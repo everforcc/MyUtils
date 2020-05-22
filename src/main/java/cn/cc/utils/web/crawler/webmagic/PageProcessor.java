@@ -1,4 +1,4 @@
-package cn.cc.utils.web.crawler;
+package cn.cc.utils.web.crawler.webmagic;
 
 import com.sun.xml.internal.ws.developer.MemberSubmissionEndpointReference;
 import net.sf.json.JSONObject;

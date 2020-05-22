@@ -1,0 +1,11 @@
+cmd /k command 执行完命令不关闭窗口
+cmd /c dir 是执行完dir命令后关闭命令窗口
+cmd /c start dir 会打开一个新窗口后执行dir指令，原窗口会关闭。
+cmd /k start dir 会打开一个新窗口后执行dir指令，原窗口不会关闭。
+一般使用 /c 这样就能处理接下来的操作，不关闭的没找到关闭的api;
+
+// + Url 在浏览器打开网址
+final static String openUrl="rundll32 url.dll,FileProtocolHandler ";
+p = Runtime.getRuntime().exec("cmd /k startup.bat",null,new File(startFir));
+p = Runtime.getRuntime().exec("cmd /c ipconfig ",null,new File(startFir));
+

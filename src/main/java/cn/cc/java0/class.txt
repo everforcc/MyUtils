@@ -1,0 +1,137 @@
+Java获取当前类名的两种方法
+
+
+
+
+
+适用于非静态方法：this.getClass().getName()
+
+
+
+
+适用于静态方法：Thread.currentThread().getStackTrace()[1].getClassName()
+
+
+
+
+
+
+获取类名：
+
+
+
+1、在类的实例中可使用this.getClass().getName();但在static method中不能使用该方法；
+
+
+
+2、在static method中使用方法:Thread.currentThread().getStackTrace()[1].getClassName();
+
+
+
+获取方法名：Thread.currentThread().getStackTrace()[1].getMethodName();
+
+
+
+获取代码行号：Thread.currentThread().getStackTrace()[1].getLineNumber();
+
+
+
+
+
+
+
+
+Log 代码：
+
+
+
+System.out.println("Class: "+this.getClass().getName()+" method: "+
+Thread.currentThread().getStackTrace()[1].getMethodName() +" line:"+
+
+Thread.currentThread().getStackTrace()[1].getLineNumber());
+
+
+
+
+
+
+
+
+
+
+http://blog.sina.com.cn/s/blog_4a4f9fb50101eyfp.html
+
+
+
+
+
+
+
+
+ Description
+
+
+
+Below I present you two different ways to get the current Class:
+
+Using Thread • Using getClass()
+
+getClass() method present in every Java object. Like here:
+
+String clazz = this.getClass().getName();
+
+
+
+static method. It won't work. Even the keyword this is meaningless in a static method.
+
+
+
+Also, the class returned by the above method may actually be a subclass of the class in which the method is defined. This is because subclasses inherit the methods of their parents; and getClass() returns the actual runtime type of the object. To get the actual class in which a method is defined, use the method below also.
+
+
+
+static method you can instead use the following:
+
+
+
+String clazz = Thread.currentThread().getStackTrace()[1].getClassName();
+
+
+
+Which uses the static methodgetStackTrace() to get the whole stacktrace. This method returns an array, where the first element (index 0) is the getStackTrace() you called and the second element (index 1) is the method your code is in.
+
+
+
+
+
+
+
+String method = Thread.currentThread().getStackTrace()[1].getMethodName();
+
+
+
+
+
+
+
+
+
+
+
+
+ The code
+
+
+
+
+package org.wikijava.reflection;
+  public class MethodName {   public static void main(String[] args) {
+ MethodName methodName = new MethodName();
+  String clazz = Thread.currentThread() .getStackTrace()[1].getClassName();
+String method = Thread.currentThread() .getStackTrace()[1].getMethodName();
+System.out.println("class name: " + clazz + " Method Name " + method);
+  methodName.anotherMethod(); }
+  private void anotherMethod() {
+  String clazz = this.getClass().getName();
+  String method = Thread.currentThread() .getStackTrace()[1].getMethodName();
+  System.out.println("class name: " + clazz + " Method Name " + method);   }   }

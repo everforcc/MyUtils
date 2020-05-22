@@ -1,4 +1,4 @@
-package cn.cc.utils.web.crawler;
+package cn.cc.utils.web.crawler.webmagic;
 
 /**
  * Yukino

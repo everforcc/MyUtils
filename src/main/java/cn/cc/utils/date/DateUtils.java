@@ -6,6 +6,7 @@ package cn.cc.utils.date;
  */
 public class DateUtils {
 
+    // 把 ToolTime移过来按照这种方式命名
 
     public String yyyyMMdd(){
 

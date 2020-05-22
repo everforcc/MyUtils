@@ -1,0 +1,59 @@
+方法名 使用说明 使用实例
+
+
+			delay(n)
+
+
+			延迟电脑操作n毫秒，类似于Thread.sleep()
+
+
+			robot.delay(1000);
+
+
+			keyPress()
+
+
+			模拟手动按下电脑键盘上的某个键
+
+
+			robot.keyPress(KeyEvent.VK_SPACE); //按下空格键
+
+
+			keyRelease()
+
+
+			模拟手动松开电脑键盘上的某个键（与keyPress()对应，按下一个键必须松开这个键）
+
+
+			robot.keyRelease(KeyEvent.VK_SPACE);  //松开空格键
+
+
+			mouseMove(x,y)
+
+
+			将鼠标移动到指定的x,y位置
+
+
+			robot.mouseMove(300, 400);  //将鼠标移动到距离左边框300px，距离上边框400px的位置
+
+
+			mousePress()
+
+
+			按下鼠标上的某个键
+
+
+			robot.mousePress(InputEvent.BUTTON1_MASK); //按下左键
+
+			robot.mousePress(InputEvent.BUTTON2_MASK); //按下滚轴键robot.mousePress(InputEvent.BUTTON3_MASK); //按下右键
+
+
+			mouseRelease()
+
+
+			松开鼠标上的某个键
+
+
+			robot.mouseRelease(InputEvent.BUTTON1_MASK); //松开左键
+
+			robot.mouseRelease(InputEvent.BUTTON2_MASK); //松开滚轴键robot.mouseRelease(InputEvent.BUTTON3_MASK); //松开右键

@@ -1,6 +1,6 @@
 package cn.cc.java8.Java8Stream;
 
-import org.junit.Test;
+
 
 import java.util.Arrays;
 import java.util.IntSummaryStatistics;
@@ -59,7 +59,7 @@ public class StreamTester1 {
 		System.out.println("parallel总数:"+count);
 	}
 
-	@Test
+
 	public void CollectorsTester() {
 		//7.Collectors
 		//Collectors 类实现了很多归约操作，例如将流转换成集合和聚合元素。Collectors 可用于返回列表或字符串：
@@ -71,7 +71,7 @@ public class StreamTester1 {
 		System.out.println("合并字符串: " + mergedString);
 	}
 
-	@Test
+
 	public void CollectorsTester1(){
 		//8.统计
 		//另外，一些产生统计结果的收集器也非常有用。它们主要用于int、double、long等基本类型上，它们可以用来产生类似如下的统计结果。

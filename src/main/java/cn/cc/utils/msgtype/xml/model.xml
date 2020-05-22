@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+>
+    <soap:Body>
+        <GetTagValueJsonResponse xmlns="YKITSJLW">
+            <GetTagValueJsonResult>
+                <Table diffgr:id="Table1" msdata:rowOrder="0">
+                    <AlarmState>调校</AlarmState>
+                    <TagKey>YK03112034112</TagKey>
+                    <TagName>1611运顺回风流CO</TagName>
+                    <Value>0</Value>
+                    <AlarmTime>2019-06-01T13:44:35.477+08:00</AlarmTime>
+                    <AlarmRtnTime>2019-06-02T16:48:05.333+08:00</AlarmRtnTime>
+                    <TimeInState>97410</TimeInState>
+                    <SysGroup>安全监测监控系统</SysGroup>
+                    <TagType>一氧化碳</TagType>
+                    <EngUnit>ppm</EngUnit>
+                    <DataType>1</DataType>
+                    <HiAlarmLimit>24</HiAlarmLimit>
+                    <LoAlarmLimit>0</LoAlarmLimit>
+                    <UnitName>小屯煤矿</UnitName>
+                </Table>
+
+                <Table diffgr:id="Table2" msdata:rowOrder="1">
+                    <AlarmState>调校</AlarmState>
+                    <TagKey>YK03113022114</TagKey>
+                    <TagName>1811运顺管道红外甲烷</TagName>
+                    <Value>2.912</Value>
+                    <AlarmTime>2019-06-01T01:39:36.41+08:00</AlarmTime>
+                    <AlarmRtnTime>2019-06-01T03:07:36.377+08:00</AlarmRtnTime>
+                    <TimeInState>5280</TimeInState>
+                    <SysGroup>安全监测监控系统</SysGroup>
+                    <TagType>高浓度甲烷</TagType>
+                    <EngUnit>%CH4</EngUnit>
+                    <DataType>1</DataType>
+                    <HiAlarmLimit>0</HiAlarmLimit>
+                    <LoAlarmLimit>0</LoAlarmLimit>
+                    <UnitName>五轮山煤矿</UnitName>
+                </Table>
+            </GetTagValueJsonResult>
+        </GetTagValueJsonResponse>
+    </soap:Body>
+</soap:Envelope>
