@@ -25,7 +25,7 @@ public class Sample {
 
 
         // 参数为本地图片路径
-        String image = "D:\\test\\OCRmodel\\4.jpg";
+        String image = "D:\\test\\OCRmodel\\20200611.jpg";
         JSONObject res = client.basicGeneral(image, options);
         content = res.toString(2);
 
@@ -50,6 +50,9 @@ public class Sample {
 
 
     public static String getJSON(String string) throws Exception{
+
+        System.out.println(string);
+
         net.sf.json.JSONObject jsonObject = net.sf.json.JSONObject.fromObject(string);
         JSONArray jsonArray = jsonObject.getJSONArray("words_result");
         net.sf.json.JSONObject jsonObject1;
@@ -60,7 +63,7 @@ public class Sample {
             //stringBuffer.append((net.sf.json.JSONObject) ((net.sf.json.JSONObject) jsonArray.get(0)).get("words"));
             stringBuffer.append(jsonObject1.get("words"));
         }
-        System.out.println(stringBuffer.toString());
+        //System.out.println(stringBuffer.toString());
 
         return stringBuffer.toString();
     }

@@ -3,7 +3,8 @@ package cn.cc.utils.fileio.file;
 
 
 import cn.cc.entity.FileSysMsg;
-import cn.cc.utils.date.ToolTime;
+import cn.cc.utils.date.DateUtils;
+
 
 import java.io.File;
 import java.util.ArrayList;
@@ -54,7 +55,6 @@ public class FileUtils {
                     // 递归寻找第一级目录下的所有文件
                     getFileList(path+"\\" + fileList[i].getName());
                 }
-
             }
         }
         return fileSysMsgList;
@@ -95,7 +95,7 @@ public class FileUtils {
         /**
          * 保存文件最后一次改变的时间
          */
-        fileSysMsg.setFileCreateTime(ToolTime.timestampToDateStr(file.lastModified()));
+        fileSysMsg.setFileCreateTime(DateUtils.timestampToDateStr(file.lastModified()));
 
         return fileSysMsg;
     }

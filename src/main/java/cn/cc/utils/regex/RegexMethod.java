@@ -1,5 +1,6 @@
 package cn.cc.utils.regex;
 
+import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -69,5 +70,23 @@ public class RegexMethod {
         }
 
     }
+
+    public String bookName(String name){
+
+        //String c="《wo》 》";
+        Pattern pattern = Pattern.compile("《{1}(.*?)》{1}");
+        Matcher matcher = pattern.matcher(name);
+        //是否匹配到了
+        if (matcher.find()) {// 进入后可以全匹配
+            System.out.println(matcher.group(0)); // 《wo》
+            System.out.println(matcher.group(1)); // wo
+        }else {
+
+        }
+        return UUID.randomUUID().toString();
+
+    }
+
+
 
 }

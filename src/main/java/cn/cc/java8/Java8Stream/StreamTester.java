@@ -77,6 +77,9 @@ public class StreamTester {
 		// 并行处理
 		count = strings.parallelStream().filter(string -> string.isEmpty()).count();
 		System.out.println("空字符串的数量为: " + count);
+		List<String> a= new ArrayList<>();
+		strings.forEach(a::add);
+		a.forEach(System.out::print);
 	}
 
 	private static int getCountEmptyStringUsingJava7(List<String> strings){

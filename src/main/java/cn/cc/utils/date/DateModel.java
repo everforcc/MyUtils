@@ -11,17 +11,7 @@ import java.util.Date;
  */
 public class DateModel {
 
-    /**
-     * 日期，待补充
-     */
-    public void   testCalendar(){
-        Date date = new Date();
-        Calendar cd = Calendar.getInstance();
-        cd.setTime(date);
-        cd.add(Calendar.SECOND, 2);
-        date = cd.getTime();
-        System.out.println(date);
-    }
+
 
      public static void now(){
          System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date(System.currentTimeMillis())));

@@ -83,6 +83,24 @@ public class InputStream_IO {
     }
 
     /**
+     * 根据文件路径读取文件内容并返回数据
+     * @param path
+     * @return
+     * @throws Exception
+     */
+    public  String IO_BufferReader_Content(String path)throws Exception{
+        File file = new File(path);
+        BufferedReader reader  = new BufferedReader(new FileReader(file));
+        String str="";
+        StringBuffer content = new StringBuffer("");
+        if((str=reader.readLine())!=null) {
+            content.append(str);
+        }
+        reader.close();
+        return content.toString();
+    }
+
+    /**
      * 系统文件 文件末尾追加
      */
     public static void IO_PrintWriter(File f,String content) {
@@ -144,6 +162,9 @@ public class InputStream_IO {
             e.printStackTrace();
         }
     }
+/*******************************************************************************************************************/
+//  分类为 读取，下载，写入， 用的时候整理
+/*******************************************************************************************************************/
 
 
 }
