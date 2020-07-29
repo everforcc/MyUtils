@@ -3,7 +3,7 @@ package cn.cc.utils.fileio.file;
 
 
 import cn.cc.entity.FileSysMsg;
-import cn.cc.utils.date.DateUtils;
+import cn.cc.core.date.DateUtils;
 
 
 import java.io.File;

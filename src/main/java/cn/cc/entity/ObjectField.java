@@ -122,4 +122,10 @@ public class ObjectField {
     public void setaDate(Date aDate) {
         this.aDate = aDate;
     }
+
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }

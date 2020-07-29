@@ -10,6 +10,9 @@ import java.math.BigDecimal;
  */
 public class CalCount {
 
+    /**
+     * 用来处理概率论的问题
+     */
 
     int a = 999;// 10   1000 都是2232
 

@@ -1,11 +1,18 @@
 package cn.cc.core;
 
+import cn.cc.entity.ObjectField;
+
 import java.lang.reflect.Field;
 
 public class FieldClass {
 
+    public static void main(String[] args) {
+        ObjectField objectField = new ObjectField();
+        getObjectValue(objectField);
 
-    public void getObjectValue(Object object){
+    }
+
+    public static void getObjectValue(Object object){
         Class<?> cla=object.getClass();
         Field[] fields=cla.getDeclaredFields();
         for (Field field:fields){

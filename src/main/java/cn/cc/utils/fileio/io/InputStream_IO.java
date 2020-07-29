@@ -93,7 +93,7 @@ public class InputStream_IO {
         BufferedReader reader  = new BufferedReader(new FileReader(file));
         String str="";
         StringBuffer content = new StringBuffer("");
-        if((str=reader.readLine())!=null) {
+        while((str=reader.readLine())!=null) {
             content.append(str);
         }
         reader.close();

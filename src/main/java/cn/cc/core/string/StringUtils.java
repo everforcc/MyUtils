@@ -82,6 +82,26 @@ public class StringUtils {
         return stringBuffer.toString();
     }
 
+    public int remarkLength(String remarkStr){
+        int lengthVal= 0;
+        String chinese = "[\u4e00-\u9fa5]";
+        if(remarkStr!=null){
+            for (int i = 0; i < remarkStr.length(); i++) {
+                try{
+                    String temp = remarkStr.substring(i, i + 1);
+                    if(temp.matches(chinese) || temp.getBytes("GBK").length > 1){
+                        lengthVal=lengthVal+2;
+                    }else{
+                        lengthVal=lengthVal+1;
+                    }
+                }catch (Exception e) {
+                    lengthVal=lengthVal+2;
+                }
+            }
+        }
+        return lengthVal;
+    }
+
 
     /**
      * 给String去重，目前仅支持字母

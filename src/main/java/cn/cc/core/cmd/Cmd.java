@@ -15,7 +15,10 @@ public class Cmd {
             //executeProcess(startFir,"startup.bat");
 
 
-            executeProcess(startFir,"ipconfig");
+            //executeProcess(startFir,"ipconfig");
+
+            systemRunTime();
+
         }catch (Exception e){
 
         }
@@ -116,6 +119,7 @@ public class Cmd {
         System.out.println("手工GC处理gc()");
         runtime.gc();
         System.out.println("什么是GC？可以由系统自动调用的垃圾释放功能，或者RunTime手工调用的垃圾释放功能");
+
     }
 
 }

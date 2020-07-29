@@ -5,8 +5,7 @@ package cn.cc.core.robot;
 import cn.cc.core.robot.utils.KeyUtils;
 import cn.cc.core.robot.utils.MouseUtil;
 import cn.cc.core.robot.utils.SystemUtils;
-import cn.cc.utils.date.DateUtils;
-import cn.cc.utils.date.ToolTime;
+import cn.cc.core.date.DateUtils;
 
 import java.awt.*;
 
