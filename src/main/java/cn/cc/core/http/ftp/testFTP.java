@@ -1,4 +1,4 @@
-package cn.cc.utils.ftp;
+package cn.cc.core.http.ftp;
 
 import sun.net.ftp.FtpClient;
 

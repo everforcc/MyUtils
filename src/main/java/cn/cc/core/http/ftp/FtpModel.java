@@ -1,10 +1,20 @@
-package cn.cc.utils.ftp;
+package cn.cc.core.http.ftp;
 
 import sun.net.ftp.FtpClient;
+import sun.net.ftp.FtpProtocolException;
 
 import java.io.*;
 
 public class FtpModel {
+
+    public static void main(String[] args) throws Exception {
+        FtpClient ftpClient=FtpClient.create("139.196.183.193");
+        ftpClient.setAsciiType();
+        ftpClient.login("vsftpd","123456".toCharArray());
+        System.out.println("服务器系统类型:"+ftpClient.getSystem());
+        System.out.println("是否连接成功:"+ftpClient.isConnected());
+        System.out.println("是否登入ftp:"+ftpClient.isLoggedIn());
+    }
 
     /**
      * 1.登录
@@ -18,9 +28,9 @@ public class FtpModel {
 
     public void model()throws Exception{
         //ftp://192.168.5.128
-        FtpClient ftpClient=FtpClient.create("192.168.5.128");
+        FtpClient ftpClient=FtpClient.create("139.196.183.193");
 
-        ftpClient.login("ccs","ccs".toCharArray());
+        ftpClient.login("ftpadmin","cc566411".toCharArray());
         System.out.println("服务器系统类型:"+ftpClient.getSystem());
         System.out.println("是否连接成功:"+ftpClient.isConnected());
         System.out.println("是否登入ftp:"+ftpClient.isLoggedIn());
