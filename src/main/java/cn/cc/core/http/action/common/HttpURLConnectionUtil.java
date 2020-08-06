@@ -1,8 +1,6 @@
 package cn.cc.core.http.action.common;
 
 import org.apache.commons.lang.StringUtils;
-import org.apache.poi.util.StringUtil;
-
 import javax.activation.MimetypesFileTypeMap;
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -24,7 +22,7 @@ public class HttpURLConnectionUtil {
     private static String userAgent="Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20200220 Firefox/29.0";
 
 
-    public static String sendToUrlRequest(String urlPath,String requestMethod,String content)throws Exception{
+    public static String sendToUrlRequest(String urlPath,String requestMethod,String content,String charset)throws Exception{
 
         //1, 得到URL对象
         URL url = new URL(urlPath);
@@ -50,7 +48,8 @@ public class HttpURLConnectionUtil {
 
         //6, 获取响应的数据
         //得到服务器写回的响应数据
-        BufferedReader br=new BufferedReader(new InputStreamReader(conn.getInputStream(),"utf-8"));
+        // charset 在这里 <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+        BufferedReader br=new BufferedReader(new InputStreamReader(conn.getInputStream(),charset));
         StringBuffer stringBuffer = new StringBuffer();
         String str;
         while ( (str=br.readLine())!=null){

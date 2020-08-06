@@ -37,7 +37,7 @@ public class ESDto {
 
     static void getName()throws Exception{
         String urlPath="http://127.0.0.1:9200/_cat/indices";
-        String str = HttpURLConnectionUtil.sendToUrlRequest(urlPath,"GET","");
+        String str = HttpURLConnectionUtil.sendToUrlRequest(urlPath,"GET","","UTF-8");
         System.out.println(str);
     }
 
@@ -49,7 +49,7 @@ public class ESDto {
         //String classname="risk_accumulation_no_marine";
         String urlPath="http://localhost:9200/"+classname+"?pretty";
         //http://localhost:9200/msic_prpcaddress
-        String str = HttpURLConnectionUtil.sendToUrlRequest(urlPath,"GET","");
+        String str = HttpURLConnectionUtil.sendToUrlRequest(urlPath,"GET","","UTF-8");
 
 
         //System.out.println(str);
@@ -58,6 +58,7 @@ public class ESDto {
         JSONObject dto = json.getJSONObject(classname).getJSONObject("mappings").getJSONObject("properties");
 
 
+        // 组装生成一个对象 ，应该在价格换行 \r\n
         StringBuffer word=new StringBuffer("");
         word.append("package com.sinosoft.esplat.core.es.entity;");
         word.append("import java.io.Serializable;");

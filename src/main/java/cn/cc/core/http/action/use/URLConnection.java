@@ -28,7 +28,7 @@ public class URLConnection {
                 "\t\t\"comCode\":\"0000000000\"\n" +
                 "\t}\n" +
                 "}\n";
-        String str = HttpURLConnectionUtil.sendToUrlRequest(urlPath,"POST",sendMsg);
+        String str = HttpURLConnectionUtil.sendToUrlRequest(urlPath,"POST",sendMsg,"UTF-8");
         System.out.println("返回值:"+str);
     }
 
@@ -44,7 +44,7 @@ public class URLConnection {
      * @throws IOException
      */
     public static JSONObject postResponse(String urlPath, String Info) throws Exception{
-        String str = HttpURLConnectionUtil.sendToUrlRequest(urlPath,"POST",Info);
+        String str = HttpURLConnectionUtil.sendToUrlRequest(urlPath,"POST",Info,"UTF-8");
         JSONObject json = JSONObject.parseObject(str);
         System.out.println("响应内容为:  " + json);
         return  json;

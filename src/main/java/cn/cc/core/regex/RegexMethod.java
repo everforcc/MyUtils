@@ -1,4 +1,4 @@
-package cn.cc.utils.regex;
+package cn.cc.core.regex;
 
 import java.util.UUID;
 import java.util.regex.Matcher;
