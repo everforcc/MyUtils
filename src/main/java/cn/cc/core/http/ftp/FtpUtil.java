@@ -29,6 +29,17 @@ public class FtpUtil {
 	}
 
 	/**
+	 * 注意用户名的权限问题
+	 *
+	 *  String charset="GBK";
+	    int size = 2048;
+	    FileInputStream fileInputStream = new FileInputStream(file1);
+	    BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
+	 *
+	 */
+
+
+	/**
 	 * @description FTP被动模式上传文件
 	 * @param ip 需要上传到的服务器IP地址 -必传字段
 	 * @param port 端口号 -必传字段

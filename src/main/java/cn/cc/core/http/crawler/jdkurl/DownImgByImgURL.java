@@ -16,7 +16,6 @@ import java.util.*;
  */
 public class DownImgByImgURL {
 
-
 	public static void main(String[] args) {
 		List<String> list=new ArrayList<>();
 		//list.add("https://pic1.zhimg.com/v2-e81db7b3d5c98aed59cbf5e3d59f7bc4_1440w.jpg");
@@ -24,6 +23,7 @@ public class DownImgByImgURL {
 		//list.add("http://10.248.103.90:9002/SunTRM/servlet");
 		Download(list,1);
 	}
+
 	/**
 	 * 步奏4
 	 */
@@ -59,8 +59,6 @@ public class DownImgByImgURL {
 				}
 
 				URL uri = new URL(url);
-
-
 
 				InputStream in = uri.openStream();
 
@@ -105,4 +103,5 @@ public class DownImgByImgURL {
 			System.out.println("进入异常");
 		}
 	}
+
 }

@@ -1,6 +1,6 @@
 package cn.cc.core.http.crawler.use;
 
-import cn.cc.core.date.DateModel;
+import cn.cc.core.date.utils.DateUtils;
 import cn.cc.utils.fileio.io.InputStream_IO;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -51,7 +51,7 @@ public class NowsFun {
             downFile = new InputStream_IO();
         } catch (Exception e) {
             e.printStackTrace();
-            DateModel.now();
+            DateUtils.now();
         }
     }
 
@@ -67,7 +67,7 @@ public class NowsFun {
             downFile.IO_PrintWriter(new File("D:"+novelName),content);
         } catch (Exception e) {
             e.printStackTrace();
-            DateModel.now();
+            DateUtils.now();
         }
     }
 

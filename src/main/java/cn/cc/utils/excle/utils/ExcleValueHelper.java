@@ -22,7 +22,9 @@ public class ExcleValueHelper {
 
     private int intValue;
 
+    // 用嵌套map来定位     x,y >> value   这种形式
     Map<Map<Integer,Integer>,String> map ;
+
     Map<Integer,Integer> key = new HashMap<>();
 
     public ExcleValueHelper() {
@@ -88,6 +90,7 @@ public class ExcleValueHelper {
 
     @Test
     void a1(){
+
         //1
         /*System.out.println(this.byteToInt("A"));
         //1+26
@@ -98,13 +101,10 @@ public class ExcleValueHelper {
         // a-z >> a-z        26~L + x
         // a-z >> a-z >>a-z  26*
 
-
-
         //26进制
         System.out.println(this.byteToInt("W"));
         System.out.println(this.byteToInt("Z"));
         System.out.println(this.byteToInt("AD"));
-
 
     }
 

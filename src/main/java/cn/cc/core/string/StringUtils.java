@@ -22,6 +22,7 @@ public class StringUtils {
 
     // 中文 英文 数字
 
+    // 测试下面两个方法
     @Test
     void a2(){
 
@@ -38,9 +39,14 @@ public class StringUtils {
         byte a= 'A';
         //System.out.println(a-64);
 
-
     }
 
+    /**
+     *  和下面的方法有类似的功能
+     * @param str
+     * @param maxLength
+     * @return
+     */
     public String subBytes(String str,int maxLength){
         // 存临时的字符串
         StringBuffer stringBuffer = new StringBuffer("");
@@ -82,9 +88,14 @@ public class StringUtils {
         return stringBuffer.toString();
     }
 
+    /**
+     *  str涉及到中文的话有字节长度的问题
+     * @param remarkStr
+     * @return
+     */
     public int remarkLength(String remarkStr){
         int lengthVal= 0;
-        String chinese = "[\u4e00-\u9fa5]";
+        String chinese = "[\u4e00-\u9fa5]";// 中文
         if(remarkStr!=null){
             for (int i = 0; i < remarkStr.length(); i++) {
                 try{
@@ -104,7 +115,7 @@ public class StringUtils {
 
 
     /**
-     * 给String去重，目前仅支持字母
+     * 给String去重，目前仅支持字母， 用来检查字符都包含哪些
      * @param string
      * @return
      */
@@ -131,5 +142,15 @@ public class StringUtils {
         System.out.println(strDistinct(s));
         System.out.println(strDistinct(s).length());
     }
+
+    @Test
+     void a3(){
+        // 测试split
+        // 使用索引访问用 String 的 split 方法得到的数组时，需做最后一个分隔符后有无
+        // 内容的检查，否则会有抛 IndexOutOfBoundsException 的风险。
+        String a = "a,,,b,c,d,";
+        String arry[] = a.split(",");
+        System.out.println(arry.length);
+     }
 
 }

@@ -1,6 +1,6 @@
 package cn.cc.utils.excle;
 
-import cn.cc.utils.excle.read.LoadExcle;
+import cn.cc.utils.excle.utils.LoadExcle;
 
 /**
  * Yukino

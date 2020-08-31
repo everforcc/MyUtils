@@ -47,6 +47,8 @@ public class RunThread {
 
         // 10个
 
+
+        // ThreadGroup
         ThreadUtils threadUtils_0 = new ThreadUtils(new Obj("零",0));
         ThreadUtils threadUtils_1 = new ThreadUtils(new Obj("一",1));
        for( int i=1 ; i<=dataTotal ; i++ ){

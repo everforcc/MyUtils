@@ -1,11 +1,14 @@
 package cn.cc.core.regex;
 
+import java.text.SimpleDateFormat;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class RegexMethod {
-     String getRegex1="(\\w)\\1{2}(?!\\1)(\\w)\\2{2}";
+
+    String getRegex1="(\\w)\\1{2}(?!\\1)(\\w)\\2{2}";
+
     public void regexTest(){
         String a="D:\\3.存档\\1.视频";
 
@@ -69,6 +72,42 @@ public class RegexMethod {
             System.out.println("true3");
         }
 
+    }
+
+    public String yyyyMMdd(String voucherdate)throws Exception{
+
+        String regex0="\\d{8}";
+        String regex1="\\d{4}-\\d{2}-\\d{2}";
+        String regex2="\\d{4}年\\d{2}月\\d{2}日";
+        String regex3="\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}";
+        String regex4="\\d{4}\\\\\\d{2}\\\\\\d{2}";
+        String regex5="\\d{4}\\\\\\d{2}\\\\\\d{2} \\d{2}:\\d{2}";
+
+        if(Pattern.compile(regex0).matcher(voucherdate).matches()){
+            String string = new SimpleDateFormat("yyyy-MM-dd").format(new SimpleDateFormat("yyyyMMdd").parse(voucherdate));
+            return string;
+        }
+        if(Pattern.compile(regex1).matcher(voucherdate).matches()){
+            return voucherdate;
+        }
+        if(Pattern.compile(regex2).matcher(voucherdate).matches()){
+            String string = new SimpleDateFormat("yyyy-MM-dd").format(new SimpleDateFormat("yyyy年MM月dd日").parse(voucherdate));
+            return string;
+        }
+        if(Pattern.compile(regex3).matcher(voucherdate).matches()){
+            String string = new SimpleDateFormat("yyyy-MM-dd").format(new SimpleDateFormat("yyyy-MM-dd hh:mm").parse(voucherdate));
+            return string;
+        }
+        if(Pattern.compile(regex4).matcher(voucherdate).matches()){
+            String string = new SimpleDateFormat("yyyy-MM-dd").format(new SimpleDateFormat("yyyy-MM-dd hh:mm").parse(voucherdate));
+            return string;
+        }
+        if(Pattern.compile(regex5).matcher(voucherdate).matches()){
+            String string = new SimpleDateFormat("yyyy-MM-dd").format(new SimpleDateFormat("yyyy-MM-dd hh:mm").parse(voucherdate));
+            return string;
+        }
+
+        return "0000-00-00";
     }
 
     public String bookName(String name){

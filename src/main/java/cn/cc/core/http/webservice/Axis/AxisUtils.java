@@ -8,15 +8,16 @@ import javax.xml.rpc.Call;
 import javax.xml.rpc.ParameterMode;
 
 public class AxisUtils {
-/**
- * 调用的时候要注意地址，有的需要?wsld, 有的不要, 接口不通的时候可以切换看看
- *
- * 就算传参有问题，也不影响接口通
- *
- * 报错参考
- * org.xml.sax.SAXException: Bad envelope tag:  definitions
- * https://blog.csdn.net/wangjinwei6912/article/details/8512598
- */
+
+    /**
+     * 调用的时候要注意地址，有的需要?wsld, 有的不要, 接口不通的时候可以切换看看
+     *
+     * 就算传参有问题，也不影响接口通
+     *
+     * 报错参考
+     * org.xml.sax.SAXException: Bad envelope tag:  definitions
+     * https://blog.csdn.net/wangjinwei6912/article/details/8512598
+     */
 
     /**
      * 接口公共调用方法
@@ -26,7 +27,6 @@ public class AxisUtils {
      */
 
     /**
-     *
      * @param endpoint 站点地址
      * @param namespaceURI 命名空间
      * @param useMethod 使用方法

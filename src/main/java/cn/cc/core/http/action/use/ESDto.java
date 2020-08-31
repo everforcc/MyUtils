@@ -15,6 +15,10 @@ import java.util.Map;
 
 public class ESDto {
 
+    /**
+     *  ES 库请求后生成本地的 dto
+     *  换行 \r\n
+     */
 
     public static void main(String[] args) throws Exception {
 
@@ -40,6 +44,7 @@ public class ESDto {
         String str = HttpURLConnectionUtil.sendToUrlRequest(urlPath,"GET","","UTF-8");
         System.out.println(str);
     }
+
 
 
     static void getDto(String classname)throws Exception{

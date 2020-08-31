@@ -1,0 +1,6 @@
+推荐使用json
+
+json  便利 entry 类似 map
+
+xml不常用，api不熟悉。
+json好用，方便。
