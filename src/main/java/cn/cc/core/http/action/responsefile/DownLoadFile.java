@@ -1,4 +1,4 @@
-package cn.cc.utils.fileio.responsefile;
+package cn.cc.core.http.action.responsefile;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -52,6 +52,15 @@ public class DownLoadFile {
         }
 
     }
+
+    /**
+     *
+     // 2.getVideo
+     $("#bilibili_Video_button").click(function () {
+     var value=$("#Video").val();
+     window.location.href = '/bilibili?num=' + value;
+     });
+     */
 
 
 }
