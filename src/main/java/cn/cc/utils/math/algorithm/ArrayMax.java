@@ -5,12 +5,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ArrayMax {
-
+//    static int[] ary = {-2,1,-3,4,-1,2,1,-5,4};
+static int[] ary = {99,-98,97,-1,99};
     public static void main(String[] args) {
         //分析过程
-        a1();
+        //a1();
         //基础算法
-        a2();
+        //a2();
         //局部变量
         a3();
     }
@@ -150,7 +151,7 @@ public class ArrayMax {
         // 原始数组
         // int[] ary={1,-1,2};
         // int[] ary = {-99,98,-99,98,-99,1};
-        int[] ary = {-2,1,-3,4,-1,2,1,-5,4};
+        // int[] ary = {-2,1,-3,4,-1,2,1,-5,4};
 
         // 区域最大值
         int areaMax = -1;
@@ -188,7 +189,6 @@ public class ArrayMax {
                     areaStart = i;
                     areaEnd = i;
                 }
-
                 // 全局计算
                 // 如果全局大于0
                 if(staticMax<areaMax){
@@ -197,14 +197,11 @@ public class ArrayMax {
                     staticStart = areaStart;
                     staticEnd = areaEnd;
                 }
-
             }else {
                 // 当前值小于0的情况
                 // 只需要做累加就好了,只会影响局部最大值，全局没有影响
                 areaMax += ary[i];
-
             }
-
         }
 
         if(staticStart>-1) {
