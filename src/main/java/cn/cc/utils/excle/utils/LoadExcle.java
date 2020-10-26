@@ -24,28 +24,39 @@ public class LoadExcle {
    private String filePath;
     //加载excle信息
 
-    private int XdefaultIndex ;
-    private int YdefaultIndex ;
-    private int XdefaultLength ;
-    private int YdefaultLength ;
+    private static int XStartIndex ;
+    private static int YStartIndex ;
+    private static int XEndIndex ;
+    private static int YEndINdex ;
+
+    private int defaultSheet = 0;
+
+    public int getDefaultSheet() {
+        return defaultSheet;
+    }
+
+    public void setDefaultSheet(int defaultSheet) {
+        this.defaultSheet = defaultSheet - 1;
+    }
 
     public LoadExcle(String filePath) {
         this.filePath = filePath;
     }
 
-    public LoadExcle(String filePath, int xdefaultIndex, int ydefaultIndex, int xdefaultLength, int ydefaultLength) {
+    // 改成    x char,y int,x char,y int
+    public LoadExcle(String filePath, String xStratIndex, String xEndIndex, int yStartIndex, int yEndIndex) {
         this.filePath = filePath;
-        XdefaultIndex = xdefaultIndex;
-        YdefaultIndex = ydefaultIndex;
-        XdefaultLength = xdefaultLength;
-        YdefaultLength = ydefaultLength;
+        XStartIndex = ExcleValueHelper.byteToInt(xStratIndex.toUpperCase()) - 1;
+        YStartIndex = yStartIndex -1;
+        XEndIndex = ExcleValueHelper.byteToInt(xEndIndex.toUpperCase())-1;
+        YEndINdex = yEndIndex - 1;
     }
 
-    public void flow(){
+    public ExcleValueHelper flow(){
         int fileType = checkFileType(filePath);
         FileInputStream fileInputStream = getFileStream(filePath);
         Workbook wb = getWorkbook(fileType, fileInputStream);
-        loadFile(wb);
+        return loadFile(wb);
     }
 
     /**
@@ -138,9 +149,9 @@ public class LoadExcle {
         return filePath.matches("^.+\\.(?i)(xlsx)$");
     }
 
-    public void loadFile( Workbook wb ){
+    public ExcleValueHelper loadFile( Workbook wb ){
         // 只操作第一个sheet页
-        int firstSheetIndex= 0 ;
+        int firstSheetIndex= defaultSheet ;
         int rows;
         Sheet firstSheet = wb.getSheetAt(firstSheetIndex); //第一个sheet页
         // 获取行数
@@ -150,37 +161,37 @@ public class LoadExcle {
         int sheetcells[] = new int[rows];
 
         // 如果大于一行，并且 第一行不为空
-        if(rows>1&&firstSheet.getRow(0)!=null){
+        /*if(rows>1&&firstSheet.getRow(0)!=null){
             for(int i=0;i<rows;i++){
                 sheetcells[i] =  firstSheet.getRow(i).getPhysicalNumberOfCells();
             }
-        }
+        }*/
 
-        loadSheet(firstSheet,sheetcells[0],rows);
+        return loadSheet(firstSheet,sheetcells[0],rows);
         //开始根据行列读取数据
 
 
     }
 
-    public void loadSheet(Sheet sheet,int x,int y){
+    public ExcleValueHelper loadSheet(Sheet sheet,int x,int y){
 
         /*int YdefaultIndex = 0;
         int Ydefaultend = y;
         int XdefaultIndex = 0;
         int Xdefaultend = x;*/
 
-        int YdefaultIndex = this.YdefaultIndex;
-        int Ydefaultend = this.YdefaultIndex+this.YdefaultLength;
-        int XdefaultIndex = this.XdefaultIndex;
-        int Xdefaultend = this.XdefaultIndex+this.XdefaultLength;
+        int YdefaultIndex = YStartIndex ;
+        int Ydefaultend = YEndINdex ;
+        int XdefaultIndex = XStartIndex ;
+        int Xdefaultend = XEndIndex ;
 
         //判断数据范围和指定范围
 
         //加载数据
-        for (int i=YdefaultIndex;i<Ydefaultend;i++){
+        for (int i=YdefaultIndex;i<=Ydefaultend;i++){
             //一行一行的读
             Row row = sheet.getRow(i);
-            for (int j=XdefaultIndex;j<Xdefaultend;j++) {
+            for (int j=XdefaultIndex;j<=Xdefaultend;j++) {
                 Cell cell = row.getCell(j);
                 String value="";
                 //开始去读单元格
@@ -188,6 +199,7 @@ public class LoadExcle {
                     //如果是数字
                     if(cell.getCellType() == HSSFCell.CELL_TYPE_NUMERIC){
                         value =  Double.toString(cell.getNumericCellValue());
+                    // 一般只用到 数字和字符串
                     }else if(cell.getCellType() == HSSFCell.CELL_TYPE_STRING){
                         value = cell.getStringCellValue();
                     }else if(cell.getCellType() == HSSFCell.CELL_TYPE_BLANK){
@@ -197,21 +209,29 @@ public class LoadExcle {
                     }else if(cell.getCellType() == HSSFCell.CELL_TYPE_ERROR){
                         value = cell.getErrorCellValue()+"";
                     }else if(cell.getCellType() == HSSFCell.CELL_TYPE_FORMULA){
-                        value = "函数";
+                        // value = "函数";
+                        value =  Double.toString(cell.getNumericCellValue());
                     }else {
                         value = "未知";
                     }
+                }
+                // 这一块逻辑需要移到外面去，属于业务逻辑
+                if(value==null||"".equals(value)||" ".equals(value)){
+                    value = "0";
                 }
                 excleValueHelper.setCellValue(i,j,value);
             }
         }
 
-        for (int i=YdefaultIndex;i<Ydefaultend;i++){
-            for (int j=XdefaultIndex;j<Xdefaultend;j++) {
-                println(i+","+j+":"+excleValueHelper.getCellValue(i,j));
+        Double a = new Double(0.0);
+        for (int i=YdefaultIndex;i<=Ydefaultend;i++){
+            for (int j=XdefaultIndex;j<=Xdefaultend;j++) {
+                // println(i+","+j+":" + excleValueHelper.getCellValue(i,j) + "," + Double.valueOf(excleValueHelper.getCellValue(i,j))) ;
+                // a += Double.valueOf(excleValueHelper.getCellValue(i,j));
+                // println(a.toString());
             }
         }
-
+        return excleValueHelper;
     }
 
 }

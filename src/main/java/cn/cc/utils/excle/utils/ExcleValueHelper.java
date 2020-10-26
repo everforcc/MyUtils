@@ -1,5 +1,6 @@
 package cn.cc.utils.excle.utils;
 
+import cn.cc.core.base.CharUtils;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
@@ -47,17 +48,23 @@ public class ExcleValueHelper {
     }
 
     /**
-     *  取出指定坐标的值
-     * @param rowNum
-     * @param lineNum
+     *  excle中的横纵坐标 第一个单元格 1，A
+     * @param xNum y
+     * @param yStr x
      * @return
      */
-    public String getCellValue(int rowNum,int lineNum){
+    public String getCellValue(int xNum,String yStr){
         key = new HashMap<>();
-        key.put(rowNum,lineNum);
+        key.put(xNum-1,ExcleValueHelper.byteToInt(yStr)-1);
         return map.get(key);
     }
 
+    // 这个是计算后的坐标 第一个单元格0,0
+    public String getCellValue(int xNum,int yNum){
+        key = new HashMap<>();
+        key.put(xNum,yNum);
+        return map.get(key);
+    }
 
     //大概有这几种模式
 
@@ -66,8 +73,8 @@ public class ExcleValueHelper {
     //aaa-aaz
     // 其实就是26进制
 
-    public int byteToInt(String str){
-        final int dif = 64;
+    public static int byteToInt(String str){
+        /*final int dif = 64;
         // 一组是26个
         final int length= 26 ;
         //几个字节
@@ -75,17 +82,18 @@ public class ExcleValueHelper {
         //a,aa,aaa
         int level = bytes.length;
         int result = 0 ;
-        /*for(int i=level;i>0;i--){
+        *//*for(int i=level;i>0;i--){
             result += new Double(Math.pow(length,(level-1))).intValue() * (bytes[level-1]-dif) ;
-        }*/
+        }*//*
 
         for(int i=0;i<level;i++){
             // ABC 从最小的位数开始加 C+B+A
             result += new Double(Math.pow(length,(i))).intValue() * (bytes[level-i-1]-dif);
             //System.out.println("result:"+result);
         }
-
-        return result;
+*/
+        // System.out.println(str+","+CharUtils.byteToInt(str));
+        return CharUtils.byteToInt(str);
     }
 
     @Test
@@ -102,9 +110,9 @@ public class ExcleValueHelper {
         // a-z >> a-z >>a-z  26*
 
         //26进制
-        System.out.println(this.byteToInt("W"));
-        System.out.println(this.byteToInt("Z"));
-        System.out.println(this.byteToInt("AD"));
+        System.out.println(this.byteToInt("a"));
+        System.out.println(this.byteToInt("A"));
+        System.out.println(this.byteToInt("A"));
 
     }
 
