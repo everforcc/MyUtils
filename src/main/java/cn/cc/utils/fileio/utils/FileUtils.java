@@ -49,6 +49,34 @@ public class FileUtils {
         return fileSysMsgList;
     }
 
+    public void recursion(String path) {
+
+        // 先判断给的是否是文件夹?
+
+        // 根据路径获取文件夹
+        File file = new File(path);
+        // 获取该文件夹下的所有文件
+        File[] fileList = file.listFiles();
+        // 便利所有的文件夹
+        if (fileList != null) {
+            for (int i = 0; i < fileList.length; i++) {
+                // 如果是文件
+                if (fileList[i].isFile()) {
+                    // 具体问题重新定制
+                    // 这里可以拿到文件信息
+                    // fileList[i].getName()
+                    // fileList[i].getPath()
+                }
+
+                //如果是文件夹
+                if (fileList[i].isDirectory()) {
+                    // 递归寻找第一级目录下的所有文件
+                    recursion(path+ File.separator + fileList[i].getName());
+                    // 那就会进入下一个文件夹，一直重复动作,当前路径加上文件夹的名字组成新的路径
+                }
+            }
+        }
+    }
 
     // 系统命名问题，文件夹也不行
     public static String checkFileName(String fileName){

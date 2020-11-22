@@ -32,7 +32,7 @@ public class CharUtils {
 
 
     //把字母转换为数字 A 65可以用来处理excle
-    public int byteToInt(String str){
+    public static int byteToInt(String str){
         final int dif = 64;
         final int length = 26 ;
         byte[] bytes = str.getBytes();

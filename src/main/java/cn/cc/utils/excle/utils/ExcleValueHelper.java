@@ -38,12 +38,12 @@ public class ExcleValueHelper {
 
     /**
      *  用来存入Excle的所有的值
-     * @param rowNum
-     * @param lineNum
+     * @param yNum
+     * @param xNum
      */
-    public void setCellValue(int rowNum,int lineNum,String value){
+    public void setCellValue(int yNum,int xNum,String value){
         key = new HashMap<>();
-        key.put(rowNum,lineNum);
+        key.put(yNum,xNum);
         map.put(key,value);
     }
 

@@ -72,33 +72,7 @@ public class InputStream_IO {
         }
     }
 
-    /**
-     * 读取一行
-     * @throws Exception
-     */
-    public void IO_BufferedReader()throws Exception{
-        BufferedReader reader  = new BufferedReader(new FileReader(file));
-        reader.readLine();
-        reader.close();
-    }
 
-    /**
-     * 根据文件路径读取文件内容并返回数据
-     * @param path
-     * @return
-     * @throws Exception
-     */
-    public  String IO_BufferReader_Content(String path)throws Exception{
-        File file = new File(path);
-        BufferedReader reader  = new BufferedReader(new FileReader(file));
-        String str="";
-        StringBuffer content = new StringBuffer("");
-        while((str=reader.readLine())!=null) {
-            content.append(str);
-        }
-        reader.close();
-        return content.toString();
-    }
 
     /**
      * 系统文件 文件末尾追加
@@ -107,7 +81,9 @@ public class InputStream_IO {
         FileWriter fw = null;
         try {
             //如果文件存在，则追加内容；如果文件不存在，则创建文件
-            //File f=new File("D:a.txt");
+            /*if(!f.exists()){
+                f.mkdir();
+            }*/
             fw = new FileWriter(f, true);
         } catch (IOException e) {
             e.printStackTrace();
@@ -134,6 +110,39 @@ public class InputStream_IO {
         //没有解决关闭流的问题
         //writer.close();
     }
+
+    /**
+     * 读取一行
+     *  可以加参数指定编码
+     * @throws Exception
+     */
+    //  new BufferedReader(new InputStreamReader(new FileInputStream(filePath), encoding));
+    public void IO_BufferedReader()throws Exception{
+        BufferedReader reader  = new BufferedReader(new FileReader(file));
+        reader.readLine();
+        reader.close();
+    }
+
+    /**
+     * 根据文件路径读取文件内容并返回数据
+     * @param path
+     * @return
+     * @throws Exception
+     */
+    public  String IO_BufferReader_Content(String path)throws Exception{
+        File file = new File(path);
+        BufferedReader reader  = new BufferedReader(new FileReader(file));
+        String str="";
+        StringBuffer content = new StringBuffer("");
+        while((str=reader.readLine())!=null) {
+            content.append(str);
+        }
+        reader.close();
+        return content.toString();
+    }
+
+    //  可以加参数指定编码
+    // new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filePath), encoding));
     public void IO_BufferedWriter(String filePath) {
         try {
             FileWriter fw = new FileWriter(filePath, true);
@@ -148,7 +157,7 @@ public class InputStream_IO {
             e.printStackTrace();
         }
     }
-/*********************/
+    /*********************/
 //处理字符串的五种方法
 // https://blog.csdn.net/yangchanghong1995/article/details/81812486
     public void IO_PrintStream(String filePath) {

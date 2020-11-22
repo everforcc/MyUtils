@@ -44,7 +44,7 @@ public class BigDecimalFormat {
      * @param obj传入的小数
      * @return
      */
-    public String formatToNumber(BigDecimal obj) {
+    public static String formatToNumber(BigDecimal obj) {
         DecimalFormat df = new DecimalFormat("#.00");
         if(obj.compareTo(BigDecimal.ZERO)==0) {
             return "0.00";
