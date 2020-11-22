@@ -15,14 +15,18 @@ public class ShareTimeWorkResult {
     // sheet1 分为三块    1.人力成本(左上)  2.九大渠道(左下) 3.右
 
     /* 当前月份 */
-    public static final String yearMonth = "202010";
+    public static final String yearMonth = "202009";
     // 要处理的文件
     public static final String fileName = "F:\\1.中科软\\2.费用分摊\\2020年末总结\\1.工时汇总2020年末测试.xlsx" ;
-
+    // 输出文件路径
     public static final String filePath = "E:"+File.separator+"linshi"+File.separator+"share"+File.separator+"01"+File.separator ;
     // 表示每块区域的坐标
     // public static final String[] sheet1_HO={"C","S","2","14"};
 
+    /*
+     * 1. sheet1的左上和左下，SU SZ 的MKT替换为 SU 和SZ 。
+     *
+     * */
     public static void main(String[] args) {
         // 渠道匹配问题
         // Non JIA
@@ -34,7 +38,7 @@ public class ShareTimeWorkResult {
         //Direct Motor
         //BD
         //JIA
-        // 1.
+        // 1. sheet1 需要替换 SU 和 SZ 随后解决
         /*final String[] sheet1_HO_channel={"C","S","2","14","HO"};
         final String[] sheet1_SMD_channel={"C","I","18","30","SMD"};
         final String[] sheet1_GD_channel={"C","I","34","46","GD"};
@@ -49,7 +53,7 @@ public class ShareTimeWorkResult {
         sheet1_channel(sheet1_BJ_channel);
         sheet1_channel(sheet1_JS_channel);
         sheet1_channel(sheet1_SU_channel);
-        // 2.
+        // 2. sheet1 左上
         final String[] sheet1_HO_cost={"C","S","2","5","HO"};
         final String[] sheet1_SMD_cost={"C","I","18","21","SMD"};
         final String[] sheet1_GD_cost={"C","I","34","37","GD"};
@@ -64,7 +68,7 @@ public class ShareTimeWorkResult {
         sheet1_cost(sheet1_BJ_cost);
         sheet1_cost(sheet1_JS_cost);
         sheet1_cost(sheet1_SU_cost);
-        //3.
+        //3. sheet1 右边
         final String[] sheet1_HO_asset={"C","W","6","14","HO"};
         final String[] sheet1_SMD_asset={"C","M","22","30","SMD"};
         final String[] sheet1_GD_asset={"C","M","38","46","GD"};
@@ -78,16 +82,19 @@ public class ShareTimeWorkResult {
         sheet1_asset(sheet1_SZ_asset);
         sheet1_asset(sheet1_BJ_asset);
         sheet1_asset(sheet1_JS_asset);
-        sheet1_asset(sheet1_SU_asset);
+        sheet1_asset(sheet1_SU_asset);*/
 
-        //sheet2
-        sheet2();*/
+        // sheet2
+        /*sheet2();*/
 
-        //sheet4
+        // sheet4  HO可能要更具SMD（SD）设置
         final String[] sheet4_JIA={"A","L","3","9","1"};
-        sheet4(sheet4_JIA);
-        /*final String[] sheet4_NonJIA={"N","Y","3","9","0"};
-        sheet4(sheet4_NonJIA);*/
+        //sheet4(sheet4_JIA);
+        final String[] sheet4_NonJIA={"M","Y","3","9","0"};
+        sheet4(sheet4_NonJIA);
+
+        //System.out.println(formatToNumber(new BigDecimal(1)));
+
     }
 
 
@@ -103,11 +110,13 @@ public class ShareTimeWorkResult {
         LoadExcle loadExcle = new LoadExcle( fileName ,sheet1_[0],sheet1_[1],Integer.valueOf(sheet1_[2]),Integer.valueOf(sheet1_[3]));
         ExcleValueHelper excleValueHelper = loadExcle.flow();
 
+        excleValueHelper.setCellValue(Integer.valueOf(sheet1_[2])-1,ExcleValueHelper.byteToInt(sheet1_[1]),"ZBSY");
+
         int realStartY = Integer.valueOf(sheet1_[2]) + 3;
         int realEndY = Integer.valueOf(sheet1_[3]);
         // 两层遍历 x外层，因为一列为一个整体
         // X 便利实际 数字 数据，坐标，只需要取出来即可
-        for(int x = ExcleValueHelper.byteToInt(sheet1_[0]) ; x < ExcleValueHelper.byteToInt(sheet1_[1]) ; x++) {
+        for(int x = ExcleValueHelper.byteToInt(sheet1_[0]) ; x <= ExcleValueHelper.byteToInt(sheet1_[1]) ; x++) {
 
             // 四舍五入以及，和为1
             BigDecimal ary[] = new BigDecimal[ realEndY - realStartY];
@@ -115,42 +124,60 @@ public class ShareTimeWorkResult {
             BigDecimal total = new BigDecimal(0);
             BigDecimal max = new BigDecimal(0);
             int maxIndex = -1;
-            // y
-            for (int y = realStartY; y < realEndY; y++) {
-                // 算出最大值，求和，记录坐标
-                ary[i] = new BigDecimal(formatToNumber(new BigDecimal(excleValueHelper.getCellValue(y, x))));
-                if(ary[i].compareTo(max)==1){
-                    maxIndex = i;
-                    max = ary[i];
+            if(x != ExcleValueHelper.byteToInt(sheet1_[1])) {
+                // y
+                for (int y = realStartY; y < realEndY; y++) {
+                    // 算出最大值，求和，记录坐标
+                    ary[i] = new BigDecimal(formatToNumber(new BigDecimal(excleValueHelper.getCellValue(y, x))));
+                    if (ary[i].compareTo(max) == 1) {
+                        maxIndex = i;
+                        max = ary[i];
+                    }
+                    total = total.add(ary[i]);
+                    i++;
                 }
-                total = total.add(ary[i]);
-                i++;
+                // 一列结束，生成sql 最大值
+                ary[maxIndex] = ary[maxIndex].subtract(total.subtract(new BigDecimal(1)));
+            }else {
+                for (int y = realStartY; y < realEndY; y++) {
+                    // NBSY
+                    if (excleValueHelper.getCellValue(i + 3 + Integer.valueOf(sheet1_[2]), 2).equals("Branch Non JIA")) {
+                        ary[i] = new BigDecimal(formatToNumber(new BigDecimal(1)));
+                    } else {
+                        ary[i] = new BigDecimal(formatToNumber(new BigDecimal(0)));
+                    }
+                    i++;
+                }
             }
-            // 一列结束，生成sql
-            ary[maxIndex] = ary[maxIndex].subtract(total.subtract(new BigDecimal(1)));
             // 公共的io方法
             BigDecimal all =  new BigDecimal(0);
+            String sort="";
             for(int resultIndex=0;resultIndex<ary.length;resultIndex++){
                 // println(ary[resultIndex]);
-                all = all.add(ary[resultIndex]);
+                // all = all.add(ary[resultIndex]);
                 // 具体每行sql
                 // 拼接sql
-                sql.append("insert into Accsh_Depsorttochannel values ('" + yearMonth + "', 'FYFT', 'C001', '" + sheet1_[4] + "', '" +
-                        excleValueHelper.getCellValue(Integer.valueOf(sheet1_[2])-1,x) + "', '" +
-                        excleValueHelper.getCellValue(resultIndex + 3 + Integer.valueOf(sheet1_[2]),2) + "', " + ary[resultIndex] + ");");
+                if("SU".equals(sheet1_[4])||"SZ".equals(sheet1_[4])){
+                    sort = sheet1_[4];
+                }else {
+                    sort = excleValueHelper.getCellValue(Integer.valueOf(sheet1_[2])-1,x);
+                }
 
+                sql.append("insert into Accsh_Depsorttochannel values ('" + yearMonth + "', 'FYFT', 'C001', '" + sheet1_[4] + "', '" +
+                        sort + "', '" +
+                        excleValueHelper.getCellValue(resultIndex + 3 + Integer.valueOf(sheet1_[2]),2) + "', " + ary[resultIndex] + ");");
                 sql.append("\r\n");
             }
 
         }
-
+        // sql.append("");
         System.out.println(sql);
 
         /**
          * 业务问题， 最后替换JIA和Non JIA
          */
 
-        InputStream_IO.IO_PrintWriter(new File(filePath + "sheet1_channel.sql"),sqlReplaceKey(sql));
+        //InputStream_IO.IO_PrintWriter(new File(filePath + "sheet1_channel.sql"),sqlReplaceKey(sql));
 
     }
 
@@ -206,13 +233,20 @@ public class ShareTimeWorkResult {
             }
             colum ++;
         }
-
+        String sort="";
         for(int i=0;i<result[0].length;i++){
+
+            if("SU".equals(sheet1_[4])||"SZ".equals(sheet1_[4])){
+                sort = sheet1_[4];
+            }else {
+                sort = excleValueHelper.getCellValue(Integer.valueOf(sheet1_[2])-1,i+3);
+            }
+
             sql.append(" insert into Accdepconsume values ('" + yearMonth + "', 'FYFT', 'C001','" + sheet1_[4] + "','"
                     // Integer.valueOf(sheet1_[0])),1
-                    + excleValueHelper.getCellValue(Integer.valueOf(sheet1_[2])-1,i+3) + "'");
+                    + sort + "'");
             for(int j=0;j<result.length;j++){
-            sql.append("," + result[j][i] );
+                sql.append("," + result[j][i] );
             }
             sql.append(", '');");
             sql.append("\r\n");
@@ -224,7 +258,7 @@ public class ShareTimeWorkResult {
          * 业务问题， 最后替换JIA和Non JIA
          */
 
-        InputStream_IO.IO_PrintWriter(new File(filePath + "sheet1_cost.sql"),sqlReplaceKey(sql));
+        //InputStream_IO.IO_PrintWriter(new File(filePath + "sheet1_cost.sql"),sqlReplaceKey(sql));
 
     }
 
@@ -402,12 +436,12 @@ public class ShareTimeWorkResult {
             // 公共的io方法
             BigDecimal all =  new BigDecimal(0);
             int TYPECODE=1;
-            for(int resultIndex=0;resultIndex<ary.length;resultIndex++){
+            for(int resultIndex=Integer.valueOf(ExcleValueHelper.byteToInt(sheet1_[0]))-1;resultIndex<Integer.valueOf(ExcleValueHelper.byteToInt(sheet1_[0]))-1+ary.length;resultIndex++){
                 //println(ary[resultIndex]+","+excleValueHelper.getCellValue(2,resultIndex+1)+","+excleValueHelper.getCellValue(y,0));
-                all = all.add(ary[resultIndex]);
+                //all = all.add(ary[resultIndex]);
                 sql.append(" insert into Accsh_Todeptoriskcode values ('" + yearMonth + "', 'FYFT', 'C001', '" + excleValueHelper.getCellValue(y,0) + "', '" +
                         excleValueHelper.getCellValue(y,0) +formatToNumberThree(TYPECODE)+"','" + excleValueHelper.getCellValue(2,resultIndex+1)
-                        + "'," + ary[resultIndex] +",'"+ sheet1_[4] +"');");
+                        + "'," + ary[resultIndex-Integer.valueOf(ExcleValueHelper.byteToInt(sheet1_[0]))+1] +",'"+ sheet1_[4] +"');");
                 sql.append("\r\n");
                 TYPECODE++;
             }
@@ -416,7 +450,7 @@ public class ShareTimeWorkResult {
         }
         System.out.println(sql);
 
-        //InputStream_IO.IO_PrintWriter(new File(filePath + "sheet4_"+sheet1_[4]+".sql"),sqlReplaceKey(sql));
+        InputStream_IO.IO_PrintWriter(new File(filePath + "sheet4_"+sheet1_[4]+".sql"),sqlReplaceKey(sql));
     }
 
 
@@ -437,7 +471,7 @@ public class ShareTimeWorkResult {
     // 格式化三位数
     public static String formatToNumberThree(int obj) {
         DecimalFormat df = new DecimalFormat("000");
-            return df.format(obj).toString();
+        return df.format(obj).toString();
     }
 
     // sql关键字替换
