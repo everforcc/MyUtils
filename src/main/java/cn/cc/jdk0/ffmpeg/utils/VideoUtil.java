@@ -1,4 +1,4 @@
-package cn.cc.jdk0.jni.ffmpeg;
+package cn.cc.jdk0.ffmpeg.utils;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -28,7 +28,7 @@ public class VideoUtil {
     private static final Logger LOGGER = LoggerFactory.getLogger(VideoUtil.class);
 
     public static void main(String[] args) {
-        String videoPath = "E:\\test\\github\\视频\\鹿鸣\\1.flv";
+        String videoPath = "E:\\ffmpeg\\1.flv";
         Map<String, Object> screenshot = getScreenshot(videoPath);
         System.out.println(screenshot);
     }

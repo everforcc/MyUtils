@@ -1,13 +1,11 @@
 package cn.cc.jdk0.cmd;
 
+import cn.cc.core.io.utils.InputStreamUtils;
+import cn.cc.utils.Print_Record;
 
+import java.io.*;
 
-import cn.cc.utils.fileio.StreamUtils;
-
-import java.io.File;
-import java.io.IOException;
-
-public class Cmd {
+public class CmdUtils {
 
     public static void main(String[] args) {
         try{
@@ -25,6 +23,34 @@ public class Cmd {
 
 
     }
+
+    Print_Record print_record = Print_Record.getInstanse("E:");
+    // 目前使用这个，下面的其他方法还需要再整理
+    public static void execCmd(String cmd) {
+        ProcessBuilder builder = new ProcessBuilder("cmd.exe", "/C", cmd);
+        Process process = null;
+        try {
+            process = builder.redirectErrorStream(true).start();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        InputStream in = process.getInputStream();
+        outStream(in);
+    }
+    private static void outStream(InputStream in) {
+        // 用一个读输出流类去读
+        BufferedReader br = new BufferedReader(new InputStreamReader(in));
+        String line;
+        // 逐行读取输出到控制台
+        try {
+            while ((line = br.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    /*****************************************************************************************************************/
 
     // + Url 在浏览器打开网址
     final static String openUrl="rundll32 url.dll,FileProtocolHandler";
@@ -46,7 +72,7 @@ public class Cmd {
         Process p ;
         try {
             p = Runtime.getRuntime().exec(cmd);
-            String errorMsg = StreamUtils.inputStreamStr(p.getErrorStream());
+            String errorMsg = InputStreamUtils.inputStreamStr(p.getErrorStream(),"GBK");
             System.out.println(METHOD_NAME + "#readLine: " + errorMsg );
             // 导致当前线程等待，如有必要，一直要等到由该 Process 对象表示的进程已经终止。
             // 如果已终止该子进程，此方法立即返回。如果没有终止该子进程，调用的线程将被阻塞，直到退出子进程。
@@ -98,7 +124,7 @@ public class Cmd {
         Process p;
         Runtime runtime =   Runtime.getRuntime();
         p = runtime.exec(precessType + command ,null,new File(path));
-        System.out.println("执行命令返回:" + StreamUtils.inputStreamStr(p.getInputStream()));
+        System.out.println("执行命令返回:" + InputStreamUtils.inputStreamStr(p.getInputStream(),"GBK"));
         System.out.println("休眠一秒");
         Thread.sleep(1000);
         System.out.println("runtime.gc();主动清理垃圾");

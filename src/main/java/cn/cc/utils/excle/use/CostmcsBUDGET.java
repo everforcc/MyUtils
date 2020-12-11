@@ -1,7 +1,6 @@
 package cn.cc.utils.excle.use;
 
-
-import cn.cc.utils.fileio.io.InputStream_IO;
+import cn.cc.core.io.utils.PrintWriterUtils;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
@@ -221,7 +220,7 @@ public class CostmcsBUDGET {
         // 并写入文件
         for(String s:insertsql){
             println(s);
-            InputStream_IO.IO_PrintWriter(new File(filePath+"//"+tableName+".sql"),s);
+            PrintWriterUtils.fileWriter(new File(filePath+"//"+tableName+".sql"),s);
         }
 
 

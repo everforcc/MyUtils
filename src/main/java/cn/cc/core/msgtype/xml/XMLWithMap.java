@@ -1,5 +1,6 @@
 package cn.cc.core.msgtype.xml;
 
+import cn.cc.core.file.utils.ConstantCharSet;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.DocumentHelper;
@@ -39,7 +40,7 @@ public class XMLWithMap {
             Map<String, String> data = new HashMap<>();
             DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-            InputStream stream = new ByteArrayInputStream(xml.getBytes("UTF-8"));
+            InputStream stream = new ByteArrayInputStream(xml.getBytes(ConstantCharSet.UTF_8));
             org.w3c.dom.Document doc = documentBuilder.parse(stream);
             doc.getDocumentElement().normalize();
             NodeList nodeList = doc.getDocumentElement().getChildNodes();
@@ -85,7 +86,7 @@ public class XMLWithMap {
             TransformerFactory tf = TransformerFactory.newInstance();
             Transformer transformer = tf.newTransformer();
             DOMSource source = new DOMSource(document);
-            transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
+            transformer.setOutputProperty(OutputKeys.ENCODING, ConstantCharSet.UTF_8);
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");
             StringWriter writer = new StringWriter();
             StreamResult result = new StreamResult(writer);

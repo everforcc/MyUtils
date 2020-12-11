@@ -1,11 +1,9 @@
 package cn.cc.utils.excle.use;
 
+import cn.cc.core.io.utils.PrintWriterUtils;
 import cn.cc.utils.excle.utils.ExcleValueHelper;
 import cn.cc.utils.excle.utils.LoadExcle;
-import cn.cc.utils.fileio.io.InputStream_IO;
-import org.junit.jupiter.api.Test;
 
-import javax.jws.soap.SOAPBinding;
 import java.io.File;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
@@ -15,11 +13,11 @@ public class ShareTimeWorkResult {
     // sheet1 分为三块    1.人力成本(左上)  2.九大渠道(左下) 3.右
 
     /* 当前月份 */
-    public static final String yearMonth = "202009";
+    public static final String yearMonth = "202012";
     // 要处理的文件
-    public static final String fileName = "F:\\1.中科软\\2.费用分摊\\2020年末总结\\1.工时汇总2020年末测试.xlsx" ;
+    public static final String fileName = "F:\\1.中科软\\2.费用分摊\\20201209\\excle\\1.工时汇总2020-11月 - 更新12.4 -TO IT.XLSX" ;
     // 输出文件路径
-    public static final String filePath = "E:"+File.separator+"linshi"+File.separator+"share"+File.separator+"01"+File.separator ;
+    public static final String filePath = "F:\\1.中科软\\2.费用分摊\\20201209\\sql\\02\\";
     // 表示每块区域的坐标
     // public static final String[] sheet1_HO={"C","S","2","14"};
 
@@ -27,19 +25,12 @@ public class ShareTimeWorkResult {
      * 1. sheet1的左上和左下，SU SZ 的MKT替换为 SU 和SZ 。
      *
      * */
-    public static void main(String[] args) {
-        // 渠道匹配问题
-        // Non JIA
-        //Branch Internet
-        //Treaty Non Motor
-        //IBG
-        //Treaty Motor
-        //PICC
-        //Direct Motor
-        //BD
-        //JIA
+    static void sheet1(){
+
+        // 可能会有奇怪的表头，表头一般就只有英文，中文的需要改掉
+
         // 1. sheet1 需要替换 SU 和 SZ 随后解决
-        /*final String[] sheet1_HO_channel={"C","S","2","14","HO"};
+         final String[] sheet1_HO_channel={"C","S","2","14","HO"};
         final String[] sheet1_SMD_channel={"C","I","18","30","SMD"};
         final String[] sheet1_GD_channel={"C","I","34","46","GD"};
         final String[] sheet1_SZ_channel={"C","D","50","62","SZ"};
@@ -82,20 +73,43 @@ public class ShareTimeWorkResult {
         sheet1_asset(sheet1_SZ_asset);
         sheet1_asset(sheet1_BJ_asset);
         sheet1_asset(sheet1_JS_asset);
-        sheet1_asset(sheet1_SU_asset);*/
+        sheet1_asset(sheet1_SU_asset);
+    }
 
-        // sheet2
-        /*sheet2();*/
+    static void sheet4(){
 
-        // sheet4  HO可能要更具SMD（SD）设置
+        // SD >> SMD
+        // HO001 的问题 直接复制哪个的来着？ 表格没有，但是要复制一个，照着
         final String[] sheet4_JIA={"A","L","3","9","1"};
-        //sheet4(sheet4_JIA);
+        sheet4(sheet4_JIA);
         final String[] sheet4_NonJIA={"M","Y","3","9","0"};
         sheet4(sheet4_NonJIA);
+    }
+
+    public static void main(String[] args) {
+        // 渠道匹配问题
+        // Non JIA
+        //Branch Internet
+        //Treaty Non Motor
+        //IBG
+        //Treaty Motor
+        //PICC
+        //Direct Motor
+        //BD
+        //JIA
+
+        //sheet1();
+
+        // sheet2
+        //sheet2();
+
+        // sheet4  HO可能要更具SMD（SD）设置
+        sheet4();
 
         //System.out.println(formatToNumber(new BigDecimal(1)));
 
     }
+
 
 
     /**
@@ -177,8 +191,7 @@ public class ShareTimeWorkResult {
          * 业务问题， 最后替换JIA和Non JIA
          */
 
-        //InputStream_IO.IO_PrintWriter(new File(filePath + "sheet1_channel.sql"),sqlReplaceKey(sql));
-
+         PrintWriterUtils.fileWriter(new File(filePath + "sheet1_channel.sql"),sqlReplaceKey(sql.toString()));
     }
 
     // {"C","S","2","5","HO"};
@@ -227,7 +240,7 @@ public class ShareTimeWorkResult {
             // 公共的io方法
             BigDecimal all =  new BigDecimal(0);
             for(int resultIndex=0;resultIndex<ary.length;resultIndex++){
-                println(ary[resultIndex]);
+                //println(ary[resultIndex]);
                 all = all.add(ary[resultIndex]);
                 result[colum][resultIndex] = ary[resultIndex];
             }
@@ -258,7 +271,7 @@ public class ShareTimeWorkResult {
          * 业务问题， 最后替换JIA和Non JIA
          */
 
-        //InputStream_IO.IO_PrintWriter(new File(filePath + "sheet1_cost.sql"),sqlReplaceKey(sql));
+        PrintWriterUtils.fileWriter(new File(filePath + "sheet1_cost.sql"),sqlReplaceKey(sql.toString()));
 
     }
 
@@ -322,7 +335,7 @@ public class ShareTimeWorkResult {
          * 业务问题， 最后替换JIA和Non JIA
          */
 
-        InputStream_IO.IO_PrintWriter(new File(filePath + "sheet1_asset.sql"),sqlReplaceKey(sql));
+        PrintWriterUtils.fileWriter(new File(filePath + "sheet1_asset.sql"),sqlReplaceKey(sql.toString()));
 
     }
 
@@ -389,7 +402,7 @@ public class ShareTimeWorkResult {
          * 业务问题， 最后替换JIA和Non JIA
          */
 
-        InputStream_IO.IO_PrintWriter(new File(filePath + "sheet2.sql"),sqlReplaceKey(sql));
+        PrintWriterUtils.fileWriter(new File(filePath + "sheet2.sql"),sqlReplaceKey(sql.toString()));
 
     }
 
@@ -449,8 +462,8 @@ public class ShareTimeWorkResult {
             System.out.println("all:"+all);
         }
         System.out.println(sql);
-
-        InputStream_IO.IO_PrintWriter(new File(filePath + "sheet4_"+sheet1_[4]+".sql"),sqlReplaceKey(sql));
+        String SMD = sql.toString().replace("SD","SMD");
+        PrintWriterUtils.fileWriter(new File(filePath + "sheet4_"+sheet1_[4]+".sql"),sqlReplaceKey(SMD));
     }
 
 
@@ -475,8 +488,8 @@ public class ShareTimeWorkResult {
     }
 
     // sql关键字替换
-    static String sqlReplaceKey(StringBuffer sql){
-        return sql.toString().replace("&","'||chr(38)||'").replace("Branch JIA","JIA")
+    static String sqlReplaceKey(String sql){
+        return sql.replace("&","'||chr(38)||'").replace("Branch JIA","JIA")
                 .replace("Branch Non JIA","Non JIA").replace("BD（HO）","BD")
                 .replace("IBG（HO）","IBG").replace("PICC（GD）","PICC")
                 .replace("日系业务\n" +

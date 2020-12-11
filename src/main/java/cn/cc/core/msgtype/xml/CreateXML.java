@@ -1,5 +1,6 @@
 package cn.cc.core.msgtype.xml;
 
+import cn.cc.core.file.utils.ConstantCharSet;
 import org.dom4j.Document;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
@@ -78,7 +79,7 @@ public class CreateXML {
         //输出格式
         OutputFormat format = OutputFormat.createPrettyPrint();
         //设置编码
-        format.setEncoding("UTF-8");
+        format.setEncoding(ConstantCharSet.UTF_8);
         XMLWriter write;
         try {
             File f = new File(filePath);

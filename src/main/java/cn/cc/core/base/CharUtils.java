@@ -1,13 +1,48 @@
 package cn.cc.core.base;
 
-import org.junit.jupiter.api.Test;
-
 /**
  * Yukino
  * 2020/4/23
  */
 public class CharUtils {
 
+    static byte a=(byte)128;
+    static byte b=(byte)129;
+    static byte[] c = new byte[]{'d',(byte)0xff,-1,(byte)255,(byte)0x80,(byte) 128,-128};
+
+    byte[] bytes1= new byte[]{'b','b','b','b','b'};
+    static byte[] bytes2= new byte[5];
+
+    static {
+        bytes2[0]='a';
+        bytes2[1]='a';
+        bytes2[2]='a';
+        bytes2[3]='a';
+        bytes2[4]='a';
+    }
+
+    public static void main(String[] args) {
+        byte a=(byte)127;
+        System.out.println("a:"+a);
+        //byte b=(byte)129;
+        //System.out.println(a);
+        //System.out.println(b);
+        String stra="abc";
+        byte[] bytestr = stra.getBytes();
+        System.out.println(bytestr.length);
+        System.out.println(new String(bytestr));
+        System.out.println(bytestr);
+        System.out.println("----------");
+        for(byte b:c){
+            System.out.println(b);
+        }
+        System.out.println("----------");
+        System.out.println(stra.getBytes());
+
+        System.out.println(c);
+
+        a1();
+    }
 
     /**
      * 方法一：将char 强制转换为byte
@@ -30,8 +65,8 @@ public class CharUtils {
         return byteAscii;
     }
 
-
     //把字母转换为数字 A 65可以用来处理excle
+    // 26进制
     public static int byteToInt(String str){
         final int dif = 64;
         final int length = 26 ;
@@ -43,12 +78,12 @@ public class CharUtils {
         }
         return result;
     }
-    @Test
-    void a1(){
+
+    public static void a1(){
         //26进制
-        System.out.println(this.byteToInt("W"));
-        System.out.println(this.byteToInt("Z"));
-        System.out.println(this.byteToInt("AD"));
+        System.out.println(byteToInt("W"));
+        System.out.println(byteToInt("Z"));
+        System.out.println(byteToInt("AD"));
     }
 
 }

@@ -191,12 +191,12 @@
         </dependency>
 
         <!-- spring 的定时任务 -->
-        <!--<dependency>
+        <dependency>
             <groupId>org.awaitility</groupId>
             <artifactId>awaitility</artifactId>
             <version>3.1.2</version>
             <scope>test</scope>
-        </dependency>-->
+        </dependency>
 
         <!-- webmagic -->
         <dependency>
@@ -216,6 +216,8 @@
             <artifactId>thumbnailator</artifactId>
             <version>0.4.8</version>
         </dependency>
+
+
 
         <!-- 拼音汉字问题 -->
         <!-- https://mvnrepository.com/artifact/com.belerweb/pinyin4j -->
@@ -238,6 +240,27 @@
             <artifactId>javacv-platform</artifactId>
             <version>1.3.1</version>
         </dependency>-->
+        <!-- https://mvnrepository.com/artifact/it.sauronsoftware/jave -->
+        <!--<dependency>
+            <groupId>it.sauronsoftware</groupId>
+            <artifactId>jave</artifactId>
+            <version>1.0.2</version>
+        </dependency>-->
+
+        <!-- 可以获取音乐时长 -->
+        <!-- https://mvnrepository.com/artifact/org/jaudiotagger -->
+        <dependency>
+            <groupId>org</groupId>
+            <artifactId>jaudiotagger</artifactId>
+            <version>2.0.3</version>
+        </dependency>
+
+        <!-- selenium-java -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.4.0</version>
+        </dependency>
 
     </dependencies>
 

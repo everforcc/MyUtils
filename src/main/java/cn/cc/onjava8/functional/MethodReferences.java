@@ -14,6 +14,8 @@ class Describe {
     }
 }
 
+// 没搞懂什么时候用
+
 public class MethodReferences {
     static void hello(String name) { // [3]
         System.out.println("Hello, " + name);

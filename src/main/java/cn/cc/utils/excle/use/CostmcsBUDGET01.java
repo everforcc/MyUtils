@@ -240,7 +240,7 @@ public class CostmcsBUDGET01 {
         // 并写入文件
         /*for(String s:insertsql){
             println(s);
-            //InputStream_IO.IO_PrintWriter(new File(filePath+"//"+tableName+".sql"),s);
+
         }*/
         List<String> ECBGTPLANDETAIL=new ArrayList<>();
         StringBuilder sqlInsert=new StringBuilder();
@@ -329,7 +329,7 @@ public class CostmcsBUDGET01 {
 
         for(String s:ECBGTPLANDETAIL){
             //println(s);
-            //InputStream_IO.IO_PrintWriter(new File(filePath+"//" + tableName + "_ECBGTPLANDETAIL"+".sql"),s);
+
             //System.out.println(s);
             //System.out.println(s);
         }

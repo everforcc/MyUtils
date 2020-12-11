@@ -209,7 +209,7 @@ public class DesUtils {
     //10.1.1.141:8001/costmcs/sign/signOn.jsp?1be51e1e3ea86a1d88ef3f5b0b59cfe6576878c1a7d332bc60d12cbf76eb4b3d7f64bbef7d39def2ecee0d183a8cb5ac00c6a1036be1bb6a
     //                                                                                                        f3cb916471ae26865b5f8741ce527c704706acfeb3838838
     try {
-      String test = "autoLogin=2&loginFrom=Portal&userCode=lengbing";
+      String test = "autoLogin=2&loginFrom=Portal&userCode=Kazuhiro.fujii";
       DesUtils des = new DesUtils("PORTALSYSTEM");//自定义密钥   portalsystem
       System.out.println("加密前的字符：" + test);
       System.out.println("加密后的字符：" + "http://10.1.1.141:8001/costmcs/sign/signOn.jsp?"+des.encrypt(test));
