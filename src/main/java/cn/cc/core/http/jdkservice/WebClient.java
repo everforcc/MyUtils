@@ -1,5 +1,7 @@
 package cn.cc.core.http.jdkservice;
 
+import cn.cc.core.file.utils.ConstantCharSet;
+
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -29,7 +31,7 @@ public class WebClient {
         if (200 == responseCode) {// 表示服务端响应成功
             InputStream is = connection.getInputStream();
             // 将字节流转换为字符流
-            InputStreamReader isr = new InputStreamReader(is, "utf-8");
+            InputStreamReader isr = new InputStreamReader(is, ConstantCharSet.UTF_8);
             // 使用缓存区
             BufferedReader br = new BufferedReader(isr);
 

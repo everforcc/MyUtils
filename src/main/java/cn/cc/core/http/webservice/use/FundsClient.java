@@ -1,9 +1,9 @@
 package cn.cc.core.http.webservice.use;
 
 import cn.cc.core.date.utils.DateUtils;
-import cn.cc.utils.fileio.io.InputStream_IO;
 import cn.cc.core.http.webservice.Axis.AxisUtils;
 import cn.cc.core.http.webservice.del.AxisWebService;
+import cn.cc.core.io.utils.PrintWriterUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -34,9 +34,8 @@ public class FundsClient {
     public static void main(String[] args)throws Exception {
         System.out.println("1");
         Date date1 = new Date();
-        InputStream_IO inputStream_io = new InputStream_IO();
         try {
-            String aa = inputStream_io.IO_BufferReader_Content("D:\\test\\生产报文.txt");
+            String aa = PrintWriterUtils.fileReader("D:\\test\\生产报文.txt");
             System.out.println("2");
             Object[] a= new Object[]{aa};
             System.out.println("3");
