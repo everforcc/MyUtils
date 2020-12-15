@@ -42,7 +42,7 @@ public class CalendarUtils {
         // 年没问题
         // 月从0开始
         // 日没问题
-        // 星期天1
+        // 星期天 1,,星期一 2
         for(int i=1970;i<2021;i++) {
             Calendar calendar = Calendar.getInstance();
             calendar.set(Calendar.YEAR, i);

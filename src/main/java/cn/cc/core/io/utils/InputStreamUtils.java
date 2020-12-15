@@ -125,11 +125,11 @@ public class InputStreamUtils {
         BufferedReader br = null;
         // 默认字符编码GBK
         br = new BufferedReader(new InputStreamReader(inputStream,charSet));
-        String readLine = br.readLine();
+        String readLine;
         StringBuilder builder = new StringBuilder();
-        while (readLine != null) {
-            readLine = br.readLine();
-            builder.append(readLine);
+        while ((readLine = br.readLine()) != null) {
+            // 一次读一行，所以我也要换行
+            builder.append(readLine + "\r\n");
         }
         String result = builder.toString();
         return result;

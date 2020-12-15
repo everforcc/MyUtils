@@ -67,7 +67,7 @@ public class PrintWriterUtils {
         // new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filePath), encoding));
         // web乱码 printWriter=new PrintWriter(new OutputStreamWriter(new FileOutputStream(ndfFileName), ConstantCharSet.UTF_8));
 
-        pw.println(content);
+        pw.print(content);
         pw.flush();
         try {
             fw.flush(); pw.close(); fw.close();
