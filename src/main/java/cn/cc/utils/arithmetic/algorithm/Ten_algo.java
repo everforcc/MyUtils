@@ -1,4 +1,4 @@
-package cn.cc.utils.math.algorithm;
+package cn.cc.utils.arithmetic.algorithm;
 
 import java.util.Arrays;
 

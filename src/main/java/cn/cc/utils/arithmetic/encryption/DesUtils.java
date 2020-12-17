@@ -1,4 +1,4 @@
-package cn.cc.utils.math.encryption;
+package cn.cc.utils.arithmetic.encryption;
 
 import javax.crypto.Cipher;
 import java.io.IOException;

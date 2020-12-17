@@ -1,4 +1,4 @@
-package cn.cc.utils.math.basenum;
+package cn.cc.utils.arithmetic.basenum;
 
 import java.util.ArrayList;
 import java.util.HashMap;

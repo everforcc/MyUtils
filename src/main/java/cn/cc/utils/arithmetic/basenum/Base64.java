@@ -1,4 +1,4 @@
-package cn.cc.utils.math.basenum;
+package cn.cc.utils.arithmetic.basenum;
 
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;

@@ -1,4 +1,4 @@
-package cn.cc.utils.math.encryption;
+package cn.cc.utils.arithmetic.encryption;
 
 public class DesExplain {
     public static void main(String[] args) {

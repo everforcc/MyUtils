@@ -1,4 +1,4 @@
-package cn.cc.probability;
+package cn.cc.utils.arithmetic.algorithm;
 
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +16,6 @@ public class CalCount {
 
     int a = 999;// 10   1000 都是2232
 
-    int pow = 1;
     int dif = 10;
 
     @Test
@@ -44,13 +43,6 @@ public class CalCount {
         }
         return result;
     }
-
-
-
-    void Pn(){
-
-    }
-
 
     // 取数然后算总数
 
