@@ -66,4 +66,24 @@ public class Header {
         return getMap(path + fileName);
     }
 
+    public static Map<String,String> bilibiliMap(){
+        String fileName = "bilibili.properties";
+        return getMap(path + fileName);
+    }
+
+    public static Map<String,String> wenku8Map(){
+        String fileName = "wenku8.properties";
+        return getMap(path + fileName);
+    }
+
+    public static Map<String,String> ipipMap(){
+        String fileName = "ipip.properties";
+        return getMap(path + fileName);
+    }
+
+    public static Map<String,String> biquge2Map(){
+        String fileName = "biquge2.properties";
+        return getMap(path + fileName);
+    }
+
 }

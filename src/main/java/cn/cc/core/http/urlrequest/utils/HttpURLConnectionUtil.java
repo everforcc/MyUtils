@@ -8,7 +8,9 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 public class HttpURLConnectionUtil {
@@ -26,7 +28,7 @@ public class HttpURLConnectionUtil {
     // 现在还没有遇到写入数据的情况这content先不用,下面的代码也屏蔽掉了,遇到了再增加,看懂意义
     // 地址，方法，内容，编码， 需要再加个请求头
     public static String sendToUrlRequest(String urlPath,String requestMethod,String content,String charset)throws Exception{
-
+        System.out.println("sendToUrlRequest >>> " + urlPath);
         //1, 得到URL对象
         URL url = new URL(urlPath);
         //2, 打开连接
@@ -63,24 +65,56 @@ public class HttpURLConnectionUtil {
         return forHttpURLConnection(conn,null,requestMethod,charset,map);
     }
 
+    // 如果解析错误重试次数设置为三次，要不然多次就溢出了
+    private static List<String> badUrl = new ArrayList<>();
+    private static int i = 0;
     public static String forHttpURLConnection(HttpURLConnection conn,String content,String requestMethod,String charset,Map<String,String> map) {
+        System.out.println("i >>> " + i);
+        String url = conn.getURL().toString();
+        if(badUrl.contains(url)){
+            System.err.println("问题url:" + url);
+        }
+
+        if(i>3){
+            try {
+                i = 0;
+                badUrl.add(url);
+                throw new Exception("重试3次，自动退出");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        System.out.println("forHttpURLConnection():start >>>>>>>>>>>>>");
         String returnMsg = null;
         InputStream inputStream = null;
         try {
+            i++;
             inputStream = getStream(conn,requestMethod,charset,map);
             // 编码在下面使用
             returnMsg = InputStreamUtils.inputStreamStr(inputStream,charset,gzip);
             gzip = false;// 重置为false 等待下一轮使用
+            i = 0;
         } catch (IOException e) {
             // 获取流异常
             System.err.println("forHttpURLConnection():获取流异常");
-            forHttpURLConnection(conn,content,requestMethod,charset,null);
-            e.printStackTrace();
+            if(i<3) {
+                forHttpURLConnection(conn, content, requestMethod, charset, null);
+            }else {
+                badUrl.add(url);
+                i = 0;
+            }
+            //e.printStackTrace();
         } catch (Exception e) {
             // 从流读取数据异常
             System.err.println("forHttpURLConnection():从流读取数据异常");
-            forHttpURLConnection(conn,content,requestMethod,charset,map);
-            e.printStackTrace();
+            if(i<3) {
+                forHttpURLConnection(conn, content, requestMethod, charset, map);
+            }else {
+                badUrl.add(url);
+                i = 0;
+            }
+            //e.printStackTrace();
         }
 
         System.out.println("forHttpURLConnection():end >>>>>>>>>>>>>");
@@ -105,7 +139,8 @@ public class HttpURLConnectionUtil {
                 if(conn.getRequestProperty(key)==null){
                     String value = (String) entry.getValue();
                     conn.setRequestProperty(key,value);
-                    if("Accept-Encoding".equals(key)&&value.contains("gzip")){
+                    // 大小写有时候不一样
+                    if("Accept-Encoding".equalsIgnoreCase(key)&&value.contains("gzip")){
                         gzip = true; // 需要解压
                     }
                 }

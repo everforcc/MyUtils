@@ -6,7 +6,7 @@ import cn.cc.core.http.urlrequest.utils.HttpClientUtils;
 import cn.cc.core.http.urlrequest.utils.HttpURLConnectionUtil;
 import cn.cc.core.io.utils.InputStreamUtils;
 import cn.cc.core.io.utils.PrintWriterUtils;
-import cn.cc.utils.math.precision.BigDecimalFormat;
+import cn.cc.utils.arithmetic.precision.BigDecimalFormat;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -54,9 +54,13 @@ public class Novel_qinxiaoshuo {
     private static String filePath = "E:\\java\\novel\\www.qinxiaoshuo.com\\叛逆的鲁鲁修5";
     private static final String firstNovelContent = "http://www.qinxiaoshuo.com/read/0/322/5d77bab756fec85e5b0f61c6.html";*/
 
-    private static String novelName = "欢迎来到实力至上主义教室";
-    private static String filePath = "E:\\java\\novel\\www.qinxiaoshuo.com\\欢迎来到实力至上主义教室";
-    private static final String firstNovelContent = "http://www.qinxiaoshuo.com/read/0/1924/5d77d70b56fec85e5b102e31.html";
+    /*private static String novelName = "欢迎来到实力至上主义教室";
+    private static String filePath = "E:\\java\\novel\\www.qinxiaoshuo.com\\" + novelName;
+    private static final String firstNovelContent = "http://www.qinxiaoshuo.com/read/0/1924/5d77d70b56fec85e5b102e31.html";*/
+
+    private static String novelName = "我的青春恋爱物语果然有问题";
+    private static String filePath = "E:\\java\\novel\\www.qinxiaoshuo.com\\" + novelName;
+    private static final String firstNovelContent = "http://www.qinxiaoshuo.com/read/0/1162/5d77c86356fec85e5b0fc84f.html";
 
     public static void main(String[] args) {
         int i = 1; // 有问题了应该先测试一下的
