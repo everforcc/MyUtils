@@ -27,5 +27,9 @@ public class ConstantString {
      */
     public static final String autoComplete = "\t";
 
+    public static final String enter = "\r";
+
+    // public static final String enter = "\n";
+
     public static final String chineseUnicode = "[\u4e00-\u9fa5]";
 }

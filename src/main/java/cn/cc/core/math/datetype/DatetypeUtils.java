@@ -1,13 +1,11 @@
-package cn.cc.utils.math;
-
-
-
-import org.junit.jupiter.api.Test;
+package cn.cc.core.math.datetype;
 
 /**
- * 基本数据类型
+ * @author c.c.
+ * @date 2020/12/17
  */
-public class Base {
+public class DatetypeUtils {
+
     //二进制
     //int binary = 0b11;
     // 八进制
@@ -16,9 +14,7 @@ public class Base {
     int dec = 11;
     // 十六进制
     int hexadecimal = 0x11;
-
     // 二进制十进制等 进制转换
-    @Test
     public void basicData(){
         System.out.println(octonary);    //9
         System.out.println(dec);          // 11
@@ -41,9 +37,5 @@ public class Base {
          *   https://www.zhihu.com/question/22477934/answer/21487588
          * */
     }
-
-
-
-
 
 }
