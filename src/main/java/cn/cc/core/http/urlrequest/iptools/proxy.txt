@@ -10,3 +10,8 @@
 http://www.moguproxy.com/http/
 
 得想办法做代理了，不让爬虫速度太慢了
+
+---
+透明代理 : 虽然可以隐藏但是还是可以从 HTTP_X_FORWARDED_FOR来查到你是谁
+匿名代理
+混淆代理
