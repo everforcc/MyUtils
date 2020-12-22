@@ -11,6 +11,7 @@ public class MathUtils {
     public static void main(String[] args) {
 
         randomNum();
+        t();
     }
 
     // 科学记数法 1.60105E9
@@ -33,4 +34,20 @@ public class MathUtils {
         //该方法的作用是生成一个随机的int值，该值介于[0,n)的区间，也就是0到n之间的随机int值，包含0而不包含n。\
         System.out.println(integer);
     }
+
+    public static void t(){
+        /**
+         * floor 向下取整
+         ceil  向上取整
+         round 则是4舍5入的计算，算法为Math.floor(x+0.5)，即将原来的数字加上0.5后再向下取整，
+         所以，Math.round(11.5)的结果为12，Math.round(-11.5)的结果为-11。
+         */
+        System.out.println(Math.floor(1.4));
+        System.out.println(Math.round(1.4));
+        System.out.println(Math.ceil(1.4));
+        System.out.println(Math.floor(1.5));
+        System.out.println(Math.round(1.5));
+        System.out.println(Math.ceil(1.5));
+    }
+
 }
