@@ -14,14 +14,16 @@ public class CalendarUtils {
     }
 
     SimpleDateFormat defaultSDF = new SimpleDateFormat(Constant_Date.mode_1);
-    /**
-     * 日历 没用过
-     */
+
+    // 算多少时间前/或后的时间
     public void calendarDate(){
         Date date = new Date();
         Calendar cd = Calendar.getInstance();
         cd.setTime(date);
         cd.add(Calendar.SECOND, 2);
+        cd.add(Calendar.YEAR,1); // 年
+        cd.add(Calendar.DATE,1); // 天
+        cd.add(Calendar.MONTH,1); // 月，等等
         date = cd.getTime();
         System.out.println(defaultSDF.format(date));
     }
