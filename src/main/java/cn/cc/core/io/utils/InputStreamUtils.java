@@ -2,6 +2,7 @@ package cn.cc.core.io.utils;
 
 import cn.cc.core.file.utils.FileUtils;
 import cn.cc.core.file.zip.ZipUtils;
+import cn.cc.utils.Print_Record;
 
 import java.io.*;
 import java.math.BigDecimal;
@@ -33,7 +34,7 @@ public class InputStreamUtils {
         // 不使用计算比例功能
         downFileByStream(in,filePath,fileName,new BigDecimal(0));
     }
-
+    static Print_Record print_record = Print_Record.getInstanse("E:\\craw\\www.wenku8.net\\log","log.txt");
     /**
      *  如果写入失败，这部分的异常需要交给谁处理呢?
      * @param inputStream
@@ -52,10 +53,11 @@ public class InputStreamUtils {
 
         File file = new File(filePath + File.separator+ fileName);
         //  加参数是否允许重复写入
-        /*if(file.exists()){
+        if(file.exists()){
             // 如果文件存在那么不在写入?
+            print_record.println(filePath+fileName+"文件存在");
             return;
-        }*/
+        }
 
         FileOutputStream fo = new FileOutputStream(file);
         // rate两位小数
@@ -74,8 +76,8 @@ public class InputStreamUtils {
         BigDecimal tempLength = new BigDecimal(length);
 
         //据说包装了有缓存，不切换上下文，比较快
-        BufferedInputStream bufferedInputStream = new BufferedInputStream(inputStream);
-        while ((length = bufferedInputStream.read(buf, 0, buf.length)) != -1) {
+        //BufferedInputStream bufferedInputStream = new BufferedInputStream(inputStream);
+        while ((length = inputStream.read(buf, 0, buf.length)) != -1) {
             if(fileLength!=null&&(fileLength.compareTo(new BigDecimal(0))==1)) {
                 tempLength = tempLength.add(new BigDecimal(length));
                 // 每 1% 跳出一行数据     num * 100 / 总长 向下取整
@@ -90,7 +92,7 @@ public class InputStreamUtils {
             fo.write(buf, 0, length);
         }
 
-        bufferedInputStream.close();
+        //bufferedInputStream.close();
         inputStream.close();
         fo.close();
 
@@ -100,7 +102,7 @@ public class InputStreamUtils {
         Date enddate = new Date();
         double time = enddate.getTime() - begindate.getTime();
 
-        System.out.println(fileName + "下载耗时:" + time);
+        print_record.println(fileName + "下载耗时:" + time/1000 + " s");
     }
 
     // 给输入流的 这个校验什么的都没做，不用

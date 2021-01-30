@@ -14,7 +14,7 @@ public class Clients {
 
 	public Clients() {
 		try {
-			socket = new Socket("localhost", 9999);
+			socket = new Socket("139.196.183.193", 80);
 			if (socket.isConnected() == true) {
 				System.out.println("连接成功");
 				new Thread() {// 开启一个接受数据的线程

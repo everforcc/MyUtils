@@ -54,7 +54,36 @@ public class RegexCase {
             // System.out.println(html);
             //epRegex(html);
             //ttregex();
-            regexTest();
+            //regexTest();
+
+            String html = "<ul id=\"contentdp\">\n" +
+                    "  本文来自 轻小说文库(http://www.wenku8.com)\n" +
+                    " </ul>";
+            String tag = "ul";
+            String id = "contentdp";
+            String regex = "\\<" + tag + " id=\"" + id + "\"\\>(\\n){0,1}([u4e00-u9fa5])*.*(\\n){0,1}.*\\</" + tag + "\\>";
+
+            String tagHtml = "<ul id=\"contentdp\">\n";
+            String tagRegex = "\\<" + tag + " id=\"" + id + "\"\\>(\\n){0,1}";
+            System.out.println("tagRegex:" + tagRegex);
+            System.out.println("tagHtml:" + tagHtml);
+
+            System.out.println("match:" + RegexUtils.matcheStr(tagRegex, tagHtml));
+
+            String chinese = "本文来自 轻小说文库(http://www.wenku8.com)\n";
+            String regex2 = "([u4e00-u9fa5])*.*(\\n){0,1}";
+            System.out.println("regex2:" + regex2);
+            System.out.println("chinese:" + chinese);
+
+            System.out.println("match:" + RegexUtils.matcheStr(regex2, chinese));
+
+            String tagEndHtml = " </ul>";;
+            String tagRegexEnd = ".*\\</" + tag + "\\>";
+            //String tagRegexEnd = ".*\\</ul\\>";
+
+            System.out.println("match:" + RegexUtils.matcheStr(tagRegexEnd, tagEndHtml));
+
+            System.out.println("match:" + RegexUtils.matcheStr(regex, html));
         } catch (Exception e) {
             e.printStackTrace();
         }

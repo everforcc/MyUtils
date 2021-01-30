@@ -35,7 +35,7 @@ public class Servers {
 				// 有客户端新上线，服务器就通知其他客户端
 				String notice = "有新客户端上线，现在在线客户端有：客户端:";
 				for (ReceiveThread thread : receiveList) {
-					notice = notice + "" + thread.num;
+					notice = notice + " " + thread.num;
 				}
 				for (ReceiveThread thread : receiveList) {
 					new SendThread(thread.socket, notice).start();

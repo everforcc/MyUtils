@@ -14,7 +14,7 @@ public class ConstantFFmpeg {
     public static final String txtFileListCOMMAND = "ffmpeg -f concat -safe 0 -i \"%s\" -c copy \"%s\"";
 
     // ffmpeg 的安装路径
-    public static final String FFMPEG_PATH = "D:\\environment\\ffmpeg\\bin\\ffmpeg.exe"; // ffmpeg 程序迷路
+    public static final String FFMPEG_PATH = "D:\\environment\\cmd\\ffmpeg\\bin\\ffmpeg.exe"; // ffmpeg 程序迷路
 
     // 1.ffmpeg的位置，配置全局变量后，应该不需要了  2.文件路径video  3.图片路径  4.输出合并后文件路径
     public static final String replaceCoverCOMMAND = "%s -i %s -i %s -map 1 -map 0 -c copy -disposition:0 attached_pic -y %s"; // ffmpeg 替换封面的命令

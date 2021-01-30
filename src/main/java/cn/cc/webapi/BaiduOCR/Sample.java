@@ -25,13 +25,13 @@ public class Sample {
 
 
         // 参数为本地图片路径
-        String image = "D:\\test\\OCRmodel\\20200611.jpg";
+        String image = "E:\\java\\test\\OCRmodel\\QQ图片20201222174346.jpg";
         JSONObject res = client.basicGeneral(image, options);
         content = res.toString(2);
 
         //System.out.println(content);
 
-        getJSON(content);
+        System.out.println(getJSON(content));
 
         /*SaveToFile saveToFile=new SaveToFile("D:\\test\\OCRmodel","2.txt",content);
         saveToFile.save();*/
@@ -88,226 +88,11 @@ public class Sample {
         // 调用接口
         String path = "test.jpg";
         JSONObject res = client.basicGeneral(path, new HashMap<String, String>());
-        System.out.println(res.toString(2));
+        //System.out.println(res.toString(2));
 
         sample(client);
         //getJSON(a);
 
     }
-    static String a="{\n" +
-            "  \"log_id\": 7759012966359207704,\n" +
-            "  \"words_result\": [\n" +
-            "    {\n" +
-            "      \"probability\": {\n" +
-            "        \"average\": 0.827159,\n" +
-            "        \"min\": 0.492782,\n" +
-            "        \"variance\": 0.034832\n" +
-            "      },\n" +
-            "      \"words\": \"99S4295399G\"\n" +
-            "    },\n" +
-            "    {\n" +
-            "      \"probability\": {\n" +
-            "        \"average\": 0.998917,\n" +
-            "        \"min\": 0.997982,\n" +
-            "        \"variance\": 1.0E-6\n" +
-            "      },\n" +
-            "      \"words\": \"存根\"\n" +
-            "    },\n" +
-            "    {\n" +
-            "      \"probability\": {\n" +
-            "        \"average\": 0.5825,\n" +
-            "        \"min\": 0.353054,\n" +
-            "        \"variance\": 0.033374\n" +
-            "      },\n" +
-            "      \"words\": \"15*B9らロ*00\"\n" +
-            "    },\n" +
-            "    {\n" +
-            "      \"probability\": {\n" +
-            "        \"average\": 0.922019,\n" +
-            "        \"min\": 0.767528,\n" +
-            "        \"variance\": 0.008182\n" +
-            "      },\n" +
-            "      \"words\": \"上海方利\"\n" +
-            "    },\n" +
-            "    {\n" +
-            "      \"probability\": {\n" +
-            "        \"average\": 0.822455,\n" +
-            "        \"min\": 0.473947,\n" +
-            "        \"variance\": 0.060733\n" +
-            "      },\n" +
-            "      \"words\": \"在发票\"\n" +
-            "    },\n" +
-            "    {\n" +
-            "      \"probability\": {\n" +
-            "        \"average\": 0.851535,\n" +
-            "        \"min\": 0.555812,\n" +
-            "        \"variance\": 0.043726\n" +
-            "      },\n" +
-            "      \"words\": \"发票4\"\n" +
-            "    },\n" +
-            "    {\n" +
-            "      \"probability\": {\n" +
-            "        \"average\": 0.999579,\n" +
-            "        \"min\": 0.998263,\n" +
-            "        \"variance\": 0\n" +
-            "      },\n" +
-            "      \"words\": \"131001861629\"\n" +
-            "    },\n" +
-            "    {\n" +
-            "      \"probability\": {\n" +
-            "        \"average\": 0.955138,\n" +
-            "        \"min\": 0.53254,\n" +
-            "        \"variance\": 0.015127\n" +
-            "      },\n" +
-            "      \"words\": \"发票号吗:02159628\"\n" +
-            "    },\n" +
-            "    {\n" +
-            "      \"probability\": {\n" +
-            "        \"average\": 0.952097,\n" +
-            "        \"min\": 0.893764,\n" +
-            "        \"variance\": 0.002253\n" +
-            "      },\n" +
-            "      \"words\": \"统社会代\"\n" +
-            "    },\n" +
-            "    {\n" +
-            "      \"probability\": {\n" +
-            "        \"average\": 0.86209,\n" +
-            "        \"min\": 0.399262,\n" +
-            "        \"variance\": 0.024824\n" +
-            "      },\n" +
-            "      \"words\": \"91319874319649\"\n" +
-            "    },\n" +
-            "    {\n" +
-            "      \"probability\": {\n" +
-            "        \"average\": 0.867188,\n" +
-            "        \"min\": 0.489104,\n" +
-            "        \"variance\": 0.027478\n" +
-            "      },\n" +
-            "      \"words\": \"监督电话6454\"\n" +
-            "    },\n" +
-            "    {\n" +
-            "      \"probability\": {\n" +
-            "        \"average\": 0.904516,\n" +
-            "        \"min\": 0.686592,\n" +
-            "        \"variance\": 0.012536\n" +
-            "      },\n" +
-            "      \"words\": \"地共和新路5252\"\n" +
-            "    },\n" +
-            "    {\n" +
-            "      \"probability\": {\n" +
-            "        \"average\": 0.808311,\n" +
-            "        \"min\": 0.565926,\n" +
-            "        \"variance\": 0.035685\n" +
-            "      },\n" +
-            "      \"words\": \"参雪用章\"\n" +
-            "    },\n" +
-            "    {\n" +
-            "      \"probability\": {\n" +
-            "        \"average\": 0.810844,\n" +
-            "        \"min\": 0.490401,\n" +
-            "        \"variance\": 0.033744\n" +
-            "      },\n" +
-            "      \"words\": \"车DR3018\"\n" +
-            "    },\n" +
-            "    {\n" +
-            "      \"probability\": {\n" +
-            "        \"average\": 0.960231,\n" +
-            "        \"min\": 0.960231,\n" +
-            "        \"variance\": 0\n" +
-            "      },\n" +
-            "      \"words\": \"证\"\n" +
-            "    },\n" +
-            "    {\n" +
-            "      \"probability\": {\n" +
-            "        \"average\": 0.897306,\n" +
-            "        \"min\": 0.496142,\n" +
-            "        \"variance\": 0.028209\n" +
-            "      },\n" +
-            "      \"words\": \"3列47677\"\n" +
-            "    },\n" +
-            "    {\n" +
-            "      \"probability\": {\n" +
-            "        \"average\": 0.616363,\n" +
-            "        \"min\": 0.452059,\n" +
-            "        \"variance\": 0.02476\n" +
-            "      },\n" +
-            "      \"words\": \"0い18:86\"\n" +
-            "    },\n" +
-            "    {\n" +
-            "      \"probability\": {\n" +
-            "        \"average\": 0.998634,\n" +
-            "        \"min\": 0.998634,\n" +
-            "        \"variance\": 0\n" +
-            "      },\n" +
-            "      \"words\": \"效\"\n" +
-            "    },\n" +
-            "    {\n" +
-            "      \"probability\": {\n" +
-            "        \"average\": 0.754878,\n" +
-            "        \"min\": 0.668779,\n" +
-            "        \"variance\": 0.007413\n" +
-            "      },\n" +
-            "      \"words\": \":3\"\n" +
-            "    },\n" +
-            "    {\n" +
-            "      \"probability\": {\n" +
-            "        \"average\": 0.999224,\n" +
-            "        \"min\": 0.99871,\n" +
-            "        \"variance\": 0\n" +
-            "      },\n" +
-            "      \"words\": \"单价\"\n" +
-            "    },\n" +
-            "    {\n" +
-            "      \"probability\": {\n" +
-            "        \"average\": 0.832584,\n" +
-            "        \"min\": 0.533058,\n" +
-            "        \"variance\": 0.044906\n" +
-            "      },\n" +
-            "      \"words\": \"259\"\n" +
-            "    },\n" +
-            "    {\n" +
-            "      \"probability\": {\n" +
-            "        \"average\": 0.597925,\n" +
-            "        \"min\": 0.445746,\n" +
-            "        \"variance\": 0.007844\n" +
-            "      },\n" +
-            "      \"words\": \"四形常不kn\"\n" +
-            "    },\n" +
-            "    {\n" +
-            "      \"probability\": {\n" +
-            "        \"average\": 0.893955,\n" +
-            "        \"min\": 0.893955,\n" +
-            "        \"variance\": 0\n" +
-            "      },\n" +
-            "      \"words\": \"候\"\n" +
-            "    },\n" +
-            "    {\n" +
-            "      \"probability\": {\n" +
-            "        \"average\": 0.81371,\n" +
-            "        \"min\": 0.520424,\n" +
-            "        \"variance\": 0.036558\n" +
-            "      },\n" +
-            "      \"words\": \"819,24\"\n" +
-            "    },\n" +
-            "    {\n" +
-            "      \"probability\": {\n" +
-            "        \"average\": 0.672826,\n" +
-            "        \"min\": 0.398564,\n" +
-            "        \"variance\": 0.052471\n" +
-            "      },\n" +
-            "      \"words\": \"金領37,90式\"\n" +
-            "    },\n" +
-            "    {\n" +
-            "      \"probability\": {\n" +
-            "        \"average\": 0.899177,\n" +
-            "        \"min\": 0.807902,\n" +
-            "        \"variance\": 0.008331\n" +
-            "      },\n" +
-            "      \"words\": \"余额\"\n" +
-            "    }\n" +
-            "  ],\n" +
-            "  \"words_result_num\": 26,\n" +
-            "  \"language\": -1,\n" +
-            "  \"direction\": 0\n" +
-            "}";
+
 }

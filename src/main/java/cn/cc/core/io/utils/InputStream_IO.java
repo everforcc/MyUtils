@@ -1,8 +1,8 @@
 package cn.cc.core.io.utils;
 
 import cn.cc.core.file.utils.FileUtils;
-import cn.cc.core.http.urlrequest.header.Header;
-import cn.cc.core.http.urlrequest.utils.HttpURLConnectionUtil;
+import cn.cc.core.web.http.header.Header;
+import cn.cc.core.web.http.utils.HttpURLConnectionUtil;
 
 import java.io.*;
 import java.net.MalformedURLException;

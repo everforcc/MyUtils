@@ -9,15 +9,20 @@ import java.math.BigDecimal;
 import java.text.DecimalFormat;
 
 public class ShareTimeWorkResult {
+
+    // 规则便于使用， A-Z就是A-Z，从使用者的角度来做
+
+    // sheet1 SU 和 SZ  MKE>自身 ZBSY 问题
+
     //  费用分摊工时表，写段代码用代码生成
     // sheet1 分为三块    1.人力成本(左上)  2.九大渠道(左下) 3.右
 
     /* 当前月份 */
     public static final String yearMonth = "202012";
     // 要处理的文件
-    public static final String fileName = "F:\\1.中科软\\2.费用分摊\\20201209\\excle\\1.工时汇总2020-11月 - 更新12.4 -TO IT.XLSX" ;
+    public static final String fileName = "F:\\1.中科软\\2.费用分摊\\20210106\\excle\\1.工时汇总2020-12月 - 更新1.6 -TO IT.xlsx" ;
     // 输出文件路径
-    public static final String filePath = "F:\\1.中科软\\2.费用分摊\\20201209\\sql\\02\\";
+    public static final String filePath = "F:\\1.中科软\\2.费用分摊\\20210106\\sql\\01\\";
     // 表示每块区域的坐标
     // public static final String[] sheet1_HO={"C","S","2","14"};
 
@@ -32,18 +37,18 @@ public class ShareTimeWorkResult {
         // 1. sheet1 需要替换 SU 和 SZ 随后解决
          final String[] sheet1_HO_channel={"C","S","2","14","HO"};
         final String[] sheet1_SMD_channel={"C","I","18","30","SMD"};
-        final String[] sheet1_GD_channel={"C","I","34","46","GD"};
+        final String[] sheet1_GD_channel={"C","I","35","47","GD"};
         final String[] sheet1_SZ_channel={"C","D","50","62","SZ"};
         final String[] sheet1_BJ_channel={"C","I","66","78","BJ"};
         final String[] sheet1_JS_channel={"C","I","82","94","JS"};
         final String[] sheet1_SU_channel={"C","D","98","110","SU"};
         sheet1_channel(sheet1_HO_channel);
-        sheet1_channel(sheet1_SMD_channel);
+        //sheet1_channel(sheet1_SMD_channel);
         sheet1_channel(sheet1_GD_channel);
-        sheet1_channel(sheet1_SZ_channel);
+        /*sheet1_channel(sheet1_SZ_channel);
         sheet1_channel(sheet1_BJ_channel);
         sheet1_channel(sheet1_JS_channel);
-        sheet1_channel(sheet1_SU_channel);
+        sheet1_channel(sheet1_SU_channel);*/
         // 2. sheet1 左上
         final String[] sheet1_HO_cost={"C","S","2","5","HO"};
         final String[] sheet1_SMD_cost={"C","I","18","21","SMD"};
@@ -52,28 +57,28 @@ public class ShareTimeWorkResult {
         final String[] sheet1_BJ_cost={"C","I","66","69","BJ"};
         final String[] sheet1_JS_cost={"C","I","82","85","JS"};
         final String[] sheet1_SU_cost={"C","D","98","101","SU"};
-        sheet1_cost(sheet1_HO_cost);
+        /*sheet1_cost(sheet1_HO_cost);
         sheet1_cost(sheet1_SMD_cost);
         sheet1_cost(sheet1_GD_cost);
         sheet1_cost(sheet1_SZ_cost);
         sheet1_cost(sheet1_BJ_cost);
         sheet1_cost(sheet1_JS_cost);
-        sheet1_cost(sheet1_SU_cost);
+        sheet1_cost(sheet1_SU_cost);*/
         //3. sheet1 右边
         final String[] sheet1_HO_asset={"C","W","6","14","HO"};
         final String[] sheet1_SMD_asset={"C","M","22","30","SMD"};
-        final String[] sheet1_GD_asset={"C","M","38","46","GD"};
+        final String[] sheet1_GD_asset={"C","M","40","47","GD"};
         final String[] sheet1_SZ_asset={"C","G","54","62","SZ"};
         final String[] sheet1_BJ_asset={"C","M","70","78","BJ"};
         final String[] sheet1_JS_asset={"C","M","86","94","JS"};
         final String[] sheet1_SU_asset={"C","G","102","110","SU"};
         sheet1_asset(sheet1_HO_asset);
-        sheet1_asset(sheet1_SMD_asset);
+        //sheet1_asset(sheet1_SMD_asset);
         sheet1_asset(sheet1_GD_asset);
-        sheet1_asset(sheet1_SZ_asset);
+        /*sheet1_asset(sheet1_SZ_asset);
         sheet1_asset(sheet1_BJ_asset);
         sheet1_asset(sheet1_JS_asset);
-        sheet1_asset(sheet1_SU_asset);
+        sheet1_asset(sheet1_SU_asset);*/
     }
 
     static void sheet4(){
@@ -98,13 +103,13 @@ public class ShareTimeWorkResult {
         //BD
         //JIA
 
-        //sheet1();
+        sheet1();
 
         // sheet2
         //sheet2();
 
         // sheet4  HO可能要更具SMD（SD）设置
-        sheet4();
+        //sheet4();
 
         //System.out.println(formatToNumber(new BigDecimal(1)));
 

@@ -1,5 +1,7 @@
 package cn.cc.core.math.datetype;
 
+import java.text.DecimalFormat;
+
 /**
  * @author c.c.
  * @date 2020/12/17
@@ -37,5 +39,17 @@ public class DatetypeUtils {
          *   https://www.zhihu.com/question/22477934/answer/21487588
          * */
     }
+
+
+    public static void main(String[] args) {
+        double limitValue = 1.53259E8;
+        System.out.println(new DecimalFormat("0.00").format(limitValue));//3
+        System.out.println(new Double(new DecimalFormat("0.00").format(limitValue)));
+
+
+        System.out.println();
+    }
+
+
 
 }

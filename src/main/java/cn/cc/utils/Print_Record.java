@@ -49,7 +49,7 @@ public class Print_Record {
         msg = DateUtils.nowTimeRegex("yyyy-MM-dd hh:mm:ss ")+" : " + location + " --- " +msg ;
         System.out.println( msg );
 
-        PrintWriterUtils.fileWriter(filePath, fileName, msg);
+        PrintWriterUtils.fileWriter(filePath, fileName, msg + "\r\n");
     }
 
     public void printErrln(String msg){
@@ -60,7 +60,7 @@ public class Print_Record {
         msg = DateUtils.nowTimeRegex("yyyy-MM-dd hh:mm:ss ")+" err : " + location + " --- " +msg ;
         System.err.println( msg );
 
-        PrintWriterUtils.fileWriter(filePath,fileName,msg);
+        PrintWriterUtils.fileWriter(filePath,fileName,msg + "\r\n");
     }
 
 }
