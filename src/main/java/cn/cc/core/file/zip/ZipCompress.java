@@ -19,63 +19,74 @@ import java.util.zip.*;
  */
 public class ZipCompress {
 
-    // https://www.cnblogs.com/liaidai/p/7592788.html
-
+    static String zipFilePath = "E:\\java\\onjava8\\zip\\test.zip";
     public static void main(String[] args) {
+        String[] strings = {"E:\\java\\onjava8\\zip\\testzip.txt"};
+        /*t1(strings);
+        t2(strings);*/
+        t3();
+    }
+
+    static void t1(String[] args){
         try (
-                FileOutputStream f = new FileOutputStream("E:\\java\\onjava8\\zip\\test.zip");
+                FileOutputStream f =new FileOutputStream(zipFilePath);
                 CheckedOutputStream csum = new CheckedOutputStream(f, new Adler32());
                 ZipOutputStream zos = new ZipOutputStream(csum);
-                BufferedOutputStream out = new BufferedOutputStream(zos);
+                BufferedOutputStream out = new BufferedOutputStream(zos)
         ) {
             zos.setComment("A test of Java Zipping");
             // No corresponding getComment(), though.
-            //for (String arg : args) {
-                System.out.println("Writing file " + "E:\\java\\onjava8\\zip\\test.zip");
-                try (
-                        InputStream in = new BufferedInputStream(
-                                new FileInputStream("E:\\java\\onjava8\\zip\\test.zip"))
-                ) {
-                    zos.putNextEntry(new ZipEntry("testtest.zip"));
+            for (String sourceFile : args) {
+                System.out.println("Writing file " + sourceFile);
+                try (InputStream in = new BufferedInputStream(new FileInputStream(sourceFile))) {
+                    zos.putNextEntry(new ZipEntry("parentPath/targetFile.txt"));
                     int c;
-                    while ((c = in.read()) != -1)
+                    while ((c = in.read()) != -1) {
                         out.write(c);
+                    }
                 }
                 out.flush();
-            //}
+            }
             // Checksum valid only after the file is closed!
-            System.out.println(
-                    "Checksum: " + csum.getChecksum().getValue());
+            System.out.println("Checksum: " + csum.getChecksum().getValue());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
+    }
+
+    static void t2(String[] args){
         // Now extract the files:
-        System.out.println("Reading file");
+        System.out.println("Reading file : " + zipFilePath);
         try (
-                FileInputStream fi =
-                        new FileInputStream("E:\\java\\onjava8\\zip\\test.zip");
-                CheckedInputStream csumi =
-                        new CheckedInputStream(fi, new Adler32());
+                FileInputStream fi = new FileInputStream(zipFilePath);
+                CheckedInputStream csumi = new CheckedInputStream(fi, new Adler32());
                 ZipInputStream in2 = new ZipInputStream(csumi);
-                BufferedInputStream bis =
-                        new BufferedInputStream(in2)
+                BufferedInputStream bis = new BufferedInputStream(in2)
         ) {
             ZipEntry ze;
             while ((ze = in2.getNextEntry()) != null) {
                 System.out.println("Reading file " + ze);
                 int x;
-                while ((x = bis.read()) != -1)
+                System.out.printf("content:");
+                while ((x = bis.read()) != -1) {
+                    // 读取文件内容
                     System.out.write(x);
+                }
             }
-            if (args.length == 1)
-                System.out.println(
-                        "Checksum: " + csumi.getChecksum().getValue());
+            System.out.println();
+            if (args.length == 1) {
+                System.out.println("Checksum: " + csumi.getChecksum().getValue());
+            }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    static void t3(){
         // Alternative way to open and read Zip files:
         try (
-                ZipFile zf = new ZipFile("E:\\java\\onjava8\\zip\\test.zip")
+                ZipFile zf = new ZipFile(zipFilePath)
         ) {
             Enumeration e = zf.entries();
             while (e.hasMoreElements()) {
@@ -87,5 +98,6 @@ public class ZipCompress {
             throw new RuntimeException(e);
         }
     }
+
 }
 
