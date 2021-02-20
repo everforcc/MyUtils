@@ -5,11 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.htmlunit.HtmlUnitDriver;
-
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author c.c.
@@ -22,63 +18,48 @@ public class SeleniumMethod {
     //headless
     public static void main(String[] args) {
 
-        /*String driverPath=System.getProperty("user.dir")+"....(路径)/geckodriver.exe";
-        System.setProperty("webdriver.gecko.driver","D:\\environment\\driver\\geckodriver.exe");
-        FirefoxDriver firefoxDriver = new FirefoxDriver();
-
-        WebDriver driver = new FirefoxDriver();*/
-
-        //openChromeTest("");
         openHtml();
 
     }
 
     public static void openHtml(){
+
+        //String driverPath=System.getProperty("user.dir")+"....(路径)/geckodriver.exe";
+        //System.setProperty("webdriver.gecko.driver","D:\\environment\\driver\\chromedriver-89.exe");
         //实例化虚拟浏览器对象
-       WebDriver driver = new ChromeDriver();
-       //打开百度首页
-       //String url = "http://www.biquge.info/10_10229";
-       String url = "http://spring4u.info/viewthread.php?tid=434&extra=page%3D1";
-       driver.get(url);
-       /*//定位搜索框元素
-       WebElement ele = driver.findElement(By.id("kw"));
-       //输入需查询内容
-       ele.sendKeys("Cheese");
-       ele.submit();*/
-
-       //获取页面标题
-       System.out.println("Page title is :" + driver.getTitle());
-       //获取页面url
-       System.out.println("Page url is :" + driver.getCurrentUrl());
-       //关闭driver
-       driver.close();
-
-    }
-
-    public static void openChromeTest(String url){
-        Map<String,String> map = new HashMap<>();
-        ChromeDriver chromeDriver = new ChromeDriver();
-
         WebDriver driver = new ChromeDriver();
+        //打开百度首页
+        //String url = "http://www.biquge.info/10_10229";
+        String url = "http://www.biquge.info/10_10229";
+        driver.get(url);
 
-        //driver.get("http://www.itest.info");
-        driver.get("http://www.biquge.info/10_10229");
-        String title = driver.getTitle();
-        System.out.println(title);
-        WebElement webElement_list = driver.findElement(By.id("list"));
-        List<WebElement> webElement_list_a = webElement_list.findElements(By.tagName("a"));
+        /* 1.submit */
+        //定位搜索框元素
+        WebElement ele = driver.findElement(By.id("wd"));
+        //输入需查询内容
+        ele.sendKeys("斗破");
+        ele.submit();
+        // 支持xpath,  driver 浏览器处理页面
+        List<WebElement> webElement_list_a = driver.findElements(By.xpath("//table[@class='grid']//td[@class='odd']"));
+        //List<WebElement> webElement_list_a = ele.findElements(By.xpath("//table[@class='grid']//td[@class='odd']"));
         for(WebElement webElement:webElement_list_a) {
             System.out.println(webElement.getText());
-            map.put(webElement.getAttribute("href"),webElement.getText());
-            saveUrl(webElement.getAttribute("href") + " " + webElement.getText());
         }
 
-        for(Map.Entry entry: map.entrySet()){
-            oneCatalogueContent((String) entry.getKey(),(String)entry.getValue());
-        }
+        /* 2.click */
+        /*WebElement search_text =  driver.findElement(By.className("search"));
+        WebElement search_button  =  driver.findElement(By.className("button"));
+        search_text.sendKeys("测试");
+        search_button.click();*/
+
+        //获取页面标题
+        System.out.println("Page title is :" + driver.getTitle());
+        //获取页面url
+        System.out.println("Page url is :" + driver.getCurrentUrl());
+        //关闭driver
         driver.close();
-    }
 
+    }
 
     public static void oneCatalogueContent(String href,String title){
         String content = "";

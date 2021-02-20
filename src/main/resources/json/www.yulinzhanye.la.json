@@ -1,0 +1,43 @@
+{
+  "@type": "cn.cc.core.web.http.use.novelmodel.model.RootModel",
+  "bookModel": {
+    "chapterListPattern": "//div[@class='container']//div[7]//div[@class='bd']//ul[@class='list']//a/@href",
+    "menuUrlPattern": ""
+  },
+  "charset": "gbk",
+  "contentModel": {
+    "charset": "utf-8",
+    "content": "//div[@class='page-content font-large']/p//text()",
+    "title": "//h1[@class='page-title']//text()"
+  },
+  "headers": {
+    "@type": "java.util.HashMap",
+    "Cookie": "__cfduid=daa88526e4190ed1a91e3f6359b8bd6101612185638; Hm_lvt_ff727c5985a6b2da2c623aef1ab0d8db=1612185655; Hm_lpvt_ff727c5985a6b2da2c623aef1ab0d8db=1612186000",
+    "Cache-Control": "max-age=0",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+    "Upgrade-Insecure-Requests": "1",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36",
+    "Connection": "keep-alive",
+    "Referer": "http://www.yulinzhanye.la/6/6007/81922.html",
+    "Host": "www.yulinzhanye.la",
+    "Accept-Language": "zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7"
+  },
+  "novelTypeUrlPattern": "//div[@class='channel']/a/@href/regex('/fenlei/.{1,10}')",
+  "rootUrl": "http://www.yulinzhanye.la",
+  "searchModel": {
+    "encode": "gbk",
+    "keyMap": {
+      "@type": "java.util.HashMap",
+      "type": "articlename",
+      "objectType": "2"
+    },
+    "novelNamePattern": "//div@class='bd']//li[@class='column-2 ']//a[@class='name']/text()",
+    "novelUrlPattern": "//div@class='bd']//li[@class='column-2 ']//a[@class='name']/@href",
+    "searchKey": "s",
+    "searchType": "POST"
+  },
+  "searchUrl": "http://www.yulinzhanye.la/s.php",
+  "typeModel": {
+    "novelUrlPattern": "//div[@class='mod block rank-switch']//div[@class='bd']//ul[1]//a/@href"
+  }
+}

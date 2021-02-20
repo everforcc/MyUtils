@@ -52,14 +52,4 @@ public class DownLoadFile {
 
     }
 
-    /**
-     *
-     // 2.getVideo
-     $("#bilibili_Video_button").click(function () {
-     var value=$("#Video").val();
-     window.location.href = '/bilibili?num=' + value;
-     });
-     */
-
-
 }

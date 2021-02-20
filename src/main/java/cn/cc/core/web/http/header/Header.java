@@ -104,4 +104,44 @@ public class Header {
         String fileName = "spring4u.info.properties";
         return getMap(path + fileName);
     }
+
+    public static Map<String,String> lanwlMap(){
+        String fileName = "www.lanwl.com.properties";
+        return getMap(path + fileName);
+    }
+    //www.yulinzhanye.la.properties
+    public static Map<String,String> yulinzhanyeMap(){
+        String fileName = "www.yulinzhanye.la.properties";
+        return getMap(path + fileName);
+    }
+
+    // www.yulinzhanye.la-search.properties
+    public static Map<String,String> yulinzhanye_searchMap(){
+        String fileName = "www.yulinzhanye.la-search.properties";
+        return getMap(path + fileName);
+    }
+
+    //www.paoshuzw.com.properties
+    public static Map<String,String> paoshuzwMap(){
+        String fileName = "www.paoshuzw.com.properties";
+        return getMap(path + fileName);
+    }
+
+    //www.paoshuzw.com.properties
+    public static Map<String,String> bqkanMap(){
+        String fileName = "www.bqkan.com.properties";
+        return getMap(path + fileName);
+    }
+
+    //www.37zw.net.properties
+    public static Map<String,String> zw37Map(){
+        String fileName = "www.37zw.net.properties";
+        return getMap(path + fileName);
+    }
+
+    // www.qidian.com.properties
+    public static Map<String,String> qidianMap(){
+        String fileName = "www.qidian.com.properties";
+        return getMap(path + fileName);
+    }
 }

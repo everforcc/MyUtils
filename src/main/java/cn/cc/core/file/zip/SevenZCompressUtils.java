@@ -27,7 +27,9 @@ public class SevenZCompressUtils {
      * @param targetFile 目标路径
      * @param pas 密码
      */
-    static void deCompression(String z7,String targetFile,String pas){
+    public static void deCompression(String z7,String targetFile,String pas){
+        z7 = z7.replaceAll(" ", "\" \"");
+        targetFile = targetFile.replaceAll(" ", "\" \"");
         if(StringUtils.isNotEmpty(pas)){
             pas = "-p" + pas;
         }else {
@@ -46,7 +48,11 @@ public class SevenZCompressUtils {
      * @param targetFile 目标文件
      * @param sourceFile 源文件 path/* path
      */
-    static void compress(String pas,String targetFile,String sourceFile){
+    public static void compress(String pas,String targetFile,String sourceFile){
+
+        targetFile = targetFile.replaceAll(" ", "\" \"").replaceAll("&","");
+        sourceFile = sourceFile.replaceAll(" ", "\" \"").replaceAll("&","");
+
         if(StringUtils.isNotEmpty(pas)){
             pas = "-p" + pas;
         }else {

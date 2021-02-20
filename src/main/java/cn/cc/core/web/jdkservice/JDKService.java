@@ -1,26 +1,19 @@
 package cn.cc.core.web.jdkservice;
 
+import javax.jws.WebMethod;
 import javax.jws.WebService;
 
 /**
  * 用JDK发部webservice
  */
 @WebService
-public class JDKService {
+public interface JDKService {
 
     /**
      * https://www.cnblogs.com/w-essay/p/7357262.html
      */
 
-    public void send(){
+    @WebMethod
+    public String sayHel(String name);
 
-    }
-
-    public void receive(){
-
-    }
-
-    public static void main(String[] args) {
-
-    }
 }

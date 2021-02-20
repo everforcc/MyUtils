@@ -22,6 +22,7 @@ public class FFmpegUtils {
         //subVideoForImg("E:\\java\\ffmpeg\\2.mp4","E:\\java\\ffmpeg\\2.png");
         //subVideoForGIF("E:\\java\\ffmpeg\\2.mp4",0,1,"E:\\java\\ffmpeg\\2.gif");
         //concatFileList("%s.txt","%s.mp4");
+        subVideoImg("filepath");
     }
 
     // 合并m3u8
@@ -32,6 +33,7 @@ public class FFmpegUtils {
         String COMMAND = String.format(ConstantFFmpeg.m3u8ToVideoCOMMAND, oldFilePath, newFilePath);
         CmdUtils.execCmd(COMMAND);
         // 命令行返回输出完了，才算结束
+        System.out.println("cmd >>> end");
     }
 
     // 合并文本清单，格式,需要file那边把文件格式给梳理好

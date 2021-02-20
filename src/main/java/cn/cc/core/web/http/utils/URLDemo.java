@@ -43,6 +43,7 @@ public class URLDemo {
             System.out.println("默认端口：" + url.getDefaultPort());
             System.out.println("请求参数：" + url.getQuery());
             System.out.println("定位位置：" + url.getRef());
+            System.out.println(url.getProtocol() + "://" + url.getHost());
         } catch (IOException e) {
             e.printStackTrace();
         }
