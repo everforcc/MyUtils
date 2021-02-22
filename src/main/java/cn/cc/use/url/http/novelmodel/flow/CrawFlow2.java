@@ -3,8 +3,11 @@ package cn.cc.use.url.http.novelmodel.flow;
 
 import cn.cc.core.io.utils.InputStreamUtils;
 import cn.cc.core.web.http.header.Header;
-import cn.cc.core.web.http.use.novelmodel.Novel_init;
-import cn.cc.core.web.http.use.novelmodel.model.*;
+import cn.cc.use.url.http.novelmodel.Novel_init;
+import cn.cc.use.url.http.novelmodel.model.BookModel;
+import cn.cc.use.url.http.novelmodel.model.ContentModel;
+import cn.cc.use.url.http.novelmodel.model.RootModel;
+import cn.cc.use.url.http.novelmodel.model.TypeModel;
 import org.apache.commons.lang.StringUtils;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;

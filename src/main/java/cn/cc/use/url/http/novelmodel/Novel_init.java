@@ -2,7 +2,10 @@ package cn.cc.use.url.http.novelmodel;
 
 import cn.cc.core.io.utils.PrintWriterUtils;
 import cn.cc.core.web.http.header.Header;
-import cn.cc.core.web.http.use.novelmodel.model.*;
+import cn.cc.use.url.http.novelmodel.model.BookModel;
+import cn.cc.use.url.http.novelmodel.model.ContentModel;
+import cn.cc.use.url.http.novelmodel.model.RootModel;
+import cn.cc.use.url.http.novelmodel.model.TypeModel;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 

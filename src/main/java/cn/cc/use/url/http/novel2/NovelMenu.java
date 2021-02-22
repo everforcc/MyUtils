@@ -1,7 +1,6 @@
 package cn.cc.use.url.http.novel2;
 
 import cn.cc.core.web.http.header.Header;
-import cn.cc.core.web.http.use.novel.ThreadUtils;
 import cn.cc.core.web.http.utils.HttpURLConnectionUtil;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

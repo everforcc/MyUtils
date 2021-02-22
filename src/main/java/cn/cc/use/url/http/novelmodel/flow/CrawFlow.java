@@ -1,13 +1,11 @@
 package cn.cc.use.url.http.novelmodel.flow;
 
-
-import cn.cc.core.msgtype.json.jsonpath.Book;
 import cn.cc.core.web.http.header.Header;
-import cn.cc.core.web.http.use.novelmodel.Novel_init;
-import cn.cc.core.web.http.use.novelmodel.model.BookModel;
-import cn.cc.core.web.http.use.novelmodel.model.ContentModel;
-import cn.cc.core.web.http.use.novelmodel.model.RootModel;
-import cn.cc.core.web.http.use.novelmodel.model.TypeModel;
+import cn.cc.use.url.http.novelmodel.Novel_init;
+import cn.cc.use.url.http.novelmodel.model.BookModel;
+import cn.cc.use.url.http.novelmodel.model.ContentModel;
+import cn.cc.use.url.http.novelmodel.model.RootModel;
+import cn.cc.use.url.http.novelmodel.model.TypeModel;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import us.codecraft.xsoup.Xsoup;
