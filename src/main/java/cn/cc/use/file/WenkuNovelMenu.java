@@ -7,7 +7,7 @@ import cn.cc.core.web.http.utils.HttpURLConnectionUtil;
 import cn.cc.core.io.utils.InputStreamUtils;
 import cn.cc.core.io.utils.PrintWriterUtils;
 import cn.cc.core.regex.utils.RegexUtils;
-import cn.cc.utils.Print_Record;
+import cn.cc.use.design.Print_Record;
 
 import java.io.File;
 import java.io.InputStream;

@@ -1,6 +1,6 @@
 package cn.cc.use.thread;
 
-import cn.cc.core.thread.ThreadPoolUtils;
+import cn.cc.core.concurrent.pool.ThreadPoolUtils;
 
 /**
  * @author c.c.

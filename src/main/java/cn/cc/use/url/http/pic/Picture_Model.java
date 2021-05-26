@@ -2,7 +2,7 @@ package cn.cc.use.url.http.pic;
 
 import cn.cc.core.io.utils.PrintWriterUtils;
 import cn.cc.core.web.http.webmagic.base.Constant;
-import cn.cc.utils.Print_Record;
+import cn.cc.use.design.Print_Record;
 import org.apache.commons.io.FileUtils;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;

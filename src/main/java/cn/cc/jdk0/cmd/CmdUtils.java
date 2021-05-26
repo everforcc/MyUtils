@@ -1,7 +1,7 @@
 package cn.cc.jdk0.cmd;
 
 import cn.cc.core.io.utils.InputStreamUtils;
-import cn.cc.utils.Print_Record;
+import cn.cc.use.design.Print_Record;
 
 import java.io.*;
 

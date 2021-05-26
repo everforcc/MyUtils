@@ -2,11 +2,10 @@ package cn.cc.core.io.utils;
 
 import cn.cc.core.file.utils.FileUtils;
 import cn.cc.core.file.zip.ZipUtils;
-import cn.cc.utils.Print_Record;
+import cn.cc.use.design.Print_Record;
 
 import java.io.*;
 import java.math.BigDecimal;
-import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.Date;
 
