@@ -6,23 +6,24 @@ import java.net.URL;
 
 public class OpenChrome {
 
-    public void cmd(){
+    private static String defaultUrl = "http://www.baidu.com";
+    private static String openDefaultBrowser = "rundll32 url.dll,FileProtocolHandler ";
+
+    // 1.打开某网址
+    public static void cmd(){
         URL url = null;
         try {
-            url = new URL("http://www.baidu.com");
+            url = new URL(defaultUrl);
         } catch (MalformedURLException e1) {
             e1.printStackTrace();
         }
         try {
             Runtime runtime =   Runtime.getRuntime();
-            runtime.exec(
-                    "rundll32 url.dll,FileProtocolHandler "
-                            + url);
+            runtime.exec(openDefaultBrowser + url);
             runtime.gc();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
 
@@ -57,47 +58,23 @@ public class OpenChrome {
             //LoggerUtil.error(AutoStartup.class.getName(), e.getMessage(), e);
             e.printStackTrace();
         }
-
     }
 
     /**
      * 在不同文件夹操作
      * @throws Exception
      */
-    public static void startTomcat(String path,String command) throws Exception{
+    public static void operatorBat(String path,String command) throws Exception{
         Process p;
-        String startFir="C:\\enviroment\\tomcat-6-list\\tomcat-6\\bin";
-        //Runtime.getRuntime().exec           startup.bat
-        // cmd /k command 执行完命令不关闭窗口
-        // cmd /c dir 是执行完dir命令后关闭命令窗口
-        // cmd /c start dir 会打开一个新窗口后执行dir指令，原窗口会关闭。
-        // cmd /k start dir 会打开一个新窗口后执行dir指令，原窗口不会关闭。
-        //p = Runtime.getRuntime().exec("cmd /k startup.bat",null,new File(startFir));
-        //p = Runtime.getRuntime().exec("cmd /c ipconfig ",null,new File(startFir));
         Runtime runtime =   Runtime.getRuntime();
         p = runtime.exec("cmd /c  " +command ,null,new File(path));
 
-        //C:\enviroment\tomcat-6-list\tomcat-6\bin
-        //读取有问题，暂时不用
-        //p = Runtime.getRuntime().exec("C:\\enviroment\\tomcat-6-list\\tomcat-6\\bin\\startup.bat");
         //取得命令结果的输出流
-        /*InputStream fis=p.getInputStream();
-        //用一个读输出流类去读                    CMD 对应的编码GBK
-        InputStreamReader isr=new InputStreamReader(fis,"GBK");
-        //用缓冲器读行
-        BufferedReader br=new BufferedReader(isr);
-        String line=null;
-        //直到读完为止
-        while((line=br.readLine())!=null)
-        {
-            System.out.println(line);
-        }*/
-
-        Thread.sleep(2000);
-
+        InputStream fis=p.getInputStream();
+        CmdUtils.outStream(fis);
 
         System.out.println("runtime.gc();");
-        //runtime.gc();
+        runtime.gc();
         System.out.println("p.destroy();");
         p.destroy();
         //p.destroyForcibly();
@@ -110,18 +87,15 @@ public class OpenChrome {
     public static void main(String[] args) {
 
         try{
-            /*System.out.println(1);
-            startTomcat("C:\\enviroment\\tomcat-6-list\\tomcat-6\\bin","startup.bat");
-            System.out.println(2);
-            Thread.sleep(1000);
-            System.out.println(3);
-            startTomcat("C:\\enviroment\\tomcat-6-list\\tomcat-6\\bin","shutdown.bat");
-            System.out.println(4);*/
+            String tomcat_path = "D:\\environment\\middleware\\apache-tomcat-6.0.45-8080\\bin";
 
-            //启动Tomcat
-            //runbat("C:\\Users\\lzy\\Desktop\\apache-tomcat-7.0.52", "bin\\startup.bat");
-            //关闭Tomcat
-            //runbat("C:\\Users\\lzy\\Desktop\\apache-tomcat-7.0.52", "bin\\shutdown.bat");
+            operatorBat(tomcat_path,"startup.bat");
+            operatorBat(tomcat_path,"shutdown.bat");
+
+            // 1.cmd
+            //cmd();
+            // 2.runbat
+            //runbat();
 
         }catch (Exception e){
             e.printStackTrace();

@@ -1,5 +1,6 @@
 package cn.cc.core.file.use;
 
+import cn.cc.use.file.WenkuNovelMenu;
 import org.junit.jupiter.api.Test;
 
 /**

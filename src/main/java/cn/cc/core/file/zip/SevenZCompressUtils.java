@@ -19,7 +19,7 @@ public class SevenZCompressUtils {
     // 7z 源文件 目标文件 密码
     private static final String deCompressionCommand = "start /B %s x %s -o%s -aoa -bse1 %s";
     // 压缩文件
-    private static final String compressionCommand = "%s a -tzip -r %s %s %s ";
+    private static final String compressionCommand = "%s a -tzip -r %s \"%s\" \"%s\" ";
 
     /**
      *
@@ -50,8 +50,11 @@ public class SevenZCompressUtils {
      */
     public static void compress(String pas,String targetFile,String sourceFile){
 
-        targetFile = targetFile.replaceAll(" ", "\" \"").replaceAll("&","");
-        sourceFile = sourceFile.replaceAll(" ", "\" \"").replaceAll("&","");
+        /*targetFile = targetFile.replaceAll(" ", "\" \"").replaceAll("&","");
+        sourceFile = sourceFile.replaceAll(" ", "\" \"").replaceAll("&","");*/
+
+        /*targetFile = targetFile.replaceAll("&","");
+        sourceFile = sourceFile.replaceAll("&","");*/
 
         if(StringUtils.isNotEmpty(pas)){
             pas = "-p" + pas;

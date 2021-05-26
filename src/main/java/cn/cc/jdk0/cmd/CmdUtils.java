@@ -11,35 +11,61 @@ public class CmdUtils {
         try{
             //System.out.println(runCMD(openUrl+"http://www.baidu.com"));
             //executeProcess(startFir,"startup.bat");
-
-
             //executeProcess(startFir,"ipconfig");
 
-            systemRunTime();
+            //execCmd("ipconfig");
 
         }catch (Exception e){
 
         }
-
-
     }
+
+
 
     Print_Record print_record = Print_Record.getInstanse("E:");
     // 目前使用这个，下面的其他方法还需要再整理
-    public static void execCmd(String cmd) {
-        ProcessBuilder builder = new ProcessBuilder("cmd.exe", "/C", cmd);
+    public static String precessType="cmd /c ";
+
+    /**
+     * 1.直接执行
+     * 2.指定目录执行
+     */
+
+    // 执行命令
+    public static void execCmd(String command) {
+        ProcessBuilder builder = new ProcessBuilder("cmd.exe", "/C", command);
         Process process = null;
         try {
             process = builder.redirectErrorStream(true).start();
+            InputStream in = process.getInputStream();
+            outStream(in);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        InputStream in = process.getInputStream();
-        outStream(in);
     }
-    private static void outStream(InputStream in) {
+
+    /**
+     *  执行指定目录的程序
+     *  类型，默认cmd
+     * @param path 指定进程的目录
+     * @param command 开启进程的命令
+     * @throws Exception
+     */
+    public static void execCmdWithPath(String path,String command) throws Exception{
+        Process p;
+        Runtime runtime =   Runtime.getRuntime();
+        p = runtime.exec(precessType + command ,null,new File(path));
+        outStream(p.getInputStream());
+        System.out.println("runtime.gc();主动清理垃圾");
+        runtime.gc();
+        System.out.println("p.destroy();强行终止当前进程");
+        p.destroy();
+    }
+
+    // 命令行返回
+    public static void outStream(InputStream in) throws UnsupportedEncodingException {
         // 用一个读输出流类去读
-        BufferedReader br = new BufferedReader(new InputStreamReader(in));
+        BufferedReader br = new BufferedReader(new InputStreamReader(in,"GBK"));
         String line;
         // 逐行读取输出到控制台
         try {
@@ -54,11 +80,7 @@ public class CmdUtils {
 
     // + Url 在浏览器打开网址
     final static String openUrl="rundll32 url.dll,FileProtocolHandler";
-    public static String precessType="cmd /c ";
-    static String startFir="C:\\enviroment\\tomcat-6-list\\tomcat-6\\bin";
 
-
-    //Logger logger= org.slf4j.LoggerFactory.getLogger("");
 
     /**
      * model
@@ -86,16 +108,7 @@ public class CmdUtils {
             } else {
                 return false;
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-            try {
-                throw e;
-            } catch (IOException e1) {
-                e1.printStackTrace();
-            }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (Exception e) {
+        } catch (Exception e) { // 很多异常，就简单处理了
             e.printStackTrace();
         } finally {
             /*if (br != null) {
@@ -103,49 +116,6 @@ public class CmdUtils {
             }*/
         }
         return false;
-    }
-
-    /**
-     *
-     *
-     * @param path
-     * @param command
-     * @throws Exception
-     */
-
-    /**
-     *  执行指定目录的程序
-     *  类型，默认cmd
-     * @param path 指定进程的目录
-     * @param command 开启进程的命令
-     * @throws Exception
-     */
-    public static void executeProcess(String path,String command) throws Exception{
-        Process p;
-        Runtime runtime =   Runtime.getRuntime();
-        p = runtime.exec(precessType + command ,null,new File(path));
-        System.out.println("执行命令返回:" + InputStreamUtils.inputStreamStr(p.getInputStream(),"GBK"));
-        System.out.println("休眠一秒");
-        Thread.sleep(1000);
-        System.out.println("runtime.gc();主动清理垃圾");
-        runtime.gc();
-        System.out.println("p.destroy();强行终止当前进程");
-        p.destroy();
-    }
-
-    /**
-     * 获取系统信息
-     */
-    public static void systemRunTime() {
-        Runtime runtime = Runtime.getRuntime();
-        System.out.println("本机CPU内核数："+runtime.availableProcessors());
-        System.out.println("最大可用内存空间"+runtime.maxMemory()/1024/1024 +"MB,默认为系统的1/4");
-        System.out.println("可用内存空间:"+runtime.totalMemory()/1024/1024 +"MB,默认为系统的1/64");
-        System.out.println("空闲内存空间:"+runtime.freeMemory()/1024/1024 +"MB");
-        System.out.println("手工GC处理gc()");
-        runtime.gc();
-        System.out.println("什么是GC？可以由系统自动调用的垃圾释放功能，或者RunTime手工调用的垃圾释放功能");
-
     }
 
 }

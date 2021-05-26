@@ -24,7 +24,7 @@ public class RenameFile implements IFileUtils {
     }
 
     public static void listFile(){
-        String filePath = "E:\\java\\rename";
+        String filePath = "G:\\00.格式前\\10.工作\\00.图片\\02.个人\\02.真冬";
         FileUtils.recursion(filePath,new RenameFile());
     }
 
@@ -44,12 +44,15 @@ public class RenameFile implements IFileUtils {
         // 当前文件
         File oldFile = fileList[i];
         // 不处理txt文件，单独在别的地方处理
-        if(!fileName.endsWith(".txt")) {
-            System.out.print("oldName:" + oldFile.getAbsolutePath() + ".");
+        if(fileName.endsWith(".url")||fileName.endsWith(".lnk")) {
+            System.out.println("fileName:" + fileName);
+            oldFile.delete();
+        }else if(!fileName.endsWith(".txt")) {
+            //System.out.print("oldName:" + oldFile.getAbsolutePath() + ".");
             // 文件改名
             oldFile.renameTo(new File(oldFile.getParent() + File.separator + fileName));
             // 输出旧文件名和新文件名
-            System.out.println(" >>> new name:" + oldFile.getParent() + File.separator + fileName);
+            //System.out.println(" >>> new name:" + oldFile.getParent() + File.separator + fileName);
             /*if(".db".equals(fileName)) {
                 //System.out.println("---" + pathname.getAbsolutePath());
             }*/
@@ -57,7 +60,7 @@ public class RenameFile implements IFileUtils {
                 // 如果旧文件名和新文件相同则不处理，也不做记录
                 // PrintWriterUtils.fileWriter(oldFile.getParent(), "name.txt", fileName + " >>> 文件名相同 ");
             } else {
-                PrintWriterUtils.fileWriter(oldFile.getParent(), "name.txt", fileName + " >>> " + oldFile.getName());
+                PrintWriterUtils.fileWriter(oldFile.getParent(), "name.txt", fileName + " >>> " + oldFile.getName() + "\r\n");
             }
         }
         return false;

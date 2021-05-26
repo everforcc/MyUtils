@@ -18,14 +18,38 @@ public class DirTo7z {
     // 密码
     private static final String passWord = "c.c.5664";
     // 需要压缩的文件夹
-    private static final String sourceFilePath = "E:\\craw\\www.wenku8.net";
+    private static final String sourceFilePath = "G:\\00.格式前\\10.工作\\00.图片\\01.组织\\01.森萝财团\\ALPHA";
     // 是否进入文件夹
     private static final boolean isCD = false;
     // 文件后缀,可以多 "." 但不能少 "."
     private static final String fileType = ".7z";
 
     public static void main(String[] args) {
-        getFileList(sourceFilePath);
+        // G:\00.格式前\10.工作\00.图片\02.个人\01.赛高
+        /*String path = "G:\\00.格式前\\10.工作\\00.图片\\02.个人\\01.赛高";
+        getFileList(path);*/
+        /*String[] dir = {"BETA","FREE","JKFUN","LOVEPLUS","R15","SSR","WTMSB","X","有料"};
+        for(String s:dir){
+            getFileList(path + s);
+        }*/
+        //getFileList(sourceFilePath);
+
+        String path = "G:\\00.格式前\\10.工作\\00.图片\\01.组织";
+        File file = new File(path);
+
+        File[] fileList = file.listFiles();
+
+        if (fileList != null) {
+            for (int i = 0; i < fileList.length; i++) {
+                //如果是文件夹
+                if (fileList[i].isDirectory()) {
+                    getFileList(fileList[i].getAbsolutePath());
+                }
+            }
+        }
+
+        //getFileList(path);
+
     }
 
     public static void getFileList(String path) {
