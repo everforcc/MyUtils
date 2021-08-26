@@ -10,12 +10,13 @@
     <!-- 项目的唯一ID，一个groupId下面可能多个项目，就是靠artifactId来区分的 -->
     <artifactId>cc</artifactId>
     <version>2.0-SNAPSHOT</version>
-    <!-- 用到的jar包 -->
 
+    <!-- java版本 -->
     <properties>
         <java.version>1.8</java.version>
     </properties>
 
+    <!-- 用到的jar包 -->
     <dependencies>
         <!-- 单元测试 -->
         <dependency>
@@ -45,28 +46,17 @@
             <version>2.4</version>
             <classifier>jdk15</classifier>
         </dependency>
-        <!--<dependency>
-            <groupId>net.sf.json-lib</groupId>
-            <artifactId>json-lib</artifactId>
-            <version>2.4</version>
-        </dependency>-->
 
-        <dependency>
+        <!--<dependency>
             <groupId>SSM.com.fastjson</groupId>
             <artifactId>fastjson</artifactId>
             <version>1.2.13</version>
-            <scope>test</scope>
-        </dependency>
+        </dependency>-->
+
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
             <version>7.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>SSM.com.fastjson</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>1.2.13</version>
         </dependency>
         <dependency>
             <groupId>wsdl4j</groupId>
@@ -318,15 +308,16 @@
             <artifactId>lombok</artifactId>
             <version>1.16.16</version>
         </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.13</version>
-        </dependency>
+
         <dependency>
             <groupId>ant</groupId>
             <artifactId>ant</artifactId>
             <version>1.6.5</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>RELEASE</version>
         </dependency>
 
     </dependencies>
