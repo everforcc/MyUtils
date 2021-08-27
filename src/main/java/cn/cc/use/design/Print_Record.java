@@ -1,6 +1,6 @@
 package cn.cc.use.design;
 
-import cn.cc.core.date.utils.DateUtils;
+import cc.core.date.utils.DateUtils;
 import cn.cc.core.io.utils.PrintWriterUtils;
 
 /**

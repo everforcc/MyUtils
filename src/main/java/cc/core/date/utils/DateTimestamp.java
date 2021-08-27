@@ -1,9 +1,9 @@
-package cn.cc.core.date.utils;
+package cc.core.date.utils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Date_Timestamp {
+public class DateTimestamp {
 
     // 时间戳
     public static void timestampTransFormDate(){

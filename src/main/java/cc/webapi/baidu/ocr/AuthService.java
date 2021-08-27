@@ -1,4 +1,4 @@
-package cn.cc.webapi.BaiduOCR;
+package cc.webapi.baidu.ocr;
 
 import net.sf.json.JSONObject;
 import java.io.*;

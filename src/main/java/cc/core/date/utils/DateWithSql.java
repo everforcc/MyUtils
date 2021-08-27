@@ -1,4 +1,4 @@
-package cn.cc.core.date.utils;
+package cc.core.date.utils;
 
 import java.sql.Timestamp;
 import java.text.DateFormat;

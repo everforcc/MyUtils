@@ -1,12 +1,12 @@
-package cn.cc.core.date.constant;
+package cc.constant;
 
-public class Constant_Date {
+public class ConstantDate {
 
     public static final String mode_1 = "yyyy-MM-dd" ;
     public static final String mode_2 = "yyyy-MM-dd HH:mm:ss" ;
     public static final String mode_3 = "yyyyMMdd";
 
-    // 星期
+    // 周
     public static final int Sunday = 1;
     public static final int Monday = 2;
     public static final int Tuesday = 3;

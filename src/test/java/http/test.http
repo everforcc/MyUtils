@@ -1,0 +1,9 @@
+
+###
+GET www.baidu.com
+Content-Type: application/json;charset=utf-8
+
+###
+GET localhost:8080/
+
+###

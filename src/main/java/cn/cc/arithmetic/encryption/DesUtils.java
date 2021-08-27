@@ -186,7 +186,6 @@ public class DesUtils {
     try {
       url = new URL(www);
     } catch (MalformedURLException e1) {
-      // TODO Auto-generated catch block
       e1.printStackTrace();
     }
     try {
@@ -194,7 +193,6 @@ public class DesUtils {
               "rundll32 url.dll,FileProtocolHandler "
                       + url);
     } catch (IOException e) {
-      // TODO Auto-generated catch block
       e.printStackTrace();
     }
 

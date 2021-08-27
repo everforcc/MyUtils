@@ -1,6 +1,6 @@
-package cn.cc.core.date;
+package cc.core.date;
 
-import cn.cc.core.date.utils.DateUtils;
+import cc.core.date.utils.DateUtils;
 
 import java.text.ParseException;
 

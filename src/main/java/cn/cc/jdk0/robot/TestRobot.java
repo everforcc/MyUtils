@@ -2,7 +2,7 @@ package cn.cc.jdk0.robot;
 
 
 
-import cn.cc.core.date.utils.Date_Timestamp;
+import cc.core.date.utils.DateTimestamp;
 import cn.cc.jdk0.robot.utils.KeyUtils;
 import cn.cc.jdk0.robot.utils.MouseUtil;
 import cn.cc.jdk0.robot.utils.SystemUtils;
@@ -37,7 +37,7 @@ public class TestRobot {
 
         Robot robot = new Robot();
         int ms = 2;//设置延迟
-        System.out.println("系统时间:" + Date_Timestamp.timestampToDateStr(System.currentTimeMillis()));
+        System.out.println("系统时间:" + DateTimestamp.timestampToDateStr(System.currentTimeMillis()));
 
         //1.win+d 打开桌面
         KeyUtils.WIN_D(robot, ms);
@@ -58,7 +58,7 @@ public class TestRobot {
             //5.发送
             KeyUtils.ENTER(robot, 200);
         }
-        System.out.println("系统时间:" + Date_Timestamp.timestampToDateStr(System.currentTimeMillis()));
+        System.out.println("系统时间:" + DateTimestamp.timestampToDateStr(System.currentTimeMillis()));
     }
 
 
@@ -66,7 +66,7 @@ public class TestRobot {
 
         Robot robot = new Robot();
         int ms = 2;//设置延迟
-        System.out.println("系统时间:" + Date_Timestamp.timestampToDateStr(System.currentTimeMillis()));
+        System.out.println("系统时间:" + DateTimestamp.timestampToDateStr(System.currentTimeMillis()));
 
         //1.win+d 打开桌面
         KeyUtils.WIN_D(robot, ms);
@@ -94,7 +94,7 @@ public class TestRobot {
             //5.发送
             KeyUtils.ENTER(robot, 10);
         }
-        System.out.println("系统时间:" + Date_Timestamp.timestampToDateStr(System.currentTimeMillis()));
+        System.out.println("系统时间:" + DateTimestamp.timestampToDateStr(System.currentTimeMillis()));
     }
 
 

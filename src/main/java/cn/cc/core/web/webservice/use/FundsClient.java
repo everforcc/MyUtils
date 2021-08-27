@@ -1,6 +1,6 @@
 package cn.cc.core.web.webservice.use;
 
-import cn.cc.core.date.utils.DateUtils;
+import cc.core.date.utils.DateUtils;
 import cn.cc.core.web.webservice.Axis.AxisUtils;
 import cn.cc.core.web.webservice.del.AxisWebService;
 import cn.cc.core.io.utils.PrintWriterUtils;

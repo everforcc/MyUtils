@@ -1,7 +1,7 @@
 package cn.cc.use.file;
 
 
-import cn.cc.core.date.utils.Date_Timestamp;
+import cc.core.date.utils.DateTimestamp;
 import cn.cc.entity.FileSysMsg;
 
 import java.io.File;
@@ -60,7 +60,7 @@ public class FileMsg {
         /**
          * 保存文件最后一次改变的时间
          */
-        fileSysMsg.setFileCreateTime(Date_Timestamp.timestampToDateStr(file.lastModified()));
+        fileSysMsg.setFileCreateTime(DateTimestamp.timestampToDateStr(file.lastModified()));
 
         return fileSysMsg;
     }

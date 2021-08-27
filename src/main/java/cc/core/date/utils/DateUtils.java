@@ -1,13 +1,9 @@
-package cn.cc.core.date.utils;
+package cc.core.date.utils;
 
-import cn.cc.core.date.constant.Constant_Date;
-import org.junit.jupiter.api.Test;
+import cc.constant.ConstantDate;
 
-import java.sql.Timestamp;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.regex.Pattern;
 
@@ -22,7 +18,7 @@ public class DateUtils {
      * yyyy-MM-dd hh:mm
      * yyyyMMddHHmmss
      */
-    public static String pattern= Constant_Date.mode_1;
+    public static String pattern= ConstantDate.mode_1;
 
     /**
      * 需要做一个 yyyy-MM-dd 和正则表达式对应的组合 这样的话添加起来比较方便 比如
@@ -95,7 +91,7 @@ public class DateUtils {
      * @return
      */
     public static String now(){
-        return new SimpleDateFormat(Constant_Date.mode_1).format(new Date(System.currentTimeMillis()));
+        return new SimpleDateFormat(ConstantDate.mode_1).format(new Date(System.currentTimeMillis()));
     }
 
 

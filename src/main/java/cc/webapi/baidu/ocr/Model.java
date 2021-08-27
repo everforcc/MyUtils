@@ -1,4 +1,4 @@
-package cn.cc.webapi.BaiduOCR;
+package cc.webapi.baidu.ocr;
 
 public class Model {
 
