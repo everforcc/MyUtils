@@ -5,21 +5,41 @@ import java.util.Date;
 
 public class DateTimestamp {
 
+    public static void main(String[] args) {
+        SDFformat();
+    }
+
     // 时间戳
     public static void timestampTransFormDate(){
+
+    }
+
+    // 统计format的集合
+    private static void SDFformat(){
+        /**
+         *  10位 秒级别时间戳
+         *  13位 毫秒级别时间戳
+         *
+         */
+
         // 10位的秒级别的时间戳
         long time1 = 1527767665;
-        String result1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date(time1 * 1000));
+        String result1 = DatePattern.defaultSDF_mode_2.format(new Date(time1 * 1000));
         System.out.println("10位数的时间戳（秒）--->Date:" + result1);
-        Date date1 = new Date(time1*1000);   //对应的就是时间戳对应的Date    // 13位的秒级别的时间戳
+        System.out.println("--->");
+
         double time2 = 1515730332000d;
-        String result2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(time2);
+
+        String result2 = DatePattern.defaultSDF_mode_2.format(time2);
         System.out.println("13位数的时间戳（毫秒）--->Date:" + result2);
+        System.out.println("--->");
 
-        String s = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date(System.currentTimeMillis()));
-        System.out.println(s);
-        System.out.println(new SimpleDateFormat("yyyyMMdd").format(new Date(System.currentTimeMillis())));
-
+        long currentTimeMillis = System.currentTimeMillis();
+        System.out.println("13位 --> currentTimeMillis:" + currentTimeMillis);
+        String s = DatePattern.defaultSDF_mode_2.format(new Date(currentTimeMillis));
+        System.out.println("13位 --> 格式化 : " + s);
+        System.out.println("--->");
+        System.out.println(DatePattern.defaultSDF_mode_1.format(new Date(currentTimeMillis)));
 
     }
 

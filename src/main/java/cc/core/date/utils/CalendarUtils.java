@@ -18,8 +18,6 @@ public class CalendarUtils {
         System.out.println(calendar.get(Calendar.DAY_OF_WEEK));
     }
 
-    //SimpleDateFormat defaultSDF = new SimpleDateFormat(ConstantDate.mode_1);
-
     /**
      * 从某个时间，计算某段时间前/后的时间
      * 提供一个示例，需要了自己修改
