@@ -1,7 +1,6 @@
 package cn.cc.core.cmd;
 
-import cn.cc.jdk0.cmd.CmdUtils;
-import com.alibaba.fastjson.JSON;
+import cc.java0.cmd.CmdUtils;
 import org.junit.jupiter.api.Test;
 
 /**

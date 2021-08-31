@@ -1,6 +1,6 @@
 package cn.cc.core.novel2;
 
-import cn.cc.use.url.http.novel.NovelMenu;
+import cc.use.url.http.novel.NovelMenu;
 import org.junit.jupiter.api.Test;
 
 /**

@@ -1,2 +1,0 @@
-http请求类型
-constant
