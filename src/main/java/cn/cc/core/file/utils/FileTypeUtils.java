@@ -1,13 +1,12 @@
 package cn.cc.core.file.utils;
 
-import cn.cc.core.base.ByteUtils;
+import cc.comp.ByteUtils;
 
 import javax.imageio.ImageIO;
 import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
 import java.awt.image.BufferedImage;
 import java.io.*;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;

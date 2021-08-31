@@ -1,6 +1,6 @@
 package cn.cc.dsf.excle.utils;
 
-import cn.cc.core.base.CharUtils;
+import cc.comp.CharUtils;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
@@ -93,7 +93,7 @@ public class ExcleValueHelper {
         }
 */
         // System.out.println(str+","+CharUtils.byteToInt(str));
-        return CharUtils.byteToInt(str);
+        return CharUtils.byteAZToInt(str);
     }
 
     @Test
