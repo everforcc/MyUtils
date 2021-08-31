@@ -1,4 +1,4 @@
-package cn.cc.core.base;
+package cc.comp;
 
 /**
  * 判断数据类型

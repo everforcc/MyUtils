@@ -1,4 +1,4 @@
-package cn.cc.core.base;
+package cc.comp;
 
 /**
  * Yukino
@@ -28,5 +28,9 @@ public class PrimaryDataType {
           System.out.println(Integer.toBinaryString(i)+"---"+Integer.toOctalString(i)+"---"+i+"---0x"+Integer.toHexString(i)+"---"+(char)i);
         }
     }
+
+    /**
+     * 增加一个进制转换功能
+     */
 
 }

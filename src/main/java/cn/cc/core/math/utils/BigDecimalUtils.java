@@ -61,6 +61,8 @@ public class BigDecimalUtils {
         //ROUND_HALF_DOWN  五舍六入
         // ROUND_HALF_EVEN    银行家舍入法 ??
         // ROUND_UNNECESSARY  ??
+
+        //可以先剩一个金额，然后用总金额，减去计算的金额，保持总数不变
     }
 
 
