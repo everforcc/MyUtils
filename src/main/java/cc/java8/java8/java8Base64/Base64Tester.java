@@ -1,6 +1,6 @@
 package cc.java8.java8.java8Base64;
 
-import cc.core.file.utils.ConstantCharSet;
+import cc.constant.ConstantCharSet;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Base64;

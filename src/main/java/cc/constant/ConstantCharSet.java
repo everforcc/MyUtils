@@ -1,6 +1,7 @@
-package cc.core.file.utils;
+package cc.constant;
 
 /**
+ * 字符编码
  * @author c.c.
  * @date 2020/12/9
  */

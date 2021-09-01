@@ -10,23 +10,23 @@ import java.util.TreeSet;
  */
 public class SetUtils {
 
-    private static Set<Integer> test = new TreeSet<>();
+    private static Set<Integer> testSet = new TreeSet<>();
     static {
         int a = 1;
         int b = 8;
         int c = 3;
-        test.add(a);
-        test.add(b);
-        test.add(c);
+        testSet.add(a);
+        testSet.add(b);
+        testSet.add(c);
     }
 
     void forEach1(){
         //遍历集合test   利用foreach遍历          //输出结果：1   3   8
-        for (Integer value : test) {
+        for (Integer value : testSet) {
             System.out.print(value+" ");
         }
         //利用Iterator实现遍历
-        Iterator<Integer> value = test.iterator();
+        Iterator<Integer> value = testSet.iterator();
         while (value.hasNext()) {
             int s = value.next();
             System.out.print(s+" ");
@@ -35,14 +35,14 @@ public class SetUtils {
 
     void forEach2(){
         //遍历集合test   利用foreach遍历          //输出结果：1   3   8
-        for (Integer value : test) {
+        for (Integer value : testSet) {
             System.out.print(value+" ");
         }
     }
 
     void forEach3(){
         //利用Iterator实现遍历
-        Iterator<Integer> value = test.iterator();
+        Iterator<Integer> value = testSet.iterator();
         while (value.hasNext()) {
             int s = value.next();
             System.out.print(s+" ");

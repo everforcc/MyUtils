@@ -1,6 +1,6 @@
 package cc.advanced.web.http.utils;
 
-import cc.core.file.utils.ConstantCharSet;
+import cc.constant.ConstantCharSet;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;

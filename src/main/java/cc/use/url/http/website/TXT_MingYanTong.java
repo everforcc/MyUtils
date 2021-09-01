@@ -1,6 +1,6 @@
 package cc.use.url.http.website;
 
-import cc.core.file.utils.ConstantCharSet;
+import cc.constant.ConstantCharSet;
 import cc.advanced.web.http.header.Header;
 import org.apache.commons.io.FileUtils;
 import org.jsoup.Jsoup;

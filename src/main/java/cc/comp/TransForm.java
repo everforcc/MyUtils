@@ -7,7 +7,7 @@ package cc.comp;
 public class TransForm {
 
     /**
-     * 基本数据类型互相转换
+     * 数据类型互相转换
      */
 
     public void DoubleToInt(){
@@ -16,9 +16,17 @@ public class TransForm {
 
     private void baseMsg(){
 
-        Integer integer;
-        Double doubled;
-        Float floatt;
+        Integer integer = 1;
+        integer.doubleValue();
+        integer.floatValue();
+
+        Double doubled = 1.0;
+        doubled.intValue();
+        doubled.floatValue();
+
+        Float floatt = 1.0f;
+        floatt.intValue();
+        floatt.doubleValue();
 
     }
 

@@ -19,9 +19,9 @@ import java.util.zip.*;
  */
 public class ZipCompress {
 
-    static String zipFilePath = "E:\\java\\onjava8\\zip\\test.zip";
+    private static String zipFilePath = "E:\\java\\onjava8\\zip\\test.zip";
+    private static String[] strings = {"E:\\java\\onjava8\\zip\\testzip.txt"};
     public static void main(String[] args) {
-        String[] strings = {"E:\\java\\onjava8\\zip\\testzip.txt"};
         /*t1(strings);
         t2(strings);*/
         t3();

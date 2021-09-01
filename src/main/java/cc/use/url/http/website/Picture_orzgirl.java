@@ -1,6 +1,6 @@
 package cc.use.url.http.website;
 
-import cc.core.file.utils.ConstantCharSet;
+import cc.constant.ConstantCharSet;
 import cc.core.io.InputStreamUtils;
 import cc.core.file.utils.FileUtils;
 import cc.advanced.web.http.header.Header;

@@ -1,6 +1,6 @@
 package cc.core.io;
 
-import cc.core.file.utils.ConstantCharSet;
+import cc.constant.ConstantCharSet;
 import cc.core.file.utils.FileUtils;
 
 import java.io.*;

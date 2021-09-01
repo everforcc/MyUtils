@@ -1,4 +1,4 @@
-package cc.core.file.utils;
+package cc.structure;
 
 /**
  * @author c.c.

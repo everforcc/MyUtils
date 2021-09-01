@@ -17,7 +17,7 @@ public class MapUtils {
         //初始化类型, 这种有问题，不建议用
         Map<String, String> mapInit = new HashMap<String, String>()
         {{
-            put("HR.xlsx", "HR_BUDGET");
+            put("key", "value");
         }};
     }
 
@@ -32,6 +32,7 @@ public class MapUtils {
             System.out.println(mapKey+":"+mapValue);
         }
     }
+
     void forEach2(){
         //在for循环中遍历key或者values，一般适用于只需要map中的key或者value时使用，在性能上比使用entrySet较好；
         // 也可以在取出key后再取出value

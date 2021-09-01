@@ -1,6 +1,6 @@
 package cc.use.file.codehelper;
 
-import cc.core.file.utils.ConstantCharSet;
+import cc.constant.ConstantCharSet;
 import cc.core.file.utils.FileUtils;
 import cc.core.file.utils.IFileUtils;
 

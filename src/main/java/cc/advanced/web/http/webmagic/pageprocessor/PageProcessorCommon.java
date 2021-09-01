@@ -1,6 +1,6 @@
 package cc.advanced.web.http.webmagic.pageprocessor;
 
-import cc.core.file.utils.ConstantCharSet;
+import cc.constant.ConstantCharSet;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 

@@ -13,19 +13,22 @@ public class ApacheAPI {
 
     // 看下 apache 的源码
     public static void main(String[] args) {
-        t1();
+        apacheSize();
     }
 
-    static void t1(){
-        // 计算文件大小的
+    /**
+     * 计算文件大小，和自己的方法做个对比
+     */
+    private static void apacheSize(){
         System.out.println(FileUtils.byteCountToDisplaySize(2047L));
     }
 
-    static void t2(){
+    /**
+     *  先判断原文件和目标文件是否存在
+     */
+    private static void apacheCopy(){
         try {
-            // 判断是否是 文件以及目标文件是否存在的
             FileUtils.copyFile(new File(""),new File(""));
-
         } catch (IOException e) {
             e.printStackTrace();
         }

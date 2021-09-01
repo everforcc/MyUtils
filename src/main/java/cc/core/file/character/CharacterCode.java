@@ -1,11 +1,8 @@
 package cc.core.file.character;
 
-import cc.core.file.utils.ConstantCharSet;
 import org.apache.tools.ant.filters.StringInputStream;
 
 import java.io.*;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * @author c.c.

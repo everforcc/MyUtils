@@ -18,7 +18,7 @@ public class SevenZCompressUtils {
     private static final String z7filePath = "D:\\app\\7z\\7-Zip\\7z.exe";
     // 7z 源文件 目标文件 密码
     private static final String deCompressionCommand = "start /B %s x %s -o%s -aoa -bse1 %s";
-    // 压缩文件
+    // 压缩文件 -tzip 参数为亚索格式，可以规定为zip,7z等支持的格式
     private static final String compressionCommand = "%s a -tzip -r %s \"%s\" \"%s\" ";
 
     /**

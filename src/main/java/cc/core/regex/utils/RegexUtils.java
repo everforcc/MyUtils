@@ -1,5 +1,7 @@
 package cc.core.regex.utils;
 
+import org.apache.poi.ss.formula.functions.T;
+
 import java.util.HashSet;
 import java.util.Set;
 import java.util.regex.Matcher;
@@ -22,22 +24,70 @@ public class RegexUtils {
         return false;
     }
 
+    /**
+     * 匹配str
+     * 不带组
+     * @param regex
+     * @param content
+     * @return
+     */
     public static String matcheStr(String regex,String content) {
         return matcheStr(regex,content,0);
     }
-    public static String matcheStr(String regex,String content,int group){
+
+    /**
+     * 匹配str
+     * 普通捕获组
+     * @param regex
+     * @param content
+     * @param group
+     * @return
+     */
+    public static String matcheStr(String regex, String content, int group){
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(content);
         //是否匹配到了
         if (matcher.find()) {// 进入后可以全匹配
-            return matcher.group(group);
+            return matcher.group(group );
         }
         return null;
     }
 
+    /**
+     * 命名捕获组
+     * 正则编写好，可以直接匹配到需要的内容，不用多处理
+     * @param regex
+     * @param content
+     * @param group
+     * @return
+     */
+    public static String matcheStr(String regex, String content, String group){
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(content);
+        //是否匹配到了
+        if (matcher.find()) {// 进入后可以全匹配
+            return matcher.group(group );
+        }
+        return null;
+    }
+
+    /**
+     * 匹配List
+     * @param regex
+     * @param content
+     * @return
+     */
     public static Set<String> matcheList(String regex,String content) {
         return matcheList(regex,content,0);
     }
+
+    /**
+     *
+     * @param regex
+     * @param content
+     * @param group
+     * @return
+     */
     public static Set<String> matcheList(String regex,String content,int group){
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(content);
@@ -45,11 +95,21 @@ public class RegexUtils {
         Set<String> stringSet = new HashSet<>();
         while (matcher.find()) {// 匹配出所有符合的
             stringSet.add(matcher.group(group));
-            //System.out.println(matcher.group(0));
+            System.out.println(matcher.group(group));
         }
         return stringSet;
     }
 
-    // String regex = "\\<" + tag + " id=\"" + id + "\"\\>(\\n){0,1}([u4e00-u9fa5])*.*(\\n){0,1}.*\\</" + tag + "\\>";
-    // 回车 //n
+    public static Set<String> matcheList(String regex,String content,String group){
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(content);
+        //是否匹配到了
+        Set<String> stringSet = new HashSet<>();
+        while (matcher.find()) {// 匹配出所有符合的
+            stringSet.add(matcher.group(group));
+            System.out.println(matcher.group(group));
+        }
+        return stringSet;
+    }
+
 }

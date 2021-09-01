@@ -1,3 +1,4 @@
+<font face="SimSun" size=3 >
 
 [TOC]
 
@@ -68,3 +69,9 @@ System.out.println(Integer.toBinaryString(-5));
 101 // 前面的0被省略
 11111111111111111111111111111011
 ~~~
+
+## 字符集
+
+- code
+
+</font>
