@@ -1,4 +1,4 @@
-package cc.core.file.character;
+package cc.comp;
 
 import org.apache.tools.ant.filters.StringInputStream;
 
@@ -9,6 +9,11 @@ import java.io.*;
  * @date 2020/12/14
  */
 public class CharacterCode {
+
+    /**
+     *  字符集问题
+     *
+     */
 
     // 用空写个工具类，相互转换
 

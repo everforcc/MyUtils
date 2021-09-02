@@ -7,6 +7,10 @@ import java.util.Date;
  */
 public class ObjectField {
 
+    /**
+     * 如果对象属性为null，不会序列化
+     */
+
     private Byte aByte;
 
     private Short aShort;
