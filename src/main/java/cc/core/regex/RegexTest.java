@@ -41,6 +41,8 @@ public class RegexTest {
 
     /**
      * 正则表达式普通组
+     * 0全部
+     * 从(开始算，第一个包裹的组就是1
      */
     private static void group(){
         String content = "2021-09-01";
