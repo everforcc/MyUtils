@@ -1,5 +1,6 @@
 package cc.advanced.web.webservice.use;
 
+import cc.constant.ConstantFile;
 import cc.core.date.utils.DateUtils;
 import cc.advanced.web.webservice.Axis.AxisUtils;
 import cc.advanced.web.webservice.del.AxisWebService;
@@ -35,7 +36,7 @@ public class FundsClient {
         System.out.println("1");
         Date date1 = new Date();
         try {
-            String aa = PrintWriterUtils.fileReader("D:\\test\\生产报文.txt");
+            String aa = PrintWriterUtils.fileReader(ConstantFile.javaFilePath + "/test/生产报文.txt");
             System.out.println("2");
             Object[] a= new Object[]{aa};
             System.out.println("3");

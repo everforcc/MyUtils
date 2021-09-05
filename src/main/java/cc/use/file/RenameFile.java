@@ -1,5 +1,6 @@
 package cc.use.file;
 
+import cc.constant.ConstantFile;
 import cc.core.file.utils.FileUtils;
 import cc.core.file.utils.IFileUtils;
 import cc.core.io.PrintWriterUtils;
@@ -24,7 +25,7 @@ public class RenameFile implements IFileUtils {
     }
 
     public static void listFile(){
-        String filePath = "G:\\00.格式前\\10.工作\\00.图片\\02.个人\\02.真冬";
+        String filePath = ConstantFile.javaFilePath + "";
         FileUtils.recursion(filePath,new RenameFile());
     }
 

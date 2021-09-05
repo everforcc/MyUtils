@@ -1,6 +1,7 @@
 package cc.webapi.baidu.ocr;
 
 
+import cc.constant.ConstantFile;
 import com.baidu.aip.ocr.AipOcr;
 import net.sf.json.JSONArray;
 import org.json.JSONObject;
@@ -25,7 +26,7 @@ public class Sample {
 
 
         // 参数为本地图片路径
-        String image = "E:\\java\\test\\OCRmodel\\QQ图片20201222174346.jpg";
+        String image = ConstantFile.javaFilePath + "\\java\\test\\OCRmodel\\QQ图片20201222174346.jpg";
         JSONObject res = client.basicGeneral(image, options);
         content = res.toString(2);
 
@@ -33,7 +34,7 @@ public class Sample {
 
         System.out.println(getJSON(content));
 
-        /*SaveToFile saveToFile=new SaveToFile("D:\\test\\OCRmodel","2.txt",content);
+        /*SaveToFile saveToFile=new SaveToFile(ConstantFile.javaFilePath + "/test/OCRmodel","2.txt",content);
         saveToFile.save();*/
         // 参数为本地图片二进制数组
         /*byte[] file = readImageFile(image);

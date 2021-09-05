@@ -1,6 +1,7 @@
 package cc.use.url.http.website;
 
 import cc.advanced.web.http.utils.HttpURLConnectionUtil;
+import cc.constant.ConstantFile;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,7 +24,7 @@ public class Picture_costmcs {
      */
     public static void testUploadImage(){
         String url = "http://localhost:7007/invoice/queryWaitEditData";
-        String fileName = "D:\\1.中科软\\1.费控系统\\发票文件\\1.jpg";
+        String fileName = ConstantFile.javaFilePath + "/发票文件/1.jpg";
         Map<String, String> textMap = new HashMap<String, String>();
         //可以设置多个input的name，value
         //textMap.put("name", "testname");

@@ -1,5 +1,6 @@
 package cc.advanced.web.http.webmagic;
 
+import cc.constant.ConstantFile;
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
@@ -39,8 +40,8 @@ public class FeisuwxProcessor implements PageProcessor {
         // 加载接口
         Spider.create(new FeisuwxProcessor())
               .addUrl(url) // 请求地址
-              //.addPipeline(new FilePipeline("E:\\java\\wemagic")) // 保存地址
-              .addPipeline(new JsonFilePipeline("E:\\java\\wemagic"))
+              //.addPipeline(new FilePipeline(ConstantFile.javaFilePath + "/java/wemagic")) // 保存地址
+              .addPipeline(new JsonFilePipeline(ConstantFile.javaFilePath + "/java/wemagic"))
               .run(); //启动
     }
 

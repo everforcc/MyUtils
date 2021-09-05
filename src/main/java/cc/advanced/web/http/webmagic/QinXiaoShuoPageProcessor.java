@@ -1,6 +1,7 @@
 package cc.advanced.web.http.webmagic;
 
 import cc.advanced.web.http.header.Header;
+import cc.constant.ConstantFile;
 import cc.core.io.PrintWriterUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -87,7 +88,7 @@ public class QinXiaoShuoPageProcessor implements PageProcessor {
             //System.out.println(page.getHtml().xpath("//div[@id='chapter_content']").toString());
             String content = page.getHtml().xpath("//div[@id='chapter_content']").toString();
             content = content.replace("<br>","").replace("</div>","").replace("<div id=\"chapter_content\">","");
-            saveTXT("E:\\java\\wemagic\\我的青春恋爱物语果然有问题md3",map.get(url) + ".md",content);
+            saveTXT(ConstantFile.javaFilePath + "/java/wemagic/我的青春恋爱物语果然有问题md3",map.get(url) + ".md",content);
 
             /*System.out.println("stringList.size():" + stringList.size());
             System.out.println("map.size():" + map.size());

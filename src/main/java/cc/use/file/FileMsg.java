@@ -1,6 +1,7 @@
 package cc.use.file;
 
 
+import cc.constant.ConstantFile;
 import cc.core.date.utils.DateTimestamp;
 import cc.entity.FileSysMsg;
 
@@ -10,7 +11,7 @@ import java.io.IOException;
 public class FileMsg {
 
     public static void main(String[] args) throws IOException {
-        File file = new File("E:\\java\\rename\\ep\\cc00.png");
+        File file = new File(ConstantFile.javaFilePath + "\\java\\rename\\ep\\cc00.png");
         System.out.println(file.getAbsolutePath());
         System.out.println(file.getPath());
         System.out.println(file.getParent());
@@ -50,7 +51,7 @@ public class FileMsg {
         /**
          * 虚拟路径，用于页面展示，去掉盘符D：，替换\,/
          */
-        fileSysMsg.setFileVirtualRoute(path.replaceAll("\\\\","/").replace("D:",""));
+        fileSysMsg.setFileVirtualRoute(path.replaceAll("\\\\","/").replace(ConstantFile.javaFilePath + "",""));
 
         /**
          * 获取文件后缀名，文件类型，随后区分，但没必要

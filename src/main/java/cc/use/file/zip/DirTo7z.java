@@ -1,5 +1,6 @@
 package cc.use.file.zip;
 
+import cc.constant.ConstantFile;
 import cc.core.file.zip.SevenZCompressUtils;
 import java.io.File;
 
@@ -16,25 +17,25 @@ public class DirTo7z {
      */
 
     // 密码
-    private static final String passWord = "c.c.5664";
+    private static final String passWord = "自己的密码";
     // 需要压缩的文件夹
-    private static final String sourceFilePath = "G:\\00.格式前\\10.工作\\00.图片\\01.组织\\01.森萝财团\\ALPHA";
+    private static final String sourceFilePath = ConstantFile.javaFilePath + "";
     // 是否进入文件夹
     private static final boolean isCD = false;
     // 文件后缀,可以多 "." 但不能少 "."
     private static final String fileType = ".7z";
 
     public static void main(String[] args) {
-        // G:\00.格式前\10.工作\00.图片\02.个人\01.赛高
-        /*String path = "G:\\00.格式前\\10.工作\\00.图片\\02.个人\\01.赛高";
+        // ""
+        /*String path = ConstantFile.javaFilePath + "";
         getFileList(path);*/
-        /*String[] dir = {"BETA","FREE","JKFUN","LOVEPLUS","R15","SSR","WTMSB","X","有料"};
+        /*String[] dir = {"",""};
         for(String s:dir){
             getFileList(path + s);
         }*/
         //getFileList(sourceFilePath);
 
-        String path = "G:\\00.格式前\\10.工作\\00.图片\\01.组织";
+        String path = ConstantFile.javaFilePath + "";
         File file = new File(path);
 
         File[] fileList = file.listFiles();

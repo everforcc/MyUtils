@@ -1,5 +1,6 @@
 package cc.structure.msgtype.json.jsonpath;
 
+import cc.constant.ConstantFile;
 import com.jayway.jsonpath.*;
 import com.jayway.jsonpath.spi.json.JacksonJsonNodeJsonProvider;
 import com.jayway.jsonpath.spi.json.JsonProvider;
@@ -44,7 +45,7 @@ public class JsonPathAPI {
     private static String json = "";
 
     static void t20() throws IOException {
-        File file = new File("E:\\java\\test\\test.json");
+        File file = new File( ConstantFile.javaFilePath + "/java/test/test.json");
         String json = FileUtils.readFileToString(file);
 
         List<String> authors = JsonPath.read(json, "$.store.book[*].author");
@@ -53,7 +54,7 @@ public class JsonPathAPI {
 
     // 如果仅是单次使用是OK的，如果是多次使用的话，为了避免每次解析json都需要调用JsonPath.read(...)，你可以先解析json
     static void t21() throws IOException {
-        File file = new File("E:\\java\\test\\test.json");
+        File file = new File(ConstantFile.javaFilePath + "/java/test/test.json");
         String json = FileUtils.readFileToString(file);
         Object document = Configuration.defaultConfiguration().jsonProvider().parse(json);
         String author0 = JsonPath.read(document, "$.store.book[0].author");
@@ -64,7 +65,7 @@ public class JsonPathAPI {
 
     // JsonPath还提供了流式的API。这也是最灵活的一种。
     static void t22() throws IOException {
-        File file = new File("E:\\java\\test\\test.json");
+        File file = new File(ConstantFile.javaFilePath + "/java/test/test.json");
         String json = FileUtils.readFileToString(file);
         ReadContext ctx = JsonPath.parse(json);
         List<String> authorsOfBooksWithISBN = ctx.read("$.store.book[?(@.isbn)].author");
@@ -85,7 +86,7 @@ public class JsonPathAPI {
 
     // 如果将JsonPath配置为使用JacksonMappingProvider或GsonMappingProvider，您甚至可以将JsonPath输出直接映射到POJO。
     static void t24() throws IOException {
-        File file = new File("E:\\java\\test\\test.json");
+        File file = new File(ConstantFile.javaFilePath + "/java/test/test.json");
         String json = FileUtils.readFileToString(file);
         Configuration.setDefaults(new Configuration.Defaults() {
 
@@ -114,7 +115,7 @@ public class JsonPathAPI {
 
     // 要获取完整的泛型类型信息，请使用TypeRef。
     static void t25() throws IOException {
-        File file = new File("E:\\java\\test\\test.json");
+        File file = new File(ConstantFile.javaFilePath + "/java/test/test.json");
         String json = FileUtils.readFileToString(file);
         Configuration.setDefaults(new Configuration.Defaults() {
 
@@ -144,7 +145,7 @@ public class JsonPathAPI {
 
     // 向json中指定位置添加内容
     static void t26() throws IOException {
-        File file = new File("E:\\java\\test\\test.json");
+        File file = new File(ConstantFile.javaFilePath + "/java/test/test.json");
         String json = FileUtils.readFileToString(file);
         DocumentContext document = JsonPath.parse(json).put("$.store.book[*]", "kind", "paper");
         System.out.println(document.jsonString());

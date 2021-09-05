@@ -1,5 +1,6 @@
 package cc.use.url.http.website;
 
+import cc.constant.ConstantFile;
 import cc.use.file.WenkuNovelMenu;
 import cc.core.file.utils.MDUtils;
 import cc.advanced.web.http.header.Header;
@@ -81,7 +82,7 @@ public class Novel_wenku8_onegroup {
     }
 
     public static void saveAll(String content){
-        PrintWriterUtils.fileWriter("E:\\craw\\www.wenku8.net", "list.md",content);
+        PrintWriterUtils.fileWriter(ConstantFile.javaFilePath + "\\craw\\www.wenku8.net", "list.md",content);
     }
 
     // 一本小说的流程

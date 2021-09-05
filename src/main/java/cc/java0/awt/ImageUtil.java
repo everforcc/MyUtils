@@ -10,14 +10,15 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import cc.constant.ConstantFile;
 import com.sun.image.codec.jpeg.JPEGCodec;
 import com.sun.image.codec.jpeg.JPEGImageEncoder;
 
 public class ImageUtil {
 
     public static void main(String[] args) {
-        File file=new File("F:\\resources\\2.图片\\head.jpg");
-        File targetFile=new File("F:\\resources\\2.图片\\headTarget.jpg");
+        File file=new File(ConstantFile.javaFilePath + "/resources/图片/head.jpg");
+        File targetFile=new File(ConstantFile.javaFilePath + "/resources/图片/headTarget.jpg");
         changeImge(file,targetFile);
     }
 

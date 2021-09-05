@@ -1,5 +1,6 @@
 package cc.core.file.utils;
 
+import cc.constant.ConstantFile;
 import org.jaudiotagger.audio.exceptions.InvalidAudioFrameException;
 import org.jaudiotagger.audio.exceptions.ReadOnlyFileException;
 import org.jaudiotagger.audio.mp3.MP3AudioHeader;
@@ -16,7 +17,7 @@ public class MP3FileHelper {
         String strLen="";
         try {
 
-            MP3File file = new MP3File("E:\\audio\\parent\\0001\\0022.mp3");
+            MP3File file = new MP3File(ConstantFile.javaFilePath + "/audio/parent/0001/0022.mp3");
             MP3AudioHeader audioHeader = (MP3AudioHeader)file.getAudioHeader();
 
             strLen = audioHeader.getTrackLengthAsString();

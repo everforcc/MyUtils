@@ -1,5 +1,6 @@
 package cc.advanced.web.http.webmagic;
 
+import cc.constant.ConstantFile;
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
@@ -44,7 +45,7 @@ public class SinaBlogProcessor implements PageProcessor {
 
     public static void main(String[] args) {
         Spider.create(new SinaBlogProcessor()).addUrl("http://blog.sina.com.cn/s/articlelist_1487828712_0_1.html")
-                .addPipeline(new FilePipeline("E:\\java\\wemagic"))
+                .addPipeline(new FilePipeline(ConstantFile.javaFilePath + "/java/wemagic"))
                 .run();
     }
 }

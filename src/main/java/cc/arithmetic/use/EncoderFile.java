@@ -1,5 +1,6 @@
 package cc.arithmetic.use;
 
+import cc.constant.ConstantFile;
 import cc.core.io.PrintWriterUtils;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -18,7 +19,7 @@ public class EncoderFile {
     public static void main(String[] args) {
         List<String> list = new ArrayList<String>();
 
-        String path = "E:\\java\\test\\invoice";
+        String path = ConstantFile.javaFilePath + "\\java\\test\\invoice";
 
         String fileName="base64.png";
 

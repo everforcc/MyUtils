@@ -1,5 +1,7 @@
 package cc.advanced.web.http.jdkcraw;
 
+import cc.constant.ConstantFile;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
@@ -63,11 +65,11 @@ public class DownImgByImgURL {
 				/**
 				 * 创建文件夹和文件名
 				 */
-				File saveFile = new File("D:\\gkl\\");
+				File saveFile = new File(ConstantFile.javaFilePath + "");
 				if (!saveFile.exists()) {
 					saveFile.mkdir();
 				}
-				FileOutputStream fo = new FileOutputStream(new File("D:\\gkl\\" + filedir + imageName));
+				FileOutputStream fo = new FileOutputStream(new File(ConstantFile.javaFilePath + "" + filedir + imageName));
 
 				/**
 				 * 以流的方式进行下载

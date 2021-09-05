@@ -1,5 +1,6 @@
 package cc.maven.excle.test;
 
+import cc.constant.ConstantFile;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -50,7 +51,7 @@ public class PoiTest {
         row.createCell(3).setCellValue("2000-01-01");
         row.createCell(4).setCellValue("12121212122");
         //设定 路径
-        File file = new File("D:\\test\\POI\\员工信息.xlsx");
+        File file = new File(ConstantFile.javaFilePath + "/test/POI/员工信息.xlsx");
         FileOutputStream stream = new FileOutputStream(file);
         // 需要抛异常
         workbook.write(stream);

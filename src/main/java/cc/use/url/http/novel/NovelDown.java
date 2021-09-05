@@ -2,6 +2,7 @@ package cc.use.url.http.novel;
 
 import cc.advanced.web.http.header.Header;
 import cc.advanced.web.http.utils.HttpURLConnectionUtil;
+import cc.constant.ConstantFile;
 import cc.core.io.PrintWriterUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -12,7 +13,7 @@ import org.jsoup.nodes.Document;
  */
 public class NovelDown implements Runnable {
 
-    private String filePath = "E:\\craw\\www.loveyuedu.com";
+    private String filePath = ConstantFile.javaFilePath + "\\craw\\www.loveyuedu.com";
 
     private String menuName;
     private String url;

@@ -7,6 +7,8 @@ package cc.core.file.zip;
 // {java GZIPcompress GZIPcompress.java}
 // {VisuallyInspectOutput}
 
+import cc.constant.ConstantFile;
+
 import java.io.*;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
@@ -19,8 +21,8 @@ public class GZIPcompress {
 
     // 最简单的 gzip
 
-    static String path = "E:\\java\\onjava8\\gzip\\Hello.txt";
-    static String targetGZFile = "E:\\java\\onjava8\\gzip\\test.gz";
+    static String path = ConstantFile.javaFilePath + "\\java\\onjava8\\gzip\\Hello.txt";
+    static String targetGZFile = ConstantFile.javaFilePath + "\\java\\onjava8\\gzip\\test.gz";
 
     public static void main(String[] args) {
         write();

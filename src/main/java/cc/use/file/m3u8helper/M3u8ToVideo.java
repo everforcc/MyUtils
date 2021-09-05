@@ -1,5 +1,6 @@
 package cc.use.file.m3u8helper;
 
+import cc.constant.ConstantFile;
 import cc.core.file.utils.FileUtils;
 import cc.core.file.utils.IFileUtils;
 import cc.core.io.PrintWriterUtils;
@@ -23,15 +24,15 @@ public class M3u8ToVideo implements IFileUtils {
 
     public static void main(String[] args) {
         // 文件所在路径
-        String filePath = "F:\\整理\\m3u8";
+        String filePath = ConstantFile.javaFilePath + "/整理/m3u8";
         // m3u8 旧路径
-        String oldPath = "F:\\整理\\test";
+        String oldPath = ConstantFile.javaFilePath + "/整理/test";
         // m3u8 新路径
-        String newPath = "F:\\整理\\test";
+        String newPath = ConstantFile.javaFilePath + "/整理/test";
 
         //String[] strings = {oldPath,newPath};
         FileUtils.recursion(filePath,new M3u8ToVideo());
-        //parsePath(txt,fileName,"F:\\整理\\test");
+        //parsePath(txt,fileName,ConstantFile.javaFilePath + "/整理/test");
     }
 
     // 待完善，需要文件测试，原来的文件都删了,

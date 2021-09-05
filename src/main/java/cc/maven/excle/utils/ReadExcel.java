@@ -1,5 +1,6 @@
 package cc.maven.excle.utils;
 
+import cc.constant.ConstantFile;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
@@ -27,7 +28,7 @@ public class ReadExcel {
         flow(fileName);
     }
 
-    private final String filePath="C:\\Users\\Yukino\\Desktop\\20200426预算导入\\";
+    private final String filePath= ConstantFile.javaFilePath + "";
 
     // 例如 P,6  53
     Map<String,String> map = new HashMap<String, String>();

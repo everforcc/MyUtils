@@ -1,5 +1,6 @@
 package cc.use.url.http.website;
 
+import cc.constant.ConstantFile;
 import cc.core.date.utils.DateUtils;
 import cc.core.io.PrintWriterUtils;
 import org.jsoup.Jsoup;
@@ -47,7 +48,7 @@ public class TXT_NowsFun {
 
     static {
         try {
-            //"D:\\test",novelName
+            //ConstantFile.javaFilePath + "/test",novelName
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -64,7 +65,7 @@ public class TXT_NowsFun {
     public static void downtxt(String content){
 
         try {
-            PrintWriterUtils.fileWriter(new File("D:"+novelName),content);
+            PrintWriterUtils.fileWriter(new File(ConstantFile.javaFilePath + novelName),content);
         } catch (Exception e) {
             e.printStackTrace();
             DateUtils.now();

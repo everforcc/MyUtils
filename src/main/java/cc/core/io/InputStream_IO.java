@@ -1,5 +1,6 @@
 package cc.core.io;
 
+import cc.constant.ConstantFile;
 import cc.core.file.utils.FileUtils;
 import cc.advanced.web.http.header.Header;
 import cc.advanced.web.http.utils.HttpURLConnectionUtil;
@@ -37,17 +38,17 @@ public class InputStream_IO {
 
             // 7306
             /*InputStream in2 = HttpURLConnectionUtil.getStream(url, "GET", "", Header.bkimgMap());
-            InputStreamUtils.downFileByStream(in2,"E:\\test","2.png");*/
+            InputStreamUtils.downFileByStream(in2,ConstantFile.javaFilePath + "/test","2.png");*/
 
             // 8792
             /*InputStream in = HttpURLConnectionUtil.getStream(url, "GET", "", Header.bkimgMap());
-            nio(in,"E:\\test\\1.png");*/
+            nio(in,ConstantFile.javaFilePath + "/test/1.png");*/
             // 连续两次会把流耗尽？
 
             // nio好想也没发现多快,这些都是小文件，随后试试大文件
 
             InputStream in3 = HttpURLConnectionUtil.getStream(url, "GET", "", Header.bkimgMap());
-            InputStream_IO.copy(in3,"E:\\test","3.png");
+            InputStream_IO.copy(in3, ConstantFile.javaFilePath + "/test","3.png");
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {

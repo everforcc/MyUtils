@@ -1,6 +1,7 @@
 package cc.core.file.utils;
 
 import cc.comp.ByteUtils;
+import cc.constant.ConstantFile;
 
 import javax.imageio.ImageIO;
 import javax.imageio.ImageReader;
@@ -26,7 +27,7 @@ public class FileTypeUtils {
 
     public static void main(String[] args) throws Exception
     {
-        File f = new File("F:/十大错觉.jpg");
+        File f = new File(ConstantFile.javaFilePath + "/test/十大错觉.jpg");
         if (f.exists())
         {
             // 判断是否为图片

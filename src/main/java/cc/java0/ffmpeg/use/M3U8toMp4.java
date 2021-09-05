@@ -1,4 +1,5 @@
 package cc.java0.ffmpeg.use;
+import cc.constant.ConstantFile;
 import cc.java0.ffmpeg.utils.ConstantFFmpeg;
 import java.io.File;
 import java.io.IOException;
@@ -16,8 +17,8 @@ public class M3U8toMp4 {
 
     public static void main(String[] args) {
         try {
-            printPath(new File("F:\\resources\\9.pre-gal\\视频\\2"));
-           /* File a = new File("F:\\resources\\9.pre-gal\\视频\\M3U8\\");
+            printPath(new File(ConstantFile.javaFilePath + "/resources/pre-gal/视频/2"));
+           /* File a = new File(ConstantFile.javaFilePath + "/resources/pre-gal/视频/M3U8/");
             String newPath = a.getParent() + "/" + a.getName().substring(0, a.getName().lastIndexOf(".")) + "_.mp4"; // 新生成的文件名后面添加_ 下划线
             System.out.println(a.getAbsolutePath());
             System.out.println(newPath);

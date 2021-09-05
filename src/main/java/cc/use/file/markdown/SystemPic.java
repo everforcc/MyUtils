@@ -1,5 +1,6 @@
 package cc.use.file.markdown;
 
+import cc.constant.ConstantFile;
 import cc.core.io.PrintWriterUtils;
 
 import java.io.File;
@@ -17,7 +18,7 @@ public class SystemPic {
         //parseMsg("");
 
         // G:\00.格式前\10.工作\00.图片\02.个人\01.赛高
-        File file = new File("G:\\00.格式前\\10.工作\\00.图片\\02.个人\\01.赛高");
+        File file = new File(ConstantFile.javaFilePath + "");
         /*System.out.println(file.getParent());
         System.out.println(file.getParentFile());
         System.out.println(file.getName());*/
@@ -67,7 +68,7 @@ public class SystemPic {
     }
 
     public static void saveMD(String fileName,String content){
-        PrintWriterUtils.fileWriter("D:\\图片\\", "图片-1.md",content + "\r\n");
+        PrintWriterUtils.fileWriter(ConstantFile.javaFilePath + "/图片\\", "图片-1.md",content + "\r\n");
     }
 
 }

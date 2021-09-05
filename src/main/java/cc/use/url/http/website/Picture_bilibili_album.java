@@ -3,6 +3,7 @@ package cc.use.url.http.website;
 import cc.constant.ConstantCharSet;
 import cc.advanced.web.http.header.Header;
 import cc.advanced.web.http.utils.HttpURLConnectionUtil;
+import cc.constant.ConstantFile;
 import cc.core.io.PrintWriterUtils;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -20,7 +21,7 @@ public class Picture_bilibili_album {
         flow(postuid);
     }
 
-    private static String fileBase = "E:\\java\\bilibili\\md\\";
+    private static String fileBase = ConstantFile.javaFilePath + "\\java\\bilibili\\md\\";
     private static String postuid = "632887";
     private static String forCountUrl = "https://api.vc.bilibili.com/link_draw/v1/doc/upload_count?uid=";
     private static String forAllimgUrl =  "https://api.vc.bilibili.com/link_draw/v1/doc/doc_list?uid=%s&page_num=0&biz=all&page_size=%s" ;

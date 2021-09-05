@@ -1,5 +1,6 @@
 package cc.maven.excle.use;
 
+import cc.constant.ConstantFile;
 import cc.core.io.PrintWriterUtils;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -22,7 +23,7 @@ public class CostmcsBUDGET {
     //用来生成费控预算sql
 
     // excle路径
-    String filePath="C:\\Users\\Yukino\\Desktop\\20200427预算导入\\";
+    String filePath= ConstantFile.javaFilePath + "/20200427预算导入";
     //String fileList[]={"2020年AD&IT预算（不含滴滴）---导费控.xlsx","2020年HR预算---导费控.xlsx"};
     //表名
     //String tableName[] = {"ADIT_BUDGET",""};

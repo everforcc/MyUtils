@@ -2,6 +2,7 @@ package cc.use.url.http.website;
 
 import cc.constant.ConstantCharSet;
 import cc.advanced.web.http.utils.HttpURLConnectionUtil;
+import cc.constant.ConstantFile;
 import cc.core.io.PrintWriterUtils;
 import com.alibaba.fastjson.JSONObject;
 
@@ -86,8 +87,8 @@ public class JSON_ESDto {
         }
         word.append("}");
         //System.out.println("响应内容为:  " + dto);
-        // File file = new File("E:\\es\\");
-        PrintWriterUtils.fileWriter(new File("E:\\es\\"+ClassName+".java"),word.toString());
+        // File file = new File(ConstantFile.javaFilePath + "\\es\\");
+        PrintWriterUtils.fileWriter(new File(ConstantFile.javaFilePath + "\\es\\"+ClassName+".java"),word.toString());
     }
 
 }

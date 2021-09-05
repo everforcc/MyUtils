@@ -1,5 +1,7 @@
 package cc.core.file.zip;
 
+import cc.constant.ConstantFile;
+
 import java.io.*;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.ZipEntry;
@@ -14,7 +16,7 @@ public class ZipUtils {
     public static void main(String[] args) {
         ZipUtils zipUtils = new ZipUtils();
         try {
-            zipUtils.zip("D:\\linshi\\a.zip",new File("D:\\linshi\\a.txt"));
+            zipUtils.zip(ConstantFile.javaFilePath + "/linshi/a.zip",new File(ConstantFile.javaFilePath + "/linshi/a.txt"));
         } catch (Exception e) {
             e.printStackTrace();
         }

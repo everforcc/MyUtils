@@ -1,6 +1,7 @@
 package cc.core.io;
 
 import cc.constant.ConstantCharSet;
+import cc.constant.ConstantFile;
 import cc.core.file.utils.FileUtils;
 
 import java.io.*;
@@ -25,7 +26,7 @@ public class PrintWriterUtils {
         //把所有方法都放里面
 
         //测试
-        IO_BufferedWriter("E:\\1.txt", ConstantCharSet.UTF_8,"123");
+        IO_BufferedWriter(ConstantFile.javaFilePath + "/1.txt", ConstantCharSet.UTF_8,"123");
     }
 
     /************************************************ 写 ******************************************************************/

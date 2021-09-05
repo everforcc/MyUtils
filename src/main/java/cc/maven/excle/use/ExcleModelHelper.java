@@ -1,5 +1,6 @@
 package cc.maven.excle.use;
 
+import cc.constant.ConstantFile;
 import cc.maven.excle.utils.ExcleValueHelper;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -32,7 +33,7 @@ public class ExcleModelHelper {
     String sql2 = "insert into Accsh_Costtochannel values ('202003', 'FYFT', 'C001', 'HO', '%s', '%s', %s);";
 
     // excle路径
-    String filePath="C:\\Users\\Yukino\\Desktop\\";
+    String filePath= ConstantFile.javaFilePath + "";
 
     // excle的name        生成的表名
     Map<String, String> map = new HashMap<String, String>()

@@ -1,5 +1,7 @@
 package cc.java0.awt;
 
+import cc.constant.ConstantFile;
+
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -56,7 +58,7 @@ public class ShowImage extends Frame {
 
 	public static void main(String[] args) {
 
-		new ShowImage("D:\\resources\\2.图片\\壁纸pivix1.jpg");
+		new ShowImage(ConstantFile.javaFilePath + "/resources/2.图片/壁纸pivix1.jpg");
 
 	}
 

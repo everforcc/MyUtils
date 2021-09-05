@@ -1,5 +1,6 @@
 package cc.java0.cmd;
 
+import cc.constant.ConstantFile;
 import cc.core.io.InputStreamUtils;
 import cc.use.design.Print_Record;
 
@@ -22,7 +23,7 @@ public class CmdUtils {
 
 
 
-    Print_Record print_record = Print_Record.getInstanse("E:");
+    Print_Record print_record = Print_Record.getInstanse(ConstantFile.javaFilePath + "");
     // 目前使用这个，下面的其他方法还需要再整理
     public static String precessType="cmd /c ";
 

@@ -2,6 +2,8 @@ package cc.java8.onjava8.files;
 
 // files/Directories.java
 
+import cc.constant.ConstantFile;
+
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -11,7 +13,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class Directories {
-    static String path = "E:\\onjava8\\test";
+    static String path = ConstantFile.javaFilePath + "\\onjava8\\test";
     static Path test = Paths.get(path);
     static String sep = FileSystems.getDefault().getSeparator();
     static List<String> parts = Arrays.asList("foo", "bar", "baz", "bag");

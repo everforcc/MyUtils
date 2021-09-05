@@ -9,6 +9,8 @@ package cc.core.file.zip;
 // {java ZipCompress ZipCompress.java}
 // {VisuallyInspectOutput}
 
+import cc.constant.ConstantFile;
+
 import java.io.*;
 import java.util.Enumeration;
 import java.util.zip.*;
@@ -19,8 +21,8 @@ import java.util.zip.*;
  */
 public class ZipCompress {
 
-    private static String zipFilePath = "E:\\java\\onjava8\\zip\\test.zip";
-    private static String[] strings = {"E:\\java\\onjava8\\zip\\testzip.txt"};
+    private static String zipFilePath = ConstantFile.javaFilePath + "/java/onjava8/zip/test.zip";
+    private static String[] strings = {ConstantFile.javaFilePath + "/java/onjava8/zip/testzip.txt"};
     public static void main(String[] args) {
         /*t1(strings);
         t2(strings);*/

@@ -1,6 +1,8 @@
 package cc.java8.onjava8.files;
 
 // files/PathInfo.java
+import cc.constant.ConstantFile;
+
 import java.nio.file.*;
 import java.net.URI;
 import java.io.File;
@@ -24,7 +26,7 @@ public class PathInfo {
     }
     public static void main(String[] args) {
         System.out.println(System.getProperty("os.name"));
-        info(Paths.get("E:", "test", "1.txt"));
+        info(Paths.get(ConstantFile.javaFilePath + "", "test", "1.txt"));
         Path p = Paths.get("PathInfo.java");
         info(p);
         Path ap = p.toAbsolutePath();

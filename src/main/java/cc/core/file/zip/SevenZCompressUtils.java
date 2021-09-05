@@ -1,5 +1,6 @@
 package cc.core.file.zip;
 
+import cc.constant.ConstantFile;
 import cc.java0.cmd.CmdUtils;
 import org.apache.commons.lang.StringUtils;
 
@@ -10,8 +11,8 @@ import org.apache.commons.lang.StringUtils;
 public class SevenZCompressUtils {
 
     public static void main(String[] args) {
-        deCompression("F:\\3.resources\\06.gal\\整理\\001.7z","F:\\3.resources\\06.gal\\整理","pas");
-        compress("F:\\3.resources\\06.gal\\整理\\test-pas.7z","pas","F:\\3.resources\\06.gal\\整理\\001\\*");
+        deCompression(ConstantFile.javaFilePath + "/001.7z",ConstantFile.javaFilePath + "/整理","pas");
+        compress(ConstantFile.javaFilePath + "/test-pas.7z","pas",ConstantFile.javaFilePath + "/001/*");
     }
 
     // 7z路径

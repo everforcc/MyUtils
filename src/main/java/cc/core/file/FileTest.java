@@ -1,5 +1,7 @@
 package cc.core.file;
 
+import cc.constant.ConstantFile;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -20,7 +22,7 @@ public class FileTest {
         // System.out.printf(Integer.toHexString(b & 0xFF));
     }
 
-    private final static String testFilePath = "C:\\environment\\test\\github\\file.txt";
+    private final static String testFilePath = ConstantFile.javaFilePath + "";
     private final static File file = new File(testFilePath);
 
     private static void fileByte(){

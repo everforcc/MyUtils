@@ -1,5 +1,6 @@
 package cc.advanced.web.ftp;
 
+import cc.constant.ConstantFile;
 import sun.net.ftp.FtpClient;
 import sun.net.ftp.FtpProtocolException;
 
@@ -63,7 +64,7 @@ public class FtpModel {
         OutputStream outputStream = null;
         try {
             outputStream = ftpClient.putFileStream("/a.txt");
-            FileInputStream fileInputStream = new FileInputStream("E:\\java\\a.txt") ;
+            FileInputStream fileInputStream = new FileInputStream(ConstantFile.javaFilePath + "\\java\\a.txt") ;
             byte[] bytes = new byte[1024];
             int c;
             while ((c = fileInputStream.read(bytes)) != -1){
@@ -88,7 +89,7 @@ public class FtpModel {
         InputStream inputStream = null;
         try {
             inputStream = ftpClient.getFileStream("/2.txt");
-            FileOutputStream os = new FileOutputStream("E:\\java\\b.txt");
+            FileOutputStream os = new FileOutputStream(ConstantFile.javaFilePath + "\\java\\b.txt");
             byte[] bytesin = new byte[1024];
             int cin;
             while ((cin = inputStream.read(bytesin)) != -1)

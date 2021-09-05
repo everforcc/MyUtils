@@ -6,6 +6,7 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
+import cc.constant.ConstantFile;
 import org.apache.commons.lang.StringUtils;
 import org.bytedeco.javacv.FFmpegFrameGrabber;
 import org.bytedeco.javacv.Frame;
@@ -28,7 +29,7 @@ public class VideoUtil {
     private static final Logger LOGGER = LoggerFactory.getLogger(VideoUtil.class);
 
     public static void main(String[] args) {
-        String videoPath = "E:\\ffmpeg\\1.flv";
+        String videoPath = ConstantFile.javaFilePath + "\\ffmpeg\\1.flv";
         Map<String, Object> screenshot = getScreenshot(videoPath);
         System.out.println(screenshot);
     }

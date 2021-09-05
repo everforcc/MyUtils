@@ -1,5 +1,7 @@
 package cc.advanced.web.http.jdkcraw;
 
+import cc.constant.ConstantFile;
+
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -96,7 +98,7 @@ public class GetUrlByUrl {
 			/**
 			 * 设置存储URL
 			 */
-			pw = new PrintWriter(new FileWriter("F:/SaveURL.txt"), true);
+			pw = new PrintWriter(new FileWriter(ConstantFile.javaFilePath + "/SaveURL.txt"), true);
 
 			while ((buf = br.readLine()) != null) {
 				System.out.println(buf);

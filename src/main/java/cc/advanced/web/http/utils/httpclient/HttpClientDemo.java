@@ -1,5 +1,6 @@
 package cc.advanced.web.http.utils.httpclient;
 
+import cc.constant.ConstantFile;
 import org.apache.commons.io.FileUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHost;
@@ -99,8 +100,8 @@ public class HttpClientDemo {
             System.out.println(httpEntity.getContentType().getValue());
             InputStream inputStream = httpEntity.getContent();
             // 快啊.! 这俩好想没啥区别 // 框架更快
-            // FileUtils.copyInputStreamToFile(inputStream,new File("E://1.gif"));
-            FileUtils.copyToFile(inputStream,new File("E://2.gif"));
+            // FileUtils.copyInputStreamToFile(inputStream,new File(ConstantFile.javaFilePath + "/1.gif"));
+            FileUtils.copyToFile(inputStream,new File(ConstantFile.javaFilePath + "//2.gif"));
         }
         // buffer 包裹一下更快
         response.close(); // 关闭流
@@ -128,8 +129,8 @@ public class HttpClientDemo {
             System.out.println(EntityUtils.toString(httpEntity, "UTF-8"));
             //InputStream inputStream = httpEntity.getContent();
             // 快啊.! 这俩好想没啥区别 // 框架更快
-            // FileUtils.copyInputStreamToFile(inputStream,new File("E://1.gif"));
-            //FileUtils.copyToFile(inputStream,new File("E://2.gif"));
+            // FileUtils.copyInputStreamToFile(inputStream,new File(ConstantFile.javaFilePath + "//1.gif"));
+            //FileUtils.copyToFile(inputStream,new File(ConstantFile.javaFilePath + "//2.gif"));
         }
         // buffer 包裹一下更快
         response.close(); // 关闭流

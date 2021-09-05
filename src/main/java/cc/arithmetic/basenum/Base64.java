@@ -1,5 +1,6 @@
 package cc.arithmetic.basenum;
 
+import cc.constant.ConstantFile;
 import cc.core.io.PrintWriterUtils;
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
@@ -63,11 +64,11 @@ public class Base64 {
     }
 
     public static void main(String[] args) {
-        //System.out.println(getbase64Url("F:\\3.resources\\2.图片\\bilibili\\向山进发.gif"));
-        //PrintWriterUtils.fileWriter("F:\\3.resources\\2.图片\\bilibili\\yellow.txt",getbase64Url("F:\\3.resources\\2.图片\\bilibili\\yellow.jpg"));
+        //System.out.println(getbase64Url(ConstantFile.javaFilePath + "/resources/图片/bilibili/向山进发.gif"));
+        //PrintWriterUtils.fileWriter(ConstantFile.javaFilePath + "/resources/图片/bilibili/yellow.txt",getbase64Url(ConstantFile.javaFilePath + "/resources/图片/bilibili/yellow.jpg"));
 
         try {
-            getImage(PrintWriterUtils.fileReader("F:\\3.resources\\2.图片\\bilibili\\yellow.txt"),"F:\\3.resources\\2.图片\\bilibili\\yellow1.jpg");
+            getImage(PrintWriterUtils.fileReader(ConstantFile.javaFilePath + "/resources/图片/bilibili/yellow.txt"),ConstantFile.javaFilePath + "/resources/图片/bilibili/yellow1.jpg");
         } catch (Exception e) {
             e.printStackTrace();
         }

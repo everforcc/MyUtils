@@ -1,5 +1,6 @@
 package cc.use.url.http.website;
 
+import cc.constant.ConstantFile;
 import cc.core.file.utils.MDUtils;
 import cc.advanced.web.http.utils.CrawDataParse;
 import cc.advanced.web.http.utils.HttpURLConnectionUtil;
@@ -34,7 +35,7 @@ public class Novel_wenku8_back {
     private static String novelName = "Fate Zero";
 
     private static String splitChapter = "";
-    private static String dirBase = "E:\\craw\\";
+    private static String dirBase = ConstantFile.javaFilePath + "\\craw\\";
     private static String dir = "www.wenku8.net\\";
 
     // 上一章，下一章，类似小说的做法
@@ -104,7 +105,7 @@ public class Novel_wenku8_back {
                 //return;
             }
            /* // 2.用jsoup来解析
-            Document document = PageProcessorCommon.byFile("F:\\aly\\wenku8\\page3.txt");
+            Document document = PageProcessorCommon.byFile(ConstantFile.javaFilePath + "/aly/wenku8/page3.txt");
             Element element = document.getElementById("content");
 
             *//*String result = parseElse(element.toString());

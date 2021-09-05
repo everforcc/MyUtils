@@ -1,6 +1,7 @@
 package cc.use.file.codehelper;
 
 import cc.constant.ConstantCharSet;
+import cc.constant.ConstantFile;
 import cc.core.file.utils.FileUtils;
 import cc.core.file.utils.IFileUtils;
 
@@ -14,9 +15,9 @@ public class ChangeFileCode implements IFileUtils {
         // 1.以指定的编码读取文件，并以指定的编码写入新的文件
         try {
             String oldCode = ConstantCharSet.GBK;
-            String oldPath = "E:\\test\\novel";
+            String oldPath = ConstantFile.javaFilePath + "\\test\\novel";
             String newCode = ConstantCharSet.UTF_8;
-            String newPath = "E:\\test\\ChangeCode";
+            String newPath = ConstantFile.javaFilePath + "\\test\\ChangeCode";
 
             //changeCode(oldPath,oldCode, newCode,newPath);
 

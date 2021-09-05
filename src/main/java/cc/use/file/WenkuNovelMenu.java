@@ -1,5 +1,6 @@
 package cc.use.file;
 
+import cc.constant.ConstantFile;
 import cc.core.file.utils.FileUtils;
 import cc.core.file.utils.IFileUtils;
 import cc.advanced.web.http.header.Header;
@@ -21,30 +22,30 @@ public class WenkuNovelMenu implements IFileUtils,Runnable {
 
     private String path ;
 
-    static Print_Record print_record = Print_Record.getInstanse("E:\\craw\\www.wenku8.net\\log","log.txt");
-    static Print_Record print_record_error = Print_Record.getInstanse("E:\\craw\\www.wenku8.net\\log","log_err.txt");
+    static Print_Record print_record = Print_Record.getInstanse(ConstantFile.javaFilePath + "\\craw\\www.wenku8.net\\log","log.txt");
+    static Print_Record print_record_error = Print_Record.getInstanse(ConstantFile.javaFilePath + "\\craw\\www.wenku8.net\\log","log_err.txt");
 
     // 需要单个测试通过，才批量开始， 文件命名多个.不通过 可能..表示上级 so
     public static void main(String[] args){
-        //String filePath ="E:\\java\\novel\\www.wenku8.net\\欢迎来到实力至上主义的教室5";
-        //String filePath = "E:\\craw\\www.wenku8.net\\我的青春恋爱物语果然有问题";
-        //String filePath = "E:\\craw\\www.wenku8.net\\Fate Zero";
-       addFileMenu("E:\\craw\\\\www.wenku8.net\\富士见文库\\","");
+        //String filePath =ConstantFile.javaFilePath + "\\java\\novel\\www.wenku8.net\\欢迎来到实力至上主义的教室5";
+        //String filePath = ConstantFile.javaFilePath + "\\craw\\www.wenku8.net\\我的青春恋爱物语果然有问题";
+        //String filePath = ConstantFile.javaFilePath + "\\craw\\www.wenku8.net\\Fate Zero";
+       addFileMenu(ConstantFile.javaFilePath + "/craw/www.wenku8.net/富士见文库/","");
 
         /*InputStream inputStream = HttpURLConnectionUtil.getStream("http://picture.wenku8.com/pictures/1/1538/51571/63712.jpg","GET","", Header.pictureWenku8());
-        InputStreamUtils.downFileByStream(inputStream,"D:/","1.jpg");*/
+        InputStreamUtils.downFileByStream(inputStream,ConstantFile.javaFilePath + "/","1.jpg");*/
 
     }
 
     public static void addFileMenu(String filePath,String fileName){
-        // String filePath = "E:\\craw\\www.wenku8.net\\叛逆的鲁路修";
+        // String filePath = ConstantFile.javaFilePath + "\\craw\\www.wenku8.net\\叛逆的鲁路修";
         FileUtils.recursion(filePath,new WenkuNovelMenu());
     }
 
 
     @Override
     public boolean accept(File[] fileList, int i, String... strings) {
-        //fileList[i] = new File("E:\\craw\\www.wenku8.net\\MF文库J\\零之使魔\\0020.第三卷始祖的祈祷书.第一章第零号系统.md");
+        //fileList[i] = new File(ConstantFile.javaFilePath + "\\craw\\www.wenku8.net\\MF文库J\\零之使魔\\0020.第三卷始祖的祈祷书.第一章第零号系统.md");
 
         if(fileList[i].getName().endsWith(".md")){
             // 说明是md文件
@@ -77,9 +78,9 @@ public class WenkuNovelMenu implements IFileUtils,Runnable {
                 }
                 }
             } catch (Exception e) {
-                PrintWriterUtils.fileWriter("E:\\craw\\www.wenku8.net\\log","log_err.txt","fileList[i].getName():" + e + "\r\n");
+                PrintWriterUtils.fileWriter(ConstantFile.javaFilePath + "\\craw\\www.wenku8.net\\log","log_err.txt","fileList[i].getName():" + e + "\r\n");
                 // print_record_error.printErrln("fileList[i].getName():" + fileList[i].getName());
-                PrintWriterUtils.fileWriter("E:\\craw\\www.wenku8.net\\log","log_err.txt","fileList[i].getName():" + fileList[i].getName() + ": " + tempUrl + "\r\n");
+                PrintWriterUtils.fileWriter(ConstantFile.javaFilePath + "\\craw\\www.wenku8.net\\log","log_err.txt","fileList[i].getName():" + fileList[i].getName() + ": " + tempUrl + "\r\n");
                 //accept(fileList,i,"");
             }
         }
@@ -136,7 +137,7 @@ public class WenkuNovelMenu implements IFileUtils,Runnable {
     }
 
     public WenkuNovelMenu(String path) {
-        this.path = "E:\\craw\\www.wenku8.net\\" + path;
+        this.path = ConstantFile.javaFilePath + "\\craw\\www.wenku8.net\\" + path;
     }
 
     @Override

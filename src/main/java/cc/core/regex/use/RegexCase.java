@@ -28,7 +28,7 @@ public class RegexCase {
 
         try {
             //bookName("《wo》abc");
-            //String html = Jsoup.parse(new File("E:\\bilibili\\html\\ep29919.txt"), ConstantCharSet.UTF_8).toString();
+            //String html = Jsoup.parse(new File(ConstantFile.javaFilePath + "/bilibili/html/ep29919.txt"), ConstantCharSet.UTF_8).toString();
             // System.out.println(html);
             //epRegex(html);
             //ttregex();

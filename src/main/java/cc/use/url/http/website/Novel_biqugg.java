@@ -1,5 +1,6 @@
 package cc.use.url.http.website;
 
+import cc.constant.ConstantFile;
 import cc.core.io.PrintWriterUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -65,7 +66,7 @@ public class Novel_biqugg {
 
 
     public static void save(String content){
-        PrintWriterUtils.fileWriter("E:\\novel\\biquge","谍影风云.txt",content);
+        PrintWriterUtils.fileWriter(ConstantFile.javaFilePath + "\\novel\\biquge","谍影风云.txt",content);
     }
 
 }

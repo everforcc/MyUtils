@@ -18,9 +18,9 @@ import java.io.IOException;
 public class FFmpegUtils {
     public static void main(String[] args) {
         //
-        //replaceCover("E:\\ffmpeg\\1.flv","E:\\ffmpeg\\1.jpg","E:\\ffmpeg\\2.mp4");
-        //subVideoForImg("E:\\java\\ffmpeg\\2.mp4","E:\\java\\ffmpeg\\2.png");
-        //subVideoForGIF("E:\\java\\ffmpeg\\2.mp4",0,1,"E:\\java\\ffmpeg\\2.gif");
+        //replaceCover(ConstantFile.javaFilePath + "\\ffmpeg\\1.flv",ConstantFile.javaFilePath + "\\ffmpeg\\1.jpg",ConstantFile.javaFilePath + "\\ffmpeg\\2.mp4");
+        //subVideoForImg(ConstantFile.javaFilePath + "\\java\\ffmpeg\\2.mp4",ConstantFile.javaFilePath + "\\java\\ffmpeg\\2.png");
+        //subVideoForGIF(ConstantFile.javaFilePath + "\\java\\ffmpeg\\2.mp4",0,1,ConstantFile.javaFilePath + "\\java\\ffmpeg\\2.gif");
         //concatFileList("%s.txt","%s.mp4");
         subVideoImg("filepath");
     }

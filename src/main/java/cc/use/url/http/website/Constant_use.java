@@ -1,5 +1,7 @@
 package cc.use.url.http.website;
 
+import cc.constant.ConstantFile;
+
 import java.text.DecimalFormat;
 
 /**
@@ -7,6 +9,6 @@ import java.text.DecimalFormat;
  * @date 2020/12/14
  */
 public class Constant_use {
-    static String dirBase = "E:/craw/";
+    static String dirBase = ConstantFile.javaFilePath + "/craw/";
     static DecimalFormat df = new DecimalFormat("0000");
 }

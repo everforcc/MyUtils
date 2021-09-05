@@ -4,6 +4,7 @@ import cc.advanced.web.http.header.Header;
 import cc.advanced.web.http.utils.CrawDataParse;
 import cc.advanced.web.http.utils.HttpClientUtils;
 import cc.advanced.web.http.utils.HttpURLConnectionUtil;
+import cc.constant.ConstantFile;
 import cc.core.io.InputStreamUtils;
 import cc.core.io.PrintWriterUtils;
 import org.jsoup.Jsoup;
@@ -41,7 +42,7 @@ public class Novel_loveyuedu implements NovelFlow,Runnable {
 
 
     private static String novelName = "我的青春恋爱物语果然有问题";
-    private static String filePath = "E:\\java\\novel\\www.qinxiaoshuo.com\\" + novelName;
+    private static String filePath = ConstantFile.javaFilePath + "\\java\\novel\\www.qinxiaoshuo.com\\" + novelName;
     private static final String firstNovelContent = "https://www.loveyuedu.com/yuedu/21531/";
 
     public static void main(String[] args) {

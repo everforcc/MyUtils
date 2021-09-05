@@ -1,5 +1,6 @@
 package cc.advanced.web.http.selenium;
 
+import cc.constant.ConstantFile;
 import cc.core.io.PrintWriterUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -25,7 +26,7 @@ public class SeleniumMethod {
     public static void openHtml(){
 
         //String driverPath=System.getProperty("user.dir")+"....(路径)/geckodriver.exe";
-        //System.setProperty("webdriver.gecko.driver","D:\\environment\\driver\\chromedriver-89.exe");
+        //System.setProperty("webdriver.gecko.driver",ConstantFile.javaFilePath + "/driver/chromedriver-89.exe");
         //实例化虚拟浏览器对象
         WebDriver driver = new ChromeDriver();
         //打开百度首页
@@ -79,10 +80,10 @@ public class SeleniumMethod {
     }
 
     public static void saveUrl(String content){
-        PrintWriterUtils.fileWriter("E:\\novel\\biquge","斗破苍穹Url.txt",content);
+        PrintWriterUtils.fileWriter(ConstantFile.javaFilePath + "/novel/biquge","斗破苍穹Url.txt",content);
     }
 
     public static void save(String content){
-        PrintWriterUtils.fileWriter("E:\\novel\\biquge","斗破苍穹.txt",content);
+        PrintWriterUtils.fileWriter(ConstantFile.javaFilePath + "/novel/biquge","斗破苍穹.txt",content);
     }
 }

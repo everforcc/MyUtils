@@ -1,5 +1,6 @@
 package cc.webapi.baidu.ocr;
 
+import cc.constant.ConstantFile;
 import net.sf.json.JSONObject;
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -102,7 +103,7 @@ public class AuthService {
      * @throws Exception
      */
     public static void saveToken(String line) throws Exception{
-        File f = new File("D:\\test\\BaiduOCR\\token.txt");
+        File f = new File(ConstantFile.javaFilePath + "/test/BaiduOCR/token.txt");
         FileWriter fw=new FileWriter (f);
         BufferedWriter out = new BufferedWriter(fw);
         out.write(line, 0, line.length());

@@ -9,6 +9,7 @@ import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 
+import cc.constant.ConstantFile;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -47,7 +48,7 @@ public class XPathDemo {
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         dbf.setValidating(false);
         DocumentBuilder db = dbf.newDocumentBuilder();
-        doc = db.parse(new FileInputStream(new File("E:\\java\\test\\demo.xml")));
+        doc = db.parse(new FileInputStream(new File(ConstantFile.javaFilePath + "\\java\\test\\demo.xml")));
 
         // 创建XPath对象
         XPathFactory factory = XPathFactory.newInstance();

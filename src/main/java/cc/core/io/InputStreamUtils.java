@@ -1,5 +1,6 @@
 package cc.core.io;
 
+import cc.constant.ConstantFile;
 import cc.core.file.utils.FileUtils;
 import cc.core.file.zip.ZipUtils;
 import cc.use.design.Print_Record;
@@ -33,7 +34,7 @@ public class InputStreamUtils {
         // 不使用计算比例功能
         downFileByStream(in,filePath,fileName,new BigDecimal(0));
     }
-    static Print_Record print_record = Print_Record.getInstanse("E:\\craw\\www.wenku8.net\\log","log.txt");
+    static Print_Record print_record = Print_Record.getInstanse(ConstantFile.javaFilePath + "/craw/www.wenku8.net/log","log.txt");
     /**
      *  如果写入失败，这部分的异常需要交给谁处理呢?
      * @param inputStream

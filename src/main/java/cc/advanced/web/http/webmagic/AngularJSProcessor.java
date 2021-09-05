@@ -1,5 +1,6 @@
 package cc.advanced.web.http.webmagic;
 
+import cc.constant.ConstantFile;
 import org.apache.commons.collections.CollectionUtils;
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
@@ -56,7 +57,7 @@ public class AngularJSProcessor implements PageProcessor {
 
     public static void main(String[] args) {
         Spider.create(new AngularJSProcessor()).addUrl("http://angularjs.cn/api/article/latest?p=1&s=20")
-                .addPipeline(new FilePipeline("E:\\java\\wemagic"))
+                .addPipeline(new FilePipeline(ConstantFile.javaFilePath + "/java/wemagic"))
                 .run();
     }
 }

@@ -2,6 +2,7 @@ package cc.use.url.http.website;
 
 import cc.constant.ConstantCharSet;
 import cc.advanced.web.http.header.Header;
+import cc.constant.ConstantFile;
 import org.apache.commons.io.FileUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -62,7 +63,7 @@ public class TXT_MingYanTong {
     //青春猪头少年不会梦到兔女郎学姐
     private static final String maiUrl = "https://www.mingyantong.com/article/813656";
 
-    private static final String localUrl="D:\\a.html";
+    private static final String localUrl= ConstantFile.javaFilePath + "/a.html";
 
 
     public static  void t1(){
@@ -93,7 +94,7 @@ public class TXT_MingYanTong {
             //conn.setDoInput(true);//当前的连接可以从服务器读取内容, 默认是true
             conn.setConnectTimeout(6000);
 
-            FileUtils.copyToFile(conn.getInputStream(),new File("D://test//2.txt"));
+            FileUtils.copyToFile(conn.getInputStream(),new File(ConstantFile.javaFilePath + "/test/2.txt"));
         } catch (Exception e) {
 
         }
