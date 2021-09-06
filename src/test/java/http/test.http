@@ -1,7 +1,8 @@
 
 ###
-GET www.baidu.com
-Content-Type: application/json;charset=utf-8
+GET {{url}}
+Content-Type: {{Content-Type}}
+User-Agent: {{User-Agent}}
 
 ###
 GET localhost:8080/
