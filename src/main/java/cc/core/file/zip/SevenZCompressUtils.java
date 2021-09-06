@@ -20,7 +20,7 @@ public class SevenZCompressUtils {
     // 7z 源文件 目标文件 密码
     private static final String deCompressionCommand = "start /B %s x %s -o%s -aoa -bse1 %s";
     // 压缩文件 -tzip 参数为亚索格式，可以规定为zip,7z等支持的格式
-    private static final String compressionCommand = "%s a -tzip -r %s \"%s\" \"%s\" ";
+    private static final String compressionCommand = "%s a -t7z -r %s \"%s\" \"%s\" ";
 
     /**
      *
@@ -63,7 +63,7 @@ public class SevenZCompressUtils {
             pas = "";
         }
         String cmd = String.format(compressionCommand,z7filePath,pas,targetFile,sourceFile);
-        System.out.println(cmd);
+        System.out.println("cmd: >>> " + cmd);
         CmdUtils.execCmd(cmd);
     }
 
