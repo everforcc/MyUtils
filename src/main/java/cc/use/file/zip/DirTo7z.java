@@ -14,7 +14,7 @@ import java.io.File;
 public class DirTo7z {
 
     // 密码
-    private static final String passWord = "c.c.5664";
+    private static final String passWord = "自己的密码";
     // 需要压缩的文件夹
     private static final String sourceFilePath = ConstantFile.javaFilePath + "";
     // 是否进入文件夹
