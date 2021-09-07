@@ -32,14 +32,14 @@ public class DownLoadFile {
             // 以流的形式下载文件。
             InputStream fis = new BufferedInputStream(new FileInputStream(path));
             byte[] buffer = new byte[fis.available()];
-            fis.read(buffer);
+            fis.read(buffer); // 这个位置可以传从磁盘或网络来的输入流，转给前端
             fis.close();
             // 清空response
             response.reset();
             // 设置response的Header
-            response.addHeader("Content-Disposition", "attachment;filename="
-                    + new String(filename.getBytes()));
+            response.addHeader("Content-Disposition", "attachment;filename=" + new String(filename.getBytes()));
             response.addHeader("Content-Length", "" + file.length());
+
             OutputStream toClient = new BufferedOutputStream(response
                     .getOutputStream());
             response.setContentType("application/octet-stream");

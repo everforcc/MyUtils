@@ -17,7 +17,7 @@ public class SystemPic {
     public static void main(String[] args) {
         //parseMsg("");
 
-        // G:\00.格式前\10.工作\00.图片\02.个人\01.赛高
+        //
         File file = new File(ConstantFile.javaFilePath + "");
         /*System.out.println(file.getParent());
         System.out.println(file.getParentFile());
