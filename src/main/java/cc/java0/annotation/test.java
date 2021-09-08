@@ -1,4 +1,4 @@
-package cc.java0;
+package cc.java0.annotation;
 /**
  * GKL
  * @author Administrator
