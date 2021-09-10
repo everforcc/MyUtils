@@ -23,7 +23,7 @@ public class Picture_zydk8 {
 
     public static void main(String[] args) {
 
-        search("桜井宁宁");
+        search("");
 
         //content("https://www.zydk8.com/post-16989.html");
         /*String string = "https://www.helloimg.com/images/2020/08/22/gteman-197896c037694269e.jpg";

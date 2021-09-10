@@ -1,0 +1,84 @@
+{
+  "retcode": 0,
+  "message": "OK",
+  "data": {
+    "page": "3",
+    "size": "6",
+    "total": "0",
+    "list": [
+      {
+        "uid": "101606716",
+        "gacha_type": "301",
+        "item_id": "",
+        "count": "1",
+        "time": "2021-09-04 17:19:48",
+        "name": "鸦羽弓",
+        "lang": "zh-cn",
+        "item_type": "武器",
+        "rank_type": "3",
+        "id": "1630746360000844804"
+      },
+      {
+        "uid": "101606716",
+        "gacha_type": "301",
+        "item_id": "",
+        "count": "1",
+        "time": "2021-09-04 17:19:36",
+        "name": "讨龙英杰谭",
+        "lang": "zh-cn",
+        "item_type": "武器",
+        "rank_type": "3",
+        "id": "1630746360000836585"
+      },
+      {
+        "uid": "101606716",
+        "gacha_type": "301",
+        "item_id": "",
+        "count": "1",
+        "time": "2021-09-04 17:19:29",
+        "name": "魔导绪论",
+        "lang": "zh-cn",
+        "item_type": "武器",
+        "rank_type": "3",
+        "id": "1630746360000831650"
+      },
+      {
+        "uid": "101606716",
+        "gacha_type": "301",
+        "item_id": "",
+        "count": "1",
+        "time": "2021-09-04 17:19:23",
+        "name": "飞天御剑",
+        "lang": "zh-cn",
+        "item_type": "武器",
+        "rank_type": "3",
+        "id": "1630746360000827473"
+      },
+      {
+        "uid": "101606716",
+        "gacha_type": "301",
+        "item_id": "",
+        "count": "1",
+        "time": "2021-09-04 17:19:15",
+        "name": "魔导绪论",
+        "lang": "zh-cn",
+        "item_type": "武器",
+        "rank_type": "3",
+        "id": "1630746360000821826"
+      },
+      {
+        "uid": "101606716",
+        "gacha_type": "301",
+        "item_id": "",
+        "count": "1",
+        "time": "2021-09-04 17:18:12",
+        "name": "讨龙英杰谭",
+        "lang": "zh-cn",
+        "item_type": "武器",
+        "rank_type": "3",
+        "id": "1630746360000778052"
+      }
+    ],
+    "region": "cn_gf01"
+  }
+}
