@@ -1,4 +1,4 @@
-package cc.structure.msgtype.json;
+package cc.structure.msgtype.json.sfjson;
 
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;

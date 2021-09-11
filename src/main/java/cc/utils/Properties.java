@@ -36,4 +36,9 @@ public class Properties {
         return getJSON(path + fileName);
     }
 
+    public static String fastjson(){
+        String fileName = "/code/fastjson.json";
+        return getJSON(path + fileName);
+    }
+
 }
