@@ -34,6 +34,21 @@ class StuDoTest{
     private static StuDto c = new StuDto(3,"c");
     public static void main(String[] args) {
 
+        /**
+         *
+         * 1.1sorted()：它使用自然顺序对流的元素进行排序。元素类必须实现Comparable接口。
+         * list.stream().sorted() .stream().sorted(); 自然升序
+         * list.stream().sorted(Comparator.reverseOrder()); 降序
+         *
+         * 1.2 sorted(Comparator<? super T> comparator):这里我们创建一个Comparator使用lambda表达式的实例。我们可以按升序和降序对流元素进行排序。
+         * 按自然升序对集合进行排序
+         * list.stream().sorted(Comparator.comparing(Student::getAge));
+         * 自然序降序使用Comparator提供reverseOrder()方法
+         * list.stream().sorted(Comparator.reverseOrder());
+         */
+
+        //1.
+
         //2.
         //listSort();
         //3.
@@ -42,6 +57,14 @@ class StuDoTest{
         mapSort();
     }
 
+    private static void limit(List<StuDto> list,int currentPage,int pageSize){
+        // 排序后进行分页,页码，页面size
+        list.stream().skip((currentPage-1)*pageSize).limit(pageSize).
+                collect(Collectors.toList());
+
+    }
+
+    //4. map
     private static void mapSort(){
         Map<Integer, String> map = new HashMap<>();
         map.put(1, "c");
@@ -104,6 +127,10 @@ class StuDoTest{
 
         System.out.println(" 未定义反序--- ");
         slist = list.stream().sorted(Comparator.comparing(StuDto::getName).reversed()).collect(Collectors.toList());
+        slist.forEach(e -> System.out.println("Id:" + e.getId() + ", Name: " + e.getName()));
+
+        System.out.println(" 多条件排序--- ");
+        slist = list.stream().sorted(Comparator.comparing(StuDto::getName).reversed().thenComparing(StuDto::getId)).collect(Collectors.toList());
         slist.forEach(e -> System.out.println("Id:" + e.getId() + ", Name: " + e.getName()));
     }
 
