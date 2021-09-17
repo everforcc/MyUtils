@@ -3,7 +3,7 @@ package cc.java0.generics;
 import java.util.List;
 
 /**
- * 泛型，处理传参不确定的问题
+ * 泛型
  */
 public class TestE {
 

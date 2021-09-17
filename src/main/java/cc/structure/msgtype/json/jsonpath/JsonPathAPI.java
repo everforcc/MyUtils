@@ -21,13 +21,7 @@ public class JsonPathAPI {
 
     public static void main(String[] args) {
         try {
-            // https://www.cnblogs.com/ifme/archive/2004/01/13/12661894.html
-            //t26();
-            System.out.println( System.getProperty("user.dir") );//user.dir指定了当前的路径
-            File directory = new File(""); //设定为当前文件夹
-            System.out.println(directory.getName());
-            System.out.println( directory.getCanonicalPath() );//获取标准的路径
-            System.out.println( directory.getAbsolutePath() );//获取绝对路径
+
         } catch (Exception e) {
             e.printStackTrace();
         }

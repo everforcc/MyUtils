@@ -19,6 +19,7 @@ public class StringUtils {
 
     public static void main(String[] args) {
         //testT();
+        split();
     }
     // 测试下面两个方法
 
@@ -123,13 +124,18 @@ public class StringUtils {
 
 
 
-     void split(){
+     private static void split(){
         // 测试split
         // 使用索引访问用 String 的 split 方法得到的数组时，需做最后一个分隔符后有无
         // 内容的检查，否则会有抛 IndexOutOfBoundsException 的风险。
-        String a = "a,,,b,c,d,";
+        // 没发现，怎么试都没报错
+        String a = "a,,,b,c,d,,";
         String arry[] = a.split(",");
-        System.out.println(arry.length);
+        int length = arry.length;
+        System.out.println(length);
+        for(int i=0;i<length;i++){
+            System.out.println(i + " > " + arry[i]);
+        }
      }
 
      // substring

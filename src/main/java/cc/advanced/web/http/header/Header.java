@@ -144,4 +144,10 @@ public class Header {
         String fileName = "www.qidian.com.properties";
         return getMap(path + fileName);
     }
+
+    public static Map<String,String> ysMap(){
+        String fileName = "ys.properties";
+        return getMap(path + fileName);
+    }
+
 }

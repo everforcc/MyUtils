@@ -31,7 +31,7 @@ public class NovelDown implements Runnable {
 
         //System.out.println("开始下载章节:" + index + menuName);
 
-        PrintWriterUtils.fileWriter(filePath + "\\打造娱乐帝国2",index + "." + menuName + ".txt",content);
+        PrintWriterUtils.fileWriter(filePath + "\\",index + "." + menuName + ".txt",content);
     }
 
     @Override
