@@ -1,6 +1,8 @@
 package cc.advanced.web.http.utils;
 
 import cc.core.io.InputStreamUtils;
+import org.apache.axis.utils.StringUtils;
+import org.apache.commons.io.FileUtils;
 
 import javax.activation.MimetypesFileTypeMap;
 import java.io.*;
@@ -25,6 +27,23 @@ public class HttpURLConnectionUtil {
      *  5.在读取流的时候，给编码
      */
 
+    // 重构
+    public static String forHttpURLConnection(HttpURLConnection conn,String requestMethod,String charset) throws IOException {
+        return forHttpURLConnection(conn,null,requestMethod,charset,null);
+    }
+
+    public static String forHttpURLConnection(HttpURLConnection conn,String requestMethod,String content,String charset) throws IOException {
+        return forHttpURLConnection(conn,content,requestMethod,charset,null);
+    }
+
+    public static String forHttpURLConnection(HttpURLConnection conn,String requestMethod,String charset,Map<String,String> map) throws IOException {
+        return forHttpURLConnection(conn,null,requestMethod,charset,map);
+    }
+
+    public static InputStream getStream(HttpURLConnection conn,String requestMethod,String charset,Map<String,String> map) throws IOException {
+        return getStream(conn,requestMethod,charset,map,null);
+    }
+
     // 现在还没有遇到写入数据的情况这content先不用,下面的代码也屏蔽掉了,遇到了再增加,看懂意义
     // 地址，方法，内容，编码， 需要再加个请求头
     public static String sendToUrlRequest(String urlPath,String requestMethod,String content,String charset)throws Exception{
@@ -33,7 +52,7 @@ public class HttpURLConnectionUtil {
         URL url = new URL(urlPath);
         //2, 打开连接
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-        return forHttpURLConnection(conn,requestMethod,charset);
+        return forHttpURLConnection(conn,requestMethod,content,charset);
     }
 
     public static String  sendToUrlRequest(String urlPath,String requestMethod,String charset, Map<String,String> map){
@@ -57,13 +76,65 @@ public class HttpURLConnectionUtil {
         }
     }
 
-    // 重构
-    public static String forHttpURLConnection(HttpURLConnection conn,String requestMethod,String charset) throws IOException {
-        return forHttpURLConnection(conn,null,requestMethod,charset,null);
+
+    public static InputStream getStream(String urlPath,String requestMethod,String charset,Map<String,String> map) throws IOException {
+        URL url = null;
+        url = new URL(urlPath);
+        //2, 打开连接
+        //HttpURLConnection conn = (HttpURLConnection) url.openConnection(ProxyDemo.getUrlProxyContent(""));
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        return getStream(conn,requestMethod,charset,map);
     }
 
-    public static String forHttpURLConnection(HttpURLConnection conn,String requestMethod,String charset,Map<String,String> map) throws IOException {
-        return forHttpURLConnection(conn,null,requestMethod,charset,map);
+    public static InputStream getStream(HttpURLConnection conn,String requestMethod,String charset,Map<String,String> map,String content) throws IOException {
+        // 设置请求头
+        if(map!=null&&map.size()>0){
+            for(Map.Entry entry : map.entrySet()){
+                //System.out.println((String) entry.getKey() + "---" + conn.getRequestProperty((String) entry.getKey()));
+                String key = (String) entry.getKey();
+                if(conn.getRequestProperty(key)==null){
+                    String value = (String) entry.getValue();
+                    conn.setRequestProperty(key,value);
+                    // 大小写有时候不一样
+                    /*if("Accept-Encoding".equalsIgnoreCase(key)&&value.contains("gzip")){
+                        gzip = true; // 需要解压
+                    }*/
+                }
+            }
+        }
+        //3, 设置提交类型
+        try {
+            conn.setConnectTimeout(60000);
+            conn.setRequestMethod(requestMethod);
+        } catch (ProtocolException e) {
+            e.printStackTrace();
+        }
+        //4, 设置允许写出数据,默认是不允许 false
+
+        conn.setDoInput(true);//当前的连接可以从服务器读取内容, 默认是true
+        //conn.setConnectTimeout(6000);
+        // 如果不为空就进去, 没搞懂方式
+        if(!StringUtils.isEmpty(content)) {
+            conn.setDoOutput(true);
+            //5, 获取向服务器写出数据的流
+            OutputStream os = conn.getOutputStream();
+            //参数是键值队  , 不以"?"开始
+            os.write(content.getBytes());
+            //os.write("googleTokenKey=&username=admin&password=5df5c29ae86331e1b5b526ad90d767e4".getBytes());
+            os.flush();
+        }
+        //6, 获取响应的数据
+        //得到服务器写回的响应数据
+        // charset 在这里 <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+        //System.out.println("getStream():1 >>>>>>>>>>>>>");
+
+        //System.out.println("getStream():" + conn.getContentLength());
+
+        //怎么判断是否连接上!!!
+
+        //System.out.println("" +conn.getResponseCode());
+
+        return conn.getInputStream();
     }
 
     // 如果解析错误重试次数设置为三次，要不然多次就溢出了
@@ -92,7 +163,8 @@ public class HttpURLConnectionUtil {
         InputStream inputStream = null;
         try {
             i++;
-            inputStream = getStream(conn,requestMethod,charset,map);
+            inputStream = getStream(conn,requestMethod,charset,map,content);
+            //FileUtils.copyToFile(inputStream,new File("/a.jpg"));
             //System.out.println("getStream(conn,requestMethod,charset,map) end >>>");
             // 编码在下面使用
             returnMsg = InputStreamUtils.inputStreamStr(inputStream,charset,gzip);
@@ -125,65 +197,6 @@ public class HttpURLConnectionUtil {
         //System.out.println("forHttpURLConnection():end >>>>>>>>>>>>>");
         //给返回等待下一步处理
         return returnMsg;
-    }
-
-    public static InputStream getStream(String urlPath,String requestMethod,String charset,Map<String,String> map) throws IOException {
-        URL url = null;
-        url = new URL(urlPath);
-        //2, 打开连接
-        //HttpURLConnection conn = (HttpURLConnection) url.openConnection(ProxyDemo.getUrlProxyContent(""));
-        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-        return getStream(conn,requestMethod,charset,map);
-    }
-
-    public static InputStream getStream(HttpURLConnection conn,String requestMethod,String charset,Map<String,String> map) throws IOException {
-        // 设置请求头
-        if(map!=null&&map.size()>0){
-            for(Map.Entry entry : map.entrySet()){
-                //System.out.println((String) entry.getKey() + "---" + conn.getRequestProperty((String) entry.getKey()));
-                String key = (String) entry.getKey();
-                if(conn.getRequestProperty(key)==null){
-                    String value = (String) entry.getValue();
-                    conn.setRequestProperty(key,value);
-                    // 大小写有时候不一样
-                    /*if("Accept-Encoding".equalsIgnoreCase(key)&&value.contains("gzip")){
-                        gzip = true; // 需要解压
-                    }*/
-                }
-            }
-        }
-        //3, 设置提交类型
-        try {
-            conn.setConnectTimeout(60000);
-            conn.setRequestMethod(requestMethod);
-        } catch (ProtocolException e) {
-            e.printStackTrace();
-        }
-        //4, 设置允许写出数据,默认是不允许 false
-        //conn.setDoOutput(true);
-        conn.setDoInput(true);//当前的连接可以从服务器读取内容, 默认是true
-        //conn.setConnectTimeout(6000);
-        // 如果不为空就进去, 没搞懂方式
-        /*if(!StringUtils.isEmpty(content)) {
-            //5, 获取向服务器写出数据的流
-            OutputStream os = conn.getOutputStream();
-            //参数是键值队  , 不以"?"开始
-            os.write(content.getBytes());
-            //os.write("googleTokenKey=&username=admin&password=5df5c29ae86331e1b5b526ad90d767e4".getBytes());
-            os.flush();
-        }*/
-        //6, 获取响应的数据
-        //得到服务器写回的响应数据
-        // charset 在这里 <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
-        //System.out.println("getStream():1 >>>>>>>>>>>>>");
-
-        //System.out.println("getStream():" + conn.getContentLength());
-
-        //怎么判断是否连接上!!!
-
-        //System.out.println("" +conn.getResponseCode());
-
-        return conn.getInputStream();
     }
 
     /* 使用统一的工具类

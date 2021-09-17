@@ -4,11 +4,14 @@ import cc.constant.ConstantFile;
 import cc.core.file.utils.FileUtils;
 import cc.core.file.zip.ZipUtils;
 import cc.use.design.Print_Record;
+import org.apache.commons.lang3.StringUtils;
 
 import java.io.*;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  *  这个类只做 InputStream 的工具类
@@ -21,20 +24,19 @@ public class InputStreamUtils {
      * 非文本类
      * 处理字节，例如图片视频流
      */
-
     public static void main(String[] args) {
         // 每个方法这里都加行 方法名
-
     }
+
+    static Print_Record print_record = Print_Record.getInstanse(ConstantFile.javaFilePath + "/craw/www.wenku8.net/log","log.txt");
 
     // 入InputStream >> 岀FileOutputStream
     // 下载文件 带文件路径，文件名，文件大小
-
     public static void downFileByStream(InputStream in, String filePath, String fileName)throws Exception{
         // 不使用计算比例功能
         downFileByStream(in,filePath,fileName,new BigDecimal(0));
     }
-    static Print_Record print_record = Print_Record.getInstanse(ConstantFile.javaFilePath + "/craw/www.wenku8.net/log","log.txt");
+
     /**
      *  如果写入失败，这部分的异常需要交给谁处理呢?
      * @param inputStream
@@ -120,13 +122,90 @@ public class InputStreamUtils {
         fo.close();
     }*/
 
+    public static byte[] inputStreamByte(InputStream inputStream,String charSet)throws Exception {
+        FileOutputStream fo_3 = new FileOutputStream(new File("C://3.jpg"));
+        FileOutputStream fo_4 = new FileOutputStream(new File("C://4.jpg"));
+        List<byte[]> byteList = new ArrayList<>();
+        int byteListIndex = 0;
+        List<Integer> lengthList = new ArrayList<Integer>();
+        int length = 0;
+        int tempLength = 0;
+        int resultLength = 0;
+        byte[] buf = new byte[1024];
+        //byte[] b = new byte[0];
+        while ((length = inputStream.read(buf, 0, buf.length)) != -1) {
+            byte[] b = copyByteAry(buf);
+            byteList.add(b);
+            //System.out.println(length);
+            tempLength = length;
+            resultLength += length;
+            lengthList.add(length);
+            fo_3.write(b,0,length);
+
+            if(byteList.get(byteListIndex)!=b){
+                System.out.println("wrong:" + byteListIndex);
+            }
+            byteListIndex++;
+        }
+        System.out.println("tempLength:" + tempLength);
+        //System.out.println("b.length:" + b.length);
+        System.out.println("buf.length:" + buf.length);
+
+        fo_3.close();
+
+        System.out.println("resultLength : " + resultLength);
+//
+        byte[] resultByte = new byte[resultLength];
+        int i = 0;
+        // copy数据
+        byte[] by = new byte[0];
+        for(int x=0;x<byteList.size();x++){
+            by = byteList.get(x);
+            for(int y = 0;y<by.length;y++){
+                //System.out.println("i:" + i);
+                resultByte[i] = by[y];
+                i++;
+                fo_4.write(by[y]);
+                if(i==resultLength){
+                    System.out.println("i==resultLength : " + i);
+                    break;
+                }
+            }
+            // TODO 问题
+            //fo_4.write(byteList.get(x),0,lengthList.get(x));
+            /*if(i==resultLength){
+                System.out.println("i==resultLength : " + i);
+                break;
+            }*/
+        }
+        System.out.println("by.length:" + by.length);
+        fo_4.close();
+
+        inputStream.close();
+
+        return resultByte;
+    }
+
+    private static byte[] copyByteAry(byte[] bytes){
+        int length = bytes.length;
+        byte[] copyBytes = new byte[length];
+        for(int i = 0; i<length; i++){
+            copyBytes[i] = bytes[i];
+        }
+        return copyBytes;
+    }
+
     public static String inputStreamStr(InputStream inputStream,String charSet,boolean gzip)throws Exception {
         if(gzip){
             return ZipUtils.gzipRestore(inputStream);
         }
         BufferedReader br = null;
         // 默认字符编码GBK
-        br = new BufferedReader(new InputStreamReader(inputStream,charSet));
+        if(StringUtils.isNotBlank(charSet)){
+            br = new BufferedReader(new InputStreamReader(inputStream,charSet));
+        }else {
+            br = new BufferedReader(new InputStreamReader(inputStream));
+        }
         String readLine;
         StringBuilder builder = new StringBuilder();
         while ((readLine = br.readLine()) != null) {
