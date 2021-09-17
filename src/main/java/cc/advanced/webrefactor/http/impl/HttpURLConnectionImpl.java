@@ -127,6 +127,8 @@ public class HttpURLConnectionImpl implements IHttp {
             //os.write("googleTokenKey=&username=admin&password=5df5c29ae86331e1b5b526ad90d767e4".getBytes());
             os.flush();
         }
+
+        log.info("返回数据类型" + conn.getHeaderField("Content-Type"));
         log.info("返回数据大小" + conn.getContentLength());
         log.info("conn.getResponseCode(): " + conn.getResponseCode());
         return conn;

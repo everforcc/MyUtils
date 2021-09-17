@@ -15,7 +15,7 @@ public class ObjRef {
     public static void main(String[] args) {
         try {
             //
-            Class<?> clazz = getInstance();
+            //Class<?> clazz = getInstance();
             // 构造
             //getConstructor(clazz);
             // 属性
@@ -24,6 +24,9 @@ public class ObjRef {
             //getField(obj.getClass(),obj);
             // 方法
             // getMehtod(clazz);
+            //
+            //
+            getInnerClass();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -79,8 +82,12 @@ public class ObjRef {
                 }
             }
         }
-
         System.out.println(object);
+
+        // 获取字段的值
+        /*Field field = clazz.getDeclaredField("privateStr");
+        field.setAccessible(true);
+        System.out.println(field.get(object));*/
 
     }
 
@@ -114,6 +121,23 @@ public class ObjRef {
         declaredMethod.setAccessible(true);
         System.out.println("方法名 : " + declaredMethod.getName());
         declaredMethod.invoke(clazz.newInstance(),"123");
+    }
+
+    // 获取私有内部类
+    public static void getInnerClass() throws NoSuchFieldException, IllegalAccessException, InstantiationException {
+        Obj obj = new Obj();
+        Class<?> clazz = obj.getClass();
+
+        Class<?>[] innerClazz = clazz.getDeclaredClasses();
+        System.out.println("innerClazz.length: " + innerClazz.length);
+        for(Class c:innerClazz){
+            System.out.println(c.getName());
+            Field fieldPrivateInnerStr = c.getDeclaredField("privateInnerStr");
+            fieldPrivateInnerStr.setAccessible(true);
+            Object innerObj = c.newInstance();
+            System.out.println("privateInnerStr" + fieldPrivateInnerStr.get(innerObj));
+            //System.out.println("publicInnerStr" + c.getDeclaredField("publicInnerStr"));
+        }
     }
 
 }

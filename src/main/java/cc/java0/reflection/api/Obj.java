@@ -8,7 +8,7 @@ public class Obj {
     // 属性
 
     public String publicStr;
-    private String privateStr;
+    private String privateStr = "privateStr---";
 
     public int publicint;
     private int privateint;
@@ -95,4 +95,20 @@ public class Obj {
                 ", privateint=" + privateint +
                 '}';
     }
+
+    public class InnerClass{
+
+        private String privateInnerStr = "privateInnerStr123";
+        public String publicInnerStr = "privateInnerStr123";
+
+        public InnerClass() {
+        }
+
+        public InnerClass(String privateInnerStr, String publicInnerStr) {
+            this.privateInnerStr = privateInnerStr;
+            this.publicInnerStr = publicInnerStr;
+        }
+
+    }
+
 }
