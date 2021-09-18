@@ -4,6 +4,7 @@ import cc.advanced.web.http.utils.HttpURLConnectionUtil;
 import cc.advanced.webrefactor.http.IHttp;
 import cc.advanced.webrefactor.http.impl.HttpURLConnectionImpl;
 import org.apache.commons.io.FileUtils;
+import sun.misc.BASE64Encoder;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -16,7 +17,7 @@ public class WXapi {
 
     private String appid = "";
     private String secret = "";
-    private static String accessToken = "49_Zr6wZhTmFL7o64QxvF9lPv8Hl2MxPEpEoEDigrweQYT0ed6n7a48LZpCQffF6Fp4Knt_wBGnUJJkiEpAXmQFkUq-YZZN0HQ_8SuqKQ5fxw4JV8Nge3C6vp2ONsb5hy86LTn1j9r1raZAPcAyZJRaAJASCK";
+    private static String accessToken = "49_swYAlx97p7Cz6iWF3W2Y_skySVS_odRp4e9fBlDyfP6E3AsbMCQAIn2QcvX3xP1rB_ms252FlFXJvI6VWeK1ZdwpTOW5y6P8qemSIElUqVIaufexxqfTcgsC8f7dc4cnIX6hDjCmzHX2ajrJAYXaAFAQON";
     private static String content = "{\n" +
             " \"scene\": \"www.baidu.com\"\n" +
             "}";
@@ -36,6 +37,7 @@ public class WXapi {
             FileOutputStream fo = new FileOutputStream(new File("C://5.jpg"));
             fo.write(bytes,0,bytes.length);
             fo.close();
+            System.out.println(new BASE64Encoder().encode(bytes));
         } catch (Exception e) {
             e.printStackTrace();
         }

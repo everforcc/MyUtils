@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$Title$</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+    </script>
+    <script>
+        $(document).ready(function(){
+            base();
+        });
+      var pjson =  '{"scene":"www.baidu.com","width":"200"}';
+
+
+        function base(){
+        $.ajax({
+                url: "http://127.0.0.1:8080/open/danceTeamController/addTeamMember",
+                type: "POST",
+                data:JSON.stringify(pjson),
+                contentType: 'application/json',
+                dataType: "json",
+                success: function (objReturn) {
+                    alert(objReturn.code);
+                    //alert(objReturn.data[0]);
+                    if(objReturn.code=="A00000"){
+                        $("#baseimg").attr("src",objReturn.data[0]);
+                    }
+                }
+
+            });
+        }
+    </script>
+</head>
+<body>
+
+<button>图片base64</button>
+
+<img src="" id="baseimg">
+
+</body>
+</html>
