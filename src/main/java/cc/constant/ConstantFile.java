@@ -15,7 +15,7 @@ public class ConstantFile {
 
     static {
         // 可以根据系统判断下windows和linux取不同的文件夹
-        System.out.println("ConstantFile");
+        System.out.println("ConstantFile:" + System.getProperty("os.name"));
     }
 
 }
