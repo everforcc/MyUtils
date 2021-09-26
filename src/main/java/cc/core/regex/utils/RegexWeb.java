@@ -1,7 +1,7 @@
 package cc.core.regex.utils;
 
 /**
- * @author guokailong 2021-09-01
+ * @author everforcc 2021-09-01
  */
 public class RegexWeb {
 

@@ -3,7 +3,7 @@ package cc.design.proxy.type2;
 import java.util.Date;
 
 /**
- * @author guokailong 2021-09-25
+ * @author everforcc 2021-09-25
  */
 public class UserServiceProxy implements UserService{
 

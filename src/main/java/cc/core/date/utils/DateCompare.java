@@ -6,7 +6,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
- * @author guokailong 2021-09-15
+ * @author everforcc 2021-09-15
  */
 public class DateCompare {
 

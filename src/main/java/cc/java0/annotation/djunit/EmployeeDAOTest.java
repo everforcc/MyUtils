@@ -1,7 +1,7 @@
 package cc.java0.annotation.djunit;
 
 /**
- * @author guokailong 2021-09-08
+ * @author everforcc 2021-09-08
  */
 public class EmployeeDAOTest {
 

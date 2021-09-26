@@ -11,19 +11,19 @@ public class SendEmail
     public static void main(String [] args)
     {
         // 收件人电子邮箱
-        String to = "guokailong@sinosoft.com.cn";
+        String to = "";
 
         /*// 发件人电子邮箱
-        final String from = "718497737@qq.com";
+        final String from = "";
         final String password="tpdcbmrhqzkwbefe";
         // 指定发送邮件的主机为 smtp.qq.com
         final String host = "smtp.qq.com";  //QQ 邮件服务器*/
 
         // 发件人电子邮箱
-        final String from = "yumeng13031@sinosoft.com.cn";
-        final String password="Yumeng182";
+        final String from = "";
+        final String password="";
         // 指定发送邮件的主机为 smtp.qq.com
-        final String host = "mail.sinosoft.com.cn";  //QQ 邮件服务器
+        final String host = "";  //QQ 邮件服务器
 
         // 获取系统属性
         Properties properties = System.getProperties();

@@ -10,7 +10,7 @@ import java.io.InputStreamReader;
  * 复杂的不清楚，暂时不需要 帮助 javadoc -help
  * javadoc SquareNum.java -d C:/soft/github/test/doc
  *
- * @author guokailong 2021-09-09
+ * @author everforcc 2021-09-09
  */
 public class SquareNum {
     /**

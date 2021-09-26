@@ -3,7 +3,7 @@ package cc.java0.reflection.base;
 import java.lang.reflect.Method;
 
 /**
- * @author guokailong 2021-09-09
+ * @author everforcc 2021-09-09
  */
 public class TestClassLoad {
     public static void main(String[] args) throws Exception {

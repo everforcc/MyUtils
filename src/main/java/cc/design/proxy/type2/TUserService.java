@@ -3,7 +3,7 @@ package cc.design.proxy.type2;
 import cc.design.proxy.type2.impl.UserServiceImpl_1;
 
 /**
- * @author guokailong 2021-09-25
+ * @author everforcc 2021-09-25
  */
 public class TUserService {
     public static void main(String[] args) {

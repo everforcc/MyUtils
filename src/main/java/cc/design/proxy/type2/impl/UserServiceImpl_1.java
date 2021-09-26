@@ -3,7 +3,7 @@ package cc.design.proxy.type2.impl;
 import cc.design.proxy.type2.UserService;
 
 /**
- * @author guokailong 2021-09-25
+ * @author everforcc 2021-09-25
  */
 public class UserServiceImpl_1 implements UserService {
 

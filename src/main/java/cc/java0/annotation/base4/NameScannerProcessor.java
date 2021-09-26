@@ -10,7 +10,7 @@ import javax.tools.Diagnostic;
 import java.util.Set;
 
 /**
- * @author guokailong 2021-09-08
+ * @author everforcc 2021-09-08
  */
 @SupportedAnnotationTypes("*")
 @SupportedSourceVersion(SourceVersion.RELEASE_8)

@@ -3,7 +3,7 @@ package cc.java0.generics.impl;
 import cc.java0.generics.Info;
 
 /**
- * @author guokailong 2021-09-13
+ * @author everforcc 2021-09-13
  */
 public class InfoTKUImpl<T,K,U> implements Info<U> {
     private U var ;

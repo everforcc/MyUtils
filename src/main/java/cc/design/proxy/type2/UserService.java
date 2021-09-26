@@ -1,7 +1,7 @@
 package cc.design.proxy.type2;
 
 /**
- * @author guokailong 2021-09-25
+ * @author everforcc 2021-09-25
  */
 public interface UserService {
 

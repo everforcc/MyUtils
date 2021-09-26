@@ -5,7 +5,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
 
 /**
- * @author guokailong 2021-09-23
+ * @author everforcc 2021-09-23
  */
 public class ThreadIC implements Callable {
     @Override

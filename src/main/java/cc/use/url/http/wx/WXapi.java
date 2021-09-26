@@ -11,7 +11,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
 /**
- * @author guokailong 2021-09-16
+ * @author everforcc 2021-09-16
  */
 public class WXapi {
 

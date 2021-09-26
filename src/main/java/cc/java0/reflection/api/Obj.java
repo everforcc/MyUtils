@@ -1,7 +1,7 @@
 package cc.java0.reflection.api;
 
 /**
- * @author guokailong 2021-09-16
+ * @author everforcc 2021-09-16
  */
 public class Obj {
 

@@ -1,7 +1,7 @@
 package cc.constant;
 
 /**
- * @author 郭凯龙
+ * @author everforcc
  * @data 2021/8/31 0031
  */
 public class ConstantFile {

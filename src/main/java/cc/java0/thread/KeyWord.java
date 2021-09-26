@@ -1,7 +1,7 @@
 package cc.java0.thread;
 
 /**
- * @author guokailong 2021-09-23
+ * @author everforcc 2021-09-23
  */
 public class KeyWord {
 

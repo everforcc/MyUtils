@@ -2,7 +2,7 @@ package cc.java0.generics;
 
 /**
  * 多泛型变量定义及字母规范
- * @author guokailong 2021-09-13
+ * @author everforcc 2021-09-13
  */
 class MorePoint<T,U> {
     private T x;

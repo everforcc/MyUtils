@@ -2,7 +2,7 @@ package cc.java0.generics;
 
 /**
  * 泛型类
- * @author guokailong 2021-09-13
+ * @author everforcc 2021-09-13
  */
 public class Point<T> {
     private T x ;

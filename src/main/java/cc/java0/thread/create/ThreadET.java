@@ -1,7 +1,7 @@
 package cc.java0.thread.create;
 
 /**
- * @author guokailong 2021-09-23
+ * @author everforcc 2021-09-23
  */
 public class ThreadET extends Thread{
     public ThreadET(String name){

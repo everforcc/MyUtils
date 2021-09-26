@@ -3,7 +3,7 @@ package cc.java0.generics.impl;
 import cc.java0.generics.Info;
 
 /**
- * @author guokailong 2021-09-13
+ * @author everforcc 2021-09-13
  */
 class InfoImpl implements Info<String> {   // 定义泛型接口的子类
     private String var ;                // 定义属性

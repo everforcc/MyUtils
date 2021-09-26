@@ -1,7 +1,7 @@
 package cc.java0.reflection.base;
 
 /**
- * @author guokailong 2021-09-09
+ * @author everforcc 2021-09-09
  */
 public class A {
 

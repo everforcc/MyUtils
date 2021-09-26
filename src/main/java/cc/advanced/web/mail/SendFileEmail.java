@@ -18,10 +18,10 @@ public class SendFileEmail
     {
 
         // 收件人电子邮箱
-        String to = "2212355809@qq.com";
+        String to = "";
 
         // 发件人电子邮箱
-        String from = "718497737@qq.com";
+        String from = "";
 
         // 指定发送邮件的主机为 localhost
         String host = "smtp.qq.com";
@@ -37,7 +37,7 @@ public class SendFileEmail
         Session session = Session.getDefaultInstance(properties,new Authenticator(){
             public PasswordAuthentication getPasswordAuthentication()
             {
-                return new PasswordAuthentication("718497737@qq.com", "tpdcbmrhqzkwbefe"); //发件人邮件用户名、授权码
+                return new PasswordAuthentication("", ""); //发件人邮件用户名、授权码
             }
         });
         try{

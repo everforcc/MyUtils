@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * 5.Class<T>类传递及泛型数组
- * @author guokailong 2021-09-14
+ * @author everforcc 2021-09-14
  */
 public class ClassT {
 
