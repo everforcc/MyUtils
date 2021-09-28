@@ -4,7 +4,7 @@ import cc.core.enume.ObjEnum;
 import org.junit.jupiter.api.Test;
 
 /**
- * @author 郭凯龙
+ * @author everforcc
  * @data 2021/9/1 0001
  */
 public class Tenum {
