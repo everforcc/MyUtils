@@ -5,7 +5,7 @@ import cc.constant.ConstantDate;
 import java.text.SimpleDateFormat;
 
 /**
- * @author 郭凯龙
+ * @author everforcc
  * @data 2021/8/27 0027
  */
 public class DatePattern {

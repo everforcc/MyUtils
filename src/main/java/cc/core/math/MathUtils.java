@@ -9,9 +9,9 @@ import java.util.Random;
 public class MathUtils {
 
     public static void main(String[] args) {
-
-        randomNum();
-        t();
+        //randomNum();
+        //t();
+        equation();
     }
 
     // 科学记数法 1.60105E9
@@ -35,6 +35,14 @@ public class MathUtils {
         System.out.println(integer);
     }
 
+    //
+    private static void equation(){
+        System.out.println("弧度: " + Math.toRadians(60.0)/Math.PI);
+        System.out.println("一个double值的正平方根: " + Math.sqrt(4.0));
+        System.out.println("a的b次方: " + Math.pow(4,2));
+        System.out.println("正弦: " + Math.sin(Math.toRadians(30)));
+    }
+
     public static void t(){
         /**
          * floor 向下取整
@@ -49,5 +57,7 @@ public class MathUtils {
         System.out.println(Math.round(1.5));
         System.out.println(Math.ceil(1.5));
     }
+
+
 
 }

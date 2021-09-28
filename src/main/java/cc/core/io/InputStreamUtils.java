@@ -131,7 +131,7 @@ public class InputStreamUtils {
         int length = 0;
         int tempLength = 0;
         int resultLength = 0;
-        byte[] buf = new byte[1024];
+        byte[] buf = new byte[1];
         //byte[] b = new byte[0];
         while ((length = inputStream.read(buf, 0, buf.length)) != -1) {
             byte[] b = copyByteAry(buf);

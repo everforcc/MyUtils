@@ -3,7 +3,7 @@ package cc.advanced.webrefactor.http;
 import java.util.Map;
 
 /**
- * @author guokailong 2021-09-16
+ * @author everforcc 2021-09-16
  */
 public interface IHttp {
 

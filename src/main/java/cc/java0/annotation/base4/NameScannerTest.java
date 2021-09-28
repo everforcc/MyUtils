@@ -1,7 +1,7 @@
 package cc.java0.annotation.base4;
 
 /**
- * @author guokailong 2021-09-08
+ * @author everforcc 2021-09-08
  */
 @NameScanner
 public class NameScannerTest {

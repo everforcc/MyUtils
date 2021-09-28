@@ -1,4 +1,4 @@
-package cc.design.proxy;
+package cc.design.proxy.type1;
 
 /**
  * @author c.c.

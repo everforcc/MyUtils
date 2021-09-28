@@ -3,7 +3,7 @@ package cc.entity;
 import com.alibaba.fastjson.JSON;
 
 /**
- * @author 郭凯龙
+ * @author everforcc
  * @data 2021/9/2 0002
  */
 public class ObjTest {

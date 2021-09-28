@@ -3,7 +3,7 @@ package cc.java0.reflection.ary;
 import java.lang.reflect.Array;
 
 /**
- * @author guokailong 2021-09-09
+ * @author everforcc 2021-09-09
  */
 public class RefAry {
 

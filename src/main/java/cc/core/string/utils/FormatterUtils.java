@@ -3,7 +3,7 @@ package cc.core.string.utils;
 import java.util.Formatter;
 
 /**
- * @author 郭凯龙
+ * @author everforcc
  * @data 2021/8/26 0026
  */
 public class FormatterUtils {

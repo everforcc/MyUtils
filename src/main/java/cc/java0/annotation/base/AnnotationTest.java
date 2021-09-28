@@ -5,7 +5,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 /**
- * @author guokailong 2021-09-08
+ * @author everforcc 2021-09-08
  */
 public class AnnotationTest {
 

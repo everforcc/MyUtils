@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.Objects;
 
 /**
- * @author guokailong 2021-09-10
+ * @author everforcc 2021-09-10
  */
 @Data
 public class YsCardVO {

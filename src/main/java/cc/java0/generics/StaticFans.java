@@ -4,7 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * 4. 泛型函数定义及使用
- * @author guokailong 2021-09-13
+ * @author everforcc 2021-09-13
  */
 @Slf4j
 public class StaticFans {

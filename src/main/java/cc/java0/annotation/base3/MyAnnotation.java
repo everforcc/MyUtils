@@ -7,7 +7,7 @@ import java.lang.reflect.Method;
 
 /**
  * Annotation在反射函数中的使用示例
- * @author guokailong 2021-09-09
+ * @author everforcc 2021-09-09
  */
 @Retention(RetentionPolicy.RUNTIME)
 @interface MyAnnotation {

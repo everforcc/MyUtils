@@ -1,4 +1,4 @@
-package cn.cc.jdk0.t;
+package java0;
 
 /**
  * @author c.c.

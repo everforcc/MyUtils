@@ -17,7 +17,7 @@ import java.net.URL;
 import java.util.Map;
 
 /**
- * @author guokailong 2021-09-16
+ * @author everforcc 2021-09-16
  */
 @Slf4j
 public class HttpURLConnectionImpl implements IHttp {

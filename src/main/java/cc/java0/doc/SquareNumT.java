@@ -9,7 +9,7 @@ import java.io.InputStreamReader;
  *
  * javadoc SquareNum.java -d C:/soft/github/test/doc
  *
- * @author guokailong 2021-09-09
+ * @author everforcc 2021-09-09
  */
 public class SquareNumT {
     /**
