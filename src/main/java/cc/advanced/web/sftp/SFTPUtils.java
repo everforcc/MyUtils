@@ -6,7 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.Properties;
 
 /**
- * @author guokailong 2021-09-28
+ * @author everforcc 2021-09-28
  */
 @Slf4j
 public class SFTPUtils {
