@@ -7,10 +7,12 @@
     </script>
     <script>
         $(document).ready(function(){
-            base();
+            //base();
+            balanceNginx();
         });
-      var pjson =  '{"scene":"www.baidu.com","page":"200","width":"200"}';
 
+
+        var pjson =  '{"scene":"www.baidu.com","page":"200","width":"200"}';
 
         function base(){
         $.ajax({
@@ -29,6 +31,23 @@
 
             });
         }
+
+        function balanceNginx(){
+            $.ajax({
+                url: "/proxy/nginx",
+                type: "GET",
+                //contentType: 'application/json',
+                //dataType: "json",
+                success: function (objReturn) {
+                    //alert(objReturn.code);
+                    //alert(objReturn.data[0]);
+                    if(objReturn.code=="A00000"){
+                        $("#balance").attr("value",objReturn);
+                    }
+                }
+            });
+        }
+
     </script>
 </head>
 <body>
@@ -36,6 +55,7 @@
 <button>图片base64</button>
 
 <img src="" id="baseimg">
+<input value="" id="balance">
 
 </body>
 </html>

@@ -68,7 +68,9 @@
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
-            <version>3.17</version>
+            <version>3.11</version>
+            <!-- <version>3.17</version> -->
+            <!-- 高版本api不了解，无视github检测 -->
             <exclusions>
                 <exclusion>
                     <artifactId>commons-codec</artifactId>
