@@ -1,6 +1,8 @@
 package cc.maven.excle.utils.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 import java.util.Map;
@@ -9,6 +11,7 @@ import java.util.Map;
  * @author
  */
 @Data
+@NoArgsConstructor
 public class EXCLEDto {
 
     // sheet名字
@@ -16,7 +19,8 @@ public class EXCLEDto {
     private Map<String,ESheet> stringESheetMap;
 
     @Data
-    public class ESheet{
+    @NoArgsConstructor
+    public static class ESheet{
 
         // 二选一
         // 行数，值
@@ -27,12 +31,17 @@ public class EXCLEDto {
     }
 
     @Data
-    public class ERow{
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class ERow{
 
         private int width;
         private int heigh;
         private EXCLEDataDto excleDataDto;
 
+        public ERow(EXCLEDataDto excleDataDto) {
+            this.excleDataDto = excleDataDto;
+        }
     }
 
 }

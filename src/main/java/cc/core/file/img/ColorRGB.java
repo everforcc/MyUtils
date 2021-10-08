@@ -3,13 +3,10 @@ package cc.core.file.img;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
- * @author guokailong 2021-09-30
+ * @author everforcc 2021-09-30
  */
 @Data
 @AllArgsConstructor
@@ -21,7 +18,10 @@ public class ColorRGB {
     private String rgb;
 
     private static List<ColorRGB> colorRGBList = new ArrayList<>();
+    // RGB，对象
     private static Map<String,ColorRGB> stringColorRGBMap = new HashMap<>();
+    // zh,rgb按照，分割
+    public static Map<String,int[]> stringColorRGBAry = new HashMap<>();
 
     static {
         /**
@@ -171,6 +171,13 @@ public class ColorRGB {
 
     static {
         colorRGBList.forEach(e ->stringColorRGBMap.put(e.getRgb(),e));
+
+        for(ColorRGB colorRGB: colorRGBList){
+            String[] strAry = colorRGB.getRgb().split(",");
+            int[] rgbAry = {Integer.valueOf(strAry[0]),Integer.valueOf(strAry[1]),Integer.valueOf(strAry[2])};
+            stringColorRGBAry.put(colorRGB.getZh(),rgbAry);
+        }
+
     }
 
     public static List<ColorRGB> getThisList(){
