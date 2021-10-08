@@ -1,4 +1,4 @@
-package cc.maven.excle.utils;
+package cc.maven.excle.utils.dto;
 
 /**
  * Yukino

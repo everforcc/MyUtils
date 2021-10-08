@@ -10,7 +10,11 @@ import cc.core.string.utils.StringUtils;
 public class StringUse {
     public static void main(String[] args) {
         // distinct();
-        fixStr();
+        //fixStr();
+        String str="我34F,Shanghai World Financial Center";
+        if(str.length()>10) {
+            System.out.println(str.substring(0, 10) + "...");
+        }
     }
 
     private static void distinct(){
