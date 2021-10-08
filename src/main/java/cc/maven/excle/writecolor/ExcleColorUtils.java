@@ -1,9 +1,9 @@
-package cc.maven.excle.write;
+package cc.maven.excle.writecolor;
 
 import org.apache.poi.ss.usermodel.IndexedColors;
 
 /**
- * @author guokailong 2021-09-30
+ * @author everforcc 2021-09-30
  */
 public class ExcleColorUtils {
 

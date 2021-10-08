@@ -1,4 +1,4 @@
-package cc.maven.excle.write;
+package cc.maven.excle.writecolor;
 
 import cc.core.file.img.ImgColorDto;
 import org.apache.poi.hssf.usermodel.*;
@@ -9,15 +9,13 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.OutputStream;
 import java.util.List;
 import java.util.Map;
 
 /**
- * @author guokailong 2021-09-30
+ * @author everforcc 2021-09-30
  */
 public class EXCLEHSSFWriteUtils {
 
