@@ -6,6 +6,7 @@ import java.util.Date;
 public class DateTimestamp {
 
     public static void main(String[] args) {
+        timestampToDateStr(1608793838L * 1000);
         SDFformat();
     }
 
