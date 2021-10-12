@@ -1,6 +1,7 @@
 package cc.core.date.utils;
 
 import cc.constant.ConstantDate;
+import cc.java0.pscp.PSCPUtils;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -16,6 +17,7 @@ public class CalendarUtils {
         //findDay();
         Calendar calendar = Calendar.getInstance();
         System.out.println(calendar.get(Calendar.DAY_OF_WEEK));
+        caGet();
     }
 
     /**
@@ -63,6 +65,15 @@ public class CalendarUtils {
                 System.out.println(calendar.get(Calendar.YEAR));
             }
         }
+    }
+
+    private static void caGet(){
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(new Date());
+        System.out.println(calendar.get(Calendar.YEAR));
+        System.out.println(calendar.get(Calendar.MONTH));
+        System.out.println(calendar.get(Calendar.DATE));
+        System.out.println(calendar.get(Calendar.DAY_OF_WEEK));
     }
 
     /**

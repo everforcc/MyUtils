@@ -94,8 +94,4 @@ public class DateUtils {
         return new SimpleDateFormat(ConstantDate.mode_1).format(new Date(System.currentTimeMillis()));
     }
 
-
-
-
-
 }
