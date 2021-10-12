@@ -10,7 +10,7 @@ public class ConstantBase {
     /**
      * 1. 获取用户信息
      */
-    public static String uinfo = "https://pan.baidu.com/rest/2.0/xpan/nas?method=uinfo&access_token=%s";
+    public static String uinfo = "https://pan.baidu.com/rest/2.0/xpan/nas";// ?method=uinfo&access_token=%s
 
     /**
      * 2. 获取网盘容量信息
