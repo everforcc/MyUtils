@@ -1,7 +1,7 @@
 package cc.use.url.http.website;
 
 import cc.constant.ConstantCharSet;
-import cc.advanced.web.http.header.Header;
+import cc.resource.PropertiesHeader;
 import cc.constant.ConstantFile;
 import org.apache.commons.io.FileUtils;
 import org.jsoup.Jsoup;
@@ -74,7 +74,7 @@ public class TXT_MingYanTong {
             //2, 打开连接
             //HttpURLConnection conn = (HttpURLConnection) url.openConnection(ProxyDemo.getUrlProxyContent(""));
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            Map<String,String> map = Header.mingyantongMap();
+            Map<String,String> map = PropertiesHeader.mingyantongMap();
             // 设置请求头
             if(map!=null&&map.size()>0){
                 for(Map.Entry entry : map.entrySet()){

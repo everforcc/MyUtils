@@ -1,6 +1,6 @@
 package cc.use.url.http.website;
 
-import cc.advanced.web.http.header.Header;
+import cc.resource.PropertiesHeader;
 import cc.advanced.web.http.utils.HttpClientUtils;
 import cc.constant.ConstantFile;
 import cc.core.io.PrintWriterUtils;
@@ -46,7 +46,7 @@ public class Novel_biquge {
     //取出所有章节的目录
     public static void  novelCatalogue(String novelUrl,String referer,String title){
         try {
-            Map<String, String> map = Header.biqugeMap();
+            Map<String, String> map = PropertiesHeader.biqugeMap();
             if (referer != null) {
                 map.put("Referer", referer);
             }
@@ -79,7 +79,7 @@ public class Novel_biquge {
     // 根据小说章节地址取出html
     public static void novelName(String novelUrlCatalogue,String title,String referer){
         try {
-            Map<String, String> map = Header.biqugeMap();
+            Map<String, String> map = PropertiesHeader.biqugeMap();
             if (referer != null) {
                 map.put("Referer", referer);
             }

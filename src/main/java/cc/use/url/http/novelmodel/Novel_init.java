@@ -1,7 +1,7 @@
 package cc.use.url.http.novelmodel;
 
 import cc.core.io.PrintWriterUtils;
-import cc.advanced.web.http.header.Header;
+import cc.resource.PropertiesHeader;
 import cc.use.url.http.novelmodel.model.BookModel;
 import cc.use.url.http.novelmodel.model.ContentModel;
 import cc.use.url.http.novelmodel.model.RootModel;
@@ -57,7 +57,7 @@ public class Novel_init {
     // 网站基本信息
     public static RootModel init_RootModel(){
         RootModel rootModel = new RootModel();
-        rootModel.setHeaders(Header.lanwlMap());
+        rootModel.setHeaders(PropertiesHeader.lanwlMap());
         rootModel.setCharset("gbk");
         rootModel.setRootUrl("https://www.lanwl.com");
         rootModel.setSearchUrl("");

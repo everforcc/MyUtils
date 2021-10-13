@@ -1,9 +1,8 @@
 package cc.core.file.utils;
 
-import cc.core.file.img.ImgColorDto;
+import cc.core.file.img.dto.ImgColorDto;
 
 import javax.imageio.ImageIO;
-import javax.persistence.criteria.CriteriaBuilder;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;

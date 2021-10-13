@@ -10,7 +10,7 @@ public class Compile {
     public void t(){
         // idea运行会编译检测，修改后跑一下看有没有问题
         System.out.println(1);
-        {// 测试提交到分支gkl.01
+        {
             System.out.println(1);
         }
     }

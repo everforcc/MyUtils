@@ -1,6 +1,6 @@
 package excle;
 
-import cc.core.file.img.ImgColorDto;
+import cc.core.file.img.dto.ImgColorDto;
 import cc.core.file.utils.PicReadColor;
 import cc.maven.excle.writecolor.EXCLEXSSFWriteUtils;
 import org.junit.jupiter.api.Test;

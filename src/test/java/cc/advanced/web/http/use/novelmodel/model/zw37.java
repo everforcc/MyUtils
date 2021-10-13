@@ -1,6 +1,6 @@
 package cc.advanced.web.http.use.novelmodel.model;
 
-import cc.advanced.web.http.header.Header;
+import cc.resource.PropertiesHeader;
 import cc.use.url.http.novelmodel.flow.CrawFlow2;
 import cc.use.url.http.novelmodel.model.*;
 import org.jsoup.Connection;
@@ -23,7 +23,7 @@ public class zw37 {
     static RootModel rootModel = new RootModel();
     static {
         // 网站根目录
-        rootModel.setHeaders(Header.zw37Map());
+        rootModel.setHeaders(PropertiesHeader.zw37Map());
         rootModel.setRootUrl("https://www.37zw.net/");
         rootModel.setCharset("gbk");
         rootModel.setNovelTypeUrlPattern("//div[@class='nav']//li//a/@href/regex('/xiaoshuo[0-9]{1}/')");

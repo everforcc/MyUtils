@@ -1,6 +1,6 @@
 package cc.maven.excle.writecolor;
 
-import cc.core.file.img.ImgColorDto;
+import cc.core.file.img.dto.ImgColorDto;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFColor;

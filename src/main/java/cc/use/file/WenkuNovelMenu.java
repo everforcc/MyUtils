@@ -3,7 +3,7 @@ package cc.use.file;
 import cc.constant.ConstantFile;
 import cc.core.file.utils.FileUtils;
 import cc.core.file.utils.IFileUtils;
-import cc.advanced.web.http.header.Header;
+import cc.resource.PropertiesHeader;
 import cc.advanced.web.http.utils.HttpURLConnectionUtil;
 import cc.core.io.InputStreamUtils;
 import cc.core.io.PrintWriterUtils;
@@ -72,7 +72,7 @@ public class WenkuNovelMenu implements IFileUtils,Runnable {
                         }
                         print_record.println(str);
                         print_record.println(fileName);
-                        InputStream inputStream = HttpURLConnectionUtil.getStream(str,"GET","", Header.pictureWenku8());
+                        InputStream inputStream = HttpURLConnectionUtil.getStream(str,"GET","", PropertiesHeader.pictureWenku8());
                         print_record.println(filePath);
                         InputStreamUtils.downFileByStream(inputStream,filePath,fileName);
                 }

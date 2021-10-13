@@ -1,9 +1,9 @@
-package cc.advanced.web.http.header;
+package cc.resource;
 
 import java.io.InputStream;
 import java.util.*;
 
-public class Header {
+public class PropertiesHeader {
 
     // 配置文件根目录
     private static String path = "/properties/header-properties/";
@@ -15,7 +15,7 @@ public class Header {
         try {
             // 静态方法和非晶态方法不同
             //InputStream in = this.getClass().getResourceAsStream("/properties/basecom.properties");
-            InputStream in = Header.class.getResource(resource).openStream();
+            InputStream in = PropertiesHeader.class.getResource(resource).openStream();
             Properties properties = new Properties();
             properties.load(in);
             /*System.out.println( properties.getProperty("a"));

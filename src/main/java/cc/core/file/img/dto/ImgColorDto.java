@@ -1,4 +1,4 @@
-package cc.core.file.img;
+package cc.core.file.img.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
