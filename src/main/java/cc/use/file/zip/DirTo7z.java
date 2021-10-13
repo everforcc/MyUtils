@@ -31,6 +31,7 @@ public class DirTo7z {
      */
     public static void main(String[] args) {
         log.info("是否进入目录:" + isCD);
+        // 加个构造，这个位置不写逻辑
         getFileList(sourceFilePath);
     }
 

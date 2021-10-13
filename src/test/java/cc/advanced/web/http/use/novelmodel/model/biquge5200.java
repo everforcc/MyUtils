@@ -1,6 +1,6 @@
 package cc.advanced.web.http.use.novelmodel.model;
 
-import cc.advanced.web.http.header.Header;
+import cc.resource.PropertiesHeader;
 import cc.use.url.http.novelmodel.flow.CrawFlow2;
 import cc.use.url.http.novelmodel.model.*;
 import org.junit.jupiter.api.Test;
@@ -19,7 +19,7 @@ public class biquge5200 {
     static RootModel rootModel = new RootModel();
     static {
         // 网站根目录
-        rootModel.setHeaders(Header.bqkanMap());
+        rootModel.setHeaders(PropertiesHeader.bqkanMap());
         rootModel.setRootUrl("https://www.biquge5200.cc/");
         rootModel.setCharset("gbk");
         rootModel.setNovelTypeUrlPattern("//div[@class='nav']//li//a/@href/regex('//www\\.biquge5200\\.cc/[a-z]{1,10}xiaoshuo/')");// /regex('https://www\.biquge5200\.cc/[a-z]{1,10}xiaoshuo/')

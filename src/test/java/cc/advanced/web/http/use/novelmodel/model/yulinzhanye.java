@@ -1,6 +1,6 @@
 package cc.advanced.web.http.use.novelmodel.model;
 
-import cc.advanced.web.http.header.Header;
+import cc.resource.PropertiesHeader;
 import cc.use.url.http.novelmodel.flow.CrawFlow2;
 import cc.use.url.http.novelmodel.model.*;
 import org.jsoup.Connection;
@@ -25,7 +25,7 @@ public class yulinzhanye {
     static{
 
         // 根目录
-        rootModel.setHeaders(Header.yulinzhanyeMap());
+        rootModel.setHeaders(PropertiesHeader.yulinzhanyeMap());
         rootModel.setCharset("gbk");
         rootModel.setRootUrl("http://www.yulinzhanye.la");
         rootModel.setSearchUrl("http://www.yulinzhanye.la/s.php");
@@ -151,7 +151,7 @@ public class yulinzhanye {
     void t3(){
         try {
             // objectType=2&type=articlename&s=%C5%AE%B6%F9
-            Connection connection = Jsoup.connect("http://www.yulinzhanye.la/s.php").headers(Header.yulinzhanye_searchMap())
+            Connection connection = Jsoup.connect("http://www.yulinzhanye.la/s.php").headers(PropertiesHeader.yulinzhanye_searchMap())
                     .cookie("Cookie"," __cfduid=dee02bfc3e30dffbdfe45b3c75cf1d02b1612186554; UM_distinctid=1775dceab98b70-0cb532ca859bf8-6c5a742c-1fa400-1775dceab99b57; Hm_lvt_ff727c5985a6b2da2c623aef1ab0d8db=1612186562,1612234189; PHPSESSID=1somln1mvo3t2uq7ln69fk4ma5; CNZZDATA1279262821=2126683797-1612182810-%7C1612237269; Hm_lpvt_ff727c5985a6b2da2c623aef1ab0d8db=1612241568")
                     .method(Connection.Method.POST)
                     .userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4356.6 Safari/537.36")

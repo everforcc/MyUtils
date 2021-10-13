@@ -2,7 +2,7 @@ package cc.core.io;
 
 import cc.constant.ConstantFile;
 import cc.core.file.utils.FileUtils;
-import cc.advanced.web.http.header.Header;
+import cc.resource.PropertiesHeader;
 import cc.advanced.web.http.utils.HttpURLConnectionUtil;
 
 import java.io.*;
@@ -47,7 +47,7 @@ public class InputStream_IO {
 
             // nio好想也没发现多快,这些都是小文件，随后试试大文件
 
-            InputStream in3 = HttpURLConnectionUtil.getStream(url, "GET", "", Header.bkimgMap());
+            InputStream in3 = HttpURLConnectionUtil.getStream(url, "GET", "", PropertiesHeader.bkimgMap());
             InputStream_IO.copy(in3, ConstantFile.javaFilePath + "/test","3.png");
         } catch (MalformedURLException e) {
             e.printStackTrace();

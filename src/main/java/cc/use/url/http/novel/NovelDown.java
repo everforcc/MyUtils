@@ -1,6 +1,6 @@
 package cc.use.url.http.novel;
 
-import cc.advanced.web.http.header.Header;
+import cc.resource.PropertiesHeader;
 import cc.advanced.web.http.utils.HttpURLConnectionUtil;
 import cc.constant.ConstantFile;
 import cc.core.io.PrintWriterUtils;
@@ -20,7 +20,7 @@ public class NovelDown implements Runnable {
     private String index;
 
     public void bookDown(){
-        String result = HttpURLConnectionUtil.sendToUrlRequest(url,"GET","gbk", Header.loveyueduMap());
+        String result = HttpURLConnectionUtil.sendToUrlRequest(url,"GET","gbk", PropertiesHeader.loveyueduMap());
         Document document = Jsoup.parse(result);
         //System.out.println(document.body());
         String content = document.getElementById("content").toString();

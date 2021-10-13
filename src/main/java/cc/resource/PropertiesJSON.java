@@ -1,11 +1,8 @@
-package cc.utils;
+package cc.resource;
 
 import java.io.*;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
 
-public class Properties {
+public class PropertiesJSON {
 
     // 配置文件根目录
     private static String path = "/json/";
@@ -14,7 +11,7 @@ public class Properties {
     }
     private static String  getJSON(String resource){
         try {
-            InputStream in = Properties.class.getResource(resource).openStream();
+            InputStream in = PropertiesJSON.class.getResource(path + resource).openStream();
 
             StringBuilder builder = new StringBuilder();
 
@@ -32,13 +29,13 @@ public class Properties {
     }
 
     public static String ysCard(){
-        String fileName = "YsCard.json";
-        return getJSON(path + fileName);
+        String fileName = "/ys/YsCard.json";
+        return getJSON(fileName);
     }
 
     public static String fastjson(){
         String fileName = "/code/fastjson.json";
-        return getJSON(path + fileName);
+        return getJSON(fileName);
     }
 
 }

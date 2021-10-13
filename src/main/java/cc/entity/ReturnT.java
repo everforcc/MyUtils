@@ -1,4 +1,4 @@
-package cc.utils;
+package cc.entity;
 
 import lombok.Data;
 

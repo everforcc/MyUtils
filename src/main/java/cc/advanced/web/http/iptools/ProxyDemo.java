@@ -4,7 +4,7 @@ package cc.advanced.web.http.iptools;
 import java.io.IOException;
 import java.net.Proxy;
 
-import cc.advanced.web.http.header.Header;
+import cc.resource.PropertiesHeader;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
@@ -37,7 +37,7 @@ public class ProxyDemo {
 
         try {
             //System.out.println(proxy);
-            Document doc = Jsoup.connect(url).data(Header.mingyantongMap()).timeout(6000).get();
+            Document doc = Jsoup.connect(url).data(PropertiesHeader.mingyantongMap()).timeout(6000).get();
 
 
             if (doc != null) {

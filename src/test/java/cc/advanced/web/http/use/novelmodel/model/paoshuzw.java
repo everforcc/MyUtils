@@ -1,6 +1,6 @@
 package cc.advanced.web.http.use.novelmodel.model;
 
-import cc.advanced.web.http.header.Header;
+import cc.resource.PropertiesHeader;
 import cc.use.url.http.novelmodel.flow.CrawFlow2;
 import cc.use.url.http.novelmodel.model.*;
 import org.jsoup.Connection;
@@ -25,7 +25,7 @@ public class paoshuzw {
         rootModel.setRootUrl("http://www.paoshuzw.com");
         rootModel.setCharset("utf-8");
         rootModel.setSearchUrl("http://www.paoshuzw.com/modules/article/waps.php");
-        rootModel.setHeaders(Header.paoshuzwMap());
+        rootModel.setHeaders(PropertiesHeader.paoshuzwMap());
 
         // 搜索
         SearchModel searchModel = new SearchModel();

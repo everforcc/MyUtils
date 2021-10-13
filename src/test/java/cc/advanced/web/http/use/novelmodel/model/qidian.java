@@ -1,6 +1,6 @@
 package cc.advanced.web.http.use.novelmodel.model;
 
-import cc.advanced.web.http.header.Header;
+import cc.resource.PropertiesHeader;
 import cc.use.url.http.novelmodel.flow.CrawFlow2;
 import cc.use.url.http.novelmodel.model.*;
 import org.jsoup.Connection;
@@ -26,7 +26,7 @@ public class qidian {
         rootModel.setRootUrl("https://www.qidian.com/");
         rootModel.setCharset("UTF-8");
         rootModel.setSearchUrl("https://www.qidian.com/search");
-        rootModel.setHeaders(Header.qidianMap());
+        rootModel.setHeaders(PropertiesHeader.qidianMap());
 
         // 搜索
         SearchModel searchModel = new SearchModel();

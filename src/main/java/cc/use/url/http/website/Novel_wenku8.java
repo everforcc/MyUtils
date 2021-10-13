@@ -3,7 +3,7 @@ package cc.use.url.http.website;
 import cc.constant.ConstantFile;
 import cc.use.file.WenkuNovelMenu;
 import cc.core.file.utils.MDUtils;
-import cc.advanced.web.http.header.Header;
+import cc.resource.PropertiesHeader;
 import cc.advanced.web.http.utils.CrawDataParse;
 import cc.advanced.web.http.utils.HttpURLConnectionUtil;
 import cc.core.io.PrintWriterUtils;
@@ -56,7 +56,7 @@ public class Novel_wenku8 {
             for(int i = 2; i < 141; i++) {
                 List<String> urlList = new ArrayList<>();
                 String modules = "https://www.wenku8.net/modules/article/articlelist.php?page=" + i;
-                String result = HttpURLConnectionUtil.sendToUrlRequest(modules, "GET", "gbk", Header.wenku8Map());
+                String result = HttpURLConnectionUtil.sendToUrlRequest(modules, "GET", "gbk", PropertiesHeader.wenku8Map());
                 Set<String> stringSet = RegexUtils.matcheList("https://www.wenku8.net/book/\\d{0,6}.htm", result);
                 for (String s : stringSet) {
                     System.out.println(s);
