@@ -61,5 +61,7 @@ public class Demo {
         return panel;
     }
 
+    // Demo3 GridBagLayout（网格袋布局）
+
 
 }

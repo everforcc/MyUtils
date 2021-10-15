@@ -21,13 +21,13 @@ public class DemoJTabbedPane {
 
 
         // 创建第 1 个选项卡（选项卡只包含 标题）
-        tabbedPane.addTab("Tab01", createTextPanel("TAB 01"));
+        tabbedPane.addTab("短视频", createTextPanel("TAB 01"));
 
         // 创建第 2 个选项卡（选项卡包含 标题 和 图标）
-        tabbedPane.addTab("Tab02", new ImageIcon("bb.jpg"), createTextPanel("TAB 02"));
+        tabbedPane.addTab("电影", new ImageIcon("src/main/resources/pic/click.png"), createTextPanel("TAB 02"));
 
         // 创建第 3 个选项卡（选项卡包含 标题、图标 和 tip提示）
-        tabbedPane.addTab("Tab03", new ImageIcon("bb.jpg"), createTextPanel("TAB 03"), "This is a tab.");
+        tabbedPane.addTab("番剧", new ImageIcon("bb.jpg"), createTextPanel("TAB 03"), "This is a tab.");
 
 
         // 添加选项卡选中状态改变的监听器

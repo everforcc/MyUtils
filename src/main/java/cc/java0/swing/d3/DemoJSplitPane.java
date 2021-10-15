@@ -14,7 +14,7 @@ public class DemoJSplitPane {
         jf.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         jf.setLocationRelativeTo(null);
 
-        // 创建分隔面板
+        // 创建分隔面板,构造确认分隔方式 JSplitPane.VERTICAL_SPLIT
         JSplitPane splitPane = new JSplitPane();
 
         // 设置左右两边显示的组件
@@ -28,7 +28,13 @@ public class DemoJSplitPane {
         splitPane.setContinuousLayout(true);
 
         // 设置分隔条的初始位置
-        splitPane.setDividerLocation(150);
+        splitPane.setDividerLocation(149);
+
+        // 设置分割条的大小(宽度)
+        splitPane.setDividerSize(2);
+
+        // 设置分割条的位置
+        //splitPane.setDividerLocation(300/2);
 
         // 把分隔面板作为内容面板添加到窗口并显示
         jf.setContentPane(splitPane);

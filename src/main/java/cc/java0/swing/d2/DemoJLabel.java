@@ -13,7 +13,7 @@ public class DemoJLabel {
     public static void main(String[] args) throws MalformedURLException {
         JFrame jf = new JFrame("测试窗口");
         jf.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-
+        jf.setSize(200, 200);
         // 创建内容面板，默认使用流式布局
         JPanel panel = new JPanel();
 

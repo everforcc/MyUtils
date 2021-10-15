@@ -6,9 +6,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * @author guokailong 2021-10-14
+ * @author guokailong 2021-10-15
  */
-public class DemoJTextField {
+public class DemoJPasswordField {
 
     public static void main(String[] args) throws AWTException {
         JFrame jf = new JFrame("测试窗口");
@@ -18,23 +18,16 @@ public class DemoJTextField {
 
         JPanel panel = new JPanel();
 
-        // 创建文本框，指定可见列数为8列
-        final JTextField textField = new JTextField(10);
+        // 创建密码框，指定可见列数为10列
+        final JPasswordField passwordField = new JPasswordField(10);
+        panel.add(passwordField);
 
-        textField.setFont(new Font(null, Font.PLAIN, 20));
-
-        panel.add(textField);
-
-        // 创建一个按钮，点击后获取文本框中的文本
+        // 创建一个按钮，点击后获取密码框中输入的密码
         JButton btn = new JButton("提交");
-        btn.setFont(new Font(null, Font.PLAIN, 20));
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("提交: " + textField.getText());
-                System.out.println("调用后台逻辑,解析数据");
-                System.out.println("获得数据");
-                System.out.println("创建新页面,展示");
+                System.out.println("提交，密码为: " + new String(passwordField.getPassword()));
             }
         });
         panel.add(btn);
