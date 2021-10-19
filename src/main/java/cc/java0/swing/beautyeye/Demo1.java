@@ -14,6 +14,7 @@ public class Demo1 {
 
         try
         {
+            // 单独去网盘下载jar包
             //设置本属性将改变窗口边框样式定义
             // BeautyEyeLNFHelper.frameBorderStyle = BeautyEyeLNFHelper.FrameBorderStyle.osLookAndFeelDecorated;
             org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper.launchBeautyEyeLNF();
