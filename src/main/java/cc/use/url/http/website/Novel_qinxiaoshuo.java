@@ -1,6 +1,6 @@
 package cc.use.url.http.website;
 
-import cc.advanced.web.http.header.Header;
+import cc.resource.PropertiesHeader;
 import cc.advanced.web.http.utils.CrawDataParse;
 import cc.advanced.web.http.utils.HttpClientUtils;
 import cc.advanced.web.http.utils.HttpURLConnectionUtil;
@@ -75,13 +75,13 @@ public class Novel_qinxiaoshuo {
     private static final String novelUrl = "http://www.qinxiaoshuo.com/book/%e5%8f%9b%e9%80%86%e7%9a%84%e9%b2%81%e8%b7%af%e4%bf%ae";
     private static final String novelContent = "http://www.qinxiaoshuo.com/read/0/322/5d77babb56fec85e5b0f61f9.html";
     public static void novelName(){
-        String result = HttpClientUtils.getWebContent(novelUrl, Header.qinxiaoshuoMap());
+        String result = HttpClientUtils.getWebContent(novelUrl, PropertiesHeader.qinxiaoshuoMap());
         System.out.println(result);
         Document document = Jsoup.parse(result);
         //System.out.println(document.getElementsByClass("volumes"));
     }
     static String connect(String firstNovelContent){
-        String result = HttpClientUtils.getWebContent(firstNovelContent, Header.qinxiaoshuoMap());
+        String result = HttpClientUtils.getWebContent(firstNovelContent, PropertiesHeader.qinxiaoshuoMap());
         if(result==null){
             connect(firstNovelContent);;
         }
@@ -92,7 +92,7 @@ public class Novel_qinxiaoshuo {
     public static void novelContent(String firstNovelContent,String title,int i,int pn){
         // 或者换一种方式解决编码问题
         // 取出html
-        String result = HttpURLConnectionUtil.sendToUrlRequest(firstNovelContent,"GET","utf-8", Header.qinxiaoshuoMap());
+        String result = HttpURLConnectionUtil.sendToUrlRequest(firstNovelContent,"GET","utf-8", PropertiesHeader.qinxiaoshuoMap());
         Document document = Jsoup.parse(result);
 
         // 得到最后一个按钮的连接
@@ -153,7 +153,7 @@ public class Novel_qinxiaoshuo {
     }
 
     public static void novelContentNextPage(String novelContent){
-        String result = HttpClientUtils.getWebContent(novelContent, Header.qinxiaoshuoMap());
+        String result = HttpClientUtils.getWebContent(novelContent, PropertiesHeader.qinxiaoshuoMap());
         System.out.println(result);
         Document document = Jsoup.parse(result);
     }
@@ -178,7 +178,7 @@ public class Novel_qinxiaoshuo {
     public static void saveImg(String url,String suffix,int pn,int i){
         InputStream inputStream = null;
         try {
-            inputStream = HttpURLConnectionUtil.getStream(url,"GET","", Header.qinxiaoshuoMap());
+            inputStream = HttpURLConnectionUtil.getStream(url,"GET","", PropertiesHeader.qinxiaoshuoMap());
             DecimalFormat df = new DecimalFormat("000");
             String formatIMGResult = String.format(fileIMGFormat,novelName,df.format(i),suffix,pn);
             InputStreamUtils.downFileByStream(inputStream,filePath + "txt" + File.separator + formatIMGResult ,url.substring(url.lastIndexOf("/") + 1));

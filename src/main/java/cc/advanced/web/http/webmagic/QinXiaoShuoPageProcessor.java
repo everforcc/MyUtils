@@ -1,6 +1,6 @@
 package cc.advanced.web.http.webmagic;
 
-import cc.advanced.web.http.header.Header;
+import cc.resource.PropertiesHeader;
 import cc.constant.ConstantFile;
 import cc.core.io.PrintWriterUtils;
 import com.alibaba.fastjson.JSON;
@@ -115,7 +115,7 @@ public class QinXiaoShuoPageProcessor implements PageProcessor {
     @Override
     public Site getSite() {
         // Header.qinxiaoshuoMap()
-        Map<String,String> map = Header.qinxiaoshuoMap();
+        Map<String,String> map = PropertiesHeader.qinxiaoshuoMap();
 
         /*if (map != null && map.size() > 0) {
             for (Map.Entry entry : map.entrySet()) {
@@ -136,7 +136,7 @@ public class QinXiaoShuoPageProcessor implements PageProcessor {
         Request request = new Request(bookMenu);
         request.setMethod(HttpConstant.Method.POST);
         //request.addCookie("Cookie",cookie);
-        Map<String,String> map = Header.qinxiaoshuoMap();
+        Map<String,String> map = PropertiesHeader.qinxiaoshuoMap();
         if (map != null && map.size() > 0) {
             for (Map.Entry entry : map.entrySet()) {
                 //System.out.println((String) entry.getKey() + "---" + conn.getRequestProperty((String) entry.getKey()));

@@ -1,18 +1,13 @@
 package cc.use.url.http.game;
 
-import cc.advanced.web.http.header.Header;
+import cc.resource.PropertiesHeader;
 import cc.advanced.web.http.utils.HttpURLConnectionUtil;
 import cc.core.io.PrintWriterUtils;
-import cc.utils.Properties;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import lombok.extern.log4j.Log4j;
-import org.apache.commons.lang.StringUtils;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
 
-import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -81,7 +76,7 @@ public class Ys {
 
         // 随机数
         // 默认写出数据
-        String result = HttpURLConnectionUtil.sendToUrlRequest(url,"GET","UTF-8", Header.ysMap());
+        String result = HttpURLConnectionUtil.sendToUrlRequest(url,"GET","UTF-8", PropertiesHeader.ysMap());
 
         //System.out.println(result);
         log.info(result);

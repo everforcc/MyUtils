@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Test {
+public class TestJCraw {
 
 	public void testInt() {
 		String i = "1";

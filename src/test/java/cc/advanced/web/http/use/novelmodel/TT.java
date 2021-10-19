@@ -1,7 +1,7 @@
 package cc.advanced.web.http.use.novelmodel;
 
 import cc.core.io.InputStreamUtils;
-import cc.advanced.web.http.header.Header;
+import cc.resource.PropertiesHeader;
 import cc.use.url.http.novelmodel.model.*;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
@@ -31,7 +31,7 @@ public class TT {
     static{
 
         // 根目录
-        rootModel.setHeaders(Header.yulinzhanye_searchMap());
+        rootModel.setHeaders(PropertiesHeader.yulinzhanye_searchMap());
         rootModel.setCharset("gbk");
         rootModel.setRootUrl("http://www.yulinzhanye.la");
         rootModel.setSearchUrl("http://www.yulinzhanye.la/s.php");

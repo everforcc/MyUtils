@@ -40,26 +40,9 @@ public class HttpClientDemo {
         CloseableHttpResponse response = null;
         try {
             response = httpClient.execute(httpGet);// 执行 http get请求
-        } catch (ClientProtocolException e) {
-            e.printStackTrace(); // http协议异常，
-        } catch (IOException e) {
-            // 网络都会有io异常
-            e.printStackTrace();
-        }
-        HttpEntity httpEntity = response.getEntity(); // 获取返回实体
-        try {
+            HttpEntity httpEntity = response.getEntity(); // 获取返回实体
             System.out.println(EntityUtils.toString(httpEntity, "GB2312"));
-        } catch (ParseException e) {// 解析异常
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
             response.close(); // 关闭流
-        } catch (IOException e) { // IO 异常
-            e.printStackTrace();
-        }
-        try {
             httpClient.close();
         } catch (IOException e) { // IO 异常
             e.printStackTrace();

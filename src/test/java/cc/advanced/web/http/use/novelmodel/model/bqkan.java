@@ -1,6 +1,6 @@
 package cc.advanced.web.http.use.novelmodel.model;
 
-import cc.advanced.web.http.header.Header;
+import cc.resource.PropertiesHeader;
 import cc.use.url.http.novelmodel.flow.CrawFlow2;
 import cc.use.url.http.novelmodel.model.*;
 import org.junit.jupiter.api.Test;
@@ -20,7 +20,7 @@ public class bqkan {
     static RootModel rootModel = new RootModel();
     static {
         // 网站根目录
-        rootModel.setHeaders(Header.bqkanMap());
+        rootModel.setHeaders(PropertiesHeader.bqkanMap());
         rootModel.setRootUrl("https://www.bqkan.com/");
         rootModel.setCharset("gbk");
         rootModel.setNovelTypeUrlPattern("//div[@class='nav']//li//a/@href/regex('/[a-z]{1,20}xiaoshuo/')");

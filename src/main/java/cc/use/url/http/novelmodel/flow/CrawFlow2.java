@@ -2,7 +2,7 @@ package cc.use.url.http.novelmodel.flow;
 
 
 import cc.core.io.InputStreamUtils;
-import cc.advanced.web.http.header.Header;
+import cc.resource.PropertiesHeader;
 import cc.use.url.http.novelmodel.Novel_init;
 import cc.use.url.http.novelmodel.model.BookModel;
 import cc.use.url.http.novelmodel.model.ContentModel;
@@ -69,7 +69,7 @@ public class CrawFlow2 {
             rootModel.setContentModel(contentModel);
 
             rootModel.setRootUrl("rootModel");
-            rootModel.setHeaders(Header.yulinzhanyeMap());
+            rootModel.setHeaders(PropertiesHeader.yulinzhanyeMap());
             rootModel.setCharset("utf-8");
             rootModel.setRootUrl("http://www.yulinzhanye.la");
 
