@@ -10,6 +10,16 @@ import java.awt.event.ActionListener;
 public class DemoJButton {
 
     public static void main(String[] args) {
+        try
+        {
+            //设置本属性将改变窗口边框样式定义
+            // BeautyEyeLNFHelper.frameBorderStyle = BeautyEyeLNFHelper.FrameBorderStyle.osLookAndFeelDecorated;
+            org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper.launchBeautyEyeLNF();
+        }
+        catch(Exception e)
+        {
+            //TODO exception
+        }
         //t1();
         t2();
     }
