@@ -11,6 +11,17 @@ import java.awt.event.ActionListener;
 public class DemoJTextField {
 
     public static void main(String[] args) throws AWTException {
+        try
+        {
+            //设置本属性将改变窗口边框样式定义
+            // BeautyEyeLNFHelper.frameBorderStyle = BeautyEyeLNFHelper.FrameBorderStyle.osLookAndFeelDecorated;
+            org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper.launchBeautyEyeLNF();
+        }
+        catch(Exception e)
+        {
+            //TODO exception
+        }
+
         JFrame jf = new JFrame("测试窗口");
         jf.setSize(300, 300);
         jf.setLocationRelativeTo(null);
