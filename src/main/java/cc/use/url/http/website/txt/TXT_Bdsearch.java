@@ -1,4 +1,4 @@
-package cc.use.url.http.website;
+package cc.use.url.http.website.txt;
 
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;

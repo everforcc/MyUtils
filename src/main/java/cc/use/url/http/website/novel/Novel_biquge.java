@@ -1,4 +1,4 @@
-package cc.use.url.http.website;
+package cc.use.url.http.website.novel;
 
 import cc.resource.PropertiesHeader;
 import cc.advanced.web.http.utils.HttpClientUtils;

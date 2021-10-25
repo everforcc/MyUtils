@@ -1,4 +1,4 @@
-package cc.use.url.http.website;
+package cc.use.url.http.website.txt;
 
 import cc.constant.ConstantCharSet;
 import cc.resource.PropertiesHeader;

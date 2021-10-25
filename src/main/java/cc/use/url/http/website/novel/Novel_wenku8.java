@@ -1,4 +1,4 @@
-package cc.use.url.http.website;
+package cc.use.url.http.website.novel;
 
 import cc.constant.ConstantFile;
 import cc.use.file.WenkuNovelMenu;
@@ -8,6 +8,7 @@ import cc.advanced.web.http.utils.CrawDataParse;
 import cc.advanced.web.http.utils.HttpURLConnectionUtil;
 import cc.core.io.PrintWriterUtils;
 import cc.core.regex.utils.RegexUtils;
+import cc.use.url.http.website.constant.Constant_use;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;

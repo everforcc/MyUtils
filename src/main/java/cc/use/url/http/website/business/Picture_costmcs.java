@@ -1,4 +1,4 @@
-package cc.use.url.http.website;
+package cc.use.url.http.website.business;
 
 import cc.advanced.web.http.utils.HttpURLConnectionUtil;
 import cc.constant.ConstantFile;
