@@ -38,4 +38,14 @@ public class PropertiesJSON {
         return getJSON(fileName);
     }
 
+    public static String jsonPath(){
+        String fileName = "/jsonpath/jsonpath.json";
+        return getJSON(fileName);
+    }
+
+    public static String jpexample(){
+        String fileName = "/jsonpath/jp-example.json";
+        return getJSON(fileName);
+    }
+
 }

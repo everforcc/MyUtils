@@ -26,7 +26,8 @@ public class ObjRef {
             // getMehtod(clazz);
             //
             //
-            getInnerClass();
+            //getInnerClass();
+            getInstance();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -41,6 +42,9 @@ public class ObjRef {
         //  3. 调用某个对象的 getClass()
         //  String str = new String();
         //  Class<?> clazzstr = str.getClass();
+        String packageName = clazz.getPackage().getName();
+        System.out.println(packageName);
+        System.out.println(packageName.substring(packageName.lastIndexOf(".")+1));
         return clazz;
     }
 

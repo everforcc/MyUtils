@@ -17,6 +17,19 @@ public class DemoJProgressBar {
     private static int currentProgress = MIN_PROGRESS;
 
     public static void main(String[] args) {
+
+        try
+        {
+            // 单独去网盘下载jar包
+            //设置本属性将改变窗口边框样式定义
+            // BeautyEyeLNFHelper.frameBorderStyle = BeautyEyeLNFHelper.FrameBorderStyle.osLookAndFeelDecorated;
+            org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper.launchBeautyEyeLNF();
+        }
+        catch(Exception e)
+        {
+            //TODO exception
+        }
+
         JFrame jf = new JFrame("测试窗口");
         jf.setSize(250, 250);
         jf.setLocationRelativeTo(null);
