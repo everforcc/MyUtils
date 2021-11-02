@@ -39,7 +39,7 @@ class TThread{
         }
 
         System.out.println("暂停10分钟");
-        Thread.sleep(1000 * 60 * 15);
+        Thread.sleep(1000 );//* 60 * 15
 
         ThreadPoolUtils.excuteFixed(new ThreadPoolUtilsUse("data1", i++));
     }

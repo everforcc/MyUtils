@@ -3,7 +3,7 @@ package cc.use.url.http.pic;
 import cc.constant.ConstantFile;
 import cc.core.io.PrintWriterUtils;
 import cc.advanced.web.http.webmagic.base.Constant;
-import cc.use.design.Print_Record;
+import cc.utils.Print_Record;
 import org.apache.commons.io.FileUtils;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;

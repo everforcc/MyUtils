@@ -1,4 +1,4 @@
-package cc.use.design;
+package cc.utils;
 
 import cc.core.date.utils.DateUtils;
 import cc.core.io.PrintWriterUtils;

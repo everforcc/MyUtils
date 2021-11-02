@@ -2,7 +2,7 @@ package cc.java0.cmd;
 
 import cc.constant.ConstantFile;
 import cc.core.io.InputStreamUtils;
-import cc.use.design.Print_Record;
+import cc.utils.Print_Record;
 
 import java.io.*;
 
