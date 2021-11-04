@@ -11,7 +11,7 @@ public class ConstantFile {
      * 比较乱，公共定义到这个位置
      */
 
-    public static String javaFilePath = ConstantFile.javaFilePath + "/test";
+    public static String javaFilePath = "C:/test";
 
     static {
         // 可以根据系统判断下windows和linux取不同的文件夹

@@ -1,6 +1,6 @@
 package cc.maven.excle.test;
 
-import cc.constant.ConstantFile;
+import cc.maven.excle.utils.read.ReadExcel;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -16,9 +16,23 @@ import java.io.IOException;
  */
 public class PoiTest {
 
+    /**
+     * 基本流程
+     * @param args
+     * @throws IOException
+     */
     public static void main(String[] args) throws IOException {
+        //createExcleFlow();
+        ReadExcel readExcel = new ReadExcel();
+        String fileName="/excle/员工信息.xlsx";
+        readExcel.flow(fileName);
+    }
 
-
+    /**
+     * 创建excle写入测试
+     * @throws IOException
+     */
+    public static void createExcleFlow() throws IOException {
         //创建工作簿 类似于创建Excel文件
         XSSFWorkbook workbook=new XSSFWorkbook();
         //创建 sheetname页名
@@ -51,7 +65,7 @@ public class PoiTest {
         row.createCell(3).setCellValue("2000-01-01");
         row.createCell(4).setCellValue("12121212122");
         //设定 路径
-        File file = new File(ConstantFile.javaFilePath + "/test/POI/员工信息.xlsx");
+        File file = new File("C:/test/excle/员工信息.xlsx");
         FileOutputStream stream = new FileOutputStream(file);
         // 需要抛异常
         workbook.write(stream);

@@ -1,8 +1,7 @@
-package cc.maven.excle.utils.dto;
+package cc.maven.excle.utils.utils;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 /**
  * @author

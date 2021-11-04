@@ -5,7 +5,7 @@ import org.apache.poi.ss.usermodel.IndexedColors;
 /**
  * @author everforcc 2021-09-30
  */
-public class ExcleColorUtils {
+public class ExcleColorTest {
 
     /**
      * excle中的颜色对应的RGB值
@@ -14,7 +14,5 @@ public class ExcleColorUtils {
     public static void main(String[] args) {
         System.out.println(IndexedColors.AQUA.getIndex());
     }
-
-
 
 }
