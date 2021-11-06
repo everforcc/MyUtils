@@ -6,7 +6,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
- * @author guokailong 2021-10-14
+ * @author everforcc 2021-10-14
  */
 public class DemoJLabel {
     // JLabel，标签。标签主要用于展示 文本 或 图片，也可以 同时显示文本和图片。

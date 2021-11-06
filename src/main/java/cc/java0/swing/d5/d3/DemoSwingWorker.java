@@ -3,7 +3,7 @@ package cc.java0.swing.d5.d3;
 import javax.swing.*;
 
 /**
- * @author guokailong 2021-10-19
+ * @author everforcc 2021-10-19
  */
 public class DemoSwingWorker {
 

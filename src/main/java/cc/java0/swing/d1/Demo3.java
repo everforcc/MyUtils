@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * @author guokailong 2021-10-15
+ * @author everforcc 2021-10-15
  */
 public class Demo3 {
 

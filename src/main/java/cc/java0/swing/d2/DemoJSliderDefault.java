@@ -5,7 +5,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 /**
- * @author guokailong 2021-10-15
+ * @author everforcc 2021-10-15
  */
 public class DemoJSliderDefault {
 

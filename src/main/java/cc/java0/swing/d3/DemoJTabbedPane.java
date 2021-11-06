@@ -6,7 +6,7 @@ import javax.swing.event.ChangeListener;
 import java.awt.*;
 
 /**
- * @author guokailong 2021-10-14
+ * @author everforcc 2021-10-14
  */
 public class DemoJTabbedPane {
     // JTabbedPane（选项卡面板） 类似浏览器的tag

@@ -5,7 +5,7 @@ import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
 import javax.swing.*;
 
 /**
- * @author guokailong 2021-10-19
+ * @author everforcc 2021-10-19
  */
 public class Demo1 {
 

@@ -1,14 +1,13 @@
-package cc.maven.excle.utils;
+package cc.maven.excle.utils.write;
 
 import cc.core.file.img.ColorRGB;
-import cc.maven.excle.utils.dto.EXCLEDataDto;
-import cc.maven.excle.utils.dto.EXCLEDto;
+import cc.maven.excle.utils.utils.EXCLEDataDto;
+import cc.maven.excle.utils.utils.EXCLEDto;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFColor;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,11 +19,32 @@ import java.util.Map;
  */
 public class EXCLEWriteUtils {
 
-    private static String targetFileName = "C:\\test\\excle\\eSheet-6.xls";
+    private static String targetFileName = "C:\\test\\excle\\eSheet-7.xls";
 
     // 测试数据
     public static void main(String[] args) {
+        try {
 
+            Map<Integer,List<String>> integerListMap = new HashMap<>();
+            List<String> list = new ArrayList<>();
+            list.add("123");
+            list.add("321");
+            list.add("333");
+            integerListMap.put(0,list);
+            list = new ArrayList<>();
+            list.add("aaa");
+            list.add("ccc");
+            list.add("bbb");
+            integerListMap.put(1,list);
+
+            EXCLEDto excleDto = createDate(integerListMap);
+            writeExcel(excleDto);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static EXCLEDto createDate(Map<Integer,List<String>> integerListMap){
         // excle
         EXCLEDto excleDto = new EXCLEDto();
 
@@ -37,30 +57,36 @@ public class EXCLEWriteUtils {
         // 单元格列
         Map<Integer,List<EXCLEDto.ERow>> integerListMapX = new HashMap<>();
 
-        // 单元格行
-        List<EXCLEDto.ERow> eRowList = new ArrayList<>();
-
+        for(Map.Entry entry:integerListMap.entrySet()){
+            // 单元格行
+            List<EXCLEDto.ERow> eRowList = new ArrayList<>();
+            Integer x = (Integer)entry.getKey();
+            List<String> stringList = (List<String>)entry.getValue();
+            for(String str:stringList){
+                eRowList.add(new EXCLEDto.ERow(new EXCLEDataDto(str)));
+            }
+            integerListMapX.put(x,eRowList);
+        }
         // 单元格值
-        eRowList.add(new EXCLEDto.ERow(new EXCLEDataDto("value1", ColorRGB.stringColorRGBAry.get("苍白的紫罗兰红色"))));
-        eRowList.add(new EXCLEDto.ERow(new EXCLEDataDto("value2", ColorRGB.stringColorRGBAry.get("蓟"))));
-        eRowList.add(new EXCLEDto.ERow(new EXCLEDataDto("value3", ColorRGB.stringColorRGBAry.get("李子"))));
-
-        integerListMapX.put(0,eRowList);
-        integerListMapX.put(4,eRowList);
+//        eRowList.add(new EXCLEDto.ERow(new EXCLEDataDto("value1", ColorRGB.stringColorRGBAry.get("苍白的紫罗兰红色"))));
+//        eRowList.add(new EXCLEDto.ERow(new EXCLEDataDto("value2", ColorRGB.stringColorRGBAry.get("蓟"))));
+//        eRowList.add(new EXCLEDto.ERow(new EXCLEDataDto("value3", ColorRGB.stringColorRGBAry.get("李子"))));
+//        integerListMapX.put(0,eRowList);
+//        integerListMapX.put(4,eRowList);
 
         eSheet.setIntegerListMapX(integerListMapX);
 
         stringESheetMap.put("eSheet-1",eSheet);
         stringESheetMap.put("eSheet-2",eSheet);
         excleDto.setStringESheetMap(stringESheetMap);
-
-        try {
-            writeExcel(excleDto);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        return excleDto;
     }
 
+    /**
+     * 按照main方法的流程创建实体类，传入，然后生成excle
+     * @param excleDto
+     * @throws Exception
+     */
     public static void writeExcel(EXCLEDto excleDto) throws Exception {
         //创建一份
         Workbook excel = new XSSFWorkbook();

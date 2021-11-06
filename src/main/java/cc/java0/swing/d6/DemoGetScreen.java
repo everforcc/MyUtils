@@ -6,7 +6,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 
 /**
- * @author guokailong 2021-10-14
+ * @author everforcc 2021-10-14
  */
 public class DemoGetScreen {
 

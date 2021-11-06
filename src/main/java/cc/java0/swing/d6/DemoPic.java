@@ -6,7 +6,7 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * @author guokailong 2021-10-19
+ * @author everforcc 2021-10-19
  */
 public class DemoPic {
 

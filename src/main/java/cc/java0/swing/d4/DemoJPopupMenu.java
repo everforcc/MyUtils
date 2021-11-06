@@ -8,7 +8,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 /**
- * @author guokailong 2021-10-18
+ * @author everforcc 2021-10-18
  */
 public class DemoJPopupMenu {
 

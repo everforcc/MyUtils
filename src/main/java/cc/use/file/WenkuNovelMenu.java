@@ -8,7 +8,7 @@ import cc.advanced.web.http.utils.HttpURLConnectionUtil;
 import cc.core.io.InputStreamUtils;
 import cc.core.io.PrintWriterUtils;
 import cc.core.regex.utils.RegexUtils;
-import cc.use.design.Print_Record;
+import cc.utils.Print_Record;
 
 import java.io.File;
 import java.io.InputStream;

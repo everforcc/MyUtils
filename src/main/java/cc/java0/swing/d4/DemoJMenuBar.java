@@ -7,7 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * @author guokailong 2021-10-18
+ * @author everforcc 2021-10-18
  */
 public class DemoJMenuBar {
 

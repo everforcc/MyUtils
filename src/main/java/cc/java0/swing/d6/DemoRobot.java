@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.InputEvent;
 
 /**
- * @author guokailong 2021-10-19
+ * @author everforcc 2021-10-19
  */
 public class DemoRobot {
 

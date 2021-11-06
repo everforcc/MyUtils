@@ -11,6 +11,13 @@ import java.util.Properties;
 @Slf4j
 public class SFTPUtils {
 
+    private static String sftpHost = "";
+    //private static String port = "";
+    private static String sftpUserName = "root";
+    private static String sftpPassword = "";
+    private static int sftpPort = 22;
+    private static int timeout = 6000;
+
     public static void main(String[] args) {
         try {
             String localFile = "C:\\test\\down.bat"; // 本地文件名
@@ -24,27 +31,12 @@ public class SFTPUtils {
     private static Session session = null;
     private static Channel channel = null;
 
-    private static String sftpHost = "";
-    //private static String port = "";
-    private static String sftpUserName = "root";
-    private static String sftpPassword = "";
-    private static int sftpPort = 22;
-    private static int timeout = 6000;
-
-
     public static void put(String localFile,String targetDir) throws Exception {
         ChannelSftp chSftp = getChannel();
         chSftp.put(localFile,targetDir,ChannelSftp.OVERWRITE);
         chSftp.quit();
         closeChannel();
     }
-
-
-
-
-
-
-
 
     // 生成可传输的对象
     private static ChannelSftp getChannel() throws JSchException {

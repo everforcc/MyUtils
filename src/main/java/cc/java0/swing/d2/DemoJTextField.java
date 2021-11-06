@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * @author guokailong 2021-10-14
+ * @author everforcc 2021-10-14
  */
 public class DemoJTextField {
 

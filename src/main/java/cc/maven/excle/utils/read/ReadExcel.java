@@ -1,4 +1,4 @@
-package cc.maven.excle.utils;
+package cc.maven.excle.utils.read;
 
 import cc.constant.ConstantFile;
 import org.apache.poi.hssf.usermodel.HSSFCell;
@@ -20,46 +20,106 @@ import java.util.Map;
  */
 public class ReadExcel {
 
-    @Test
-    public void test(){
-        System.out.println("1");
-        //1.工时汇总2020-4-23new.xlsx
-        String fileName="AD.xlsx";
-        flow(fileName);
-    }
+    /**
+     * 多了个插入sql的过程
+     */
 
+    //
     private final String filePath= ConstantFile.javaFilePath + "";
 
     // 例如 P,6  53
-    Map<String,String> map = new HashMap<String, String>();
+    // Map<String,String> map = new HashMap<>();
     // 行列 A-Z,AA-AZ    1-10 10-100
-    String value[][];
+    // String value[][];
 
     /**
      * 1.根据路径获取文件
      */
-
     public void flow(String fileName){
 
-        //1.获取指定路径的文件信息
+        //1. 获取指定路径的文件信息
         System.out.println("文件名:"+filePath+fileName);
         //获取文件类型
         int fileType = checkFileType(fileName);
-        //获取输入流
+        //2. 获取输入流
         FileInputStream fileInputStream = getFileStream(fileName);
 
-        //2.读取excle 输出流生成workbook
+        //3. 读取excle 输出流生成workbook
         Workbook wb = getWorkbook(fileType,fileInputStream);
 
-        //3.根据workbook读取信息
+        //4. 根据workbook读取信息
         loadFile(wb);
+    }
 
+    /**
+     * 1. 判断文件类型 是否为excle
+     * @param name
+     * @return
+     */
+    public int checkFileType(String name){
+        if(name==null||"".equals(name)){
+            try {
+                throw new Exception("文件名不能为空");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        if(isExcel2003(name)){
+            return 2003;
+        }
 
+        if(isExcel2007(name)){
+            return 2007;
+        }
+        return 0;
 
     }
 
+    /**
+     * 1.1
+     * @param filePath
+     * @return @描述：是否是2003的excel，返回true是2003
+     */
+    public static boolean isExcel2003(String filePath)  {
+        // .（点号）也是一个正则表达式，它匹配任何一个字符如："a" 或 "1"。
+        //  (?i) 表示所在位置右侧的表达式开启忽略大小写模式
+        return filePath.matches("^.+\\.(?i)(xls)$");
+    }
 
+    /**
+     * 1.2
+     * @param filePath
+     * @return @描述：是否是2007的excel，返回true是2007
+     */
+    public static boolean isExcel2007(String filePath)  {
+        return filePath.matches("^.+\\.(?i)(xlsx)$");
+    }
 
+    /**
+     * 2. 读取文件
+     * @param fileName
+     * @return
+     */
+    public FileInputStream getFileStream(String fileName){
+        File file = new File(filePath+fileName);
+        //获取输入流
+        FileInputStream fileInputStream = null;
+        try {
+            fileInputStream=new FileInputStream(file);
+            //fileInputStream.
+        } catch (FileNotFoundException e) {
+            System.out.println("获取file流出错");
+            e.printStackTrace();
+        }
+        return fileInputStream;
+    }
+
+    /**
+     * 3. 读取excle 输出流生成workbook
+     * @param fileType
+     * @param inputStream
+     * @return
+     */
     public Workbook getWorkbook(int fileType,InputStream inputStream){
         Workbook wb = null;
         switch (fileType){
@@ -93,52 +153,10 @@ public class ReadExcel {
         return wb;
     }
 
-
-    //判断文件类型 是否为excle
-    public int checkFileType(String name){
-        if(name==null||"".equals(name)){
-            try {
-                throw new Exception("文件名不能为空");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-        if(isExcel2003(name)){
-              return 2003;
-        }
-
-        if(isExcel2007(name)){
-              return 2007;
-        }
-        return 0;
-
-    }
-
-    public FileInputStream getFileStream(String fileName){
-        File file = new File(filePath+fileName);
-        //获取输入流
-        FileInputStream fileInputStream = null;
-        try {
-            fileInputStream=new FileInputStream(file);
-            //fileInputStream.
-        } catch (FileNotFoundException e) {
-            System.out.println("获取file流出错");
-            e.printStackTrace();
-        }
-        return fileInputStream;
-    }
-
-    // @描述：是否是2003的excel，返回true是2003
-    public static boolean isExcel2003(String filePath)  {
-        // .（点号）也是一个正则表达式，它匹配任何一个字符如："a" 或 "1"。
-        //  (?i) 表示所在位置右侧的表达式开启忽略大小写模式
-        return filePath.matches("^.+\\.(?i)(xls)$");
-    }
-    //@描述：是否是2007的excel，返回true是2007
-        public static boolean isExcel2007(String filePath)  {
-        return filePath.matches("^.+\\.(?i)(xlsx)$");
-    }
-
+    /**
+     * 4. 根据workbook读取信息
+     * @param wb
+     */
     public void loadFile(Workbook wb){
         //获取sheet页的数量
         int sheetNum = wb.getNumberOfSheets();
@@ -210,10 +228,8 @@ public class ReadExcel {
             System.out.println(s);
         }
 
-
-
-
     }
+
     // 读取指定的行列 坐标和值
 
 }
