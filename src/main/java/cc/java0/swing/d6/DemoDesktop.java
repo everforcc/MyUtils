@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.net.URI;
 
 /**
- * @author guokailong 2021-10-19
+ * @author everforcc 2021-10-19
  */
 public class DemoDesktop {
 

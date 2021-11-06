@@ -8,7 +8,7 @@ import javax.swing.table.TableModel;
 import java.awt.*;
 
 /**
- * @author guokailong 2021-10-19
+ * @author everforcc 2021-10-19
  */
 public class DemoJTableModelListener {
 

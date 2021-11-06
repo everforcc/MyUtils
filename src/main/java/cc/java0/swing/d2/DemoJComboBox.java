@@ -5,7 +5,7 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
 /**
- * @author guokailong 2021-10-15
+ * @author everforcc 2021-10-15
  */
 public class DemoJComboBox {
 

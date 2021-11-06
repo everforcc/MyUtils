@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author guokailong 2021-10-26
+ * @author everforcc 2021-10-26
  */
 public class FSCard {
 

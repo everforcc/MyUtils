@@ -1,7 +1,7 @@
 package cc.use.url.http.game.ys.dto;
 
 /**
- * @author guokailong 2021-10-26
+ * @author everforcc 2021-10-26
  */
 public class CardTree {
 

@@ -3,7 +3,7 @@ package cc.java0.swing.d3;
 import javax.swing.*;
 
 /**
- * @author guokailong 2021-10-14
+ * @author everforcc 2021-10-14
  */
 public class DemoJSplitPane {
 

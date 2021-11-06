@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.*;
 
 /**
- * @author guokailong 2021-10-26
+ * @author everforcc 2021-10-26
  */
 public class FSCard_Algo {
 
