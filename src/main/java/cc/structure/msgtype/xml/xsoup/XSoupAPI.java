@@ -2,8 +2,6 @@ package cc.structure.msgtype.xml.xsoup;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 import org.testng.Assert;
 import us.codecraft.xsoup.Xsoup;
 
@@ -20,14 +18,15 @@ public class XSoupAPI {
     public static void main(String[] args) {
 
         try {
-            menu();
-        } catch (IOException e) {
+            //menu();
+            testSelect();
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        // t01();
+
     }
 
-    static void t01(){
+    static void testSelect(){
         String html = "<html><div><a href='https://github.com'>github.com</a></div>" +
                 "<table><tr><td>a</td><td>b</td></tr></table></html>";
 
@@ -35,6 +34,7 @@ public class XSoupAPI {
 
         System.out.println(document.body());
 
+        // jsoup1.11.3 高版本解析会有问题
         String result = Xsoup.compile("//a/@href").evaluate(document).get();
 
         System.out.println(result);
