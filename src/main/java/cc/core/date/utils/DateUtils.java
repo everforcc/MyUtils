@@ -52,6 +52,7 @@ public class DateUtils {
             String string = new SimpleDateFormat(pattern).format(new SimpleDateFormat("yyyy-MM-dd hh:mm").parse(voucherdate));
             return string;
         }
+        // 特殊情况 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
         return "0000-00-00";
     }
 
