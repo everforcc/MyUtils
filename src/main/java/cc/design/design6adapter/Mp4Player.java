@@ -1,4 +1,4 @@
-package cc.design.adapter;
+package cc.design.design6adapter;
 
 /**
  * @author c.c.

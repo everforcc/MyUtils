@@ -13,4 +13,7 @@ public class Circle extends Shape {
 
     String clo = "abc";
 
+    public Circle(String clo) {
+        this.clo = clo;
+    }
 }
