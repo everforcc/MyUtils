@@ -1,4 +1,4 @@
-package cc.design.proxy.type1;
+package cc.design.design13proxy.type1;
 
 import cc.constant.ConstantFile;
 

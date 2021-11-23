@@ -1,6 +1,6 @@
-package cc.design.proxy.type2;
+package cc.design.design13proxy.type2;
 
-import cc.design.proxy.type2.impl.UserServiceImpl_1;
+import cc.design.design13proxy.type2.impl.UserServiceImpl_1;
 
 /**
  * @author everforcc 2021-09-25

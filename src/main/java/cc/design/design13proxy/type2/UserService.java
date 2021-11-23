@@ -1,4 +1,4 @@
-package cc.design.proxy.type2;
+package cc.design.design13proxy.type2;
 
 /**
  * @author everforcc 2021-09-25
