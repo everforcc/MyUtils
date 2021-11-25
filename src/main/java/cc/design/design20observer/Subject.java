@@ -1,4 +1,4 @@
-package cc.design.observer;
+package cc.design.design20observer;
 
 /**
  * @author c.c.
@@ -23,7 +23,14 @@ public class Subject {
 
     public void attach(Observer observer){
         observers.add(observer);
+        //observers.remove(observer);
+        System.out.println("加入通知");
+    }
+
+    public void cancelAttach(Observer observer){
+        //observers.add(observer);
         observers.remove(observer);
+        System.out.println("取消通知");
     }
 
     public void notifyAllObservers(){

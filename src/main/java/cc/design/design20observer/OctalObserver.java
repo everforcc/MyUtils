@@ -1,4 +1,4 @@
-package cc.design.observer;
+package cc.design.design20observer;
 
 /**
  * @author c.c.
