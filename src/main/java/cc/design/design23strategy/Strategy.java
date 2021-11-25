@@ -1,4 +1,4 @@
-package cc.design.strategy;
+package cc.design.design23strategy;
 
 /**
  * @author c.c.

@@ -1,4 +1,4 @@
-package cc.design.template;
+package cc.design.design24template;
 
 /**
  * @author c.c.
