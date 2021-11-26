@@ -1,7 +1,7 @@
 package cc.use.url.http.novel;
 
 import cc.resource.PropertiesHeader;
-import cc.advanced.web.http.utils.CrawDataParse;
+import cc.advanced.web.craw.utils.CrawDataParse;
 import cc.advanced.web.http.utils.HttpClientUtils;
 import cc.advanced.web.http.utils.HttpURLConnectionUtil;
 import cc.constant.ConstantFile;

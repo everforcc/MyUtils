@@ -1,4 +1,4 @@
-package cc.advanced.web.http.selenium;
+package cc.advanced.web.craw.selenium;
 
 import cc.constant.ConstantFile;
 import cc.core.io.PrintWriterUtils;

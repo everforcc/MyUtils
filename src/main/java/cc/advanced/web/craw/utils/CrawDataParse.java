@@ -1,4 +1,4 @@
-package cc.advanced.web.http.utils;
+package cc.advanced.web.craw.utils;
 
 /**
  * @author c.c.

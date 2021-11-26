@@ -1,4 +1,4 @@
-package cc.advanced.web.http.webmagic.base;
+package cc.advanced.web.craw.webmagic.base;
 
 /**
  * @author c.c.

@@ -41,26 +41,29 @@ public class Print_Record {
 
 
 
-    public void println(String msg){
-        String location="";
-        StackTraceElement[] stacks = Thread.currentThread().getStackTrace();
-        // 这里还可以根据包名 来分类 保存日志
-        location = "[["+stacks[2].getClassName() + "](" + stacks[2].getMethodName() + ")" + "" + stacks[2].getLineNumber() + "]";
-        msg = DateUtils.nowTimeRegex("yyyy-MM-dd hh:mm:ss ")+" : " + location + " --- " +msg ;
-        System.out.println( msg );
-
-        PrintWriterUtils.fileWriter(filePath, fileName, msg + "\r\n");
+    public void println(String msg,String... formatMsg){
+        print(msg,"cor",formatMsg);
     }
 
-    public void printErrln(String msg){
+    public void printErrln(String msg,String... formatMsg){
+        print(msg,"err",formatMsg);
+    }
+
+    private void print(String msg,String type,String... formatMsg){
         String location="";
         StackTraceElement[] stacks = Thread.currentThread().getStackTrace();
         // 这里还可以根据包名 来分类 保存日志
         location = "[["+stacks[2].getClassName() + "](" + stacks[2].getMethodName() + ")" + "" + stacks[2].getLineNumber() + "]";
-        msg = DateUtils.nowTimeRegex("yyyy-MM-dd hh:mm:ss ")+" err : " + location + " --- " +msg ;
-        System.err.println( msg );
-
-        PrintWriterUtils.fileWriter(filePath,fileName,msg + "\r\n");
+        msg = DateUtils.nowTimeRegex("yyyy-MM-dd hh:mm:ss ") + type + " : " + location + " --- " + String.format(msg,formatMsg) ;
+        if("err".equals(type)) {
+            System.err.println( msg );
+        }else {
+            System.out.println( msg );
+        }
+        if(!"".equals(filePath)) {
+            System.out.println(filePath);
+            PrintWriterUtils.fileWriter(filePath, fileName, msg + "\r\n");
+        }
     }
 
 }

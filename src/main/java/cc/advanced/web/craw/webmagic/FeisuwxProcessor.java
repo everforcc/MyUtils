@@ -1,4 +1,4 @@
-package cc.advanced.web.http.webmagic;
+package cc.advanced.web.craw.webmagic;
 
 import cc.constant.ConstantFile;
 import us.codecraft.webmagic.Page;

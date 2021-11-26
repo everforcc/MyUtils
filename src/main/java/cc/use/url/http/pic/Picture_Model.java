@@ -2,7 +2,7 @@ package cc.use.url.http.pic;
 
 import cc.constant.ConstantFile;
 import cc.core.io.PrintWriterUtils;
-import cc.advanced.web.http.webmagic.base.Constant;
+import cc.advanced.web.craw.webmagic.base.Constant;
 import cc.utils.Print_Record;
 import org.apache.commons.io.FileUtils;
 import org.jsoup.Connection;

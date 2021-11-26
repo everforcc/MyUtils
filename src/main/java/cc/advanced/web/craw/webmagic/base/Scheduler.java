@@ -1,4 +1,4 @@
-package cc.advanced.web.http.webmagic.base;
+package cc.advanced.web.craw.webmagic.base;
 
 import java.util.Timer;
 

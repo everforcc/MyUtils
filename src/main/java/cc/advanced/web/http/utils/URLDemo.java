@@ -1,5 +1,7 @@
 package cc.advanced.web.http.utils;
 
+import cc.utils.Print_Record;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -8,6 +10,8 @@ import java.net.URL;
 import java.net.URLConnection;
 
 public class URLDemo {
+
+    private static Print_Record print_record = Print_Record.getInstanse("");
 
     // 请求要素，
 
@@ -21,6 +25,7 @@ public class URLDemo {
     // url基本含义
     public static void main(String[] args) {
         urlMethod();
+        URLConnectionMethod();
         // 路径中文的加密解密
         //nextUrl = URLDecoder.decode(nextUrl);
     }
@@ -43,14 +48,19 @@ public class URLDemo {
             System.out.println("默认端口：" + url.getDefaultPort());
             System.out.println("请求参数：" + url.getQuery());
             System.out.println("定位位置：" + url.getRef());
+            print_record.println("定位位置：[%s]",url.getRef());
             System.out.println(url.getProtocol() + "://" + url.getHost());
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+    public static void println(String msg,String... format){
+        System.out.println(String.format(msg,format));
+    }
+
     // url 校验
-    void URLConnectionMethod() {
+    static void URLConnectionMethod() {
         try {
             URL url = new URL("http://www.runoob.com");
             URLConnection urlConnection = url.openConnection();

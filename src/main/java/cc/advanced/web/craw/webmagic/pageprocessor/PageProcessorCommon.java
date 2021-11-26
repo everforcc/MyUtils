@@ -1,4 +1,4 @@
-package cc.advanced.web.http.webmagic.pageprocessor;
+package cc.advanced.web.craw.webmagic.pageprocessor;
 
 import cc.constant.ConstantCharSet;
 import org.jsoup.Jsoup;

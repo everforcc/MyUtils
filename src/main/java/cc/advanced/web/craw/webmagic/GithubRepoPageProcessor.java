@@ -1,4 +1,4 @@
-package cc.advanced.web.http.webmagic;
+package cc.advanced.web.craw.webmagic;
 
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
