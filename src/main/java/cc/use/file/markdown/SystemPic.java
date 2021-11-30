@@ -18,7 +18,7 @@ public class SystemPic {
         //parseMsg("");
 
         //
-        File file = new File(ConstantFile.javaFilePath + "");
+        File file = new File(ConstantFile.L1_javaFilePath + "");
         /*System.out.println(file.getParent());
         System.out.println(file.getParentFile());
         System.out.println(file.getName());*/
@@ -68,7 +68,7 @@ public class SystemPic {
     }
 
     public static void saveMD(String fileName,String content){
-        PrintWriterUtils.fileWriter(ConstantFile.javaFilePath + "/图片\\", "图片-1.md",content + "\r\n");
+        PrintWriterUtils.fileWriter(ConstantFile.L1_javaFilePath + "/图片\\", "图片-1.md",content + "\r\n");
     }
 
 }

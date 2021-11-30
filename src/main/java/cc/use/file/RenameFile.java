@@ -25,7 +25,7 @@ public class RenameFile implements IFileUtils {
     }
 
     public static void listFile(){
-        String filePath = ConstantFile.javaFilePath + "";
+        String filePath = ConstantFile.L1_javaFilePath + "";
         FileUtils.recursion(filePath,new RenameFile());
     }
 

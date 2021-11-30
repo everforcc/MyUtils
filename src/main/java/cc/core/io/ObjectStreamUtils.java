@@ -24,7 +24,7 @@ public class ObjectStreamUtils {
 
     public void writeObj(String filePath,String fileName){
         try {
-            FileOutputStream fos = new FileOutputStream(ConstantFile.javaFilePath + "/test/integer");
+            FileOutputStream fos = new FileOutputStream(ConstantFile.L1_javaFilePath + "/test/integer");
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             Integer integer = new Integer(1);
             oos.writeObject(integer);
@@ -38,7 +38,7 @@ public class ObjectStreamUtils {
 
     public void readObj(String filePath,String fileName){
         try {
-            FileInputStream fis = new FileInputStream(ConstantFile.javaFilePath + "/test/integer");
+            FileInputStream fis = new FileInputStream(ConstantFile.L1_javaFilePath + "/test/integer");
             ObjectInputStream ois = new ObjectInputStream(fis);
             Integer integer = (Integer)ois.readObject();
             System.out.println(integer);

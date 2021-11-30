@@ -23,7 +23,7 @@ public class CmdUtils {
 
 
 
-    Print_Record print_record = Print_Record.getInstanse(ConstantFile.javaFilePath + "");
+    Print_Record print_record = Print_Record.getInstanse(ConstantFile.L1_javaFilePath + "");
     // 目前使用这个，下面的其他方法还需要再整理
     public static String precessType="cmd /c ";
 

@@ -35,7 +35,7 @@ public class Novel_wenku8_back {
     private static String novelName = "Fate Zero";
 
     private static String splitChapter = "";
-    private static String dirBase = ConstantFile.javaFilePath + "\\craw\\";
+    private static String dirBase = ConstantFile.L1_javaFilePath + "\\craw\\";
     private static String dir = "www.wenku8.net\\";
 
     // 上一章，下一章，类似小说的做法

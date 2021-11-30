@@ -36,7 +36,7 @@ public class FundsClient {
         System.out.println("1");
         Date date1 = new Date();
         try {
-            String aa = PrintWriterUtils.fileReader(ConstantFile.javaFilePath + "/test/生产报文.txt");
+            String aa = PrintWriterUtils.fileReader(ConstantFile.L1_javaFilePath + "/test/生产报文.txt");
             System.out.println("2");
             Object[] a= new Object[]{aa};
             System.out.println("3");

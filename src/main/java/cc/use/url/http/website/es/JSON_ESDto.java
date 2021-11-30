@@ -88,7 +88,7 @@ public class JSON_ESDto {
         word.append("}");
         //System.out.println("响应内容为:  " + dto);
         // File file = new File(ConstantFile.javaFilePath + "\\es\\");
-        PrintWriterUtils.fileWriter(new File(ConstantFile.javaFilePath + "\\es\\"+ClassName+".java"),word.toString());
+        PrintWriterUtils.fileWriter(new File(ConstantFile.L1_javaFilePath + "\\es\\"+ClassName+".java"),word.toString());
     }
 
 }

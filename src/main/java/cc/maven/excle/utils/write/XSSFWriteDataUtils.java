@@ -1,5 +1,6 @@
 package cc.maven.excle.utils.write;
 
+import cc.constant.ConstantFile;
 import cc.maven.excle.dto.EXCLEDataDto;
 import cc.maven.excle.dto.EXCLEDto;
 import org.apache.poi.ss.usermodel.*;
@@ -18,7 +19,7 @@ import java.util.Map;
  */
 public class XSSFWriteDataUtils {
 
-    private static String targetFileName = "C:\\test\\excle\\eSheet-7.xls";
+    private static String targetFileName = ConstantFile.L1_javaFilePath + ConstantFile.L2_excle +  "/eSheet-8.xls";
 
     // 测试数据
     public static void main(String[] args) {

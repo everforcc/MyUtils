@@ -4,8 +4,6 @@ import cc.constant.ConstantFile;
 import cc.core.file.zip.SevenZCompressUtils;
 import lombok.extern.slf4j.Slf4j;
 
-import java.io.File;
-
 /**
  * @author c.c.
  * @date 2021/2/8
@@ -16,7 +14,7 @@ public class DirTo7z {
     // 密码
     private static final String passWord = "自己的密码";
     // 需要压缩的文件夹
-    private static final String sourceFilePath = ConstantFile.javaFilePath + "";
+    private static final String sourceFilePath = ConstantFile.L1_javaFilePath + "";
     // 是否进入文件夹
     private static final boolean isCD = true;
     // 文件后缀,可以多 "." 但不能少 "."

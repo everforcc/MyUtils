@@ -29,7 +29,7 @@ public class VideoUtil {
     private static final Logger LOGGER = LoggerFactory.getLogger(VideoUtil.class);
 
     public static void main(String[] args) {
-        String videoPath = ConstantFile.javaFilePath + "\\ffmpeg\\1.flv";
+        String videoPath = ConstantFile.L1_javaFilePath + "\\ffmpeg\\1.flv";
         Map<String, Object> screenshot = getScreenshot(videoPath);
         System.out.println(screenshot);
     }

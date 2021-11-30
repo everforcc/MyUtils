@@ -26,7 +26,7 @@ public class Sample {
 
 
         // 参数为本地图片路径
-        String image = ConstantFile.javaFilePath + "\\java\\test\\OCRmodel\\QQ图片20201222174346.jpg";
+        String image = ConstantFile.L1_javaFilePath + "\\java\\test\\OCRmodel\\QQ图片20201222174346.jpg";
         JSONObject res = client.basicGeneral(image, options);
         content = res.toString(2);
 

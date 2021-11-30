@@ -19,7 +19,7 @@ public class EncoderFile {
     public static void main(String[] args) {
         List<String> list = new ArrayList<String>();
 
-        String path = ConstantFile.javaFilePath + "\\java\\test\\invoice";
+        String path = ConstantFile.L1_javaFilePath + "\\java\\test\\invoice";
 
         String fileName="base64.png";
 

@@ -13,8 +13,8 @@ import java.io.File;
 public class SevenZCompressUtils {
 
     public static void main(String[] args) {
-        deCompression(ConstantFile.javaFilePath + "/001.7z",ConstantFile.javaFilePath + "/整理","pas");
-        compress(ConstantFile.javaFilePath + "/test-pas.7z","pas",ConstantFile.javaFilePath + "/001/*");
+        deCompression(ConstantFile.L1_javaFilePath + "/001.7z",ConstantFile.L1_javaFilePath + "/整理","pas");
+        compress(ConstantFile.L1_javaFilePath + "/test-pas.7z","pas",ConstantFile.L1_javaFilePath + "/001/*");
     }
 
     // 7z路径
@@ -26,7 +26,7 @@ public class SevenZCompressUtils {
 
     private String passWord = "自己的密码";
     // 需要压缩的文件夹
-    private String sourceFilePath = ConstantFile.javaFilePath + "";
+    private String sourceFilePath = ConstantFile.L1_javaFilePath + "";
     // 是否进入文件夹
     private boolean isCD = true;
     // 文件后缀,可以多 "." 但不能少 "."

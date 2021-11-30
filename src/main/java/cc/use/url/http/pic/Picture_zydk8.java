@@ -77,9 +77,9 @@ public class Picture_zydk8 {
         fileName = FileUtils.checkFileName(fileName);
         if (in.available() > 0) {
             // 下载字节流需要用到的
-            InputStreamUtils.downFileByStream(in, ConstantFile.javaFilePath + "\\craw\\www.zydk8.com\\" + dir + "\\", fileName, new BigDecimal(1));
+            InputStreamUtils.downFileByStream(in, ConstantFile.L1_javaFilePath + "\\craw\\www.zydk8.com\\" + dir + "\\", fileName, new BigDecimal(1));
         } else {
-            PrintWriterUtils.fileWriter(ConstantFile.javaFilePath + "\\craw\\www.zydk8.com\\" + dir + "\\", fileName + ".txt", url);
+            PrintWriterUtils.fileWriter(ConstantFile.L1_javaFilePath + "\\craw\\www.zydk8.com\\" + dir + "\\", fileName + ".txt", url);
         }
     }
 

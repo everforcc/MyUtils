@@ -28,7 +28,7 @@ public class InputStreamUtils {
         // 每个方法这里都加行 方法名
     }
 
-    static Print_Record print_record = Print_Record.getInstanse(ConstantFile.javaFilePath + "/craw/www.wenku8.net/log","log.txt");
+    static Print_Record print_record = Print_Record.getInstanse(ConstantFile.L1_javaFilePath + "/craw/www.wenku8.net/log","log.txt");
 
     // 入InputStream >> 岀FileOutputStream
     // 下载文件 带文件路径，文件名，文件大小

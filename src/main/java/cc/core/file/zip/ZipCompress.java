@@ -21,8 +21,8 @@ import java.util.zip.*;
  */
 public class ZipCompress {
 
-    private static String zipFilePath = ConstantFile.javaFilePath + "/java/onjava8/zip/test.zip";
-    private static String[] strings = {ConstantFile.javaFilePath + "/java/onjava8/zip/testzip.txt"};
+    private static String zipFilePath = ConstantFile.L1_javaFilePath + "/java/onjava8/zip/test.zip";
+    private static String[] strings = {ConstantFile.L1_javaFilePath + "/java/onjava8/zip/testzip.txt"};
     public static void main(String[] args) {
         /*t1(strings);
         t2(strings);*/

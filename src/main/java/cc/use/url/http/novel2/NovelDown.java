@@ -13,7 +13,7 @@ import org.jsoup.nodes.Document;
  */
 public class NovelDown implements Runnable {
 
-    private String filePath = ConstantFile.javaFilePath + "\\craw\\www.loveyuedu.com";
+    private String filePath = ConstantFile.L1_javaFilePath + "\\craw\\www.loveyuedu.com";
 
     private String menuName;
     private String url;

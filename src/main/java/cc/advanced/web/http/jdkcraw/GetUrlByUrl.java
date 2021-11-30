@@ -98,7 +98,7 @@ public class GetUrlByUrl {
 			/**
 			 * 设置存储URL
 			 */
-			pw = new PrintWriter(new FileWriter(ConstantFile.javaFilePath + "/SaveURL.txt"), true);
+			pw = new PrintWriter(new FileWriter(ConstantFile.L1_javaFilePath + "/SaveURL.txt"), true);
 
 			while ((buf = br.readLine()) != null) {
 				System.out.println(buf);

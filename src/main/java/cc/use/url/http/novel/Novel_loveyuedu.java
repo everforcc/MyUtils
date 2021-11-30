@@ -42,7 +42,7 @@ public class Novel_loveyuedu implements NovelFlow,Runnable {
 
 
     private static String novelName = "我的青春恋爱物语果然有问题";
-    private static String filePath = ConstantFile.javaFilePath + "\\java\\novel\\www.qinxiaoshuo.com\\" + novelName;
+    private static String filePath = ConstantFile.L1_javaFilePath + "\\java\\novel\\www.qinxiaoshuo.com\\" + novelName;
     private static final String firstNovelContent = "https://www.loveyuedu.com/yuedu/21531/";
 
     public static void main(String[] args) {

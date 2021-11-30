@@ -48,7 +48,7 @@ public class XPathDemo {
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         dbf.setValidating(false);
         DocumentBuilder db = dbf.newDocumentBuilder();
-        doc = db.parse(new FileInputStream(new File(ConstantFile.javaFilePath + "\\java\\test\\demo.xml")));
+        doc = db.parse(new FileInputStream(new File(ConstantFile.L1_javaFilePath + "\\java\\test\\demo.xml")));
 
         // 创建XPath对象
         XPathFactory factory = XPathFactory.newInstance();

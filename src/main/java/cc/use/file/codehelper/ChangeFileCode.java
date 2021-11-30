@@ -15,9 +15,9 @@ public class ChangeFileCode implements IFileUtils {
         // 1.以指定的编码读取文件，并以指定的编码写入新的文件
         try {
             String oldCode = ConstantCharSet.GBK;
-            String oldPath = ConstantFile.javaFilePath + "\\test\\novel";
+            String oldPath = ConstantFile.L1_javaFilePath + "\\test\\novel";
             String newCode = ConstantCharSet.UTF_8;
-            String newPath = ConstantFile.javaFilePath + "\\test\\ChangeCode";
+            String newPath = ConstantFile.L1_javaFilePath + "\\test\\ChangeCode";
 
             //changeCode(oldPath,oldCode, newCode,newPath);
 

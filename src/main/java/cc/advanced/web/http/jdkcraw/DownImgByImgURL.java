@@ -65,11 +65,11 @@ public class DownImgByImgURL {
 				/**
 				 * 创建文件夹和文件名
 				 */
-				File saveFile = new File(ConstantFile.javaFilePath + "");
+				File saveFile = new File(ConstantFile.L1_javaFilePath + "");
 				if (!saveFile.exists()) {
 					saveFile.mkdir();
 				}
-				FileOutputStream fo = new FileOutputStream(new File(ConstantFile.javaFilePath + "" + filedir + imageName));
+				FileOutputStream fo = new FileOutputStream(new File(ConstantFile.L1_javaFilePath + "" + filedir + imageName));
 
 				/**
 				 * 以流的方式进行下载

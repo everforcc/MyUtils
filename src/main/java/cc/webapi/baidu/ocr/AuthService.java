@@ -103,7 +103,7 @@ public class AuthService {
      * @throws Exception
      */
     public static void saveToken(String line) throws Exception{
-        File f = new File(ConstantFile.javaFilePath + "/test/BaiduOCR/token.txt");
+        File f = new File(ConstantFile.L1_javaFilePath + "/test/BaiduOCR/token.txt");
         FileWriter fw=new FileWriter (f);
         BufferedWriter out = new BufferedWriter(fw);
         out.write(line, 0, line.length());

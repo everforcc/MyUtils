@@ -53,7 +53,7 @@ public class Video_bilibili {
             // 快啊.! 这俩好想没啥区别 // 框架更快
             // FileUtils.copyInputStreamToFile(inputStream,new File(ConstantFile.javaFilePath + "//1.gif"));
             System.out.println(httpEntity.getContent().available());
-            InputStreamUtils.downFileByStream(httpEntity.getContent(), ConstantFile.javaFilePath + "\\java\\test","3.flv");
+            InputStreamUtils.downFileByStream(httpEntity.getContent(), ConstantFile.L1_javaFilePath + "\\java\\test","3.flv");
             //FileUtils.copyToFile(httpEntity.getContent(),new File(ConstantFile.javaFilePath + "\\java\\test\\2.flv"));
         }
         // buffer 包裹一下更快
@@ -76,7 +76,7 @@ public class Video_bilibili {
         conn.setRequestProperty("Referer", "https://www.bilibili.com/bangumi/play/ep336055?theme=movie&spm_id_from=333.851.b_62696c695f7265706f72745f6d6f766965.21");
         conn.setRequestProperty("X-Requested-With", " ShockwaveFlash/29.0.0.171");
         // 测试 io速度 网址的 缓存写法
-        FileUtils.copyToFile(conn.getInputStream(),new File(ConstantFile.javaFilePath + "\\java\\test\\ep336055.flv"));// 23:55
+        FileUtils.copyToFile(conn.getInputStream(),new File(ConstantFile.L1_javaFilePath + "\\java\\test\\ep336055.flv"));// 23:55
     }
 
 }

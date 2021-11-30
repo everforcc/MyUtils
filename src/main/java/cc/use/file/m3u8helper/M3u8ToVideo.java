@@ -24,11 +24,11 @@ public class M3u8ToVideo implements IFileUtils {
 
     public static void main(String[] args) {
         // 文件所在路径
-        String filePath = ConstantFile.javaFilePath + "/整理/m3u8";
+        String filePath = ConstantFile.L1_javaFilePath + "/整理/m3u8";
         // m3u8 旧路径
-        String oldPath = ConstantFile.javaFilePath + "/整理/test";
+        String oldPath = ConstantFile.L1_javaFilePath + "/整理/test";
         // m3u8 新路径
-        String newPath = ConstantFile.javaFilePath + "/整理/test";
+        String newPath = ConstantFile.L1_javaFilePath + "/整理/test";
 
         //String[] strings = {oldPath,newPath};
         FileUtils.recursion(filePath,new M3u8ToVideo());

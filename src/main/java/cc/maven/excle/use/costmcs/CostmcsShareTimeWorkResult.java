@@ -22,9 +22,9 @@ public class CostmcsShareTimeWorkResult {
     /* 当前月份 */
     public static final String yearMonth = "202012";
     // 要处理的文件
-    public static final String fileName = ConstantFile.javaFilePath + "/费用分摊\\20210106\\excle\\1.工时汇总2020-12月 - 更新1.6 -TO IT.xlsx" ;
+    public static final String fileName = ConstantFile.L1_javaFilePath + "/费用分摊\\20210106\\excle\\1.工时汇总2020-12月 - 更新1.6 -TO IT.xlsx" ;
     // 输出文件路径
-    public static final String filePath = ConstantFile.javaFilePath + "/费用分摊\\20210106\\sql\\01\\";
+    public static final String filePath = ConstantFile.L1_javaFilePath + "/费用分摊\\20210106\\sql\\01\\";
     // 表示每块区域的坐标
     // public static final String[] sheet1_HO={"C","S","2","14"};
 

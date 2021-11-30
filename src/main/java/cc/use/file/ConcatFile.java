@@ -16,8 +16,8 @@ public class ConcatFile implements IFileUtils {
     // ~~ 两个替换为一个或者加个点
     // 合并多个文件，例如按照章节下载的小说
     public static void main(String[] args) {
-       String filePath = ConstantFile.javaFilePath + "\\java\\果然我的青春恋爱喜剧搞错了(我的青春恋爱物语果然有问题)";
-       FileUtils.recursion(filePath,new ConcatFile(),ConstantFile.javaFilePath + "\\java\\我的青春恋爱物语果然有问题%s.md");
+       String filePath = ConstantFile.L1_javaFilePath + "\\java\\果然我的青春恋爱喜剧搞错了(我的青春恋爱物语果然有问题)";
+       FileUtils.recursion(filePath,new ConcatFile(),ConstantFile.L1_javaFilePath + "\\java\\我的青春恋爱物语果然有问题%s.md");
     }
 
 

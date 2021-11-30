@@ -66,7 +66,7 @@ public class Novel_biqugg {
 
 
     public static void save(String content){
-        PrintWriterUtils.fileWriter(ConstantFile.javaFilePath + "\\novel\\biquge","谍影风云.txt",content);
+        PrintWriterUtils.fileWriter(ConstantFile.L1_javaFilePath + "\\novel\\biquge","谍影风云.txt",content);
     }
 
 }

@@ -68,7 +68,7 @@ public class Base64 {
         //PrintWriterUtils.fileWriter(ConstantFile.javaFilePath + "/resources/图片/bilibili/yellow.txt",getbase64Url(ConstantFile.javaFilePath + "/resources/图片/bilibili/yellow.jpg"));
 
         try {
-            getImage(PrintWriterUtils.fileReader(ConstantFile.javaFilePath + "/resources/图片/bilibili/yellow.txt"),ConstantFile.javaFilePath + "/resources/图片/bilibili/yellow1.jpg");
+            getImage(PrintWriterUtils.fileReader(ConstantFile.L1_javaFilePath + "/resources/图片/bilibili/yellow.txt"),ConstantFile.L1_javaFilePath + "/resources/图片/bilibili/yellow1.jpg");
         } catch (Exception e) {
             e.printStackTrace();
         }

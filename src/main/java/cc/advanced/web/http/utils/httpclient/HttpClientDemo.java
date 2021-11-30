@@ -4,8 +4,6 @@ import cc.constant.ConstantFile;
 import org.apache.commons.io.FileUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHost;
-import org.apache.http.ParseException;
-import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -84,7 +82,7 @@ public class HttpClientDemo {
             InputStream inputStream = httpEntity.getContent();
             // 快啊.! 这俩好想没啥区别 // 框架更快
             // FileUtils.copyInputStreamToFile(inputStream,new File(ConstantFile.javaFilePath + "/1.gif"));
-            FileUtils.copyToFile(inputStream,new File(ConstantFile.javaFilePath + "//2.gif"));
+            FileUtils.copyToFile(inputStream,new File(ConstantFile.L1_javaFilePath + "//2.gif"));
         }
         // buffer 包裹一下更快
         response.close(); // 关闭流

@@ -18,13 +18,13 @@ public class FileCopy implements IFileUtils{
             //FileUtils.copyFile(new File(ConstantFile.javaFilePath + "\\Cache\\360极速浏览器下载\\pic\\7.7原视频\\IMG_6190.mp4"),new File("7.7原视频IMG_6190.mp4"));
             //String file = new File(ConstantFile.javaFilePath + "\\Cache\\360极速浏览器下载\\狗头\\7.7原视频\\IMG_6190.mp4").getParent();
             //System.out.println(file.substring(file.lastIndexOf("\\")+1));
-            cc.core.file.utils.FileUtils.recursion(ConstantFile.javaFilePath + "\\Cache\\360极速浏览器下载\\pic",new FileCopy());
+            cc.core.file.utils.FileUtils.recursion(ConstantFile.L1_javaFilePath + "\\Cache\\360极速浏览器下载\\pic",new FileCopy());
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    static String path = ConstantFile.javaFilePath + "\\Cache\\360极速浏览器下载\\0合集";
+    static String path = ConstantFile.L1_javaFilePath + "\\Cache\\360极速浏览器下载\\0合集";
 
     @Override
     public boolean accept(File[] fileList, int i, String... strings) {

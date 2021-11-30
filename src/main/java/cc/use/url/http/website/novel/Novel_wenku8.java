@@ -77,7 +77,7 @@ public class Novel_wenku8 {
     }
 
     public static void saveAll(String content){
-        PrintWriterUtils.fileWriter(ConstantFile.javaFilePath + "\\craw\\www.wenku8.net", "list.md",content);
+        PrintWriterUtils.fileWriter(ConstantFile.L1_javaFilePath + "\\craw\\www.wenku8.net", "list.md",content);
     }
 
     public static String[] novelMsg(String url){

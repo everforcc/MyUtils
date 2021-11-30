@@ -9,6 +9,6 @@ import java.text.DecimalFormat;
  * @date 2020/12/14
  */
 public class Constant_use {
-    public static String dirBase = ConstantFile.javaFilePath + "/craw/";
+    public static String dirBase = ConstantFile.L1_javaFilePath + "/craw/";
     public static DecimalFormat df = new DecimalFormat("0000");
 }

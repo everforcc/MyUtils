@@ -47,7 +47,7 @@ public class Picture_Model {
     private static String singleElseMsgPattern = "//img[@class='']";
     private static String singleTypeMsgPattern = "//div[@class='logo']//a/text()";
 
-    private static String systemPath = ConstantFile.javaFilePath + "\\craw\\" + rootPath + "\\";
+    private static String systemPath = ConstantFile.L1_javaFilePath + "\\craw\\" + rootPath + "\\";
     private static String userAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/82.0.4083.0 Safari/537.36" ;
     private static String cookie = "";
     private static int timeout = 6 * 1000;

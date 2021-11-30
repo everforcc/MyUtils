@@ -14,7 +14,7 @@ public class ProxyPatternDemo {
     }
 
     public static void proxyImg(){
-        Image image = new ProxyImage(ConstantFile.javaFilePath + "\\craw\\临时\\webmagic.png");
+        Image image = new ProxyImage(ConstantFile.L1_javaFilePath + "\\craw\\临时\\webmagic.png");
 
         // 图像将从磁盘加载
         image.display();
@@ -23,7 +23,7 @@ public class ProxyPatternDemo {
     }
 
     public static void realImg(){
-        Image image = new RealImage(ConstantFile.javaFilePath + "\\craw\\临时\\webmagic.png");
+        Image image = new RealImage(ConstantFile.L1_javaFilePath + "\\craw\\临时\\webmagic.png");
 
         // 图像将从磁盘加载
         image.display();

@@ -80,10 +80,10 @@ public class SeleniumMethod {
     }
 
     public static void saveUrl(String content){
-        PrintWriterUtils.fileWriter(ConstantFile.javaFilePath + "/novel/biquge","斗破苍穹Url.txt",content);
+        PrintWriterUtils.fileWriter(ConstantFile.L1_javaFilePath + "/novel/biquge","斗破苍穹Url.txt",content);
     }
 
     public static void save(String content){
-        PrintWriterUtils.fileWriter(ConstantFile.javaFilePath + "/novel/biquge","斗破苍穹.txt",content);
+        PrintWriterUtils.fileWriter(ConstantFile.L1_javaFilePath + "/novel/biquge","斗破苍穹.txt",content);
     }
 }

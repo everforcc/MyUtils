@@ -143,7 +143,7 @@ public class Novel_biquge {
 
     // 保存内容
     public static void save(String content){
-        PrintWriterUtils.fileWriter(ConstantFile.javaFilePath + "\\novel\\biquge","斗破苍穹.txt",content);
+        PrintWriterUtils.fileWriter(ConstantFile.L1_javaFilePath + "\\novel\\biquge","斗破苍穹.txt",content);
     }
 
 }

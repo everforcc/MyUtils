@@ -33,7 +33,7 @@ public class CostmcsBUDGET00 {
     String sql2 = "insert into Accsh_Costtochannel values ('202003', 'FYFT', 'C001', 'HO', '%s', '%s', %s);";
 
     // excle路径
-    String filePath= ConstantFile.javaFilePath + "";
+    String filePath= ConstantFile.L1_javaFilePath + "";
 
     // excle的name        生成的表名
     Map<String, String> map = new HashMap<String, String>()

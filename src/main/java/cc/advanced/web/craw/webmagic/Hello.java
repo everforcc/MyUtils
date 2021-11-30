@@ -14,7 +14,7 @@ public class Hello {
         Spider.create(new GithubRepoPageProcessor())
                 //从"https://github.com/code4craft"开始抓
                 .addUrl("http://wap.feisuwx.org/xxss-250824-45573978-2/")
-                .addPipeline(new FilePipeline(ConstantFile.javaFilePath + "/java/wemagic/1.txt"))
+                .addPipeline(new FilePipeline(ConstantFile.L1_javaFilePath + "/java/wemagic/1.txt"))
                 //开启5个线程抓取
                 .thread(5)
                 //启动爬虫

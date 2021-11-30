@@ -58,7 +58,7 @@ public class ShowImage extends Frame {
 
 	public static void main(String[] args) {
 
-		new ShowImage(ConstantFile.javaFilePath + "/resources/2.图片/壁纸pivix1.jpg");
+		new ShowImage(ConstantFile.L1_javaFilePath + "/resources/2.图片/壁纸pivix1.jpg");
 
 	}
 

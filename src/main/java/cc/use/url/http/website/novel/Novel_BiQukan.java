@@ -135,7 +135,7 @@ public class Novel_BiQukan {
 
     public static void downNovel(String content){
         try {
-            PrintWriterUtils.fileWriter(new File(ConstantFile.javaFilePath +novelName),content);
+            PrintWriterUtils.fileWriter(new File(ConstantFile.L1_javaFilePath +novelName),content);
         } catch (Exception e) {
             e.printStackTrace();
             DateUtils.now();

@@ -57,7 +57,7 @@ public class AngularJSProcessor implements PageProcessor {
 
     public static void main(String[] args) {
         Spider.create(new AngularJSProcessor()).addUrl("http://angularjs.cn/api/article/latest?p=1&s=20")
-                .addPipeline(new FilePipeline(ConstantFile.javaFilePath + "/java/wemagic"))
+                .addPipeline(new FilePipeline(ConstantFile.L1_javaFilePath + "/java/wemagic"))
                 .run();
     }
 }

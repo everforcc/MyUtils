@@ -23,7 +23,7 @@ public class ReadExcel {
      */
 
     //
-    private final String filePath= ConstantFile.javaFilePath + "";
+    private final String filePath= ConstantFile.L1_javaFilePath + "";
 
     // 例如 P,6  53
     // Map<String,String> map = new HashMap<>();

@@ -65,7 +65,7 @@ public class TXT_NowsFun {
     public static void downtxt(String content){
 
         try {
-            PrintWriterUtils.fileWriter(new File(ConstantFile.javaFilePath + novelName),content);
+            PrintWriterUtils.fileWriter(new File(ConstantFile.L1_javaFilePath + novelName),content);
         } catch (Exception e) {
             e.printStackTrace();
             DateUtils.now();

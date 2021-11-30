@@ -26,7 +26,7 @@ public class PrintWriterUtils {
         //把所有方法都放里面
 
         //测试
-        IO_BufferedWriter(ConstantFile.javaFilePath + "/1.txt", ConstantCharSet.UTF_8,"123");
+        IO_BufferedWriter(ConstantFile.L1_javaFilePath + "/1.txt", ConstantCharSet.UTF_8,"123");
     }
 
     /************************************************ 写 ******************************************************************/

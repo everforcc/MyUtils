@@ -1,5 +1,6 @@
 package cc.maven.excle.utils.write;
 
+import cc.constant.ConstantFile;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -24,7 +25,6 @@ public class CreateExcleDemo {
      */
     public static void main(String[] args) throws IOException {
         //createExcleFlow();
-
     }
 
     /**
@@ -64,7 +64,7 @@ public class CreateExcleDemo {
         row.createCell(3).setCellValue("2000-01-01");
         row.createCell(4).setCellValue("12121212122");
         //设定 路径
-        File file = new File("C:/test/excle/员工信息.xlsx");
+        File file = new File(ConstantFile.L1_javaFilePath + ConstantFile.L2_excle + "/员工信息.xlsx");
         FileOutputStream stream = new FileOutputStream(file);
         // 需要抛异常
         workbook.write(stream);

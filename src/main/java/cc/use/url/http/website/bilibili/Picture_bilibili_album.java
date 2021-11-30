@@ -21,7 +21,7 @@ public class Picture_bilibili_album {
         flow(postuid);
     }
 
-    private static String fileBase = ConstantFile.javaFilePath + "\\java\\bilibili\\md\\";
+    private static String fileBase = ConstantFile.L1_javaFilePath + "\\java\\bilibili\\md\\";
     private static String postuid = "632887";
     private static String forCountUrl = "https://api.vc.bilibili.com/link_draw/v1/doc/upload_count?uid=";
     private static String forAllimgUrl =  "https://api.vc.bilibili.com/link_draw/v1/doc/doc_list?uid=%s&page_num=0&biz=all&page_size=%s" ;

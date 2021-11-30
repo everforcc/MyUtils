@@ -18,8 +18,8 @@ public class ConcatFileToMD implements IFileUtils {
         // 叛逆的鲁鲁修[001][STAGE-0：Interval]--1.txt 7,10 11,length-7
         // 001叛逆的鲁鲁修[STAGE-0：Interval]--1.txt 0,3 9,length-7
         // md文件格式 name[001][STAGE-0：Interval]
-       String filePath = ConstantFile.javaFilePath + "\\java\\novel\\www.qinxiaoshuo.com\\欢迎来到实力至上主义教室1";
-       String str = ConstantFile.javaFilePath + "\\java\\novel\\www.qinxiaoshuo.com\\欢迎来到实力至上主义教室1md\\";
+       String filePath = ConstantFile.L1_javaFilePath + "\\java\\novel\\www.qinxiaoshuo.com\\欢迎来到实力至上主义教室1";
+       String str = ConstantFile.L1_javaFilePath + "\\java\\novel\\www.qinxiaoshuo.com\\欢迎来到实力至上主义教室1md\\";
        String filePre = "欢迎来到实力至上主义教室";
        // 还需要通用点，规定文件名格式
        //String[] strAry = {str,"0","3","9","7"};

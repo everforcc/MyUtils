@@ -17,7 +17,7 @@ public class MP3FileHelper {
         String strLen="";
         try {
 
-            MP3File file = new MP3File(ConstantFile.javaFilePath + "/audio/parent/0001/0022.mp3");
+            MP3File file = new MP3File(ConstantFile.L1_javaFilePath + "/audio/parent/0001/0022.mp3");
             MP3AudioHeader audioHeader = (MP3AudioHeader)file.getAudioHeader();
 
             strLen = audioHeader.getTrackLengthAsString();

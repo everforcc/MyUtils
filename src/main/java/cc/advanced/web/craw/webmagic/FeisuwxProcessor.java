@@ -41,7 +41,7 @@ public class FeisuwxProcessor implements PageProcessor {
         Spider.create(new FeisuwxProcessor())
               .addUrl(url) // 请求地址
               //.addPipeline(new FilePipeline(ConstantFile.javaFilePath + "/java/wemagic")) // 保存地址
-              .addPipeline(new JsonFilePipeline(ConstantFile.javaFilePath + "/java/wemagic"))
+              .addPipeline(new JsonFilePipeline(ConstantFile.L1_javaFilePath + "/java/wemagic"))
               .run(); //启动
     }
 

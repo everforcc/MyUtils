@@ -24,7 +24,7 @@ public class Picture_costmcs {
      */
     public static void testUploadImage(){
         String url = "http://localhost:7007/invoice/queryWaitEditData";
-        String fileName = ConstantFile.javaFilePath + "/发票文件/1.jpg";
+        String fileName = ConstantFile.L1_javaFilePath + "/发票文件/1.jpg";
         Map<String, String> textMap = new HashMap<String, String>();
         //可以设置多个input的name，value
         //textMap.put("name", "testname");

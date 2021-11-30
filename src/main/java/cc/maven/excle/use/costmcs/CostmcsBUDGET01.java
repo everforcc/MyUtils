@@ -23,7 +23,7 @@ public class CostmcsBUDGET01 {
     //用来生成费控预算sql
 
     // excle路径
-    String filePath= ConstantFile.javaFilePath + "/20200427预算导入";
+    String filePath= ConstantFile.L1_javaFilePath + "/20200427预算导入";
     //String fileList[]={"2020年AD&IT预算（不含滴滴）---导费控.xlsx","2020年HR预算---导费控.xlsx"};
     //表名
     //String tableName[] = {"ADIT_BUDGET",""};

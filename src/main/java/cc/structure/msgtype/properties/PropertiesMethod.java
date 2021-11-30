@@ -37,7 +37,7 @@ public class PropertiesMethod {
 	public Properties sysLoad()throws Exception{
 		Properties properties = new Properties();
 		// 使用InPutStream流读取properties文件
-		BufferedReader bufferedReader = new BufferedReader(new FileReader(ConstantFile.javaFilePath + "/config.properties"));
+		BufferedReader bufferedReader = new BufferedReader(new FileReader(ConstantFile.L1_javaFilePath + "/config.properties"));
 		properties.load(bufferedReader);
 		// 获取key对应的value值
 		//properties.getProperty(String key);
