@@ -16,6 +16,20 @@ public class ConstantFile {
     static {
         // 可以根据系统判断下windows和linux取不同的文件夹
         System.out.println("ConstantFile:" + System.getProperty("os.name"));
+        String userName = System.getProperty("user.name");
+        if("everforcc".equals(userName)){
+            javaFilePath = "E:/test";
+        }
+    }
+
+    // 20211130 确定以后使用包use就放到当前工具包的同级
+    /**
+     * 不同业务情况下的下一级
+     */
+    public static String businessFilePath = "/business";
+
+    public static void main(String[] args) {
+        System.out.println(System.getProperty("java.vm.name"));
     }
 
 }

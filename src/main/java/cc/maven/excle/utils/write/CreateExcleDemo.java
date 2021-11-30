@@ -1,6 +1,5 @@
-package cc.maven.excle.test;
+package cc.maven.excle.utils.write;
 
-import cc.maven.excle.utils.read.ReadExcel;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -9,12 +8,14 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.util.List;
 
 /**
  * Yukino
  * 2020/6/18
  */
-public class PoiTest {
+public class CreateExcleDemo {
 
     /**
      * 基本流程
@@ -23,13 +24,11 @@ public class PoiTest {
      */
     public static void main(String[] args) throws IOException {
         //createExcleFlow();
-        ReadExcel readExcel = new ReadExcel();
-        String fileName="/excle/员工信息.xlsx";
-        readExcel.flow(fileName);
+
     }
 
     /**
-     * 创建excle写入测试
+     * 1. 创建excle写入测试
      * @throws IOException
      */
     public static void createExcleFlow() throws IOException {
@@ -73,5 +72,42 @@ public class PoiTest {
         stream.close();
     }
 
+    /**
+     * 2. 示例2 向Excel中写数据
+     * @param list
+     * @param filePath
+     */
+    public static void writeExcel(List<Object> list , String filePath){
+        XSSFWorkbook workbook = new XSSFWorkbook();
+        XSSFSheet sheet = workbook.createSheet("student");
+        XSSFRow firstRow = sheet.createRow(0);//第一行表头
+        XSSFCell cells[] = new XSSFCell[3];
+
+        String[] titles = new String[]{"age","name","address"};
+        //循环设置表头信息
+        for (int i=0;i<3;i++){
+            cells[0]=firstRow.createCell(i);
+            cells[0].setCellValue(titles[i]);
+        }
+
+        //遍历list,将数据写入Excel中
+        for (int i=0;i<list.size();i++){
+            XSSFRow row = sheet.createRow(i+1);
+            XSSFCell cell = row.createCell(0); //第一列
+            cell.setCellValue("");
+            cell=row.createCell(1); //第二列
+            cell.setCellValue("");
+            cell=row.createCell(2); //第三列
+            cell.setCellValue("");
+        }
+        OutputStream out = null;
+        try {
+            out = new FileOutputStream(filePath);
+            workbook.write(out);
+            out.close();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 
 }

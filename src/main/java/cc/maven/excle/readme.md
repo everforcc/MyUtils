@@ -1,3 +1,4 @@
+<font face="SimSun" size=3>
 动态生成
 
 下拉框给选择，子表，表名，列名
@@ -18,6 +19,8 @@ public class OutExcle {
      *   可以尝试输出图形，计算一下
      *   网上那种动漫的图yukino计算坐标和颜色
      *   已实现
+     *   excle.TwriteColor.t1
      */
 }
 ~~~
+</font>

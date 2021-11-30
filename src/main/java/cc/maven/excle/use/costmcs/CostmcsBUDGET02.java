@@ -1,4 +1,4 @@
-package cc.maven.excle.use;
+package cc.maven.excle.use.costmcs;
 
 import cc.constant.ConstantFile;
 import org.apache.poi.hssf.usermodel.HSSFCell;
@@ -20,7 +20,7 @@ import java.util.Map;
  * Yukino
  * 2020/4/26
  */
-public class CostmcsBUDGET01 {
+public class CostmcsBUDGET02 {
     //用来生成费控预算sql
 
     // excle路径

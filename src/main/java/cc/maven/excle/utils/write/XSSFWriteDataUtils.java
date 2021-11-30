@@ -1,8 +1,7 @@
 package cc.maven.excle.utils.write;
 
-import cc.core.file.img.ColorRGB;
-import cc.maven.excle.utils.utils.EXCLEDataDto;
-import cc.maven.excle.utils.utils.EXCLEDto;
+import cc.maven.excle.dto.EXCLEDataDto;
+import cc.maven.excle.dto.EXCLEDto;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFColor;
@@ -17,7 +16,7 @@ import java.util.Map;
 /**
  * @author everforcc
  */
-public class EXCLEWriteUtils {
+public class XSSFWriteDataUtils {
 
     private static String targetFileName = "C:\\test\\excle\\eSheet-7.xls";
 
@@ -44,6 +43,11 @@ public class EXCLEWriteUtils {
         }
     }
 
+    /**
+     * 1. 组织数据对象
+     * @param integerListMap
+     * @return
+     */
     private static EXCLEDto createDate(Map<Integer,List<String>> integerListMap){
         // excle
         EXCLEDto excleDto = new EXCLEDto();
@@ -83,7 +87,7 @@ public class EXCLEWriteUtils {
     }
 
     /**
-     * 按照main方法的流程创建实体类，传入，然后生成excle
+     * 2. 根据对象生成excle
      * @param excleDto
      * @throws Exception
      */
@@ -126,6 +130,9 @@ public class EXCLEWriteUtils {
                     Cell cell = row.createCell(rowY);
                     rowY++;
                     // 设置单元格格式
+                    // CellStyle cellStyleTemp = excel.createCellStyle();
+                    // cellStyleTemp.setDataFormat(excel.createDataFormat().getFormat("@"));// 设置为文本格式
+                    // cell.setCellType(Cell.CELL_TYPE_STRING);
                     cell.setCellType(excleDataDto.getDataType());
                     // 设置单元格值
                     cell.setCellValue(excleDataDto.getDataValue());
@@ -145,6 +152,14 @@ public class EXCLEWriteUtils {
         out.close();
     }
 
+    /**
+     * 3. 设置颜色
+     * @param workbook
+     * @param r
+     * @param g
+     * @param b
+     * @param cell
+     */
     public static void setColor(Workbook workbook, int r, int g, int b,Cell cell){
 
         XSSFCellStyle cellStyle = (XSSFCellStyle) workbook.createCellStyle();

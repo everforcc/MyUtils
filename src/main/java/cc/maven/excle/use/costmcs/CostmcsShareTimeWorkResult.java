@@ -1,9 +1,9 @@
-package cc.maven.excle.use;
+package cc.maven.excle.use.costmcs;
 
 import cc.constant.ConstantFile;
 import cc.core.io.PrintWriterUtils;
-import cc.maven.excle.utils.utils.ExcleValueHelper;
-import cc.maven.excle.utils.read.LoadExcle;
+import cc.maven.excle.dto.ExcleValueHelper;
+import cc.maven.excle.utils.read.LoadExcleDto;
 
 import java.io.File;
 import java.math.BigDecimal;
@@ -128,8 +128,8 @@ public class CostmcsShareTimeWorkResult {
         // StringBuffer sql = new StringBuffer("delete from Accsh_Depsorttochannel  where yearmonth='" + yearMonth + "'; \r\n");
         StringBuffer sql = new StringBuffer("-- " + sheet1_[4] + " \r\n");
         // 起始坐标的位置 和长度 ，但其实换成xyz也不错
-        LoadExcle loadExcle = new LoadExcle( fileName ,sheet1_[0],sheet1_[1],Integer.valueOf(sheet1_[2]),Integer.valueOf(sheet1_[3]));
-        ExcleValueHelper excleValueHelper = loadExcle.flow();
+        LoadExcleDto loadExcleDto = new LoadExcleDto( fileName ,sheet1_[0],sheet1_[1],Integer.valueOf(sheet1_[2]),Integer.valueOf(sheet1_[3]));
+        ExcleValueHelper excleValueHelper = loadExcleDto.flow();
 
         excleValueHelper.setCellValue(Integer.valueOf(sheet1_[2])-1,ExcleValueHelper.byteToInt(sheet1_[1]),"ZBSY");
 
@@ -207,8 +207,8 @@ public class CostmcsShareTimeWorkResult {
 
         StringBuffer sql = new StringBuffer("-- " + sheet1_[4] + " \r\n");
         // 读取excle
-        LoadExcle loadExcle = new LoadExcle( fileName ,sheet1_[0],sheet1_[1],Integer.valueOf(sheet1_[2]),Integer.valueOf(sheet1_[3]));
-        ExcleValueHelper excleValueHelper = loadExcle.flow();
+        LoadExcleDto loadExcleDto = new LoadExcleDto( fileName ,sheet1_[0],sheet1_[1],Integer.valueOf(sheet1_[2]),Integer.valueOf(sheet1_[3]));
+        ExcleValueHelper excleValueHelper = loadExcleDto.flow();
         // 计算和为1的数组长度
         int realStartX = ExcleValueHelper.byteToInt(sheet1_[0]);
         int realEndX = ExcleValueHelper.byteToInt(sheet1_[1]);
@@ -288,8 +288,8 @@ public class CostmcsShareTimeWorkResult {
 
         StringBuffer sql = new StringBuffer("-- " + sheet1_[4] + " \r\n");
         // 起始坐标的位置 和长度 ，但其实换成xyz也不错
-        LoadExcle loadExcle = new LoadExcle( fileName ,sheet1_[0],sheet1_[1],Integer.valueOf(sheet1_[2]),Integer.valueOf(sheet1_[3]));
-        ExcleValueHelper excleValueHelper = loadExcle.flow();
+        LoadExcleDto loadExcleDto = new LoadExcleDto( fileName ,sheet1_[0],sheet1_[1],Integer.valueOf(sheet1_[2]),Integer.valueOf(sheet1_[3]));
+        ExcleValueHelper excleValueHelper = loadExcleDto.flow();
         // println(excleValueHelper.getCellValue(6,"U"));
         int realStartY = Integer.valueOf(sheet1_[2]) - 1;
         int realEndY = Integer.valueOf(sheet1_[3]);
@@ -348,9 +348,9 @@ public class CostmcsShareTimeWorkResult {
 
     public static void sheet2() {
         StringBuffer sql = new StringBuffer("-- \r\n");
-        LoadExcle loadExcle = new LoadExcle( fileName ,"A","J",1,8);
-        loadExcle.setDefaultSheet(2);
-        ExcleValueHelper excleValueHelper = loadExcle.flow();
+        LoadExcleDto loadExcleDto = new LoadExcleDto( fileName ,"A","J",1,8);
+        loadExcleDto.setDefaultSheet(2);
+        ExcleValueHelper excleValueHelper = loadExcleDto.flow();
         // System.out.println(excleValueHelper.getCellValue(2,2));
 
         int realStartY = 1;
@@ -416,9 +416,9 @@ public class CostmcsShareTimeWorkResult {
 
     public static void sheet4(String[] sheet1_){
         StringBuffer sql = new StringBuffer("-- \r\n");
-        LoadExcle loadExcle = new LoadExcle( fileName ,"A","Z",3,9);
-        loadExcle.setDefaultSheet(4);
-        ExcleValueHelper excleValueHelper = loadExcle.flow();
+        LoadExcleDto loadExcleDto = new LoadExcleDto( fileName ,"A","Z",3,9);
+        loadExcleDto.setDefaultSheet(4);
+        ExcleValueHelper excleValueHelper = loadExcleDto.flow();
 
         // 计算和为1的数组长度
         int realStartX = ExcleValueHelper.byteToInt(sheet1_[0]);

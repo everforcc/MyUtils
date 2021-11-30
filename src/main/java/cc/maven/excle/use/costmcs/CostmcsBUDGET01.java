@@ -1,4 +1,4 @@
-package cc.maven.excle.use;
+package cc.maven.excle.use.costmcs;
 
 import cc.constant.ConstantFile;
 import cc.core.io.PrintWriterUtils;
@@ -19,7 +19,7 @@ import java.util.Map;
  * Yukino
  * 2020/4/26
  */
-public class CostmcsBUDGET {
+public class CostmcsBUDGET01 {
     //用来生成费控预算sql
 
     // excle路径

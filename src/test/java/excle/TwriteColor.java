@@ -2,7 +2,7 @@ package excle;
 
 import cc.core.file.img.dto.ImgColorDto;
 import cc.core.file.utils.PicReadColor;
-import cc.maven.excle.writecolor.EXCLEXSSFWriteUtils;
+import cc.maven.excle.utils.writecolor.XSSFWriteColorUtils;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -26,7 +26,7 @@ public class TwriteColor {
 //        for(ImgColorDto e:imgColorDtoList){
 //            System.out.println(e);
 //        }
-        EXCLEXSSFWriteUtils.defined(integerListMap,fileName + ".xlsx");
+        XSSFWriteColorUtils.defined(integerListMap,fileName + ".xlsx");
     }
 
     @Test
@@ -42,7 +42,7 @@ public class TwriteColor {
 //        for(ImgColorDto e:imgColorDtoList){
 //            System.out.println(e);
 //        }
-        EXCLEXSSFWriteUtils.defined(integerListMap,fileName + ".xlsx");
+        XSSFWriteColorUtils.defined(integerListMap,fileName + ".xlsx");
     }
 
 }

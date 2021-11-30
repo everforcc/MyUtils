@@ -1,6 +1,6 @@
 package cc.maven.excle.utils.read;
 
-import cc.maven.excle.utils.utils.ExcleValueHelper;
+import cc.maven.excle.dto.ExcleValueHelper;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
@@ -15,11 +15,12 @@ import java.io.*;
  * Yukino
  * 2020/6/11
  */
-public class LoadExcle {
+public class LoadExcleDto {
 
     /**
-     * 将excle读入dto，进行后续处理
-     * 坐标加值
+     * 1. 读取costmcs的工具类
+     * 2. 将excle读入ExcleValueHelper
+     * 3. 操作对象，进行后续处理
      */
 
     // 只操作第一个sheet页
@@ -44,12 +45,12 @@ public class LoadExcle {
         this.defaultSheet = defaultSheet - 1;
     }
 
-    public LoadExcle(String filePath) {
+    public LoadExcleDto(String filePath) {
         this.filePath = filePath;
     }
 
     // 改成    x char,y int,x char,y int
-    public LoadExcle(String filePath, String xStratIndex, String xEndIndex, int yStartIndex, int yEndIndex) {
+    public LoadExcleDto(String filePath, String xStratIndex, String xEndIndex, int yStartIndex, int yEndIndex) {
         this.filePath = filePath;
         XStartIndex = ExcleValueHelper.byteToInt(xStratIndex.toUpperCase()) - 1;
         YStartIndex = yStartIndex -1;
