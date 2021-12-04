@@ -20,8 +20,8 @@ public class SFTPUtils {
 
     public static void main(String[] args) {
         try {
-            String localFile = "C:\\test\\down.bat"; // 本地文件名
-            String targetDir = "/test/down.bat"; // 目标文件
+            String localFile = ""; // 本地文件名
+            String targetDir = ""; // 目标文件
             put(localFile,targetDir);
         } catch (Exception e) {
             e.printStackTrace();

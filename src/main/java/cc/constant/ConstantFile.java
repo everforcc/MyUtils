@@ -33,6 +33,11 @@ public class ConstantFile {
 
     public static String L2_craw = "/craw";
 
+    /**
+     * 和linux交互文件
+     */
+    public static String L2_linux = "/linux";
+
     public static void main(String[] args) {
         System.out.println(System.getProperty("java.vm.name"));
     }

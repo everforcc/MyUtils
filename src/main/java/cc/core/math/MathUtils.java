@@ -1,5 +1,8 @@
 package cc.core.math;
 
+
+import org.apache.commons.lang3.RandomUtils;
+
 import java.util.Random;
 
 /**
@@ -10,8 +13,9 @@ public class MathUtils {
 
     public static void main(String[] args) {
         //randomNum();
+        safeRandomNum();
         //t();
-        equation();
+        //equation();
     }
 
     // 科学记数法 1.60105E9
@@ -33,6 +37,21 @@ public class MathUtils {
         Integer integer = new Random().nextInt(100);
         //该方法的作用是生成一个随机的int值，该值介于[0,n)的区间，也就是0到n之间的随机int值，包含0而不包含n。\
         System.out.println(integer);
+    }
+
+    /**
+     * 安全随机数
+     */
+    public static void safeRandomNum(){
+        /**
+         *
+         * <dependency>
+         *        <groupId>org.apache.commons</groupId>
+         *        <artifactId>commons-lang3</artifactId>
+         *        <version>3.12.0</version>
+         * </dependency>
+         */
+        System.out.println(RandomUtils.nextInt(-1, 1));
     }
 
     //

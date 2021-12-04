@@ -1,5 +1,6 @@
 package cc.java0.pscp;
 
+import cc.constant.ConstantFile;
 import cc.java0.cmd.CmdUtils;
 import lombok.extern.slf4j.Slf4j;
 
@@ -18,7 +19,7 @@ public class PSCPUtils {
         // 递归传，支持单个文件或目录，第二个参数为文件所在的目录
         //send("C:\\test\\down.bat","/test");
         // 传递方可以是文件夹或文件，但接收方是目录
-        down("C:\\test1\\","/test/dir/down.bat");
+        down(ConstantFile.L1_javaFilePath + ConstantFile.L2_linux,"/test/dir/down.bat");
     }
 
     public static void send(String windowsFile,String linuxDir){
