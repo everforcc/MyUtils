@@ -1,7 +1,7 @@
 package cc.use.url.http.game;
 
 import cc.resource.PropertiesHeader;
-import cc.advanced.web.http.utils.HttpURLConnectionUtil;
+import cc.advanced.web.http.HttpURLConnectionUtil;
 import cc.core.io.PrintWriterUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;

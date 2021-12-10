@@ -1,4 +1,4 @@
-package cc.advanced.web.http.utils;
+package cc.advanced.web.http;
 
 import cc.core.io.InputStreamUtils;
 import cc.utils.Print_Record;

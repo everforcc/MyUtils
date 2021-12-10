@@ -5,7 +5,7 @@ import cc.use.file.WenkuNovelMenu;
 import cc.core.file.utils.MDUtils;
 import cc.resource.PropertiesHeader;
 import cc.advanced.web.craw.utils.CrawDataParse;
-import cc.advanced.web.http.utils.HttpURLConnectionUtil;
+import cc.advanced.web.http.HttpURLConnectionUtil;
 import cc.core.io.PrintWriterUtils;
 import cc.core.regex.utils.RegexUtils;
 import cc.use.url.http.website.constant.Constant_use;

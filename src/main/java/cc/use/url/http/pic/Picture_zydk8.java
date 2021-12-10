@@ -4,7 +4,7 @@ import cc.constant.ConstantFile;
 import cc.core.file.utils.FileUtils;
 import cc.core.io.InputStreamUtils;
 import cc.core.io.PrintWriterUtils;
-import cc.advanced.web.http.utils.HttpURLConnectionUtil;
+import cc.advanced.web.http.HttpURLConnectionUtil;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import us.codecraft.xsoup.Xsoup;

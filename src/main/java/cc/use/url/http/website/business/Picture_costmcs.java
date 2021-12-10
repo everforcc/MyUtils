@@ -1,6 +1,6 @@
 package cc.use.url.http.website.business;
 
-import cc.advanced.web.http.utils.HttpURLConnectionUtil;
+import cc.advanced.web.http.HttpURLConnectionUtil;
 import cc.constant.ConstantFile;
 
 import java.util.HashMap;

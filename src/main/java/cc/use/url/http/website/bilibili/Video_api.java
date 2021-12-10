@@ -2,7 +2,7 @@ package cc.use.url.http.website.bilibili;
 
 import cc.constant.ConstantCharSet;
 import cc.resource.PropertiesHeader;
-import cc.advanced.web.http.utils.HttpURLConnectionUtil;
+import cc.advanced.web.http.HttpURLConnectionUtil;
 import com.alibaba.fastjson.JSONObject;
 import com.jayway.jsonpath.DocumentContext;
 import com.jayway.jsonpath.JsonPath;

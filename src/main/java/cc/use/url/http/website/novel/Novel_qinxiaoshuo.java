@@ -3,7 +3,7 @@ package cc.use.url.http.website.novel;
 import cc.resource.PropertiesHeader;
 import cc.advanced.web.craw.utils.CrawDataParse;
 import cc.advanced.web.http.utils.HttpClientUtils;
-import cc.advanced.web.http.utils.HttpURLConnectionUtil;
+import cc.advanced.web.http.HttpURLConnectionUtil;
 import cc.constant.ConstantFile;
 import cc.core.io.InputStreamUtils;
 import cc.core.io.PrintWriterUtils;

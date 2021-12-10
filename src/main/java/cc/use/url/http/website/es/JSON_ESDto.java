@@ -1,7 +1,7 @@
 package cc.use.url.http.website.es;
 
 import cc.constant.ConstantCharSet;
-import cc.advanced.web.http.utils.HttpURLConnectionUtil;
+import cc.advanced.web.http.HttpURLConnectionUtil;
 import cc.constant.ConstantFile;
 import cc.core.io.PrintWriterUtils;
 import com.alibaba.fastjson.JSONObject;

@@ -1,13 +1,10 @@
 package cc.use.url.http.wx;
 
-import cc.advanced.web.http.utils.HttpURLConnectionUtil;
 import cc.advanced.webrefactor.http.IHttp;
 import cc.advanced.webrefactor.http.impl.HttpURLConnectionImpl;
-import org.apache.commons.io.FileUtils;
 import sun.misc.BASE64Encoder;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
 /**

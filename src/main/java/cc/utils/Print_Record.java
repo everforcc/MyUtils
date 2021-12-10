@@ -64,7 +64,9 @@ public class Print_Record {
         StackTraceElement[] stacks = Thread.currentThread().getStackTrace();
         // 这里还可以根据包名 来分类 保存日志
         location = "[["+stacks[2].getClassName() + "](" + stacks[2].getMethodName() + ")" + "" + stacks[2].getLineNumber() + "]";
-        msg = DateUtils.nowTimeRegex("yyyy-MM-dd hh:mm:ss ") + type + " : " + location + " --- " + String.format(msg,formatMsg) ;
+
+        msg = formatMsg.length == 0 ?msg : String.format(msg,formatMsg) ;
+        msg = DateUtils.nowTimeRegex("yyyy-MM-dd hh:mm:ss ") + type + " : " + location + " --- " + msg ;
         if("err".equals(type)) {
             System.err.println( msg );
         }else {

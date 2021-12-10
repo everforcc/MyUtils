@@ -3,7 +3,7 @@ package cc.use.url.http.website.novel;
 import cc.constant.ConstantFile;
 import cc.core.file.utils.MDUtils;
 import cc.advanced.web.craw.utils.CrawDataParse;
-import cc.advanced.web.http.utils.HttpURLConnectionUtil;
+import cc.advanced.web.http.HttpURLConnectionUtil;
 import cc.core.io.PrintWriterUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

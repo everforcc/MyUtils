@@ -1,7 +1,7 @@
 package cc.use.url.http.novel;
 
 import cc.resource.PropertiesHeader;
-import cc.advanced.web.http.utils.HttpURLConnectionUtil;
+import cc.advanced.web.http.HttpURLConnectionUtil;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;

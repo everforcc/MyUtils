@@ -3,7 +3,7 @@ package cc.core.io;
 import cc.constant.ConstantFile;
 import cc.core.file.utils.FileUtils;
 import cc.resource.PropertiesHeader;
-import cc.advanced.web.http.utils.HttpURLConnectionUtil;
+import cc.advanced.web.http.HttpURLConnectionUtil;
 
 import java.io.*;
 import java.net.MalformedURLException;
