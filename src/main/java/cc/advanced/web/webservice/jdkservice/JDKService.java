@@ -1,4 +1,4 @@
-package cc.advanced.web.jdkservice;
+package cc.advanced.web.webservice.jdkservice;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;

@@ -29,11 +29,11 @@ public class Picture_bilibili_album {
     public static void flow(String uid){
         try {
 
-            String result_count = HttpURLConnectionUtil.sendToUrlRequest(forCountUrl + uid,"POST", ConstantCharSet.UTF_8, PropertiesHeader.bilibiliMap());
+            String result_count = HttpURLConnectionUtil.flow(forCountUrl + uid,"POST", ConstantCharSet.UTF_8, PropertiesHeader.bilibiliMap());
             String count = albumCount(result_count);
             System.out.println(count);
 
-            String result_url = HttpURLConnectionUtil.sendToUrlRequest(String.format(forAllimgUrl,uid,count),"POST", ConstantCharSet.UTF_8, PropertiesHeader.bilibiliMap());
+            String result_url = HttpURLConnectionUtil.flow(String.format(forAllimgUrl,uid,count),"POST", ConstantCharSet.UTF_8, PropertiesHeader.bilibiliMap());
             System.out.println(result_url);
             allImgUrl(result_url,false);
             //System.out.println(result_url);

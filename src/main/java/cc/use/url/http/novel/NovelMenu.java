@@ -31,7 +31,7 @@ public class NovelMenu implements Runnable {
     public void bookMenu(String url){
 
         //List<NovelMenu> novelMenuList = new ArrayList<>();
-        String result = HttpURLConnectionUtil.sendToUrlRequest(url,"GET","gbk", PropertiesHeader.loveyueduMap());
+        String result = HttpURLConnectionUtil.flow(url,"GET","gbk", PropertiesHeader.loveyueduMap());
         Document document = Jsoup.parse(result);
         Element element_list = document.getElementById("list");
         Elements elements_ddList = element_list.getElementsByTag("dd");

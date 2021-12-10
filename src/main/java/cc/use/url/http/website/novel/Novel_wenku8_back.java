@@ -60,7 +60,7 @@ public class Novel_wenku8_back {
         try {
 
             // 1.返回一个html的串
-            String result = HttpURLConnectionUtil.sendToUrlRequest(url + "index.htm","GET","","gbk");
+            String result = HttpURLConnectionUtil.flow(url + "index.htm","GET","","gbk");
             //System.out.println(result);
             Document document = Jsoup.parse(result);
             Elements elements_css = document.getElementsByClass("css");
@@ -129,7 +129,7 @@ public class Novel_wenku8_back {
 
     public static String novelContent(String url){
         try {
-            String result = HttpURLConnectionUtil.sendToUrlRequest(url,"GET","","gbk");
+            String result = HttpURLConnectionUtil.flow(url,"GET","","gbk");
             Document document = Jsoup.parse(result);
             Element element = document.getElementById("content");
             String content = element.toString();

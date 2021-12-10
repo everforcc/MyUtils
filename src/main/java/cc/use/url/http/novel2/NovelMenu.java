@@ -33,7 +33,7 @@ public class NovelMenu implements Runnable {
         ThreadUtils threadUtils = new ThreadUtils();
         //Map<String,String> map = new HashMap<>();
 
-        String result = HttpURLConnectionUtil.sendToUrlRequest(url,"GET","gbk", PropertiesHeader.loveyueduMap());
+        String result = HttpURLConnectionUtil.flow(url,"GET","gbk", PropertiesHeader.loveyueduMap());
         Document document = Jsoup.parse(result);
         Element element_list = document.getElementById("list");
         Elements elements_ddList = element_list.getElementsByTag("dd");

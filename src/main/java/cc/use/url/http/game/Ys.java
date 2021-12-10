@@ -76,7 +76,7 @@ public class Ys {
 
         // 随机数
         // 默认写出数据
-        String result = HttpURLConnectionUtil.sendToUrlRequest(url,"GET","UTF-8", PropertiesHeader.ysMap());
+        String result = HttpURLConnectionUtil.flow(url,"GET","UTF-8", PropertiesHeader.ysMap());
 
         //System.out.println(result);
         log.info(result);

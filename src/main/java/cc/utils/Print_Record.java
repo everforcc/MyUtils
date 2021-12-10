@@ -2,11 +2,14 @@ package cc.utils;
 
 import cc.core.date.utils.DateUtils;
 import cc.core.io.PrintWriterUtils;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang.StringUtils;
 
 /**
  * Yukino
  * 2020/3/9
  */
+@Slf4j
 public class Print_Record {
 
     /* 调整为输出加上 包名 类名，方法名 */
@@ -24,6 +27,13 @@ public class Print_Record {
         this.filePath = filePath;
         this.fileName = fileName ;
     };
+
+    public static synchronized  Print_Record getInstanse(){
+        if(print_record == null){
+            print_record = new Print_Record("",DateUtils.now() + ".txt");
+        }
+        return print_record;
+    }
 
     public static synchronized  Print_Record getInstanse(String filePath){
         if(print_record == null){
@@ -60,8 +70,8 @@ public class Print_Record {
         }else {
             System.out.println( msg );
         }
-        if(!"".equals(filePath)) {
-            System.out.println(filePath);
+
+        if(!StringUtils.isBlank(filePath)) {
             PrintWriterUtils.fileWriter(filePath, fileName, msg + "\r\n");
         }
     }

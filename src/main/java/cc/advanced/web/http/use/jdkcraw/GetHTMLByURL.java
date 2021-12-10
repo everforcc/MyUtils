@@ -1,4 +1,4 @@
-package cc.advanced.web.http.jdkcraw;
+package cc.advanced.web.http.use.jdkcraw;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

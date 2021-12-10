@@ -92,7 +92,7 @@ public class Novel_qinxiaoshuo {
     public static void novelContent(String firstNovelContent,String title,int i,int pn){
         // 或者换一种方式解决编码问题
         // 取出html
-        String result = HttpURLConnectionUtil.sendToUrlRequest(firstNovelContent,"GET","utf-8", PropertiesHeader.qinxiaoshuoMap());
+        String result = HttpURLConnectionUtil.flow(firstNovelContent,"GET","utf-8", PropertiesHeader.qinxiaoshuoMap());
         Document document = Jsoup.parse(result);
 
         // 得到最后一个按钮的连接

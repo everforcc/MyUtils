@@ -1,4 +1,4 @@
-package cc.advanced.web.http.utils;
+package cc.advanced.web.utils;
 
 import cc.utils.Print_Record;
 
@@ -9,7 +9,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 
-public class URLDemo {
+public class URLUtils {
 
     private static Print_Record print_record = Print_Record.getInstanse("");
 

@@ -1,4 +1,4 @@
-package cc.advanced.web.http.jdkcraw;
+package cc.advanced.web.http.use.jdkcraw;
 
 import java.net.URL;
 import java.net.URLConnection;

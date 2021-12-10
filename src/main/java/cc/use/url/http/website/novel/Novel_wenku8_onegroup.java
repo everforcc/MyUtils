@@ -63,7 +63,7 @@ public class Novel_wenku8_onegroup {
             for(int i = 2; i < 141; i++) {
                 List<String> urlList = new ArrayList<>();
                 String modules = "https://www.wenku8.net/modules/article/articlelist.php?page=" + i;
-                String result = HttpURLConnectionUtil.sendToUrlRequest(modules, "GET", "gbk", PropertiesHeader.wenku8Map());
+                String result = HttpURLConnectionUtil.flow(modules, "GET", "gbk", PropertiesHeader.wenku8Map());
                 Set<String> stringSet = RegexUtils.matcheList("https://www.wenku8.net/book/\\d{0,6}.htm", result);
                 for (String s : stringSet) {
                     System.out.println(s);
@@ -109,7 +109,7 @@ public class Novel_wenku8_onegroup {
             // dir 目录信息
 
             // 1.返回一个html的串
-            String result = HttpURLConnectionUtil.sendToUrlRequest(novelIndex,"GET","","gbk");
+            String result = HttpURLConnectionUtil.flow(novelIndex,"GET","","gbk");
             Document document = Jsoup.parse(result);
 
             // novelName = document.getElementById("title").text();
@@ -171,7 +171,7 @@ public class Novel_wenku8_onegroup {
         // 获取小说封面的基本信息
         String[] strAry = new String[11];
         try {
-            String result = HttpURLConnectionUtil.sendToUrlRequest(url,"GET","","gbk");
+            String result = HttpURLConnectionUtil.flow(url,"GET","","gbk");
 
             novelIndex = RegexUtils.matcheStr("https://www.wenku8.net/novel/\\d{0,6}/\\d{0,6}/index.htm",result).replace("index.htm","");
 
@@ -242,7 +242,7 @@ public class Novel_wenku8_onegroup {
     // 获取章节内容
     public static String novelContent(String url){
         try {
-            String result = HttpURLConnectionUtil.sendToUrlRequest(url,"GET","","gbk");
+            String result = HttpURLConnectionUtil.flow(url,"GET","","gbk");
             Document document = Jsoup.parse(result);
             Element element = document.getElementById("content");
             String content = element.toString();

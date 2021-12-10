@@ -37,7 +37,7 @@ public class JSON_ESDto {
 
     static void getName()throws Exception{
         String urlPath="http://127.0.0.1:9200/_cat/indices";
-        String str = HttpURLConnectionUtil.sendToUrlRequest(urlPath,"GET","", ConstantCharSet.UTF_8);
+        String str = HttpURLConnectionUtil.flow(urlPath,"GET","", ConstantCharSet.UTF_8);
         System.out.println(str);
     }
 
@@ -50,7 +50,7 @@ public class JSON_ESDto {
         //String classname="risk_accumulation_no_marine";
         String urlPath="http://localhost:9200/"+classname+"?pretty";
         //http://localhost:9200/msic_prpcaddress
-        String str = HttpURLConnectionUtil.sendToUrlRequest(urlPath,"GET","",ConstantCharSet.UTF_8);
+        String str = HttpURLConnectionUtil.flow(urlPath,"GET","",ConstantCharSet.UTF_8);
 
 
         //System.out.println(str);

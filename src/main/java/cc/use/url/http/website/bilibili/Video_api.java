@@ -22,7 +22,7 @@ public class Video_api {
         String l = "https://api.mwx.mx/video/BV1QA411G78i/";
         //String u = "http://upos-sz-mirrorcos.bilivideo.com/upgcxcode/68/15/275911568/275911568-1-208.mp4?e=ig8euxZM2rNcNbhjnWdVhwdlhzTHhwdVhoNvNC8BqJIzNbfq9rVEuxTEnE8L5F6VnEsSTx0vkX8fqJeYTj_lta53NCM=&uipk=5&nbs=1&deadline=1610020124&gen=playurl&os=akam&oi=1736557629&trid=3d01fc2d5c574011a133705076e0b83eT&platform=html5&upsig=5b898c0e941dad8d757264a627540b0d&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,platform&hdnts=exp=1610020124~hmac=304cd74361a8cbe8700f794a03b768ec5505f1437f1d1f4ba803ce749de9a4f9&mid=0&orderid=0,1&logo=80000000";
 
-        String result_count = HttpURLConnectionUtil.sendToUrlRequest(l,"GET", ConstantCharSet.UTF_8, PropertiesHeader.bilibiliMap());
+        String result_count = HttpURLConnectionUtil.flow(l,"GET", ConstantCharSet.UTF_8, PropertiesHeader.bilibiliMap());
 
         System.out.println(result_count);
 

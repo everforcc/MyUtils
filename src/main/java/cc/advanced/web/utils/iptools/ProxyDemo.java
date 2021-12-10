@@ -1,4 +1,4 @@
-package cc.advanced.web.http.iptools;
+package cc.advanced.web.utils.iptools;
 
 
 import java.io.IOException;

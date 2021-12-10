@@ -20,7 +20,7 @@ public class NovelDown implements Runnable {
     private String index;
 
     public void bookDown(){
-        String result = HttpURLConnectionUtil.sendToUrlRequest(url,"GET","gbk", PropertiesHeader.loveyueduMap());
+        String result = HttpURLConnectionUtil.flow(url,"GET","gbk", PropertiesHeader.loveyueduMap());
         Document document = Jsoup.parse(result);
         //System.out.println(document.body());
         String content = document.getElementById("content").toString();

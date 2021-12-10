@@ -38,7 +38,7 @@ public class CalendarUtils {
 
     /**
      * 获取昨天的
-     * @return yyyy-MM-dd
+     * @return yyyyMMdd
      */
     public static String getYesterday(){
         Calendar ca = Calendar.getInstance();

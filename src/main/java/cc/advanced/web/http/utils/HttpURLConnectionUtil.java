@@ -1,15 +1,12 @@
 package cc.advanced.web.http.utils;
 
 import cc.core.io.InputStreamUtils;
+import cc.utils.Print_Record;
 import org.apache.axis.utils.StringUtils;
-import org.apache.commons.io.FileUtils;
 
 import javax.activation.MimetypesFileTypeMap;
 import java.io.*;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
-import java.net.URL;
+import java.net.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -17,7 +14,21 @@ import java.util.Map;
 
 public class HttpURLConnectionUtil {
 
-    private static boolean gzip = false;
+    public static boolean gzip = false;
+    public static int timeout = 6000;
+    public static Print_Record print_record = Print_Record.getInstanse();
+
+    // 如果解析错误重试次数设置为三次，要不然多次就溢出了
+    private static List<String> badUrl = new ArrayList<>();
+    private static int i = 0;
+
+    /**
+     * 1. 从url拿到 HttpURLConnection
+     * 2. 给conn设置请求头
+     * 3. 从conn拿到返回流
+     * 4. 从流拿到数据并重试几次
+     * 5. 全流程，供外部调用
+     */
 
     /**
      *  1.发送普通的请求
@@ -27,67 +38,35 @@ public class HttpURLConnectionUtil {
      *  5.在读取流的时候，给编码
      */
 
-    // 重构
-    public static String forHttpURLConnection(HttpURLConnection conn,String requestMethod,String charset) throws IOException {
-        return forHttpURLConnection(conn,null,requestMethod,charset,null);
+    /**
+     * 1. 从url拿到 HttpURLConnection
+     */
+    public static HttpURLConnection getHttpUCByIn(String urlPath) throws IOException {
+        // 从url打开 HttpURLConnection 然后设置参数
+        URL url = new URL(urlPath);
+        return (HttpURLConnection) url.openConnection();
+    }
+    public static HttpURLConnection getHttpUCByIn(String urlPath, Proxy proxy) throws IOException {
+        URL url = new URL(urlPath);
+        // ProxyDemo.getUrlProxyContent("")
+        return (HttpURLConnection) url.openConnection(proxy);
     }
 
-    public static String forHttpURLConnection(HttpURLConnection conn,String requestMethod,String content,String charset) throws IOException {
-        return forHttpURLConnection(conn,content,requestMethod,charset,null);
+    /**
+     * 2. 给conn设置请求头
+     * 3. 从conn拿到返回流
+     */
+    public static InputStream getStream(String urlPath,String requestMethod,String charset,Map<String,String> map) throws IOException {
+        return getStream(getHttpUCByIn(urlPath),requestMethod,charset,map);
     }
-
-    public static String forHttpURLConnection(HttpURLConnection conn,String requestMethod,String charset,Map<String,String> map) throws IOException {
-        return forHttpURLConnection(conn,null,requestMethod,charset,map);
+    public static InputStream getStream(String urlPath,String requestMethod,String charset,Map<String,String> map,String content) throws IOException {
+        return getStream(getHttpUCByIn(urlPath),requestMethod,charset,map,content);
     }
-
     public static InputStream getStream(HttpURLConnection conn,String requestMethod,String charset,Map<String,String> map) throws IOException {
         return getStream(conn,requestMethod,charset,map,null);
     }
-
-    // 现在还没有遇到写入数据的情况这content先不用,下面的代码也屏蔽掉了,遇到了再增加,看懂意义
-    // 地址，方法，内容，编码， 需要再加个请求头
-    public static String sendToUrlRequest(String urlPath,String requestMethod,String content,String charset)throws Exception{
-        System.out.println("sendToUrlRequest >>> " + urlPath);
-        //1, 得到URL对象
-        URL url = new URL(urlPath);
-        //2, 打开连接
-        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-        return forHttpURLConnection(conn,requestMethod,content,charset);
-    }
-
-    public static String  sendToUrlRequest(String urlPath,String requestMethod,String charset, Map<String,String> map){
-        //System.out.println("sendToUrlRequest():" + urlPath);
-        //1, 得到URL对象
-        URL url = null;
-        try {
-            url = new URL(urlPath);
-            //2, 打开连接
-            //HttpURLConnection conn = (HttpURLConnection) url.openConnection(ProxyDemo.getUrlProxyContent(""));
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            return forHttpURLConnection(conn,requestMethod,charset,map);
-        } catch (MalformedURLException e) {
-            System.out.println("重试中 1>>>" + e.toString());
-            return sendToUrlRequest(urlPath, requestMethod, charset, map);
-            //e.printStackTrace();
-        } catch (IOException e) {
-            System.out.println("重试中 2>>>" + e.toString());
-            return sendToUrlRequest(urlPath, requestMethod, charset, map);
-            //e.printStackTrace();
-        }
-    }
-
-
-    public static InputStream getStream(String urlPath,String requestMethod,String charset,Map<String,String> map) throws IOException {
-        URL url = null;
-        url = new URL(urlPath);
-        //2, 打开连接
-        //HttpURLConnection conn = (HttpURLConnection) url.openConnection(ProxyDemo.getUrlProxyContent(""));
-        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-        return getStream(conn,requestMethod,charset,map);
-    }
-
     public static InputStream getStream(HttpURLConnection conn,String requestMethod,String charset,Map<String,String> map,String content) throws IOException {
-        // 设置请求头
+        // 1. 设置请求头
         if(map!=null&&map.size()>0){
             for(Map.Entry entry : map.entrySet()){
                 //System.out.println((String) entry.getKey() + "---" + conn.getRequestProperty((String) entry.getKey()));
@@ -102,45 +81,57 @@ public class HttpURLConnectionUtil {
                 }
             }
         }
-        //3, 设置提交类型
+
         try {
-            conn.setConnectTimeout(60000);
+            //2. 设置超时时间
+            conn.setConnectTimeout(timeout);
+            //3. 设置提交类型
             conn.setRequestMethod(requestMethod);
         } catch (ProtocolException e) {
             e.printStackTrace();
         }
-        //4, 设置允许写出数据,默认是不允许 false
 
-        conn.setDoInput(true);//当前的连接可以从服务器读取内容, 默认是true
-        //conn.setConnectTimeout(6000);
-        // 如果不为空就进去, 没搞懂方式
+        //4. 设置允许写出数据,默认是不允许 false
+        // 当前的连接可以从服务器读取内容, 默认是true
+        //conn.setDoInput(true);
+
         if(!StringUtils.isEmpty(content)) {
             conn.setDoOutput(true);
-            //5, 获取向服务器写出数据的流
+            //5. 获取向服务器写出数据的流
             OutputStream os = conn.getOutputStream();
             //参数是键值队  , 不以"?"开始
-            os.write(content.getBytes());
             //os.write("googleTokenKey=&username=admin&password=5df5c29ae86331e1b5b526ad90d767e4".getBytes());
+            os.write(content.getBytes());
             os.flush();
         }
-        //6, 获取响应的数据
-        //得到服务器写回的响应数据
         // charset 在这里 <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
-        //System.out.println("getStream():1 >>>>>>>>>>>>>");
 
-        //System.out.println("getStream():" + conn.getContentLength());
+        // 6. 打印响应头信息
+        print_record.println("ContentLength:" + conn.getContentLength(),"[%s]");
+        conn.getHeaderFields().forEach((k,v) -> {
+            print_record.println("响应头 key:" + k + ", value:" + v);
+        });
+        // 判断是否链接
+        print_record.println("ResponseCode:" + conn.getResponseCode(),"[%s]");
 
-        //怎么判断是否连接上!!!
-
-        //System.out.println("" +conn.getResponseCode());
-
+        // 7. 获取响应的流
+        // 得到服务器写回的响应数据
         return conn.getInputStream();
     }
 
-    // 如果解析错误重试次数设置为三次，要不然多次就溢出了
-    private static List<String> badUrl = new ArrayList<>();
-    private static int i = 0;
-    public static String forHttpURLConnection(HttpURLConnection conn,String content,String requestMethod,String charset,Map<String,String> map) {
+    /**
+     * 4. 从流拿到数据并重试几次
+     */
+    public static String connToResult(HttpURLConnection conn, String requestMethod, String charset) throws IOException {
+        return connToResult(conn,null,requestMethod,charset,null);
+    }
+    public static String connToResult(HttpURLConnection conn, String requestMethod, String content, String charset) throws IOException {
+        return connToResult(conn,content,requestMethod,charset,null);
+    }
+    public static String connToResult(HttpURLConnection conn, String requestMethod, String charset, Map<String,String> map) throws IOException {
+        return connToResult(conn,null,requestMethod,charset,map);
+    }
+    public static String connToResult(HttpURLConnection conn, String content, String requestMethod, String charset, Map<String,String> map) {
 
         //System.out.println("i >>> " + i);
         String url = conn.getURL().toString();
@@ -175,7 +166,7 @@ public class HttpURLConnectionUtil {
             // 获取流异常
             System.err.println("forHttpURLConnection():获取流异常");
             if(i<3) {
-                forHttpURLConnection(conn, content, requestMethod, charset, null);
+                connToResult(conn, content, requestMethod, charset, null);
             }else {
                 badUrl.add(url);
                 i = 0;
@@ -186,7 +177,7 @@ public class HttpURLConnectionUtil {
             // 从流读取数据异常
             System.err.println("forHttpURLConnection():从流读取数据异常");
             if(i<3) {
-                forHttpURLConnection(conn, content, requestMethod, charset, map);
+                connToResult(conn, content, requestMethod, charset, map);
             }else {
                 badUrl.add(url);
                 i = 0;
@@ -199,22 +190,30 @@ public class HttpURLConnectionUtil {
         return returnMsg;
     }
 
-    /* 使用统一的工具类
-    private static String readMsg(InputStream inputStream,String charset) throws IOException {
-        String str;
-        BufferedReader br= null;
-        StringBuffer stringBuffer = new StringBuffer();
-        br = new BufferedReader(new InputStreamReader(inputStream,charset));
-        while ( (str=br.readLine())!=null){
-            stringBuffer.append(str + "\r\n");
+    /**
+     * 5. 全流程
+     */
+    public static String flow(String urlPath, String requestMethod, String content, String charset)throws Exception{
+        return flow(urlPath,requestMethod,content,charset,null);
+    }
+
+    public static String flow(String urlPath, String requestMethod, String charset, Map<String,String> map){
+        return flow(urlPath,requestMethod,null,charset,map);
+    }
+    public static String flow(String urlPath, String requestMethod, String content, String charset, Map<String,String> map){
+        try {
+            return connToResult(getHttpUCByIn(urlPath),content,requestMethod,charset,map);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        return stringBuffer.toString();
-    }*/
+        return null;
+    }
 
 /***************************************************** ↓还没有用到↓ ****************************************************/
 
 
     /**
+     * POST处理文件
      *
      */
 
@@ -235,10 +234,11 @@ public class HttpURLConnectionUtil {
         // boundary就是request头和上传文件内容的分隔符
         String BOUNDARY = "---------------------------123821742118716";
         try {
-            URL url = new URL(urlStr);
-            conn = (HttpURLConnection) url.openConnection();
 
-            // 设置强求属性
+            // 1. 声明conn
+            conn = getHttpUCByIn(urlStr);
+
+            // 2. 设置请求属性
             conn.setConnectTimeout(5000);
             conn.setReadTimeout(30000);
             conn.setDoOutput(true);
@@ -249,9 +249,10 @@ public class HttpURLConnectionUtil {
             // conn.setRequestProperty("User-Agent","Mozilla/5.0 (Windows; U; Windows NT 6.1; zh-CN; rv:1.9.2.6)");
             conn.setRequestProperty("Content-Type","multipart/form-data; boundary=" + BOUNDARY);
 
+            // 3. 拿到输出流
             OutputStream out = new DataOutputStream(conn.getOutputStream());
 
-            // text 字符参数
+            // 3.1 text 字符参数
             if (textMap != null) {
                 StringBuffer strBuf = new StringBuffer();
                 Iterator iter = textMap.entrySet().iterator();
@@ -269,7 +270,7 @@ public class HttpURLConnectionUtil {
                 out.write(strBuf.toString().getBytes());
             }
 
-            // file 文件map
+            // 3.2 file 文件map
             if (fileMap != null) {
                 Iterator iter = fileMap.entrySet().iterator();
                 while (iter.hasNext()) {
@@ -315,14 +316,16 @@ public class HttpURLConnectionUtil {
             }
             // file end
 
-            // 发送数据
+            // 3.3 发送数据
             byte[] endData = ("\r\n--" + BOUNDARY + "--\r\n").getBytes();
             out.write(endData);
+
+            // 3.4 关闭流
             out.flush();
             out.close();
 
 
-            // 读取返回数据
+            // 4. 读取返回数据
             StringBuffer strBuf = new StringBuffer();
             BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
             String line = null;

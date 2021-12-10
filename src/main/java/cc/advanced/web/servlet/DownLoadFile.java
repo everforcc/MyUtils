@@ -1,4 +1,4 @@
-package cc.advanced.web.http.responsefile;
+package cc.advanced.web.servlet;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
