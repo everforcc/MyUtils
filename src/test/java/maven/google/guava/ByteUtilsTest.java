@@ -3,6 +3,7 @@ package maven.google.guava;
 import com.google.common.base.Preconditions;
 import com.google.common.math.IntMath;
 import org.apache.commons.lang3.RandomUtils;
+import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -90,8 +91,28 @@ public class ByteUtilsTest {
         for(int remaining = totalLen; remaining > 0; remaining -= bytesToCopy) {
             // 删除队列中的第一个元素，并返回该元素的值
             byte[] buf = (byte[])bufs.remove();
+            /**
+             * 取出两者中较小的那个
+             * 1. 如果remaining小，一轮结束
+             * 2. 如果buf.length小，那么依次取出赋值
+             * 3.
+             */
             bytesToCopy = Math.min(remaining, buf.length);
+            /**
+             * 1. totalLen 固定
+             * 2. remaining初始值为totalLen
+             * 3. 每轮 remaining减少bytesToCopy
+             * 4. 那不就是 bytesToCopy ?
+             *
+             */
             int resultOffset = totalLen - remaining;
+            /**
+             * 要copy的数组
+             * 起始位置
+             * 目标文件
+             * 开始位置
+             * copy长度
+             */
             System.arraycopy(buf, 0, result, resultOffset, bytesToCopy);
         }
 
@@ -108,6 +129,15 @@ public class ByteUtilsTest {
          * </dependency>
          */
         System.out.println(RandomUtils.nextInt(-1, 1));
+    }
+
+    @Test
+    public void testFor(){
+
+        for(int i = 0;i<10;i++){
+            System.out.println(i);
+        }
+
     }
 
 }
