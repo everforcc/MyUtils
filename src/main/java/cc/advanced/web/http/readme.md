@@ -20,14 +20,22 @@
  * 
  */
 ~~~
+- 常见操作
+- [x] 请求方式
+- [x] 请求头
+- [x] 请求参数
+- [x] 超时
+- [x] 代理
+- [x] 返回流
+
 
 ---
 
 - [ ] URL
-- [ ] HttpURLConnection
-- [ ] URLConnection
+- [x] URLConnection
+- [x] HttpURLConnection
+- [x] apache HttpClient- 
 - [ ] Socket
-- [ ] apache HttpClient
 
 ---
 

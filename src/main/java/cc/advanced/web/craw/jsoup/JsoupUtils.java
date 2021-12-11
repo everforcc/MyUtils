@@ -1,4 +1,4 @@
-package cc.advanced.web.craw.utils;
+package cc.advanced.web.craw.jsoup;
 
 import cc.constant.ConstantCharSet;
 import org.jsoup.Connection;
