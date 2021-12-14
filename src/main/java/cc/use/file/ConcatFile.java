@@ -3,7 +3,8 @@ package cc.use.file;
 import cc.constant.ConstantFile;
 import cc.core.file.utils.FileUtils;
 import cc.core.file.utils.IFileUtils;
-import cc.core.io.PrintWriterUtils;
+import cc.core.io.base.PrintReaderUtils;
+import cc.core.io.base.PrintWriterUtils;
 
 import java.io.File;
 
@@ -28,9 +29,9 @@ public class ConcatFile implements IFileUtils {
             String name = fileList[i].getName();
             int first  = name.indexOf(".") + 1;
             name = name.substring(first,name.indexOf(".",first));
-            String content = PrintWriterUtils.fileReader(fileList[i].getAbsolutePath());
+            String content = PrintReaderUtils.bufferReader(fileList[i].getAbsolutePath());
             System.out.println(content);
-            PrintWriterUtils.fileWriter(String.format(strings[0],name),content);
+            PrintWriterUtils.printWriter(String.format(strings[0],name),content);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -1,6 +1,6 @@
 package cc.use.url.http.novelmodel;
 
-import cc.core.io.PrintWriterUtils;
+import cc.core.io.base.PrintReaderUtils;
 import cc.resource.PropertiesHeader;
 import cc.use.url.http.novelmodel.model.BookModel;
 import cc.use.url.http.novelmodel.model.ContentModel;
@@ -10,7 +10,8 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 
 import java.io.File;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author c.c.
@@ -99,7 +100,7 @@ public class Novel_init {
 
         try {
             // 静态方法和非晶态方法不同
-            return PrintWriterUtils.fileReader(resource);
+            return PrintReaderUtils.bufferReader(resource);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -1,7 +1,7 @@
 package cc.arithmetic.basenum;
 
 import cc.constant.ConstantFile;
-import cc.core.io.PrintWriterUtils;
+import cc.core.io.base.PrintReaderUtils;
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 
@@ -68,7 +68,7 @@ public class Base64 {
         //PrintWriterUtils.fileWriter(ConstantFile.javaFilePath + "/resources/图片/bilibili/yellow.txt",getbase64Url(ConstantFile.javaFilePath + "/resources/图片/bilibili/yellow.jpg"));
 
         try {
-            getImage(PrintWriterUtils.fileReader(ConstantFile.L1_javaFilePath + "/resources/图片/bilibili/yellow.txt"),ConstantFile.L1_javaFilePath + "/resources/图片/bilibili/yellow1.jpg");
+            getImage(PrintReaderUtils.bufferReader(ConstantFile.L1_javaFilePath + "/resources/图片/bilibili/yellow.txt"),ConstantFile.L1_javaFilePath + "/resources/图片/bilibili/yellow1.jpg");
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -1,6 +1,7 @@
 package maven.google.guava;
 
 import com.google.common.base.Preconditions;
+import com.google.common.io.ByteStreams;
 import com.google.common.math.IntMath;
 import org.apache.commons.lang3.RandomUtils;
 import org.junit.jupiter.api.Test;
@@ -137,7 +138,11 @@ public class ByteUtilsTest {
         for(int i = 0;i<10;i++){
             System.out.println(i);
         }
-
+        try {
+            ByteStreams.toByteArray(null);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }

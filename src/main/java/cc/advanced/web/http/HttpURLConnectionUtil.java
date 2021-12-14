@@ -1,6 +1,6 @@
 package cc.advanced.web.http;
 
-import cc.core.io.InputStreamUtils;
+import cc.core.io.base.StreamInputUtils;
 import cc.utils.Print_Record;
 import org.apache.axis.utils.StringUtils;
 
@@ -158,7 +158,7 @@ public class HttpURLConnectionUtil {
             //FileUtils.copyToFile(inputStream,new File("/a.jpg"));
             //System.out.println("getStream(conn,requestMethod,charset,map) end >>>");
             // 编码在下面使用
-            returnMsg = InputStreamUtils.inputStreamStr(inputStream,charset,gzip);
+            returnMsg = StreamInputUtils.streamToStr(inputStream,charset,gzip);
             gzip = false;// 重置为false 等待下一轮使用
             i = 0;
         } catch (IOException e) {

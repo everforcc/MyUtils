@@ -3,7 +3,7 @@ package cc.use.file;
 import cc.constant.ConstantFile;
 import cc.core.file.utils.FileUtils;
 import cc.core.file.utils.IFileUtils;
-import cc.core.io.PrintWriterUtils;
+import cc.core.io.base.PrintWriterUtils;
 
 import java.io.File;
 import java.text.DecimalFormat;
@@ -61,7 +61,7 @@ public class RenameFile implements IFileUtils {
                 // 如果旧文件名和新文件相同则不处理，也不做记录
                 // PrintWriterUtils.fileWriter(oldFile.getParent(), "name.txt", fileName + " >>> 文件名相同 ");
             } else {
-                PrintWriterUtils.fileWriter(oldFile.getParent(), "name.txt", fileName + " >>> " + oldFile.getName() + "\r\n");
+                PrintWriterUtils.printWriter(oldFile.getParent(), "name.txt", fileName + " >>> " + oldFile.getName() + "\r\n");
             }
         }
         return false;

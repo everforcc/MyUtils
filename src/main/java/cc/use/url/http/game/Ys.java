@@ -1,8 +1,9 @@
 package cc.use.url.http.game;
 
+import cc.core.io.base.PrintReaderUtils;
 import cc.resource.PropertiesHeader;
 import cc.advanced.web.http.HttpURLConnectionUtil;
-import cc.core.io.PrintWriterUtils;
+import cc.core.io.base.PrintWriterUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -118,13 +119,13 @@ public class Ys {
         System.out.println(JSONArray.toJSONString(ysCardVOSet));
 
         // uid
-        PrintWriterUtils.fileWriter("temp", uid + ".json", JSONArray.toJSONString(ysCardVOSet));
+        PrintWriterUtils.printWriter("temp", uid + ".json", JSONArray.toJSONString(ysCardVOSet));
 
     }
 
     public static void analyse(String uid){
         try {
-            String jsonAry = PrintWriterUtils.fileReader("temp/" + uid + ".json");
+            String jsonAry = PrintReaderUtils.bufferReader("temp/" + uid + ".json");
             System.out.println(jsonAry);
             List<YsCardVO> ysCardVOList = JSON.parseArray(jsonAry,YsCardVO.class);
 

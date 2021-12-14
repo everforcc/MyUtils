@@ -1,7 +1,7 @@
 package cc.use.url.http.pic;
 
 import cc.constant.ConstantFile;
-import cc.core.io.PrintWriterUtils;
+import cc.core.io.base.PrintWriterUtils;
 import cc.advanced.web.craw.webmagic.base.Constant;
 import cc.utils.Print_Record;
 import org.apache.commons.io.FileUtils;
@@ -218,7 +218,7 @@ public class Picture_Model {
     }
 
     public static void save(String content,String name,String... path){
-        PrintWriterUtils.fileWriter(pathFormat(path),name,content);
+        PrintWriterUtils.printWriter(pathFormat(path),name,content);
     }
 
     public static void save(List<String> contentList,String name,String... path){
@@ -228,7 +228,7 @@ public class Picture_Model {
             stringBuilder.append(s);
         }
 
-        PrintWriterUtils.fileWriter(pathFormat(path),name,stringBuilder.toString());
+        PrintWriterUtils.printWriter(pathFormat(path),name,stringBuilder.toString());
     }
 
     private static String pathFormat(String... dir){

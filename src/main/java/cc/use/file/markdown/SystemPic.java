@@ -1,7 +1,7 @@
 package cc.use.file.markdown;
 
 import cc.constant.ConstantFile;
-import cc.core.io.PrintWriterUtils;
+import cc.core.io.base.PrintWriterUtils;
 
 import java.io.File;
 
@@ -68,7 +68,7 @@ public class SystemPic {
     }
 
     public static void saveMD(String fileName,String content){
-        PrintWriterUtils.fileWriter(ConstantFile.L1_javaFilePath + "/图片\\", "图片-1.md",content + "\r\n");
+        PrintWriterUtils.printWriter(ConstantFile.L1_javaFilePath + "/图片\\", "图片-1.md",content + "\r\n");
     }
 
 }

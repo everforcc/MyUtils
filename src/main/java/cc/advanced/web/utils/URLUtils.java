@@ -25,7 +25,6 @@ public class URLUtils {
     // url基本含义
     public static void main(String[] args) {
         urlMethod();
-        URLConnectionMethod();
         // 路径中文的加密解密
         //nextUrl = URLDecoder.decode(nextUrl);
     }
@@ -50,35 +49,6 @@ public class URLUtils {
             System.out.println("定位位置：" + url.getRef());
             print_record.println("定位位置：[%s]",url.getRef());
             System.out.println(url.getProtocol() + "://" + url.getHost());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static void println(String msg,String... format){
-        System.out.println(String.format(msg,format));
-    }
-
-    // url 校验
-    static void URLConnectionMethod() {
-        try {
-            URL url = new URL("http://www.runoob.com");
-            URLConnection urlConnection = url.openConnection();
-            HttpURLConnection connection = null;
-            if (urlConnection instanceof HttpURLConnection) {
-                connection = (HttpURLConnection) urlConnection;
-            } else {
-                System.out.println("请输入 URL 地址");
-                return;
-            }
-            BufferedReader in = new BufferedReader(
-                    new InputStreamReader(connection.getInputStream()));
-            String urlString = "";
-            String current;
-            while ((current = in.readLine()) != null) {
-                urlString += current;
-            }
-            System.out.println(urlString);
         } catch (IOException e) {
             e.printStackTrace();
         }

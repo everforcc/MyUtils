@@ -1,7 +1,6 @@
 package cc.advanced.web.http;
 
-import cc.core.io.InputStreamUtils;
-import cc.utils.UserException;
+import cc.core.io.base.StreamInputUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.IOException;
@@ -31,7 +30,7 @@ public class URLConnectionUtils {
         InputStream inputStream = receive();
         // 4.
         try {
-            System.out.println(InputStreamUtils.inputStreamStr(inputStream, "UTF-8"));
+            System.out.println(StreamInputUtils.streamToStr(inputStream, "UTF-8"));
         } catch (Exception e) {
             e.printStackTrace();
         }

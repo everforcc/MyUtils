@@ -3,10 +3,11 @@ package cc.use.file;
 import cc.constant.ConstantFile;
 import cc.core.file.utils.FileUtils;
 import cc.core.file.utils.IFileUtils;
+import cc.core.io.base.PrintReaderUtils;
 import cc.resource.PropertiesHeader;
 import cc.advanced.web.http.HttpURLConnectionUtil;
-import cc.core.io.InputStreamUtils;
-import cc.core.io.PrintWriterUtils;
+import cc.core.io.base.StreamInputUtils;
+import cc.core.io.base.PrintWriterUtils;
 import cc.core.regex.utils.RegexUtils;
 import cc.utils.Print_Record;
 
@@ -51,7 +52,7 @@ public class WenkuNovelMenu implements IFileUtils,Runnable {
             // 说明是md文件
             String tempUrl = "";
             try {
-                String content = PrintWriterUtils.fileReader(fileList[i]);
+                String content = PrintReaderUtils.bufferReader(fileList[i]);
                 Set<String> stringSet = RegexUtils.matcheList("\\<img src=.*\\>",content);
                 if(stringSet!=null&&stringSet.size()!=0){
                     print_record.println("stringSet.size():" + stringSet.size() + " >>> " + fileList[i].getAbsolutePath());
@@ -74,13 +75,13 @@ public class WenkuNovelMenu implements IFileUtils,Runnable {
                         print_record.println(fileName);
                         InputStream inputStream = HttpURLConnectionUtil.getStream(str,"GET","", PropertiesHeader.pictureWenku8());
                         print_record.println(filePath);
-                        InputStreamUtils.downFileByStream(inputStream,filePath,fileName);
+                        StreamInputUtils.streamToFile(inputStream,filePath,fileName);
                 }
                 }
             } catch (Exception e) {
-                PrintWriterUtils.fileWriter(ConstantFile.L1_javaFilePath + "\\craw\\www.wenku8.net\\log","log_err.txt","fileList[i].getName():" + e + "\r\n");
+                PrintWriterUtils.printWriter(ConstantFile.L1_javaFilePath + "\\craw\\www.wenku8.net\\log","log_err.txt","fileList[i].getName():" + e + "\r\n");
                 // print_record_error.printErrln("fileList[i].getName():" + fileList[i].getName());
-                PrintWriterUtils.fileWriter(ConstantFile.L1_javaFilePath + "\\craw\\www.wenku8.net\\log","log_err.txt","fileList[i].getName():" + fileList[i].getName() + ": " + tempUrl + "\r\n");
+                PrintWriterUtils.printWriter(ConstantFile.L1_javaFilePath + "\\craw\\www.wenku8.net\\log","log_err.txt","fileList[i].getName():" + fileList[i].getName() + ": " + tempUrl + "\r\n");
                 //accept(fileList,i,"");
             }
         }
@@ -122,7 +123,7 @@ public class WenkuNovelMenu implements IFileUtils,Runnable {
     }
 
     private static void saveMDMenu(String fileName,String content){
-        PrintWriterUtils.fileWriter(fileName,content);
+        PrintWriterUtils.printWriter(fileName,content);
     }
 
     public String getPath() {

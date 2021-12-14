@@ -1,7 +1,7 @@
 package cc.advanced.web.craw.selenium;
 
 import cc.constant.ConstantFile;
-import cc.core.io.PrintWriterUtils;
+import cc.core.io.base.PrintWriterUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -80,10 +80,10 @@ public class SeleniumMethod {
     }
 
     public static void saveUrl(String content){
-        PrintWriterUtils.fileWriter(ConstantFile.L1_javaFilePath + "/novel/biquge","斗破苍穹Url.txt",content);
+        PrintWriterUtils.printWriter(ConstantFile.L1_javaFilePath + "/novel/biquge","斗破苍穹Url.txt",content);
     }
 
     public static void save(String content){
-        PrintWriterUtils.fileWriter(ConstantFile.L1_javaFilePath + "/novel/biquge","斗破苍穹.txt",content);
+        PrintWriterUtils.printWriter(ConstantFile.L1_javaFilePath + "/novel/biquge","斗破苍穹.txt",content);
     }
 }

@@ -3,7 +3,7 @@ package cc.use.file.m3u8helper;
 import cc.constant.ConstantFile;
 import cc.core.file.utils.FileUtils;
 import cc.core.file.utils.IFileUtils;
-import cc.core.io.PrintWriterUtils;
+import cc.core.io.base.PrintWriterUtils;
 import cc.java0.ffmpeg.utils.FFmpegUtils;
 
 import java.io.BufferedReader;
@@ -82,7 +82,7 @@ public class M3u8ToVideo implements IFileUtils {
                         System.out.println("fileName:" + fileName);
                         System.out.println("readLine:" + readLine);
 
-                        PrintWriterUtils.fileWriter(path,newFileName,readLine + "\r\n");
+                        PrintWriterUtils.printWriter(path,newFileName,readLine + "\r\n");
                     }
                 }
 
@@ -113,7 +113,7 @@ public class M3u8ToVideo implements IFileUtils {
 
         System.out.println("3txt:" + txt);
 
-        PrintWriterUtils.fileWriter(path, fileName,txt);
+        PrintWriterUtils.printWriter(path, fileName,txt);
 
         return txt;
     }

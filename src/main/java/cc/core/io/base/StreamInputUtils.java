@@ -1,10 +1,10 @@
-package cc.core.io;
+package cc.core.io.base;
 
 import cc.constant.ConstantFile;
 import cc.core.file.utils.FileUtils;
 import cc.core.file.zip.ZipUtils;
 import cc.utils.Print_Record;
-import org.apache.commons.lang3.StringUtils;
+import com.google.common.io.ByteStreams;
 
 import java.io.*;
 import java.math.BigDecimal;
@@ -18,34 +18,39 @@ import java.util.List;
  * @author c.c.
  * @date 2020/12/9
  */
-public class InputStreamUtils {
+public class StreamInputUtils {
 
     /**
-     * 非文本类
-     * 处理字节，例如图片视频流
+     * 分类
+     * 1. 字节流
+     * 1.1 字节流 > 文件
+     * 1.2 字节流 > copy Ary
+     * 1.3 字节流 > str
+     *
+     * 2. Reader系列
+     *
      */
+
     public static void main(String[] args) {
-        // 每个方法这里都加行 方法名
+
     }
 
-    static Print_Record print_record = Print_Record.getInstanse(ConstantFile.L1_javaFilePath + "/craw/www.wenku8.net/log","log.txt");
-
-    // 入InputStream >> 岀FileOutputStream
-    // 下载文件 带文件路径，文件名，文件大小
-    public static void downFileByStream(InputStream in, String filePath, String fileName)throws Exception{
-        // 不使用计算比例功能
-        downFileByStream(in,filePath,fileName,new BigDecimal(0));
-    }
+    // 日志记录
+    private static Print_Record print_record = Print_Record.getInstanse(ConstantFile.L1_javaFilePath + "/craw/www.wenku8.net/log","log.txt");
 
     /**
-     *  如果写入失败，这部分的异常需要交给谁处理呢?
+     *  1.1 stream到file
      * @param inputStream
      * @param filePath D:dir
      * @param fileName a.txt
-     * @param fileLength size
+     * @ fileLength size
      * @throws Exception
      */
-    public static void downFileByStream(InputStream inputStream, String filePath, String fileName, BigDecimal fileLength)throws Exception{
+    public static void streamToFile(InputStream inputStream, String filePath, String fileName)throws Exception{
+        // 不使用计算比例功能
+        streamToFile(inputStream,filePath,fileName,new BigDecimal(0));
+    }
+    public static void streamToFile(InputStream inputStream, String filePath, String fileName, BigDecimal fileLength)throws Exception{
         // 总时间
         Date begindate = new Date();
 
@@ -107,7 +112,10 @@ public class InputStreamUtils {
         print_record.println(fileName + "下载耗时:" + time/1000 + " s");
     }
 
-    // 给输入流的 这个校验什么的都没做，不用
+    /**
+     * 给输入流的 这个校验什么的都没做，不用
+     * 示例大概流程
+     */
     /*public static void IO_FileOutputStream(File file,InputStream in)throws Exception{
         FileOutputStream fo = new FileOutputStream(file);
         *//**
@@ -122,7 +130,16 @@ public class InputStreamUtils {
         fo.close();
     }*/
 
-    public static byte[] inputStreamByte(InputStream inputStream,String charSet)throws Exception {
+    /**
+     * 1.2 复制 inputstream 的byte数组
+     * @param inputStream
+     * @param charSet
+     * @return
+     * @throws Exception
+     */
+    public static byte[] copyStreamByteAry(InputStream inputStream, String charSet)throws Exception {
+        //ByteStreams.toByteArray(inputStream);
+
         FileOutputStream fo_3 = new FileOutputStream(new File("C://3.jpg"));
         FileOutputStream fo_4 = new FileOutputStream(new File("C://4.jpg"));
         List<byte[]> byteList = new ArrayList<>();
@@ -195,36 +212,35 @@ public class InputStreamUtils {
         return copyBytes;
     }
 
-    public static String inputStreamStr(InputStream inputStream,String charSet,boolean gzip)throws Exception {
+    /**
+     * 1.3 因为要读出字符，所以要全读然后转，否则就要根据编码从底层判断了，比较麻烦
+     * 不建议使用这种方法，数据量大,容易出问题
+     */
+    public static String streamToStr(InputStream inputStream,String charSet)throws Exception {
+        byte[] bytes = ByteStreams.toByteArray(inputStream);
+        return new String(bytes,charSet);
+    }
+
+    public static String streamToStr(InputStream inputStream,String charSet,boolean gzip)throws Exception {
         if(gzip){
             return ZipUtils.gzipRestore(inputStream);
         }
-        BufferedReader br = null;
-        // 默认字符编码GBK
-        if(StringUtils.isNotBlank(charSet)){
-            br = new BufferedReader(new InputStreamReader(inputStream,charSet));
-        }else {
-            br = new BufferedReader(new InputStreamReader(inputStream));
-        }
-        String readLine;
-        StringBuilder builder = new StringBuilder();
-        while ((readLine = br.readLine()) != null) {
-            // 一次读一行，所以我也要换行
-            builder.append(readLine + "\r\n");
-        }
-        String result = builder.toString();
-        return result;
+        byte[] bytes = ByteStreams.toByteArray(inputStream);
+        return new String(bytes,charSet);
     }
 
+
     /**
-     * 根据inputStream获得输入的字符串,带编码
-     * @param inputStream 输入流
-     * @param charSet 字符编码
-     * @return
-     * @throws Exception
+     * 2. 使用其他api
+     *
      */
-    public static String inputStreamStr(InputStream inputStream,String charSet)throws Exception{
-        return inputStreamStr(inputStream,charSet,false);
+    public static String readerUtils(InputStream inputStream,String charSet){
+        try {
+            return PrintReaderUtils.bufferReaderToStr(inputStream,charSet);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "获取失败";
     }
 
 }

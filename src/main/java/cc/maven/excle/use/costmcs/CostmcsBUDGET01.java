@@ -1,7 +1,7 @@
 package cc.maven.excle.use.costmcs;
 
 import cc.constant.ConstantFile;
-import cc.core.io.PrintWriterUtils;
+import cc.core.io.base.PrintWriterUtils;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
@@ -221,7 +221,7 @@ public class CostmcsBUDGET01 {
         // 并写入文件
         for(String s:insertsql){
             println(s);
-            PrintWriterUtils.fileWriter(new File(filePath+"//"+tableName+".sql"),s);
+            PrintWriterUtils.printWriter(new File(filePath+"//"+tableName+".sql"),s);
         }
 
 

@@ -3,7 +3,7 @@ package cc.use.url.http.novel2;
 import cc.resource.PropertiesHeader;
 import cc.advanced.web.http.HttpURLConnectionUtil;
 import cc.constant.ConstantFile;
-import cc.core.io.PrintWriterUtils;
+import cc.core.io.base.PrintWriterUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
@@ -31,7 +31,7 @@ public class NovelDown implements Runnable {
 
         //System.out.println("开始下载章节:" + index + menuName);
 
-        PrintWriterUtils.fileWriter(filePath + "\\",index + "." + menuName + ".txt",content);
+        PrintWriterUtils.printWriter(filePath + "\\",index + "." + menuName + ".txt",content);
     }
 
     @Override

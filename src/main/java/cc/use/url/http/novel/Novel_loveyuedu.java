@@ -5,8 +5,8 @@ import cc.advanced.web.craw.utils.CrawDataParse;
 import cc.advanced.web.http.HttpClientUtils;
 import cc.advanced.web.http.HttpURLConnectionUtil;
 import cc.constant.ConstantFile;
-import cc.core.io.InputStreamUtils;
-import cc.core.io.PrintWriterUtils;
+import cc.core.io.base.StreamInputUtils;
+import cc.core.io.base.PrintWriterUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -139,17 +139,17 @@ public class Novel_loveyuedu implements NovelFlow,Runnable {
 
     public static void saveTXT(String content,String suffix,int page,int i){
         String formatNameResult = String.format(fileTXTFormat,novelName,df.format(i),suffix,page);
-        PrintWriterUtils.fileWriter(filePath + "txt",formatNameResult,content);
+        PrintWriterUtils.printWriter(filePath + "txt",formatNameResult,content);
     }
 
     public static void saveHTML(String content,String suffix,int pn,int i){
         String formatNameResult = String.format(fileHTMLFormat,novelName,df.format(i),suffix,pn);
-        PrintWriterUtils.fileWriter(filePath + "html",formatNameResult,content);
+        PrintWriterUtils.printWriter(filePath + "html",formatNameResult,content);
     }
 
     public static void saveMD(String content,String suffix,int i){
         String formatNameResult = String.format(fileMDFormat,novelName,df.format(i),suffix);
-        PrintWriterUtils.fileWriter(filePath + "md",formatNameResult,content);
+        PrintWriterUtils.printWriter(filePath + "md",formatNameResult,content);
     }
 
     public static void saveImg(String url,String suffix,int pn,int i){
@@ -158,7 +158,7 @@ public class Novel_loveyuedu implements NovelFlow,Runnable {
             inputStream = HttpURLConnectionUtil.getStream(url,"GET","", PropertiesHeader.qinxiaoshuoMap());
             DecimalFormat df = new DecimalFormat("000");
             String formatIMGResult = String.format(fileIMGFormat,novelName,df.format(i),suffix,pn);
-            InputStreamUtils.downFileByStream(inputStream,filePath + "txt" + File.separator + formatIMGResult ,url.substring(url.lastIndexOf("/") + 1));
+            StreamInputUtils.streamToFile(inputStream,filePath + "txt" + File.separator + formatIMGResult ,url.substring(url.lastIndexOf("/") + 1));
         } catch (IOException e) {
             e.printStackTrace();
         } catch (Exception e) {

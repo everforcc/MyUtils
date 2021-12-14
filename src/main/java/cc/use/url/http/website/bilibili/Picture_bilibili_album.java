@@ -4,7 +4,7 @@ import cc.constant.ConstantCharSet;
 import cc.resource.PropertiesHeader;
 import cc.advanced.web.http.HttpURLConnectionUtil;
 import cc.constant.ConstantFile;
-import cc.core.io.PrintWriterUtils;
+import cc.core.io.base.PrintWriterUtils;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
@@ -107,7 +107,7 @@ public class Picture_bilibili_album {
 
     public static void saveMD(String filePath,String fileName,String content){
         //String formatNameResult = String.format(fileMDFormat,novelName,df.format(i),suffix);
-        PrintWriterUtils.fileWriter(filePath,fileName,content + "\r\n");
+        PrintWriterUtils.printWriter(filePath,fileName,content + "\r\n");
     }
 
 

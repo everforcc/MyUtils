@@ -3,7 +3,7 @@ package cc.use.url.http.website.novel;
 
 import cc.constant.ConstantFile;
 import cc.core.date.utils.DateUtils;
-import cc.core.io.PrintWriterUtils;
+import cc.core.io.base.PrintWriterUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -135,7 +135,7 @@ public class Novel_BiQukan {
 
     public static void downNovel(String content){
         try {
-            PrintWriterUtils.fileWriter(new File(ConstantFile.L1_javaFilePath +novelName),content);
+            PrintWriterUtils.printWriter(new File(ConstantFile.L1_javaFilePath +novelName),content);
         } catch (Exception e) {
             e.printStackTrace();
             DateUtils.now();

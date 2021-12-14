@@ -1,7 +1,7 @@
 package cc.use.file.m3u8helper;
 
 import cc.core.file.utils.IFileUtils;
-import cc.core.io.PrintWriterUtils;
+import cc.core.io.base.PrintWriterUtils;
 import cc.java0.ffmpeg.utils.FFmpegUtils;
 
 import java.io.File;
@@ -63,7 +63,7 @@ public class FileListToVideo implements IFileUtils {
         for(int i=0 ; i<729 ;i++) {
             String str = "file '" + path + File.separator + i + "' \r\n";
             // 生成与文件夹同名的txt，里面包含目录下的所有文件路径信息
-            PrintWriterUtils.fileWriter(fileName,str);
+            PrintWriterUtils.printWriter(fileName,str);
         }
         set.add(fileName);
     }

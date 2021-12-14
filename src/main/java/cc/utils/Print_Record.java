@@ -1,7 +1,7 @@
 package cc.utils;
 
 import cc.core.date.utils.DateUtils;
-import cc.core.io.PrintWriterUtils;
+import cc.core.io.base.PrintWriterUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 
@@ -74,7 +74,7 @@ public class Print_Record {
         }
 
         if(!StringUtils.isBlank(filePath)) {
-            PrintWriterUtils.fileWriter(filePath, fileName, msg + "\r\n");
+            PrintWriterUtils.printWriter(filePath, fileName, msg + "\r\n");
         }
     }
 

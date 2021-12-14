@@ -1,7 +1,7 @@
 package cc.use.url.http.website.bilibili;
 
 import cc.constant.ConstantFile;
-import cc.core.io.InputStreamUtils;
+import cc.core.io.base.StreamInputUtils;
 import org.apache.commons.io.FileUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -53,7 +53,7 @@ public class Video_bilibili {
             // 快啊.! 这俩好想没啥区别 // 框架更快
             // FileUtils.copyInputStreamToFile(inputStream,new File(ConstantFile.javaFilePath + "//1.gif"));
             System.out.println(httpEntity.getContent().available());
-            InputStreamUtils.downFileByStream(httpEntity.getContent(), ConstantFile.L1_javaFilePath + "\\java\\test","3.flv");
+            StreamInputUtils.streamToFile(httpEntity.getContent(), ConstantFile.L1_javaFilePath + "\\java\\test","3.flv");
             //FileUtils.copyToFile(httpEntity.getContent(),new File(ConstantFile.javaFilePath + "\\java\\test\\2.flv"));
         }
         // buffer 包裹一下更快

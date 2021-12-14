@@ -2,8 +2,8 @@ package cc.use.url.http.pic;
 
 import cc.constant.ConstantFile;
 import cc.core.file.utils.FileUtils;
-import cc.core.io.InputStreamUtils;
-import cc.core.io.PrintWriterUtils;
+import cc.core.io.base.StreamInputUtils;
+import cc.core.io.base.PrintWriterUtils;
 import cc.advanced.web.http.HttpURLConnectionUtil;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -77,9 +77,9 @@ public class Picture_zydk8 {
         fileName = FileUtils.checkFileName(fileName);
         if (in.available() > 0) {
             // 下载字节流需要用到的
-            InputStreamUtils.downFileByStream(in, ConstantFile.L1_javaFilePath + "\\craw\\www.zydk8.com\\" + dir + "\\", fileName, new BigDecimal(1));
+            StreamInputUtils.streamToFile(in, ConstantFile.L1_javaFilePath + "\\craw\\www.zydk8.com\\" + dir + "\\", fileName, new BigDecimal(1));
         } else {
-            PrintWriterUtils.fileWriter(ConstantFile.L1_javaFilePath + "\\craw\\www.zydk8.com\\" + dir + "\\", fileName + ".txt", url);
+            PrintWriterUtils.printWriter(ConstantFile.L1_javaFilePath + "\\craw\\www.zydk8.com\\" + dir + "\\", fileName + ".txt", url);
         }
     }
 

@@ -1,6 +1,6 @@
 package cc.use.url.http.dto;
 
-import cc.core.io.PrintWriterUtils;
+import cc.core.io.base.PrintWriterUtils;
 import com.alibaba.fastjson.JSON;
 
 public class Resources {
@@ -155,7 +155,7 @@ public class Resources {
         resources.setDiskPath("根目录+dir split");
         System.out.println(resources);
 
-        PrintWriterUtils.fileWriter("C:/test/wx/",resources.getDecFileName() + ".txt",resources.toString());
-        PrintWriterUtils.fileWriter("C:/test/wx/",resources.getDecFileName() + ".md",resources.getContent());
+        PrintWriterUtils.printWriter("C:/test/wx/",resources.getDecFileName() + ".txt",resources.toString());
+        PrintWriterUtils.printWriter("C:/test/wx/",resources.getDecFileName() + ".md",resources.getContent());
     }
 }

@@ -1,7 +1,7 @@
 package cc.use.url.http.novelmodel.flow;
 
 
-import cc.core.io.InputStreamUtils;
+import cc.core.io.base.StreamInputUtils;
 import cc.resource.PropertiesHeader;
 import cc.use.url.http.novelmodel.Novel_init;
 import cc.use.url.http.novelmodel.model.BookModel;
@@ -420,7 +420,7 @@ public class CrawFlow2 {
         System.out.println("" + conn.getResponseCode());
 
         if( 200==conn.getResponseCode() ){
-            String returnMsg = InputStreamUtils.inputStreamStr(conn.getInputStream(),rootModel.getCharset(),gzip);
+            String returnMsg = StreamInputUtils.streamToStr(conn.getInputStream(),rootModel.getCharset(),gzip);
             //System.out.println(returnMsg);
             return returnMsg;
         }

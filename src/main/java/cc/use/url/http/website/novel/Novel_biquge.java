@@ -3,7 +3,7 @@ package cc.use.url.http.website.novel;
 import cc.resource.PropertiesHeader;
 import cc.advanced.web.http.HttpClientUtils;
 import cc.constant.ConstantFile;
-import cc.core.io.PrintWriterUtils;
+import cc.core.io.base.PrintWriterUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -143,7 +143,7 @@ public class Novel_biquge {
 
     // 保存内容
     public static void save(String content){
-        PrintWriterUtils.fileWriter(ConstantFile.L1_javaFilePath + "\\novel\\biquge","斗破苍穹.txt",content);
+        PrintWriterUtils.printWriter(ConstantFile.L1_javaFilePath + "\\novel\\biquge","斗破苍穹.txt",content);
     }
 
 }

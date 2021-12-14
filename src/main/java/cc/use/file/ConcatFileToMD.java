@@ -3,7 +3,8 @@ package cc.use.file;
 import cc.constant.ConstantFile;
 import cc.core.file.utils.FileUtils;
 import cc.core.file.utils.IFileUtils;
-import cc.core.io.PrintWriterUtils;
+import cc.core.io.base.PrintReaderUtils;
+import cc.core.io.base.PrintWriterUtils;
 
 import java.io.File;
 
@@ -36,7 +37,7 @@ public class ConcatFileToMD implements IFileUtils {
             String fileName = fileList[i].getName();
             if (fileName.endsWith(".txt")) {
 
-                String content = PrintWriterUtils.fileReader(fileList[i].getAbsolutePath());
+                String content = PrintReaderUtils.bufferReader(fileList[i].getAbsolutePath());
 
                 // 序号
                 //  章节名
@@ -44,7 +45,7 @@ public class ConcatFileToMD implements IFileUtils {
 
                 //PrintWriterUtils.fileWriter(strings[0], strings[1] + fileName + ".md", MDUtils.mdTitle(fileName));
 
-                PrintWriterUtils.fileWriter(strings[0], strings[1] + fileName + ".md", content);
+                PrintWriterUtils.printWriter(strings[0], strings[1] + fileName + ".md", content);
             }
         } catch (Exception e) {
             e.printStackTrace();

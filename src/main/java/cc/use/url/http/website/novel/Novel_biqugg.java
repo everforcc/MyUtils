@@ -1,7 +1,7 @@
 package cc.use.url.http.website.novel;
 
 import cc.constant.ConstantFile;
-import cc.core.io.PrintWriterUtils;
+import cc.core.io.base.PrintWriterUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -66,7 +66,7 @@ public class Novel_biqugg {
 
 
     public static void save(String content){
-        PrintWriterUtils.fileWriter(ConstantFile.L1_javaFilePath + "\\novel\\biquge","谍影风云.txt",content);
+        PrintWriterUtils.printWriter(ConstantFile.L1_javaFilePath + "\\novel\\biquge","谍影风云.txt",content);
     }
 
 }

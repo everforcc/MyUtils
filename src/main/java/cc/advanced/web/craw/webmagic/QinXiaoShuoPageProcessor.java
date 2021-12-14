@@ -2,7 +2,7 @@ package cc.advanced.web.craw.webmagic;
 
 import cc.resource.PropertiesHeader;
 import cc.constant.ConstantFile;
-import cc.core.io.PrintWriterUtils;
+import cc.core.io.base.PrintWriterUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -155,7 +155,7 @@ public class QinXiaoShuoPageProcessor implements PageProcessor {
     }
 
     public static void saveTXT(String path,String name,String content){
-        PrintWriterUtils.fileWriter(path,name,content);
+        PrintWriterUtils.printWriter(path,name,content);
     }
 
 }

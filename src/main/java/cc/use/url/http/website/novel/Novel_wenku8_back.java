@@ -4,7 +4,7 @@ import cc.constant.ConstantFile;
 import cc.core.file.utils.MDUtils;
 import cc.advanced.web.craw.utils.CrawDataParse;
 import cc.advanced.web.http.HttpURLConnectionUtil;
-import cc.core.io.PrintWriterUtils;
+import cc.core.io.base.PrintWriterUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -153,12 +153,12 @@ public class Novel_wenku8_back {
 
     public static void saveMDMenu(String content){
         //String formatNameResult = String.format(fileMDFormat,novelName,df.format(i),suffix);
-        PrintWriterUtils.fileWriter(dirBase + dir, novelName + ".md",content);
+        PrintWriterUtils.printWriter(dirBase + dir, novelName + ".md",content);
     }
 
     public static void saveMD(String fileName,String content){
         //String formatNameResult = String.format(fileMDFormat,novelName,df.format(i),suffix);
-        PrintWriterUtils.fileWriter(dirBase + dir + novelName, fileName + ".md",content);
+        PrintWriterUtils.printWriter(dirBase + dir + novelName, fileName + ".md",content);
     }
 
     private static String replaceToMD(){

@@ -1,4 +1,4 @@
-package cc.core.io;
+package cc.core.io.base;
 
 
 
@@ -15,30 +15,34 @@ import java.io.ObjectOutputStream;
  */
 public class ObjectStreamUtils {
 
-    // 处理序列化文件的问题
+    /**
+     * 处理序列化文件的问题
+     * 将对象写入文件
+     * 从文件恢复对象
+     */
 
-    public void test(){
-        //writeObj();
-        readObj("","");
+    public static void main(String[] args) {
+        String writeFile = ConstantFile.L1_javaFilePath + "/test/integer";
+        writeObj(writeFile);
+        readObj(writeFile);
     }
 
-    public void writeObj(String filePath,String fileName){
+    public static void writeObj(String filePN){
         try {
-            FileOutputStream fos = new FileOutputStream(ConstantFile.L1_javaFilePath + "/test/integer");
+            FileOutputStream fos = new FileOutputStream(filePN);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             Integer integer = new Integer(1);
             oos.writeObject(integer);
             oos.flush();
             oos.close();
-
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public void readObj(String filePath,String fileName){
+    public static void readObj(String filePN){
         try {
-            FileInputStream fis = new FileInputStream(ConstantFile.L1_javaFilePath + "/test/integer");
+            FileInputStream fis = new FileInputStream(filePN);
             ObjectInputStream ois = new ObjectInputStream(fis);
             Integer integer = (Integer)ois.readObject();
             System.out.println(integer);

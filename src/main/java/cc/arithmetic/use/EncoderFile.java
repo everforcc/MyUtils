@@ -1,7 +1,7 @@
 package cc.arithmetic.use;
 
 import cc.constant.ConstantFile;
-import cc.core.io.PrintWriterUtils;
+import cc.core.io.base.PrintWriterUtils;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
@@ -39,7 +39,7 @@ public class EncoderFile {
         try {
 
             System.out.println("JSONArray.fromObject(list).toString():"+ JSONArray.fromObject(list).toString());
-            PrintWriterUtils.fileWriter(path + fileName + sd + ".txt",JSONArray.fromObject(list).toString());
+            PrintWriterUtils.printWriter(path + fileName + sd + ".txt",JSONArray.fromObject(list).toString());
 
         }catch (Exception e){
             e.printStackTrace();

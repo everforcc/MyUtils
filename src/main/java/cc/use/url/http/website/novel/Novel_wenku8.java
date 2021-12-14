@@ -6,7 +6,7 @@ import cc.core.file.utils.MDUtils;
 import cc.resource.PropertiesHeader;
 import cc.advanced.web.craw.utils.CrawDataParse;
 import cc.advanced.web.http.HttpURLConnectionUtil;
-import cc.core.io.PrintWriterUtils;
+import cc.core.io.base.PrintWriterUtils;
 import cc.core.regex.utils.RegexUtils;
 import cc.use.url.http.website.constant.Constant_use;
 import org.jsoup.Jsoup;
@@ -77,7 +77,7 @@ public class Novel_wenku8 {
     }
 
     public static void saveAll(String content){
-        PrintWriterUtils.fileWriter(ConstantFile.L1_javaFilePath + "\\craw\\www.wenku8.net", "list.md",content);
+        PrintWriterUtils.printWriter(ConstantFile.L1_javaFilePath + "\\craw\\www.wenku8.net", "list.md",content);
     }
 
     public static String[] novelMsg(String url){
@@ -245,11 +245,11 @@ public class Novel_wenku8 {
     }
 
     public static void saveMDMenu(String content){
-        PrintWriterUtils.fileWriter(dir + novelType ,novelName + "目录" + ".md",content);
+        PrintWriterUtils.printWriter(dir + novelType ,novelName + "目录" + ".md",content);
     }
 
     public static void saveMD(String fileName,String content){
-        PrintWriterUtils.fileWriter(tempDir, fileName + ".md",content);
+        PrintWriterUtils.printWriter(tempDir, fileName + ".md",content);
     }
 
 }

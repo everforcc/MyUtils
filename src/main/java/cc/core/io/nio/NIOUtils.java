@@ -1,4 +1,6 @@
-package cc.core.io;
+package cc.core.io.nio;
+
+import cc.utils.Print_Record;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -13,6 +15,8 @@ import java.util.Date;
  * @date 2020/12/9
  */
 public class NIOUtils {
+
+    private static Print_Record print_record = Print_Record.getInstanse();
 
     public static void main(String[] args) {
     }
@@ -38,7 +42,7 @@ public class NIOUtils {
 
         Date enddate = new Date();
         double time = enddate.getTime() - begindate.getTime();
-        System.out.println(fileName + "下载耗时:" + time);
+        print_record.println(fileName + "下载耗时:" + time);
     }
 
 }

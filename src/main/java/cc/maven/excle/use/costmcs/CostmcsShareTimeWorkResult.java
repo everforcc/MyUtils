@@ -1,7 +1,7 @@
 package cc.maven.excle.use.costmcs;
 
 import cc.constant.ConstantFile;
-import cc.core.io.PrintWriterUtils;
+import cc.core.io.base.PrintWriterUtils;
 import cc.maven.excle.dto.ExcleValueHelper;
 import cc.maven.excle.utils.read.LoadExcleDto;
 
@@ -198,7 +198,7 @@ public class CostmcsShareTimeWorkResult {
          * 业务问题， 最后替换JIA和Non JIA
          */
 
-         PrintWriterUtils.fileWriter(new File(filePath + "sheet1_channel.sql"),sqlReplaceKey(sql.toString()));
+         PrintWriterUtils.printWriter(new File(filePath + "sheet1_channel.sql"),sqlReplaceKey(sql.toString()));
     }
 
     // {"C","S","2","5","HO"};
@@ -278,7 +278,7 @@ public class CostmcsShareTimeWorkResult {
          * 业务问题， 最后替换JIA和Non JIA
          */
 
-        PrintWriterUtils.fileWriter(new File(filePath + "sheet1_cost.sql"),sqlReplaceKey(sql.toString()));
+        PrintWriterUtils.printWriter(new File(filePath + "sheet1_cost.sql"),sqlReplaceKey(sql.toString()));
 
     }
 
@@ -342,7 +342,7 @@ public class CostmcsShareTimeWorkResult {
          * 业务问题， 最后替换JIA和Non JIA
          */
 
-        PrintWriterUtils.fileWriter(new File(filePath + "sheet1_asset.sql"),sqlReplaceKey(sql.toString()));
+        PrintWriterUtils.printWriter(new File(filePath + "sheet1_asset.sql"),sqlReplaceKey(sql.toString()));
 
     }
 
@@ -409,7 +409,7 @@ public class CostmcsShareTimeWorkResult {
          * 业务问题， 最后替换JIA和Non JIA
          */
 
-        PrintWriterUtils.fileWriter(new File(filePath + "sheet2.sql"),sqlReplaceKey(sql.toString()));
+        PrintWriterUtils.printWriter(new File(filePath + "sheet2.sql"),sqlReplaceKey(sql.toString()));
 
     }
 
@@ -470,7 +470,7 @@ public class CostmcsShareTimeWorkResult {
         }
         System.out.println(sql);
         String SMD = sql.toString().replace("SD","SMD");
-        PrintWriterUtils.fileWriter(new File(filePath + "sheet4_"+sheet1_[4]+".sql"),sqlReplaceKey(SMD));
+        PrintWriterUtils.printWriter(new File(filePath + "sheet4_"+sheet1_[4]+".sql"),sqlReplaceKey(SMD));
     }
 
 
