@@ -1,5 +1,6 @@
 package cc.core.string.utils;
 
+import com.google.common.base.Strings;
 import java.io.UnsupportedEncodingException;
 import java.util.Iterator;
 import java.util.Set;
@@ -19,7 +20,8 @@ public class StringUtils {
 
     public static void main(String[] args) {
         //testT();
-        split();
+        //split();
+        repeat("字符串:",100);
     }
     // 测试下面两个方法
 
@@ -136,6 +138,13 @@ public class StringUtils {
         for(int i=0;i<length;i++){
             System.out.println(i + " > " + arry[i]);
         }
+     }
+
+     public static void repeat(String str,int count){
+         //joptsimple.internal.Strings;
+         //
+        String result = Strings.repeat(str,count);
+         System.out.println(result);
      }
 
      // substring
