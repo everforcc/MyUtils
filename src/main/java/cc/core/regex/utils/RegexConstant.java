@@ -22,6 +22,8 @@ public class RegexConstant {
     public static String htmlTag = "/<(.*)>.*</1>|<(.*) />/";
     // 匹配首尾空格的正则表达式：(^s*)|(s*$)
     public static String borderSpace = "(^s*)|(s*$)";
+    // 微信的表情包三个字符，可以看笔记
+    public static String wxEmoji = "[\ud83c\udc00-\ud83c\udfff]|[\ud83d\udc00-\ud83d\udfff]|[\u2600-\u27ff]";
 
     /**
      一些常用的正则匹配规则
