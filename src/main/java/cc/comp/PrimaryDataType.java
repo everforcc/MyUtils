@@ -33,6 +33,7 @@ public class PrimaryDataType {
         String nanoTimeHex = Long.toHexString(System.nanoTime());
         int length = nanoTimeHex.length();
         int residueLength = 15 - phoneHex.length();
+        // 这个位数差的方可以加个G防止冲突
         System.out.println("residueLength:" + residueLength);
         String residueNanoTimeStr = nanoTimeHex.substring(length-residueLength,length);
         return phoneHex + residueNanoTimeStr;
