@@ -22,8 +22,8 @@ public class PrimaryDataType {
 
         System.out.println(Long.toHexString(System.nanoTime()));*/
 
-        System.out.println(reTurnStr("11111111111"));
-        System.out.println(reTurnStr("99999999999"));
+        System.out.println(reTurnStr("10000000000"));
+        System.out.println(reTurnStr("20000000000"));
     }
 
     public static String reTurnStr(String phone){
@@ -32,6 +32,7 @@ public class PrimaryDataType {
         // nanotime的hex
         String nanoTimeHex = Long.toHexString(System.nanoTime());
         int length = nanoTimeHex.length();
+        System.out.println("phoneHex.length():" + phoneHex.length());
         int residueLength = 15 - phoneHex.length();
         // 这个位数差的方可以加个G防止冲突
         System.out.println("residueLength:" + residueLength);
