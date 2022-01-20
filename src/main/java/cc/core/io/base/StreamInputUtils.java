@@ -5,6 +5,7 @@ import cc.core.file.utils.FileUtils;
 import cc.core.file.zip.ZipUtils;
 import cc.utils.Print_Record;
 import com.google.common.io.ByteStreams;
+import org.apache.poi.util.IOUtils;
 
 import java.io.*;
 import java.math.BigDecimal;
@@ -219,6 +220,12 @@ public class StreamInputUtils {
     public static String streamToStr(InputStream inputStream,String charSet)throws Exception {
         byte[] bytes = ByteStreams.toByteArray(inputStream);
         return new String(bytes,charSet);
+    }
+    public static byte[] streamTobytesGuava(InputStream inputStream)throws Exception {
+        return ByteStreams.toByteArray(inputStream);
+    }
+    public static byte[] streamTobytesApache(InputStream inputStream)throws Exception {
+        return IOUtils.toByteArray(inputStream);
     }
 
     public static String streamToStr(InputStream inputStream,String charSet,boolean gzip)throws Exception {

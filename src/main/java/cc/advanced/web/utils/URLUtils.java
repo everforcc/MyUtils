@@ -24,16 +24,18 @@ public class URLUtils {
 
     // url基本含义
     public static void main(String[] args) {
-        urlMethod();
+        String u1 = "http://127.0.0.1:8080/open/file/read?fileId=";
+        String u2 = "http://boc.91tests.net/open/file/read?fileId=";
+        urlMethod(u1);
+        urlMethod(u2);
         // 路径中文的加密解密
         //nextUrl = URLDecoder.decode(nextUrl);
     }
 
     // url参数含义
 
-    static void urlMethod() {
+    static void urlMethod(String picUrl) {
         try {
-            String picUrl = "https://www.wenku8.net/book/366.htm";
             URL url = new URL(picUrl);
             System.out.println("URL 为：" + url.toString());
             System.out.println("协议为：" + url.getProtocol());

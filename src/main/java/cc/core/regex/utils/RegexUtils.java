@@ -95,7 +95,7 @@ public class RegexUtils {
         Set<String> stringSet = new HashSet<>();
         while (matcher.find()) {// 匹配出所有符合的
             stringSet.add(matcher.group(group));
-            System.out.println(matcher.group(group));
+            //System.out.println(matcher.group(group));
         }
         return stringSet;
     }

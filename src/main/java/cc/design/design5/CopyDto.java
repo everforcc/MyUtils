@@ -18,6 +18,7 @@ public class CopyDto implements Cloneable{
             System.out.println(cCopyDto.key);
             System.out.println(cCopyDto.circle.clo);
 
+            cCopyDto.key = "key_b";
             cCopyDto.circle.clo = "def";
 
             System.out.println("-----");

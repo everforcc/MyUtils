@@ -3,6 +3,7 @@ package cc.core.regex;
 import cc.core.regex.utils.RegexUtils;
 import cc.core.regex.utils.RegexWeb;
 
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -14,16 +15,21 @@ public class RegexTest {
     public static void main(String[] args) {
         //bd_regex();
         //group();
-        bili_regex("");
+        //bili_regex("");
+        wx_piccode();
     }
 
+    private static void wx_piccode(){
+        Set<String> result = RegexUtils.matcheList(RegexWeb.wx_piccode_regex,"中文!我啊#$&'()*+,/:;=?@-._~，abzABZ019");
+        System.out.println(result.size());
+        System.out.println(result.toString());
+    }
 
     private static void bd_regex(){
         System.out.println(RegexUtils.isMatches(RegexWeb.bd_regex,"http://i0.hdslb.com/bfs/archive/74af0a6d77214ae7be8f2c11de0079d9004689c9.jpg"));
         System.out.println(RegexUtils.isMatches(RegexWeb.bd_regex1,"74af0a6d77214ae7be8f2c11de0079d9004689c9.jpg"));
         System.out.println(RegexUtils.isMatches(RegexWeb.bd_regex2,"74af0a6d77214ae7be8f2c11de0079d9004689c9"));
         System.out.println(RegexUtils.isMatches(RegexWeb.bd_regex3,"archive"));
-
     }
 
     private static void bili_regex(String html){
@@ -59,7 +65,6 @@ public class RegexTest {
         System.out.println(RegexUtils.matcheStr(regex_name,content,"md"));
         System.out.println(RegexUtils.matcheStr(regex_name,content,"month"));
         System.out.println(RegexUtils.matcheStr(regex_name,content,"date"));
-
     }
 
 
