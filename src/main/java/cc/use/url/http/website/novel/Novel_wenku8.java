@@ -58,7 +58,7 @@ public class Novel_wenku8 {
                 List<String> urlList = new ArrayList<>();
                 String modules = "https://www.wenku8.net/modules/article/articlelist.php?page=" + i;
                 String result = HttpURLConnectionUtil.flow(modules, "GET", "gbk", PropertiesHeader.wenku8Map());
-                Set<String> stringSet = RegexUtils.matcheList("https://www.wenku8.net/book/\\d{0,6}.htm", result);
+                List<String> stringSet = RegexUtils.matcheList("https://www.wenku8.net/book/\\d{0,6}.htm", result);
                 for (String s : stringSet) {
                     System.out.println(s);
                     saveAll(s + "  \n");

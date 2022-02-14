@@ -13,7 +13,7 @@ import cc.utils.Print_Record;
 
 import java.io.File;
 import java.io.InputStream;
-import java.util.Set;
+import java.util.List;
 
 /**
  * @author c.c.
@@ -53,7 +53,7 @@ public class WenkuNovelMenu implements IFileUtils,Runnable {
             String tempUrl = "";
             try {
                 String content = PrintReaderUtils.bufferReader(fileList[i]);
-                Set<String> stringSet = RegexUtils.matcheList("\\<img src=.*\\>",content);
+                List<String> stringSet = RegexUtils.matcheList("\\<img src=.*\\>",content);
                 if(stringSet!=null&&stringSet.size()!=0){
                     print_record.println("stringSet.size():" + stringSet.size() + " >>> " + fileList[i].getAbsolutePath());
                     //stringSet.forEach(System.out::println);
