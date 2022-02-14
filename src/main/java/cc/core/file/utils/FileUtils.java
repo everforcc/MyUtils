@@ -128,4 +128,10 @@ public class FileUtils {
         return fileName;
     }
 
+    public static void main(String[] args) {
+
+        String abc= "a/b/c";
+        System.out.println(checkFileName(abc));
+    }
+
 }

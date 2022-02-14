@@ -46,9 +46,22 @@ public class HttpURLConnectionUtil {
         URL url = new URL(urlPath);
         return (HttpURLConnection) url.openConnection();
     }
+
     public static HttpURLConnection getHttpUCByIn(String urlPath, Proxy proxy) throws IOException {
         URL url = new URL(urlPath);
-        // ProxyDemo.getUrlProxyContent("")
+//        int port = 41091;
+//        String ip = "127.0.0.1";
+//        InetSocketAddress inetSocketAddress = new InetSocketAddress(ip,port);
+//        proxy = new Proxy(Proxy.Type.HTTP,inetSocketAddress);
+        return (HttpURLConnection) url.openConnection(proxy);
+    }
+
+    public static HttpURLConnection getHttpUCByIn(String urlPath, String ip, int port, Proxy.Type type) throws IOException {
+        URL url = new URL(urlPath);
+//        int port = 41091;
+//        String ip = "127.0.0.1";
+//        Proxy proxy = new Proxy(Proxy.Type.HTTP,inetSocketAddress);
+        Proxy proxy = new Proxy(type,new InetSocketAddress(ip,port));
         return (HttpURLConnection) url.openConnection(proxy);
     }
 

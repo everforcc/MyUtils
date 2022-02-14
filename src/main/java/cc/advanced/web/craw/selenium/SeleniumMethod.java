@@ -3,10 +3,15 @@ package cc.advanced.web.craw.selenium;
 import cc.constant.ConstantFile;
 import cc.core.io.base.PrintWriterUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.mobile.NetworkConnection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * @author c.c.
@@ -18,9 +23,7 @@ public class SeleniumMethod {
     // 禁止启动浏览器打开怎么做
     //headless
     public static void main(String[] args) {
-
-        openHtml();
-
+        openSpring4U();
     }
 
     public static void openHtml(){
@@ -62,15 +65,58 @@ public class SeleniumMethod {
 
     }
 
+    public static void openSpring4U(){
+
+        //Map<String, String> mobileEmulation = new HashMap<String, String>();
+        //mobileEmulation.put("deviceName", "Laptop with touch");
+
+        Map<String, Object> chromeOptions = new HashMap<String, Object>();
+        //chromeOptions.put("mobileEmulation", mobileEmulation);
+        //chromeOptions.put("binary", binarylocation);
+//        chromeOptions.put("Cookie", "cdb_cookietime=2592000; cdb_oldtopics=D32924D10625D; cdb_visitedfid=9D57D34D73D96D103D124; cdb_sid=5iy5Eu; cdb_auth=B1xVAgMEBA8FBQECBgdVV1AOBwoNAlEFAgACVAQHBQM5bAJUBVRSAQ");
+//        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+//        capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+//        capabilities.setCapability(CapabilityType.SUPPORTS_NETWORK_CONNECTION, true);
+
+        WebDriver driver = new ChromeDriver();
+        //((NetworkConnection) driver).setNetworkConnection(NetworkConnection.ConnectionType.ALL);
+        //打开百度首页
+        String url = "http://spring4u.info/search.php?searchid=11361166&orderby=lastpost&ascdesc=desc&searchsubmit=yes";
+        Cookie everforcc = new Cookie("Cookie", "cdb_cookietime=2592000; cdb_oldtopics=D32924D10625D; cdb_visitedfid=9D57D34D73D96D103D124; cdb_sid=5iy5Eu; cdb_auth=B1xVAgMEBA8FBQECBgdVV1AOBwoNAlEFAgACVAQHBQM5bAJUBVRSAQ");
+        driver.get(url);
+//        driver.manage().deleteAllCookies();
+//        driver.manage().addCookie(everforcc);
+
+        WebElement username =  driver.findElement(By.name("username"));
+        username.sendKeys("cc5664");
+        WebElement password  =  driver.findElement(By.name("password"));
+        password.sendKeys("c.c.c.c.");
+        WebElement loginsubmit  =  driver.findElement(By.name("loginsubmit"));
+        loginsubmit.click();
+
+        driver.navigate().refresh();
+
+        Set<Cookie> cookieSet =  driver.manage().getCookies();
+        cookieSet.forEach(System.out::println);
+        //获取页面标题
+        System.out.println("Page title is :" + driver.getTitle());
+        //获取页面url
+        System.out.println("Page url is :" + driver.getCurrentUrl());
+        //关闭driver
+        driver.close();
+
+    }
+
     public static void oneCatalogueContent(String href,String title){
         String content = "";
-        WebDriver driver_novel = new ChromeDriver();
+        WebDriver driver_srping4u = new ChromeDriver();
+        ((NetworkConnection) driver_srping4u).setNetworkConnection(NetworkConnection.ConnectionType.ALL);
         try{
             //driver_novel.manage().window().setPosition();
-            driver_novel.get(href);
-            WebElement webElement_content = driver_novel.findElement(By.id("content"));
+            driver_srping4u.get(href);
+            WebElement webElement_content = driver_srping4u.findElement(By.id("content"));
             content = webElement_content.getText();
-            driver_novel.close();
+            driver_srping4u.close();
         }catch (Exception e){
             oneCatalogueContent(href,title);
         }finally {
