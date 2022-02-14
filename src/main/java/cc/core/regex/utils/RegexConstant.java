@@ -25,6 +25,9 @@ public class RegexConstant {
     // 微信的表情包三个字符，可以看笔记
     public static String wxEmoji = "[\ud83c\udc00-\ud83c\udfff]|[\ud83d\udc00-\ud83d\udfff]|[\u2600-\u27ff]";
 
+    public static String fileName = "\\<*\\>*\\/*\\\\*\\|*\\:*\"*\\**\\?*\\；*\\ *";
+
+
     /**
      一些常用的正则匹配规则
      匹配中文字符的正则表达式： [u4e00-u9fa5]

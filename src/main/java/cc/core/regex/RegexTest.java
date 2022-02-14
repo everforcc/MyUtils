@@ -1,8 +1,10 @@
 package cc.core.regex;
 
+import cc.core.regex.utils.RegexConstant;
 import cc.core.regex.utils.RegexUtils;
 import cc.core.regex.utils.RegexWeb;
 
+import java.util.List;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -16,11 +18,40 @@ public class RegexTest {
         //bd_regex();
         //group();
         //bili_regex("");
-        wx_piccode();
+        //fileName();
+        //pattern_();
+    }
+
+    private static void fileName(){
+//        Set<String> result = RegexUtils.matcheList(RegexConstant.fileName,"中文/");
+//        System.out.println(result.size());
+//        System.out.println(result.toString());
+        //System.out.println(RegexUtils.matcheStr("^(1)\\d{10}$", "123456"));
+        // ^((?!hede).)*$
+        //String fileName = "^(?!.*[\\<*\\>*\\/*\\\\*\\|*\\:*\"*\\**\\?*\\；*\\ *])";
+        String fileName = "^((?!(\\<*\\>*\\/*\\\\*\\|*\\:*\"*\\**\\?*\\；*\\ *)).)*$";
+        System.out.println("a---" + RegexUtils.matcheStr(fileName, ":中文"));
+        System.out.println("b---" + RegexUtils.matcheList(fileName, "中:文"));
+        System.out.println("c---" + RegexUtils.matcheList(fileName, "中文:"));
+        System.out.println("c---" + RegexUtils.matcheList(fileName, "中文"));
+    }
+
+    private static void pattern_(){
+
+        //String fileName = "^((?!my string).)*$";
+        //String s = RegexConstant.fileName;
+        //String s = "\\<+|\\>+|\\/+|\\\\+|\\|+|\\:+|\"+|\\*+|\\?+|\\；+|\\ +|";
+        String s = "\\<+|\\>+|\\/|\\\\+|\\|+|\\:+|\"+|\\*+|\\?+|\\；+|\\ +";
+        String fileName = "^((?!(" + s + ")).)*$";
+        System.out.println("c---" + RegexUtils.matcheList(fileName, "<中文mystring"));
+        System.out.println("c---" + RegexUtils.matcheList(fileName, " my2string中文"));
+        System.out.println("c---" + RegexUtils.matcheList(fileName, "my2string 中文"));
+        System.out.println("c---" + RegexUtils.matcheList(fileName, "my2string中文 "));
+        System.out.println("c---" + RegexUtils.matcheList(fileName, "中文mystring中文3"));
     }
 
     private static void wx_piccode(){
-        Set<String> result = RegexUtils.matcheList(RegexWeb.wx_piccode_regex,"中文!我啊#$&'()*+,/:;=?@-._~，abzABZ019");
+        List<String> result = RegexUtils.matcheList(RegexWeb.wx_piccode_regex,"中文!我啊#$&'()*+,/:;=?@-._~，abzABZ019");
         System.out.println(result.size());
         System.out.println(result.toString());
     }
@@ -45,27 +76,7 @@ public class RegexTest {
         System.out.println(RegexUtils.matcheStr(t_regex,t_content,1));
     }
 
-    /**
-     * 正则表达式普通组
-     * 0全部
-     * 从(开始算，第一个包裹的组就是1
-     */
-    private static void group(){
-        String content = "2021-09-01";
-        String regex = "(\\d{4})-((\\d{2})-(\\d{2}))";
-        System.out.println(RegexUtils.matcheStr(regex,content,0));
-        System.out.println(RegexUtils.matcheStr(regex,content,1));
-        System.out.println(RegexUtils.matcheStr(regex,content,2));
-        System.out.println(RegexUtils.matcheStr(regex,content,3));
-        System.out.println(RegexUtils.matcheStr(regex,content,4));
 
-        String regex_name = "(?<year>\\d{4})-(?<md>(?<month>\\d{2})-(?<date>\\d{2}))";
-        System.out.println(RegexUtils.matcheStr(regex_name,content,0));
-        System.out.println(RegexUtils.matcheStr(regex_name,content,"year"));
-        System.out.println(RegexUtils.matcheStr(regex_name,content,"md"));
-        System.out.println(RegexUtils.matcheStr(regex_name,content,"month"));
-        System.out.println(RegexUtils.matcheStr(regex_name,content,"date"));
-    }
 
 
 
