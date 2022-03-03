@@ -147,6 +147,10 @@ public class StringUtils {
          System.out.println(result);
      }
 
+     public static void search(String str){
+
+     }
+
      // substring
 
 }

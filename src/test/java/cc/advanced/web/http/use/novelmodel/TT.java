@@ -1,5 +1,6 @@
 package cc.advanced.web.http.use.novelmodel;
 
+import cc.advanced.web.http.use.novelmodel.model.*;
 import cc.core.io.base.StreamInputUtils;
 import cc.resource.PropertiesHeader;
 import cc.use.url.http.novelmodel.model.*;

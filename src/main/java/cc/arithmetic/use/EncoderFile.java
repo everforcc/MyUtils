@@ -8,7 +8,7 @@ import net.sf.json.JSONObject;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-import static cc.arithmetic.basenum.Base64.getbase64Url;
+import static cc.arithmetic.basenum.Base64Utils.getbase64Url;
 
 /**
  * @author c.c.

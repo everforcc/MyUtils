@@ -186,4 +186,11 @@ public class RegexModel {
         System.out.println(RegexUtils.matcheStr(attributeReg, attributeHTML, 1));
     }
 
+    /**
+     * 6. 环视
+     */
+    private static void assetReg(){
+
+    }
+
 }

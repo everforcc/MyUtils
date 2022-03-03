@@ -11,8 +11,9 @@ public class Tenum {
 
     @Test
     public void t1(){
-        /*System.out.println(DanceEnum.getValue("Manage"));
-        System.out.println(DanceEnum.getValue("Manage2"));*/
+        System.out.println(ObjEnum.DANCE_USER_TYPE.type());
+        System.out.println(ObjEnum.getValue("Manage"));
+        System.out.println(ObjEnum.getValue("Manage2"));
         System.out.println(ObjEnum.Manage());
     }
 
