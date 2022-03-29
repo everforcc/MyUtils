@@ -15,7 +15,29 @@ public class PrimaryDataType {
      */
     public static void main(String[] args) {
         // allASCII();
-        printFormat();
+        //printFormat();
+        /*System.out.println(Long.toHexString(15738573601L));
+
+        System.out.println(System.nanoTime());
+
+        System.out.println(Long.toHexString(System.nanoTime()));*/
+
+        System.out.println(reTurnStr("10000000000"));
+        System.out.println(reTurnStr("20000000000"));
+    }
+
+    public static String reTurnStr(String phone){
+        // 手机号的hex
+        String phoneHex = Long.toHexString(Long.valueOf(phone));
+        // nanotime的hex
+        String nanoTimeHex = Long.toHexString(System.nanoTime());
+        int length = nanoTimeHex.length();
+        System.out.println("phoneHex.length():" + phoneHex.length());
+        int residueLength = 15 - phoneHex.length();
+        // 这个位数差的方可以加个G防止冲突
+        System.out.println("residueLength:" + residueLength);
+        String residueNanoTimeStr = nanoTimeHex.substring(length-residueLength,length);
+        return phoneHex + residueNanoTimeStr;
     }
 
     public static void allASCII(){

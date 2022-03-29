@@ -1,14 +1,14 @@
 package cc.arithmetic.use;
 
 import cc.constant.ConstantFile;
-import cc.core.io.PrintWriterUtils;
+import cc.core.io.base.PrintWriterUtils;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-import static cc.arithmetic.basenum.Base64.getbase64Url;
+import static cc.arithmetic.basenum.Base64Utils.getbase64Url;
 
 /**
  * @author c.c.
@@ -19,7 +19,7 @@ public class EncoderFile {
     public static void main(String[] args) {
         List<String> list = new ArrayList<String>();
 
-        String path = ConstantFile.javaFilePath + "\\java\\test\\invoice";
+        String path = ConstantFile.L1_javaFilePath + "\\java\\test\\invoice";
 
         String fileName="base64.png";
 
@@ -39,7 +39,7 @@ public class EncoderFile {
         try {
 
             System.out.println("JSONArray.fromObject(list).toString():"+ JSONArray.fromObject(list).toString());
-            PrintWriterUtils.fileWriter(path + fileName + sd + ".txt",JSONArray.fromObject(list).toString());
+            PrintWriterUtils.printWriter(path + fileName + sd + ".txt",JSONArray.fromObject(list).toString());
 
         }catch (Exception e){
             e.printStackTrace();

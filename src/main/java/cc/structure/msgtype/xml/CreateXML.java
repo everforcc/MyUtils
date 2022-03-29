@@ -19,7 +19,7 @@ public class CreateXML {
 
     private static List<Map<String, String>> students = new ArrayList<Map<String, String>>();//模拟学生集合
     private static Map<String, String> student = null;    //模拟student对象
-    private static final String filePath = ConstantFile.javaFilePath + "/test.xml";//存放xml文件位置
+    private static final String filePath = ConstantFile.L1_javaFilePath + "/test.xml";//存放xml文件位置
 
     /**
      * 初始化数据

@@ -1,6 +1,7 @@
 package cc.advanced.web.http.use.novelmodel;
 
-import cc.core.io.InputStreamUtils;
+import cc.advanced.web.http.use.novelmodel.model.*;
+import cc.core.io.base.StreamInputUtils;
 import cc.resource.PropertiesHeader;
 import cc.use.url.http.novelmodel.model.*;
 import org.apache.http.HttpResponse;
@@ -166,7 +167,7 @@ public class TT {
             System.out.println("" + conn.getResponseCode());
 
             if( 200==conn.getResponseCode() ){
-               String returnMsg = InputStreamUtils.inputStreamStr(conn.getInputStream(),rootModel.getCharset(),false);
+               String returnMsg = StreamInputUtils.streamToStr(conn.getInputStream(),rootModel.getCharset(),false);
                System.out.println(returnMsg);
             }
         } catch (Exception e) {

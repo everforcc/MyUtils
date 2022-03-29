@@ -1,7 +1,7 @@
 package cc.advanced.web.http.use;
 
-import cc.use.url.http.novel.NovelDown;
-import cc.use.url.http.novel.NovelMenu;
+import cc.advanced.web.http.use.novel.NovelDown;
+import cc.advanced.web.http.use.novel.NovelMenu;
 import org.junit.jupiter.api.Test;
 
 /**

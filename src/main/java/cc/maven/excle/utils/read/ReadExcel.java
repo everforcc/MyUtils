@@ -8,11 +8,8 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.testng.annotations.Test;
 
 import java.io.*;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Yukino
@@ -21,11 +18,12 @@ import java.util.Map;
 public class ReadExcel {
 
     /**
-     * 多了个插入sql的过程
+     * 1. 标准的读取格式，需要按照业务调整
+     * 2. 多了个插入sql的过程
      */
 
     //
-    private final String filePath= ConstantFile.javaFilePath + "";
+    private final String filePath= ConstantFile.L1_javaFilePath + "";
 
     // 例如 P,6  53
     // Map<String,String> map = new HashMap<>();
@@ -48,6 +46,7 @@ public class ReadExcel {
         Workbook wb = getWorkbook(fileType,fileInputStream);
 
         //4. 根据workbook读取信息
+        // 需要根据实际业务给对象赋值
         loadFile(wb);
     }
 
@@ -185,6 +184,7 @@ public class ReadExcel {
         }
 
         StringBuilder stringBuilder[] = new StringBuilder[sheetrows[0]];
+
         String insertsql[] = new String[sheetrows[0]];
         //开始写行列逻辑
         for(int r=0; r<sheetrows[0]; r++){

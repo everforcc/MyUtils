@@ -34,17 +34,20 @@ public class ObjRef {
     }
 
     public static Class<?> getInstance() throws ClassNotFoundException {
-        //  1. 类路径,class的静态方法
-        Class<?> clazz = Class.forName("cc.java0.reflection.api.Obj");
+        //  1. 类路径,class的静态方法 cc.java0.reflection.api.Obj
+        Class<?> clazz = Class.forName("ConstantCharSet");
         //  2. 直接获取对象的class
         //  Class<?> clazzint = int.class;
         //  Class<?>  clazzinteger = Integer.TYPE;
         //  3. 调用某个对象的 getClass()
         //  String str = new String();
         //  Class<?> clazzstr = str.getClass();
-        String packageName = clazz.getPackage().getName();
-        System.out.println(packageName);
-        System.out.println(packageName.substring(packageName.lastIndexOf(".")+1));
+        //  4. 包不一定存在
+        /*String packageName = clazz.getPackage().getName();
+        if(StringUtils.isNotBlank(packageName)) {
+            System.out.println(packageName);
+        }
+        System.out.println(packageName.substring(packageName.lastIndexOf(".")+1));*/
         return clazz;
     }
 
@@ -58,12 +61,12 @@ public class ObjRef {
 
     public static void getField(Class<?> clazz,Object object) throws NoSuchFieldException, IllegalAccessException, InstantiationException {
         // 单个字段
-        Field fieldPublicStr = clazz.getField("publicStr");
+        /*Field fieldPublicStr = clazz.getField("publicStr");
         fieldPublicStr.set(object,"publicStr");
 
         Field fieldPrivateStr = clazz.getDeclaredField("privateStr");
         fieldPrivateStr.setAccessible(true);
-        fieldPrivateStr.set(object,"privateStr");
+        fieldPrivateStr.set(object,"privateStr");*/
 
         System.out.println(object);
 
@@ -77,6 +80,8 @@ public class ObjRef {
                     field.set(object,"publicStr");
                 }else if("privateStr".equals(field.getName())){
                     field.set(object,"privateStr");
+                }else {
+                    //System.out.println(field.getName() + "" + field.);
                 }
             }else if(field.getType().isAssignableFrom(int.class)){
                 if("publicint".equals(field.getName())){
@@ -89,9 +94,9 @@ public class ObjRef {
         System.out.println(object);
 
         // 获取字段的值
-        /*Field field = clazz.getDeclaredField("privateStr");
+        Field field = clazz.getDeclaredField("privateStr");
         field.setAccessible(true);
-        System.out.println(field.get(object));*/
+        System.out.println(field.get(object));
 
     }
 
@@ -102,12 +107,12 @@ public class ObjRef {
         //2. 方法返回某个类的所有公用（public）方法，包括其继承类的公用方法
         //Method[] methods = clazz.getMethods();
         for(Method method:methods){
-            System.out.println("方法名 : " + method.getName());
-            System.out.println("返回值 : " + method.getReturnType());
+            System.out.print("方法名 : [" + method.getName());
+            System.out.print("]    返回值 : [" + method.getReturnType());
 
             int parameterCount = method.getParameterCount();
             Class<?>[] clazzs = method.getParameterTypes();
-            System.out.print("参数个数 " + parameterCount + " 参数列表 :{ ");
+            System.out.print("]  参数个数 [" + parameterCount + "] 参数列表 :{ ");
             for(Class cla:clazzs){
                 System.out.print(cla.getName());
             }

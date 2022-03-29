@@ -26,6 +26,7 @@ public class FastJsonUtils {
      * 6. Obj转 str
      * 7. 从JSONObject取出信息
      * 8. 便利JSON（相同结构）取出信息
+     * 9. map转 JSONObject
      */
     public static void main(String[] args) {
         Map<String,String> map = new HashMap<>();
@@ -113,5 +114,16 @@ public class FastJsonUtils {
             entry.getKey();
         }
     }
+
+    /**
+     * 9. map转JSONObject
+     * @param map
+     * @return
+     */
+    public static JSONObject mapToJsonObject(Map<String,Object> map){
+        return new JSONObject(map);
+    }
+
+
 
 }

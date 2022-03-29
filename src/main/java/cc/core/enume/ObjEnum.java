@@ -27,11 +27,11 @@ public enum ObjEnum {
         return "3";
     }
 
-    private String type() {
+    public String type() {
         return this.type;
     }
 
-    private String code() {
+    public String code() {
         return this.code;
     }
 
@@ -40,4 +40,19 @@ public enum ObjEnum {
         return danceEnums[0].code;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
 }

@@ -21,4 +21,13 @@ public class RegexWeb {
     public static String bilibili_middle = ".*";
     public static String bilibili_regexEnd=";\\(function\\(\\)\\{var s;\\(s=document\\.currentScript\\|\\|document\\.scripts\\[document\\.scripts\\.length-1\\]\\)\\.parentNode\\.removeChild\\(s\\);\\}\\(\\)\\);\\</script\\>";
 
+    // [^xyz]
+    /**
+     * 最大32个可见字符，只支持数字，大小写英文以及部分特殊字符：!#$&'()*+,/:;=?@-._~，其它字符请自行编码为合法字符（因不支持%，中文无法使用 urlencode 处理，请使用其他编码方式）
+     * 0-9a-zA-Z
+     */
+    //public static String wx_piccode = "[^abc]";
+    //public static String wx_piccode = "[^a-zA-Z0-9$!#$&'()]";
+    public static String wx_piccode_regex = "[^\\.\\-a-zA-Z0-9!#$&'()*+,/:;=?@_~，]";
+
 }

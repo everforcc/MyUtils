@@ -16,7 +16,7 @@ public class ZipUtils {
     public static void main(String[] args) {
         ZipUtils zipUtils = new ZipUtils();
         try {
-            zipUtils.zip(ConstantFile.javaFilePath + "/linshi/a.zip",new File(ConstantFile.javaFilePath + "/linshi/a.txt"));
+            zipUtils.zip(ConstantFile.L1_javaFilePath + "/linshi/a.zip",new File(ConstantFile.L1_javaFilePath + "/linshi/a.txt"));
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -13,7 +13,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class Directories {
-    static String path = ConstantFile.javaFilePath + "\\onjava8\\test";
+    static String path = ConstantFile.L1_javaFilePath + "\\onjava8\\test";
     static Path test = Paths.get(path);
     static String sep = FileSystems.getDefault().getSeparator();
     static List<String> parts = Arrays.asList("foo", "bar", "baz", "bag");

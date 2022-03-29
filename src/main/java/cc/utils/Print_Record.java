@@ -1,12 +1,15 @@
 package cc.utils;
 
 import cc.core.date.utils.DateUtils;
-import cc.core.io.PrintWriterUtils;
+import cc.core.io.base.PrintWriterUtils;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang.StringUtils;
 
 /**
  * Yukino
  * 2020/3/9
  */
+@Slf4j
 public class Print_Record {
 
     /* 调整为输出加上 包名 类名，方法名 */
@@ -25,6 +28,13 @@ public class Print_Record {
         this.fileName = fileName ;
     };
 
+    public static synchronized  Print_Record getInstanse(){
+        if(print_record == null){
+            print_record = new Print_Record("",DateUtils.now() + ".txt");
+        }
+        return print_record;
+    }
+
     public static synchronized  Print_Record getInstanse(String filePath){
         if(print_record == null){
             print_record = new Print_Record(filePath,DateUtils.now() + ".txt");
@@ -41,26 +51,31 @@ public class Print_Record {
 
 
 
-    public void println(String msg){
-        String location="";
-        StackTraceElement[] stacks = Thread.currentThread().getStackTrace();
-        // 这里还可以根据包名 来分类 保存日志
-        location = "[["+stacks[2].getClassName() + "](" + stacks[2].getMethodName() + ")" + "" + stacks[2].getLineNumber() + "]";
-        msg = DateUtils.nowTimeRegex("yyyy-MM-dd hh:mm:ss ")+" : " + location + " --- " +msg ;
-        System.out.println( msg );
-
-        PrintWriterUtils.fileWriter(filePath, fileName, msg + "\r\n");
+    public void println(String msg,String... formatMsg){
+        print(msg,"cor",formatMsg);
     }
 
-    public void printErrln(String msg){
+    public void printErrln(String msg,String... formatMsg){
+        print(msg,"err",formatMsg);
+    }
+
+    private void print(String msg,String type,String... formatMsg){
         String location="";
         StackTraceElement[] stacks = Thread.currentThread().getStackTrace();
         // 这里还可以根据包名 来分类 保存日志
         location = "[["+stacks[2].getClassName() + "](" + stacks[2].getMethodName() + ")" + "" + stacks[2].getLineNumber() + "]";
-        msg = DateUtils.nowTimeRegex("yyyy-MM-dd hh:mm:ss ")+" err : " + location + " --- " +msg ;
-        System.err.println( msg );
 
-        PrintWriterUtils.fileWriter(filePath,fileName,msg + "\r\n");
+        msg = formatMsg.length == 0 ?msg : String.format(msg,formatMsg) ;
+        msg = DateUtils.nowTimeRegex("yyyy-MM-dd hh:mm:ss ") + type + " : " + location + " --- " + msg ;
+        if("err".equals(type)) {
+            System.err.println( msg );
+        }else {
+            System.out.println( msg );
+        }
+
+        if(!StringUtils.isBlank(filePath)) {
+            PrintWriterUtils.printWriter(filePath, fileName, msg + "\r\n");
+        }
     }
 
 }

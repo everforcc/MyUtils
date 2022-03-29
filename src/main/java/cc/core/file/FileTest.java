@@ -4,9 +4,6 @@ import cc.constant.ConstantFile;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -22,7 +19,7 @@ public class FileTest {
         // System.out.printf(Integer.toHexString(b & 0xFF));
     }
 
-    private final static String testFilePath = ConstantFile.javaFilePath + "";
+    private final static String testFilePath = ConstantFile.L1_javaFilePath + "";
     private final static File file = new File(testFilePath);
 
     private static void fileByte(){

@@ -1,7 +1,7 @@
 package cc.java0.cmd;
 
 import cc.constant.ConstantFile;
-import cc.core.io.InputStreamUtils;
+import cc.core.io.base.StreamInputUtils;
 import cc.utils.Print_Record;
 
 import java.io.*;
@@ -23,7 +23,7 @@ public class CmdUtils {
 
 
 
-    Print_Record print_record = Print_Record.getInstanse(ConstantFile.javaFilePath + "");
+    Print_Record print_record = Print_Record.getInstanse(ConstantFile.L1_javaFilePath + "");
     // 目前使用这个，下面的其他方法还需要再整理
     public static String precessType="cmd /c ";
 
@@ -95,7 +95,7 @@ public class CmdUtils {
         Process p ;
         try {
             p = Runtime.getRuntime().exec(cmd);
-            String errorMsg = InputStreamUtils.inputStreamStr(p.getErrorStream(),"GBK");
+            String errorMsg = StreamInputUtils.streamToStr(p.getErrorStream(),"GBK");
             System.out.println(METHOD_NAME + "#readLine: " + errorMsg );
             // 导致当前线程等待，如有必要，一直要等到由该 Process 对象表示的进程已经终止。
             // 如果已终止该子进程，此方法立即返回。如果没有终止该子进程，调用的线程将被阻塞，直到退出子进程。

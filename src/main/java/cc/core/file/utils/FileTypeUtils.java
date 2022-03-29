@@ -27,7 +27,7 @@ public class FileTypeUtils {
 
     public static void main(String[] args) throws Exception
     {
-        File f = new File(ConstantFile.javaFilePath + "/test/十大错觉.jpg");
+        File f = new File(ConstantFile.L1_javaFilePath + "/test/十大错觉.jpg");
         if (f.exists())
         {
             // 判断是否为图片

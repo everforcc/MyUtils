@@ -26,7 +26,7 @@ public class PathInfo {
     }
     public static void main(String[] args) {
         System.out.println(System.getProperty("os.name"));
-        info(Paths.get(ConstantFile.javaFilePath + "", "test", "1.txt"));
+        info(Paths.get(ConstantFile.L1_javaFilePath + "", "test", "1.txt"));
         Path p = Paths.get("PathInfo.java");
         info(p);
         Path ap = p.toAbsolutePath();

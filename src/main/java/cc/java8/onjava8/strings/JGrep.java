@@ -8,7 +8,6 @@ import cc.constant.ConstantFile;
 
 import java.util.regex.*;
 import java.nio.file.*;
-import java.util.stream.*;
 
 public class JGrep {
     public static void main(String[] args) throws Exception {
@@ -18,7 +17,7 @@ public class JGrep {
         }*/
 
         String arg[] = new String[2];
-        arg[0] = ConstantFile.javaFilePath + "\\java\\onjava8\\string\\regex.txt";
+        arg[0] = ConstantFile.L1_javaFilePath + "\\java\\onjava8\\string\\regex.txt";
         arg[1] = "^Ssct.+";
         Pattern p = Pattern.compile(arg[1]);
         // Iterate through the lines of the input file:

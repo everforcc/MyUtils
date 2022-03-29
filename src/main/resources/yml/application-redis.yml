@@ -1,0 +1,5 @@
+server:
+  port: 6379
+  context-path: /spring
+  # 数据源
+  datasource:

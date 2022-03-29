@@ -2,7 +2,9 @@ package cc.core.regex.utils;
 
 import org.apache.poi.ss.formula.functions.T;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -77,7 +79,7 @@ public class RegexUtils {
      * @param content
      * @return
      */
-    public static Set<String> matcheList(String regex,String content) {
+    public static List<String> matcheList(String regex,String content) {
         return matcheList(regex,content,0);
     }
 
@@ -88,14 +90,14 @@ public class RegexUtils {
      * @param group
      * @return
      */
-    public static Set<String> matcheList(String regex,String content,int group){
+    public static List<String> matcheList(String regex,String content,int group){
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(content);
         //是否匹配到了
-        Set<String> stringSet = new HashSet<>();
+        List<String> stringSet = new ArrayList<>();
         while (matcher.find()) {// 匹配出所有符合的
             stringSet.add(matcher.group(group));
-            System.out.println(matcher.group(group));
+            //System.out.println(matcher.group(group));
         }
         return stringSet;
     }

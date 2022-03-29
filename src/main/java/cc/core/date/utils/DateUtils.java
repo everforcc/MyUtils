@@ -5,7 +5,10 @@ import cc.constant.ConstantDate;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.regex.Pattern;
+import java.util.stream.Stream;
 
 /**
  * Yukino
@@ -13,12 +16,34 @@ import java.util.regex.Pattern;
  */
 public class DateUtils {
 
+    public static void main(String[] args) {
+        try {
+             String data = "20160915";
+            // String data = "2016-09-15";
+            // String data = "2016-09-15 12:12:12";
+            // String data = "2016年09月15日";
+            // String data = "2016-09-15T00:00:00.000Z";
+            System.out.println(formatDate(data, pattern));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     /**
      * 跟定的需要时间类型的正则表达式，默认 yyyy-MM-dd
      * yyyy-MM-dd hh:mm
      * yyyyMMddHHmmss
      */
-    public static String pattern= ConstantDate.mode_1;
+    public static String pattern= ConstantDate.mode_5;
+    private static Map<String,String> dataPatternMap = new HashMap<>();
+
+    static {
+        dataPatternMap.put(ConstantDate.mode_1,ConstantDate.regex_1);
+        dataPatternMap.put(ConstantDate.mode_2,ConstantDate.regex_2);
+        dataPatternMap.put(ConstantDate.mode_3,ConstantDate.regex_3);
+        dataPatternMap.put(ConstantDate.mode_4,ConstantDate.regex_4);
+        dataPatternMap.put(ConstantDate.mode_5,ConstantDate.regex_5);
+    }
 
     /**
      * 需要做一个 yyyy-MM-dd 和正则表达式对应的组合 这样的话添加起来比较方便 比如
@@ -36,6 +61,7 @@ public class DateUtils {
         String regex1="[0-9]{4}-[0-9]{2}-[0-9]{2}";
         String regex2="[0-9]{4}年[0-9]{2}月[0-9]{2}日";
         String regex3="[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}";
+        String regex4="[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}\\.[0-9]{3}'Z'";
         if(Pattern.compile(regex).matcher(voucherdate).matches()){
             String string = new SimpleDateFormat(pattern).format(new SimpleDateFormat("yyyyMMdd").parse(voucherdate));
             return string;
@@ -51,6 +77,16 @@ public class DateUtils {
         if(Pattern.compile(regex3).matcher(voucherdate).matches()){
             String string = new SimpleDateFormat(pattern).format(new SimpleDateFormat("yyyy-MM-dd hh:mm").parse(voucherdate));
             return string;
+        }
+
+        return "0000-00-00";
+    }
+
+    public static String formatDate(String voucherdate,String pattern)throws Exception{
+        for(Map.Entry<String,String> entry:dataPatternMap.entrySet()){
+            if(Pattern.compile(entry.getValue()).matcher(voucherdate).matches()){
+                return new SimpleDateFormat(pattern).format(new SimpleDateFormat(entry.getKey()).parse(voucherdate));
+            }
         }
         return "0000-00-00";
     }

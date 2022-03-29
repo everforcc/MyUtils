@@ -68,7 +68,7 @@ public class SendFileEmail
 
             // 附件部分
             messageBodyPart = new MimeBodyPart();
-            String filename = ConstantFile.javaFilePath + "/test/凌天战尊1-1380.txt";
+            String filename = ConstantFile.L1_javaFilePath + "/test/凌天战尊1-1380.txt";
             DataSource source = new FileDataSource(filename);
             messageBodyPart.setDataHandler(new DataHandler(source));
             messageBodyPart.setFileName(filename);

@@ -1,7 +1,8 @@
 package cc.advanced.web.http.use.novelmodel;
 
-import cc.core.io.PrintWriterUtils;
-import cc.use.url.http.novelmodel.flow.CrawFlow2;
+import cc.advanced.web.http.use.novelmodel.model.RootModel;
+import cc.core.io.base.PrintReaderUtils;
+import cc.advanced.web.http.use.novelmodel.flow.CrawFlow2;
 import cc.use.url.http.novelmodel.model.*;
 import com.alibaba.fastjson.JSON;
 import org.junit.jupiter.api.Test;
@@ -69,7 +70,7 @@ public class Model_merge {
 
         try {
             // 静态方法和非晶态方法不同
-            return PrintWriterUtils.fileReader(resource);
+            return PrintReaderUtils.bufferReader(resource);
         } catch (Exception e) {
             e.printStackTrace();
         }

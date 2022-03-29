@@ -1,17 +1,15 @@
 package cc.advanced.webrefactor.http.impl;
 
 import cc.advanced.webrefactor.http.IHttp;
-import cc.core.io.InputStreamUtils;
+import cc.core.io.base.StreamInputUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.axis.utils.StringUtils;
-import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.util.Map;
@@ -57,7 +55,7 @@ public class HttpURLConnectionImpl implements IHttp {
             //2. 流
             httpURLConnection = getConn(httpURLConnection,requestMethod,map,content,timeout);
             //3. 获取内容
-            returnMsg = InputStreamUtils.inputStreamStr(httpURLConnection.getInputStream(),charset);
+            returnMsg = StreamInputUtils.streamToStr(httpURLConnection.getInputStream(),charset);
             //3. copy文件
         } catch (IOException e) {
             e.printStackTrace();
@@ -78,7 +76,7 @@ public class HttpURLConnectionImpl implements IHttp {
             //3. copy文件
             //if(httpURLConnection.getContentLength()<1024){
                 //returnMsg = InputStreamUtils.inputStreamStr(httpURLConnection.getInputStream(),null);
-                returnMsg = InputStreamUtils.inputStreamByte(httpURLConnection.getInputStream(),null);
+                returnMsg = StreamInputUtils.copyStreamByteAry(httpURLConnection.getInputStream(),null);
             /*}else {
                 FileUtils.copyToFile(httpURLConnection.getInputStream(),new File(file));
             }*/
