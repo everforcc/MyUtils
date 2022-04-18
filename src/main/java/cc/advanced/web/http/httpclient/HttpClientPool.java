@@ -1,5 +1,6 @@
 package cc.advanced.web.http.httpclient;
 
+import org.apache.http.client.HttpClient;
 import org.apache.http.client.HttpRequestRetryHandler;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
@@ -9,6 +10,10 @@ import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 public class HttpClientPool {
 
     public static PoolingHttpClientConnectionManager cm = new PoolingHttpClientConnectionManager();
+
+    /**
+     * 超时后重试次数
+     */
     public static HttpRequestRetryHandler httpRequestRetryHandler = new StandardHttpRequestRetryHandler(5,true);
 
     static {
@@ -21,10 +26,11 @@ public class HttpClientPool {
         //connectionManager.setMaxPerRoute(new HttpRoute(httpHost),50);
     }
 
-    private static void getClient(){
+    private static HttpClient getClient(){
         CloseableHttpClient httpClient = HttpClients.custom()
                          .setConnectionManager(cm)
                          .setRetryHandler(httpRequestRetryHandler).build();
+        return httpClient;
     }
 
     public static void main(String[] args) {

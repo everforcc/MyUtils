@@ -1,5 +1,7 @@
 package cc.advanced.concurrent.pool;
 
+import lombok.SneakyThrows;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -29,63 +31,68 @@ public class ThreadPoolUtils {
     // 创建创建一个单线程化的线程池
     public static ExecutorService singleThreadExecutor = Executors.newSingleThreadExecutor();
 
-    // 线程太多 不建议使用
+    /**
+     * 线程太多 不建议使用
+     * @param runnable
+     */
+    @SneakyThrows
     public static void excuteCache(Runnable runnable){
-        // 创建一个可缓存线程池
-
-        // 线程池为无限大，当执行当前任务时上一个任务已经完成，会复用执行上一个任务的线程，而不用每次新建线程
-        try {
-            // sleep可明显看到使用的是线程池里面以前的线程，没有创建新的线程
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        // sleep可明显看到使用的是线程池里面以前的线程，没有创建新的线程
+        Thread.sleep(1000);
         cachedThreadPool.execute(runnable);
     }
 
-    // 还行
+    /**
+     * 还行
+     * @param runnable
+     * @return
+     */
     public static ExecutorService excuteFixed(Runnable runnable){
         // 创建一个可重用固定个数的线程池
         fixedThreadPool.execute(runnable);
         return fixedThreadPool;
     }
 
-    // 设置延迟,可以爬虫时使用，避免被封
+    /**
+     * 设置延迟,可以爬虫时使用，避免被封
+     * @param runnable
+     */
     public static void excuteSchedule(Runnable runnable){
-        //延迟1秒执行
-        /*scheduledThreadPool.schedule(new Runnable() {
-            public void run() {
-               System.out.println("延迟1秒执行");
-            }
-        }, 1, TimeUnit.SECONDS);*/
-
-        // 延迟1秒后每3秒执行一次
-        // TimeUnit.SECONDS 第一个参数 延迟索酒,第二个参数间隔,第三个参数 延迟单位
-        scheduledThreadPool.scheduleAtFixedRate(runnable, 1, 3, TimeUnit.SECONDS);
+        excuteSchedule(runnable, 1, 3, TimeUnit.SECONDS);
     }
 
-    // 初始延迟 周期 间隔类型
+    /**
+     * 初始延迟 周期 间隔类型
+     * @param runnable
+     * @param initialDelay
+     * @param period
+     * @param timeUnit
+     */
     public static void excuteSchedule(Runnable runnable,int initialDelay,int period,TimeUnit timeUnit){
         // TimeUnit.SECONDS 第一个参数 延迟索酒,第二个参数间隔,第三个参数 延迟单位
         scheduledThreadPool.scheduleAtFixedRate(runnable, initialDelay, period, timeUnit);
     }
 
+    /**
+     * 创建一个单线程化的线程池
+     * @param runnable
+     */
     public static void excuteSingle(Runnable runnable){
-        // 创建一个单线程化的线程池
+
         for (int i = 0; i < 10; i++) {
             singleThreadExecutor.execute(runnable);
         }
     }
 
+    /**
+     * 超时的时候向线程池中所有的线程发出中断(interrupted)。
+     * @param executorService
+     */
+    @SneakyThrows
     public static void shutdown(ExecutorService executorService){
         executorService.shutdown();
-        try {
-            if(!executorService.awaitTermination(awaitTime, TimeUnit.MILLISECONDS)){
-                // 超时的时候向线程池中所有的线程发出中断(interrupted)。
-                executorService.shutdownNow();
-            }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        if(!executorService.awaitTermination(awaitTime, TimeUnit.MILLISECONDS)){
+            executorService.shutdownNow();
         }
     }
 

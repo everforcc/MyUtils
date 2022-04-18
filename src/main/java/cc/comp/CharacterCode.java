@@ -23,7 +23,12 @@ public class CharacterCode {
     // 春”和“节”的GB2312编码（我的操作系统“Windows XP”中文版的默认编码）分别是“B4 BA”和“BD DA”
     public static void main(String[] args) {
         try {
-            InputStream inputStream = new StringInputStream("严", "Unicode");
+            /**
+             * Unicode
+             * GB2312
+             * UTF-8
+             */
+            InputStream inputStream = new StringInputStream("+", "UTF-8");
             int length = 0;
             byte[] buf = new byte[8];
             while ((length = inputStream.read(buf, 0, buf.length)) != -1) {

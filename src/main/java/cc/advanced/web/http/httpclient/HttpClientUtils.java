@@ -38,16 +38,17 @@ import java.util.zip.GZIPInputStream;
  */
 public class HttpClientUtils {
 
+    /**
+     * 1. get
+     * 2. post
+     * 2.1 表单
+     * 2.2 访问接口 设置登录认证
+     * 3. 上传文件
+     * 4. 代理
+     * 5. 流文件
+     */
     public static void main(String[] args) {
-        /**
-         * 1. get
-         * 2. post
-         * 2.1 表单
-         * 2.2 访问接口 设置登录认证
-         * 3. 上传文件
-         * 4. 代理
-         * 5. 流文件
-         */
+
         /**
          * 登录认证
          * basic √

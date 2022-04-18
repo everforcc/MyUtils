@@ -1,14 +1,14 @@
-package cc.advanced.concurrent.threadrun;
+package cc.advanced.concurrent.test;
 
 /**
  * Yukino
  * 2020/6/1
  */
-class RunnableDemo implements Runnable {
+public class TRunnable implements Runnable {
     private Thread t;
     private String threadName;
 
-    RunnableDemo( String name) {
+    TRunnable(String name) {
         threadName = name;
         System.out.println("Creating " +  threadName );
     }
@@ -34,15 +34,13 @@ class RunnableDemo implements Runnable {
             t.start ();
         }
     }
-}
-
-public class TestThread {
 
     public static void main(String args[]) {
-        RunnableDemo R1 = new RunnableDemo( "Thread-1");
+        TRunnable R1 = new TRunnable( "Thread-1");
         R1.start();
 
-        RunnableDemo R2 = new RunnableDemo( "Thread-2");
+        TRunnable R2 = new TRunnable( "Thread-2");
         R2.start();
     }
+
 }
