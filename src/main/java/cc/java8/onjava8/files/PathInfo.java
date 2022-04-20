@@ -1,7 +1,7 @@
 package cc.java8.onjava8.files;
 
 // files/PathInfo.java
-import cc.constant.ConstantFile;
+import cc.sysconstant.ConstantFile;
 
 import java.nio.file.*;
 import java.net.URI;

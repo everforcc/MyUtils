@@ -1,6 +1,6 @@
 package cc.java0.pscp;
 
-import cc.constant.ConstantFile;
+import cc.sysconstant.ConstantFile;
 import cc.java0.cmd.CmdUtils;
 import lombok.extern.slf4j.Slf4j;
 

@@ -1,6 +1,6 @@
 package cc.advanced.web.craw.selenium;
 
-import cc.constant.ConstantFile;
+import cc.sysconstant.ConstantFile;
 import cc.core.io.base.PrintWriterUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;

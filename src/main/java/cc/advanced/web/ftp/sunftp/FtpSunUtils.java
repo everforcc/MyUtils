@@ -1,6 +1,6 @@
 package cc.advanced.web.ftp.sunftp;
 
-import cc.constant.ConstantFile;
+import cc.sysconstant.ConstantFile;
 import sun.net.ftp.FtpClient;
 import sun.net.ftp.FtpProtocolException;
 

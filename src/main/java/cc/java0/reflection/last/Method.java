@@ -2,7 +2,7 @@ package cc.java0.reflection.last;
 
 
 
-import cc.entity.ObjectField;
+import cc.sysentity.ObjectField;
 
 import java.lang.reflect.Field;
 

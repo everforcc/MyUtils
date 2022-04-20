@@ -1,6 +1,6 @@
 package cc.core.file.apache;
 
-import cc.constant.ConstantCharSet;
+import cc.sysconstant.ConstantCharSet;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.LineIterator;
 

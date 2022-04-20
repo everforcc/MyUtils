@@ -1,10 +1,10 @@
 package cc.advanced.web.http.use.website.novel;
 
-import cc.resource.PropertiesHeader;
+import cc.sysresource.PropertiesHeader;
 import cc.advanced.web.craw.utils.CrawDataParse;
 import cc.advanced.web.http.httpclient.HttpClientUtils;
 import cc.advanced.web.http.httpurlconnect.HttpURLConnectionUtil;
-import cc.constant.ConstantFile;
+import cc.sysconstant.ConstantFile;
 import cc.core.io.base.StreamInputUtils;
 import cc.core.io.base.PrintWriterUtils;
 import org.jsoup.Jsoup;

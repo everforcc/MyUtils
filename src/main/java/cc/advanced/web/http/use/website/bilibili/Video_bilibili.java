@@ -1,6 +1,6 @@
 package cc.advanced.web.http.use.website.bilibili;
 
-import cc.constant.ConstantFile;
+import cc.sysconstant.ConstantFile;
 import cc.core.io.base.StreamInputUtils;
 import org.apache.commons.io.FileUtils;
 import org.apache.http.HttpEntity;

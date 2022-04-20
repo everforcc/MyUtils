@@ -2,10 +2,7 @@ package cc.advanced.concurrent.pool;
 
 import lombok.SneakyThrows;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 /**
  * @author c.c.
@@ -26,6 +23,7 @@ public class ThreadPoolUtils {
     private static ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
     // 创建一个可重用固定个数的线程池，以共享的无界队列方式来运行这些线程。
     public static ExecutorService fixedThreadPool = Executors.newFixedThreadPool(threadSize);
+    //public static ExecutorService fixedThreadPool = Executors.newFixedThreadPool(100);
     // 创建一个定长线程池，支持定时及周期性任务执行——延迟执行
     public static ScheduledExecutorService scheduledThreadPool = Executors.newScheduledThreadPool(threadSize);
     // 创建创建一个单线程化的线程池
@@ -94,6 +92,30 @@ public class ThreadPoolUtils {
         if(!executorService.awaitTermination(awaitTime, TimeUnit.MILLISECONDS)){
             executorService.shutdownNow();
         }
+    }
+
+    /**
+     * 判断线程是否执行完毕
+     */
+    public static void isEnd(ExecutorService executorService){
+        while(true) {
+            if(executorService.isTerminated()) {
+                System.out.println("执行完毕");
+                break;
+            }else {
+                //System.out.println("正在执行 >>> ");
+                int threadCount = ((ThreadPoolExecutor)executorService).getActiveCount();
+                if(threadCount < threadSize) {
+                    System.out.println("1.threadCount====" + threadCount);
+                }
+            }
+        }
+    }
+
+    public static void activity(ExecutorService executorService){
+        int threadCount = ((ThreadPoolExecutor)executorService).getActiveCount();
+        System.out.println("1.threadCount===="+threadCount);
+
     }
 
 }

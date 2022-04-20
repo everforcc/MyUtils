@@ -1,7 +1,7 @@
 package cc.advanced.web.http.use.website.business;
 
 import cc.advanced.web.http.httpurlconnect.HttpURLConnectionUtil;
-import cc.constant.ConstantFile;
+import cc.sysconstant.ConstantFile;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,7 +1,7 @@
 package cc.advanced.web.http.httpurlconnect;
 
 import cc.core.io.base.StreamInputUtils;
-import cc.utils.Print_Record;
+import cc.sysutils.Print_Record;
 import org.apache.axis.utils.StringUtils;
 
 import javax.activation.MimetypesFileTypeMap;

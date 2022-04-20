@@ -1,9 +1,9 @@
 package cc.core.file.use;
 
 
-import cc.constant.ConstantFile;
+import cc.sysconstant.ConstantFile;
 import cc.core.date.utils.DateTimestamp;
-import cc.entity.FileSysMsg;
+import cc.sysentity.FileSysMsg;
 
 import java.io.File;
 import java.io.IOException;

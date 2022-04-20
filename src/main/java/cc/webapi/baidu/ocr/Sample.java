@@ -1,7 +1,7 @@
 package cc.webapi.baidu.ocr;
 
 
-import cc.constant.ConstantFile;
+import cc.sysconstant.ConstantFile;
 import com.baidu.aip.ocr.AipOcr;
 import net.sf.json.JSONArray;
 import org.json.JSONObject;

@@ -1,7 +1,7 @@
 package cc.advanced.web.http.use.game;
 
 import cc.core.io.base.PrintReaderUtils;
-import cc.resource.PropertiesHeader;
+import cc.sysresource.PropertiesHeader;
 import cc.advanced.web.http.httpurlconnect.HttpURLConnectionUtil;
 import cc.core.io.base.PrintWriterUtils;
 import com.alibaba.fastjson.JSON;

@@ -1,5 +1,5 @@
 package cc.java0.ffmpeg.use;
-import cc.constant.ConstantFile;
+import cc.sysconstant.ConstantFile;
 import cc.java0.ffmpeg.utils.ConstantFFmpeg;
 import java.io.File;
 import java.io.IOException;

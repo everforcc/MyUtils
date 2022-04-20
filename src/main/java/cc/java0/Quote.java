@@ -1,6 +1,6 @@
 package cc.java0;
 
-import cc.entity.ObjectField;
+import cc.sysentity.ObjectField;
 
 import java.util.ArrayList;
 import java.util.List;

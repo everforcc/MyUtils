@@ -1,8 +1,8 @@
 package cc.advanced.web.http.use.website.txt;
 
-import cc.constant.ConstantCharSet;
-import cc.resource.PropertiesHeader;
-import cc.constant.ConstantFile;
+import cc.sysconstant.ConstantCharSet;
+import cc.sysresource.PropertiesHeader;
+import cc.sysconstant.ConstantFile;
 import org.apache.commons.io.FileUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

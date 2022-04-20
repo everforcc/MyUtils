@@ -2,7 +2,7 @@ package cc.advanced.web.http.use.novelmodel.flow;
 
 
 import cc.core.io.base.StreamInputUtils;
-import cc.resource.PropertiesHeader;
+import cc.sysresource.PropertiesHeader;
 import cc.advanced.web.http.use.novelmodel.Novel_init;
 import cc.advanced.web.http.use.novelmodel.model.BookModel;
 import cc.advanced.web.http.use.novelmodel.model.ContentModel;

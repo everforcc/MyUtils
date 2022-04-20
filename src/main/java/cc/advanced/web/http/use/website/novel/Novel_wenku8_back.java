@@ -1,6 +1,6 @@
 package cc.advanced.web.http.use.website.novel;
 
-import cc.constant.ConstantFile;
+import cc.sysconstant.ConstantFile;
 import cc.core.file.utils.MDUtils;
 import cc.advanced.web.craw.utils.CrawDataParse;
 import cc.advanced.web.http.httpurlconnect.HttpURLConnectionUtil;

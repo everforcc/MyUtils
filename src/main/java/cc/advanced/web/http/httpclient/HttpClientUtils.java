@@ -1,7 +1,7 @@
 package cc.advanced.web.http.httpclient;
 
-import cc.constant.ConstantFile;
-import cc.utils.Print_Record;
+import cc.sysconstant.ConstantFile;
+import cc.sysutils.Print_Record;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.commons.io.FileUtils;
 import org.apache.http.*;
@@ -16,7 +16,6 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.client.HttpClients;
-import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;

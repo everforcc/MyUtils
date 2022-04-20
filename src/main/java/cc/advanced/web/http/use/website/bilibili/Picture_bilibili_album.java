@@ -1,9 +1,9 @@
 package cc.advanced.web.http.use.website.bilibili;
 
-import cc.constant.ConstantCharSet;
-import cc.resource.PropertiesHeader;
+import cc.sysconstant.ConstantCharSet;
+import cc.sysresource.PropertiesHeader;
 import cc.advanced.web.http.httpurlconnect.HttpURLConnectionUtil;
-import cc.constant.ConstantFile;
+import cc.sysconstant.ConstantFile;
 import cc.core.io.base.PrintWriterUtils;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;

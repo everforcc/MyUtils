@@ -1,15 +1,12 @@
 package cc.structure.msgtype.json.jsonpath;
 
-import cc.constant.ConstantFile;
-import cc.resource.PropertiesJSON;
+import cc.sysresource.PropertiesJSON;
 import com.jayway.jsonpath.*;
 import com.jayway.jsonpath.spi.json.JacksonJsonNodeJsonProvider;
 import com.jayway.jsonpath.spi.json.JsonProvider;
 import com.jayway.jsonpath.spi.mapper.JacksonMappingProvider;
 import com.jayway.jsonpath.spi.mapper.MappingProvider;
-import org.apache.commons.io.FileUtils;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.*;
 

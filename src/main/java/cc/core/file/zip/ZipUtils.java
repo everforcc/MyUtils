@@ -1,6 +1,6 @@
 package cc.core.file.zip;
 
-import cc.constant.ConstantFile;
+import cc.sysconstant.ConstantFile;
 
 import java.io.*;
 import java.util.zip.GZIPInputStream;

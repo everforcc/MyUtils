@@ -1,6 +1,6 @@
 package cc.advanced.web.craw.webmagic.pageprocessor;
 
-import cc.constant.ConstantCharSet;
+import cc.sysconstant.ConstantCharSet;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 

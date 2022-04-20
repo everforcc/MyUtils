@@ -1,6 +1,6 @@
 package cc.arithmetic.basenum;
 
-import cc.constant.ConstantFile;
+import cc.sysconstant.ConstantFile;
 import cc.core.io.base.PrintReaderUtils;
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;

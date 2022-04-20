@@ -1,6 +1,6 @@
 package cc.java0.awt;
 
-import cc.constant.ConstantFile;
+import cc.sysconstant.ConstantFile;
 
 import javax.imageio.ImageIO;
 import java.awt.*;

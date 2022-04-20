@@ -4,7 +4,7 @@ package cc.java8.onjava8.strings;
 // A very simple version of the "grep" program
 // {java JGrep
 // WhitherStringBuilder.java 'return|for|String'}
-import cc.constant.ConstantFile;
+import cc.sysconstant.ConstantFile;
 
 import java.util.regex.*;
 import java.nio.file.*;

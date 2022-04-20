@@ -1,6 +1,6 @@
 package cc.core.date.utils;
 
-import cc.constant.ConstantDate;
+import cc.sysconstant.ConstantDate;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -8,7 +8,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
-import java.util.stream.Stream;
 
 /**
  * Yukino
@@ -128,6 +127,15 @@ public class DateUtils {
      */
     public static String now(){
         return new SimpleDateFormat(ConstantDate.mode_1).format(new Date(System.currentTimeMillis()));
+    }
+
+    public static long time(){
+        return new Date().getTime();
+    }
+
+    public static long timedif(long before, long end){
+        //return (end-before)/1000;
+        return end-before;
     }
 
 }

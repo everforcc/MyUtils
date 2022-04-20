@@ -1,6 +1,6 @@
 package cc.core.file.utils;
 
-import cc.constant.ConstantFile;
+import cc.sysconstant.ConstantFile;
 import org.jaudiotagger.audio.exceptions.InvalidAudioFrameException;
 import org.jaudiotagger.audio.exceptions.ReadOnlyFileException;
 import org.jaudiotagger.audio.mp3.MP3AudioHeader;

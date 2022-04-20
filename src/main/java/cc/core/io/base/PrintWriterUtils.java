@@ -1,9 +1,8 @@
 package cc.core.io.base;
 
-import cc.constant.ConstantCharSet;
-import cc.constant.ConstantFile;
+import cc.sysconstant.ConstantCharSet;
+import cc.sysconstant.ConstantFile;
 import cc.core.file.utils.FileUtils;
-import com.google.common.io.ByteStreams;
 
 import java.io.*;
 

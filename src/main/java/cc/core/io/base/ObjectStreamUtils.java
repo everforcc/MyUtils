@@ -2,7 +2,7 @@ package cc.core.io.base;
 
 
 
-import cc.constant.ConstantFile;
+import cc.sysconstant.ConstantFile;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

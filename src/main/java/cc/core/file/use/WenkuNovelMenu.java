@@ -1,15 +1,15 @@
 package cc.core.file.use;
 
-import cc.constant.ConstantFile;
+import cc.sysconstant.ConstantFile;
 import cc.core.file.utils.FileUtils;
 import cc.core.file.utils.IFileUtils;
 import cc.core.io.base.PrintReaderUtils;
-import cc.resource.PropertiesHeader;
+import cc.sysresource.PropertiesHeader;
 import cc.advanced.web.http.httpurlconnect.HttpURLConnectionUtil;
 import cc.core.io.base.StreamInputUtils;
 import cc.core.io.base.PrintWriterUtils;
 import cc.core.regex.utils.RegexUtils;
-import cc.utils.Print_Record;
+import cc.sysutils.Print_Record;
 
 import java.io.File;
 import java.io.InputStream;

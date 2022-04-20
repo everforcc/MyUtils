@@ -1,6 +1,6 @@
 package cc.structure.msgtype.xml;
 
-import cc.constant.ConstantCharSet;
+import cc.sysconstant.ConstantCharSet;
 import org.dom4j.io.OutputFormat;
 import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;

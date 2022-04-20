@@ -1,7 +1,7 @@
 package cc.advanced.web.http.use.novelmodel;
 
 import cc.core.io.base.PrintReaderUtils;
-import cc.resource.PropertiesHeader;
+import cc.sysresource.PropertiesHeader;
 import cc.advanced.web.http.use.novelmodel.model.BookModel;
 import cc.advanced.web.http.use.novelmodel.model.ContentModel;
 import cc.advanced.web.http.use.novelmodel.model.RootModel;

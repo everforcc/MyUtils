@@ -1,9 +1,9 @@
 package cc.advanced.web.http.use.pic;
 
-import cc.constant.ConstantFile;
+import cc.sysconstant.ConstantFile;
 import cc.core.io.base.PrintWriterUtils;
 import cc.advanced.web.craw.webmagic.base.Constant;
-import cc.utils.Print_Record;
+import cc.sysutils.Print_Record;
 import org.apache.commons.io.FileUtils;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;

@@ -1,7 +1,7 @@
 package cc.structure.msgtype.xml;
 
-import cc.constant.ConstantCharSet;
-import cc.constant.ConstantFile;
+import cc.sysconstant.ConstantCharSet;
+import cc.sysconstant.ConstantFile;
 import org.dom4j.Document;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;

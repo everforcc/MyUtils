@@ -1,6 +1,6 @@
 package cc.structure.msgtype.properties;
 
-import cc.constant.ConstantFile;
+import cc.sysconstant.ConstantFile;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

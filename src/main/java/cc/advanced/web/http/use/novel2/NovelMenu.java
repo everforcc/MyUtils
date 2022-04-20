@@ -1,6 +1,6 @@
 package cc.advanced.web.http.use.novel2;
 
-import cc.resource.PropertiesHeader;
+import cc.sysresource.PropertiesHeader;
 import cc.advanced.web.http.httpurlconnect.HttpURLConnectionUtil;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

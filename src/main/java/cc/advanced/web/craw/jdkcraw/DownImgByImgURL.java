@@ -1,6 +1,6 @@
 package cc.advanced.web.craw.jdkcraw;
 
-import cc.constant.ConstantFile;
+import cc.sysconstant.ConstantFile;
 
 import java.io.File;
 import java.io.FileOutputStream;

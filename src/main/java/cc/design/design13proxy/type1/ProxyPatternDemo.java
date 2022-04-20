@@ -1,6 +1,6 @@
 package cc.design.design13proxy.type1;
 
-import cc.constant.ConstantFile;
+import cc.sysconstant.ConstantFile;
 
 /**
  * @author c.c.

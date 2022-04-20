@@ -1,6 +1,6 @@
 package cc.advanced.web.webservice.use;
 
-import cc.constant.ConstantFile;
+import cc.sysconstant.ConstantFile;
 import cc.core.date.utils.DateUtils;
 import cc.advanced.web.webservice.Axis.AxisUtils;
 import cc.advanced.web.webservice.del.AxisWebService;

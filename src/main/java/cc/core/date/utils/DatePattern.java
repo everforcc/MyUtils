@@ -1,6 +1,6 @@
 package cc.core.date.utils;
 
-import cc.constant.ConstantDate;
+import cc.sysconstant.ConstantDate;
 
 import java.text.SimpleDateFormat;
 

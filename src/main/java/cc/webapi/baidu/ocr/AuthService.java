@@ -1,6 +1,6 @@
 package cc.webapi.baidu.ocr;
 
-import cc.constant.ConstantFile;
+import cc.sysconstant.ConstantFile;
 import net.sf.json.JSONObject;
 import java.io.*;
 import java.net.HttpURLConnection;

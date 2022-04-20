@@ -1,6 +1,6 @@
 package cc.core.file;
 
-import cc.constant.ConstantFile;
+import cc.sysconstant.ConstantFile;
 
 import java.io.File;
 import java.io.FileInputStream;

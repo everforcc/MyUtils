@@ -1,6 +1,6 @@
 package cc.core.file.use;
 
-import cc.constant.ConstantFile;
+import cc.sysconstant.ConstantFile;
 import cc.core.file.utils.FileUtils;
 import cc.core.file.utils.IFileUtils;
 import cc.core.io.base.PrintReaderUtils;

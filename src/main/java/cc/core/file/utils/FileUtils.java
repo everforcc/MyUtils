@@ -1,8 +1,7 @@
 package cc.core.file.utils;
 
-import cc.entity.FileSysMsg;
+import cc.sysentity.FileSysMsg;
 import java.io.File;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;

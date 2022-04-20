@@ -4,7 +4,7 @@ package cc.advanced.web.utils.iptools;
 import java.io.IOException;
 import java.net.Proxy;
 
-import cc.resource.PropertiesHeader;
+import cc.sysresource.PropertiesHeader;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 

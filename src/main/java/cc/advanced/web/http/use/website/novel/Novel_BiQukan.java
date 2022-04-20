@@ -1,7 +1,7 @@
 package cc.advanced.web.http.use.website.novel;
 
 
-import cc.constant.ConstantFile;
+import cc.sysconstant.ConstantFile;
 import cc.core.date.utils.DateUtils;
 import cc.core.io.base.PrintWriterUtils;
 import org.jsoup.Jsoup;

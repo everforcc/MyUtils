@@ -1,6 +1,6 @@
 package cc.advanced.web.craw.jsoup;
 
-import cc.constant.ConstantCharSet;
+import cc.sysconstant.ConstantCharSet;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

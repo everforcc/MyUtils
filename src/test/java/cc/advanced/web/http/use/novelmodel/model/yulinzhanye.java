@@ -1,8 +1,7 @@
 package cc.advanced.web.http.use.novelmodel.model;
 
-import cc.resource.PropertiesHeader;
+import cc.sysresource.PropertiesHeader;
 import cc.advanced.web.http.use.novelmodel.flow.CrawFlow2;
-import cc.use.url.http.novelmodel.model.*;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.junit.jupiter.api.Test;

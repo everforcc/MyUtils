@@ -1,6 +1,6 @@
 package cc.advanced.web.craw.webmagic;
 
-import cc.constant.ConstantFile;
+import cc.sysconstant.ConstantFile;
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;

@@ -1,6 +1,6 @@
 package cc.advanced.web.mail;
 
-import cc.constant.ConstantFile;
+import cc.sysconstant.ConstantFile;
 
 import javax.activation.DataHandler;
 import javax.activation.DataSource;

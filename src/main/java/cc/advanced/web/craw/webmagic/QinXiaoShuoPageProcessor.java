@@ -1,7 +1,7 @@
 package cc.advanced.web.craw.webmagic;
 
-import cc.resource.PropertiesHeader;
-import cc.constant.ConstantFile;
+import cc.sysresource.PropertiesHeader;
+import cc.sysconstant.ConstantFile;
 import cc.core.io.base.PrintWriterUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;

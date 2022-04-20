@@ -1,6 +1,6 @@
 package cc.core.file.zip;
 
-import cc.constant.ConstantFile;
+import cc.sysconstant.ConstantFile;
 import cc.java0.cmd.CmdUtils;
 import org.apache.commons.lang.StringUtils;
 

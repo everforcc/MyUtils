@@ -1,7 +1,7 @@
 package cc.core.file.utils;
 
 import cc.comp.ByteUtils;
-import cc.constant.ConstantFile;
+import cc.sysconstant.ConstantFile;
 
 import javax.imageio.ImageIO;
 import javax.imageio.ImageReader;

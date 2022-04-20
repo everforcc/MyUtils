@@ -1,7 +1,7 @@
 package cc.advanced.web.http.use.google;
 
 import cc.advanced.web.http.httpurlconnect.HttpURLConnectionUtil;
-import cc.resource.PropertiesHeader;
+import cc.sysresource.PropertiesHeader;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;

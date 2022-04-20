@@ -1,8 +1,8 @@
 package cc.java0.cmd;
 
-import cc.constant.ConstantFile;
+import cc.sysconstant.ConstantFile;
 import cc.core.io.base.StreamInputUtils;
-import cc.utils.Print_Record;
+import cc.sysutils.Print_Record;
 
 import java.io.*;
 

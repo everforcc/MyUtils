@@ -1,6 +1,6 @@
 package cc.advanced.web.webservice.jdkservice;
 
-import cc.constant.ConstantCharSet;
+import cc.sysconstant.ConstantCharSet;
 
 import java.io.*;
 import java.net.HttpURLConnection;
